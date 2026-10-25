@@ -28,6 +28,7 @@ heroCTASecondaryHref = "#comparison"
 authorName = "Mexico City Balloon Rides editors"
 authorRole = "Independent guide"
 bookingCardLabel = "Editorial pick"
+bookingCardFramed = true
 exploreHubTitle = "Keep reading"
 exploreHubSpokesLabel = "Ways to book"
 exploreHubGuidesLabel = "Planning guides"

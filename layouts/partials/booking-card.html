@@ -17,8 +17,7 @@
 {{ with $tour.galleryImages }}{{ $img = (index . 0).src }}{{ $imgAlt = (index . 0).alt }}{{ else }}{{ with $tour.images }}{{ $img = index . 0 }}{{ end }}{{ end }}
 {{ $price := $tour.formattedStartingPrice | default (cond (gt ($tour.startingPrice | default 0) 0) (printf "$%.0f" ($tour.startingPrice | default 0)) "") }}
 <div class="booking-card{{ if .noMedia }} booking-card--framed{{ end }}" data-affiliate-widget="availability" data-affiliate-tour-id="{{ $tour.id }}">
-  {{/* rome design (CHECKLIST E6): inside the featured booking frame the card has no
-       photo of its own; availability-surface.html passes noMedia. */}}
+  {{/* noMedia: bookingCardFramed (rome design) -- the frame already shows label + name. */}}
   {{ if not .noMedia }}{{ with $img }}
   <div class="booking-card-media">
     {{ $bImg := partial "img-src.html" (dict "src" . "alt" $imgAlt "Site" $site) }}

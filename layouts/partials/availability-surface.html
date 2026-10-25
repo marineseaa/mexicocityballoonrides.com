@@ -12,7 +12,7 @@
 {{- $tour := .tour | default dict -}}
 {{- $site := .Site -}}
 {{- if eq $tour.provider "viator" -}}
-{{ partial "booking-card.html" (dict "Site" $site "tour" $tour "noMedia" true) }}
+{{ partial "booking-card.html" (dict "Site" $site "tour" $tour "noMedia" ($site.Params.bookingCardFramed | default false)) }}
 {{- else if $tour.id -}}
 <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame"
      data-gyg-tour-id="{{ $tour.id }}"
