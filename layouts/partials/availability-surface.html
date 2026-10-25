@@ -11,12 +11,6 @@
      Codified from queenstownjetboattours.com 2026-09-28 (first mixed site). */ -}}
 {{- $tour := .tour | default dict -}}
 {{- $site := .Site -}}
-{{- /* Live widget first: a Viator tour swaps to a relevant GYG tour when one is
-     configured (widget-tour.html: page widgetTourId, else gygWidgetTourID). The
-     Viator booking card below is only the fallback for Viator-only sites.
-     Callers should resolve the tour the same way for their frame text; this
-     call is the safety net. (Marina 2026-10-25, mexicocityballoonrides.com) */ -}}
-{{- $tour = partial "widget-tour.html" (dict "Site" $site "Page" .Page "tour" $tour) -}}
 {{- if eq $tour.provider "viator" -}}
 {{ partial "booking-card.html" (dict "Site" $site "tour" $tour "noMedia" ($site.Params.bookingCardFramed | default false)) }}
 {{- else if $tour.id -}}

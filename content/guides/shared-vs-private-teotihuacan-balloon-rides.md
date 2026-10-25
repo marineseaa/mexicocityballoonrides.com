@@ -15,7 +15,6 @@ keywords:
 type: "guides"
 date: 2026-10-25
 featuredTourId: "309496P6"
-widgetTourId: "1432828"
 ogImage: "/images/shared-vs-private-teotihuacan-balloon-rides-hook.webp"
 cardImage: "/images/shared-vs-private-teotihuacan-balloon-rides-hook.webp"
 ---

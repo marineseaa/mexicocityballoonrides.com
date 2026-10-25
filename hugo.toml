@@ -28,7 +28,6 @@ heroCTASecondaryHref = "#comparison"
 authorName = "Mexico City Balloon Rides editors"
 authorRole = "Independent guide"
 bookingCardLabel = "Editorial pick"
-bookingCardFramed = true
 exploreHubTitle = "Keep reading"
 exploreHubSpokesLabel = "Ways to book"
 exploreHubGuidesLabel = "Planning guides"
@@ -75,7 +74,6 @@ stay22Currency  = "USD"
 contactEmail   = "info@mexicocityballoonrides.com"
 
 bookingOverline    = "Our pick for most visitors"
-widgetBookingOverline = "Book a sunrise flight"   # booking section when the widget books a GYG tour other than the page pick
 bookingHeading     = "Check dates and prices"
 featuredTourPitch  = ""
 sitePriceFrom = "$137"

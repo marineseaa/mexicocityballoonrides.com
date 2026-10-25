@@ -1,13 +1,6 @@
 {{ $tour := .tour | default dict }}
 {{ $site := .Site }}
 {{ $page := .Page }}
-{{/* The surface books a live WIDGET: a Viator page tour swaps to a relevant GYG tour
-     (widget-tour.html). The frame, subtitle and proof bar describe the tour the
-     widget actually books, never the page tour, so no rating sits over another
-     tour's calendar. */}}
-{{ $ownTour := $tour }}
-{{ $tour = partial "widget-tour.html" (dict "Site" $site "Page" $page "tour" $tour) }}
-{{ $swapped := ne (string ($ownTour.id | default "")) (string ($tour.id | default "")) }}
 {{ $tourID := $page.Params.tourId | default $site.Params.featuredTourID | default $site.Params.gygWidgetTourID }}
 
 {{/* ── Booking header (HOMEPAGE-CONVERSION-PATTERNS.md §3).
@@ -37,8 +30,6 @@
      SITE pitch belongs to the homepage only; a landing spoke takes its own `bookingPitch`,
      so a spoke can never repeat the featured tour's sales line. */}}
 {{ $bookingPitch := cond $isFeatured (cond $page.IsHome ($site.Params.featuredTourPitch | default "") ($page.Params.bookingPitch | default "")) ($tour.abstract | default "") }}
-{{/* A pitch written about the page tour must not sit over a different tour's widget. */}}
-{{ if $swapped }}{{ $bookingPitch = "" }}{{ $bookingOverline = $page.Params.bookingOverline | default $site.Params.widgetBookingOverline | default "Book your experience" }}{{ end }}
 
 {{/* ── Load widget snippet from assets/widgets/gyg-availability-<tourID>.txt ── */}}
 {{ $txtPath := printf "assets/widgets/gyg-availability-%v.txt" $tourID }}
@@ -64,11 +55,20 @@
     {{/* romeinaday.tours "featured tour card": label + tour name, then the live
          availability widget edge to edge below. No photo: the widget carries
          the tour's own imagery, so a card photo above it repeats it. */}}
+    {{/* A Viator tour books through its own booking card (photo, title, facts,
+         price, Viator CTA) with NO rome frame around it: the card already names the
+         tour, so a frame would print the title twice. Viator has no embeddable
+         affiliate calendar; the card IS the Viator widget. Never swap the page's
+         recommended tour for a GYG one to get a calendar (Marina 2026-10-25,
+         reference: mauiwhalewatchingcruise.com homepage). */}}
+    {{ $viatorCard := eq $tour.provider "viator" }}
+    {{ if not $viatorCard }}
     <article class="tour-card tour-card--featured booking-card-shell">
       {{ with $tName }}<div class="tour-card__body">
-        {{ if $swapped }}<span class="tour-card__label">{{ $site.Params.widgetCardLabel | default "Live availability" }}</span>{{ else if $isFeatured }}<span class="tour-card__label">{{ $page.Params.bookingCardLabel | default $site.Params.bookingCardLabel | default "Editorial pick" }}</span>{{ end }}
+        {{ if $isFeatured }}<span class="tour-card__label">{{ $page.Params.bookingCardLabel | default $site.Params.bookingCardLabel | default "Editorial pick" }}</span>{{ end }}
         <h3 class="tour-card__title">{{ $tour.shortTitle | default . }}</h3>
       </div>{{ end }}
+    {{ end }}
     <div class="booking-widget-wrapper fade-up">
       {{/* The GYG loader script is already in <head> (partials/head.html, gated
            on gygPartnerID, loads once for every page) — do NOT repeat it here.
@@ -84,7 +84,7 @@
              data-gyg-cmp="{{ $site.Params.gygCampaign }}"></div>
       {{ end }}
     </div>
-    </article>
+    {{ if not $viatorCard }}</article>{{ end }}
 
     {{/* ── Social proof trust bar ── */}}
     {{ $rating := $tour.rating | default 0 }}

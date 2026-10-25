@@ -15,7 +15,6 @@ cardMeta: "Private baskets vs private tours with a shared balloon"
 cardImage: "/images/heroes/private-teotihuacan-balloon-rides.webp"
 
 tourId: "309496P6"
-widgetTourId: "1432828"
 dataKey: "mcbr_offers"
 
 heroImage: "/images/heroes/private-teotihuacan-balloon-rides.webp"

@@ -18,8 +18,6 @@
     {{ $widgetTour = . }}
   {{ end }}
 {{ end }}
-{{/* Live widget, never a static card: a Viator featuredTourId swaps to a GYG tour (widget-tour.html). */}}
-{{ $widgetTour = partial "widget-tour.html" (dict "Site" $site "Page" . "tour" $widgetTour) }}
 {{/* Derive the GYG location slug (e.g. "tokyo-l193") from the picked tour's
      own url so the fallback link is correct even when featuredTourId points
      at a tour in a different location than the sitewide default. */}}
@@ -107,17 +105,21 @@
 
   {{/* Availability widget — this guide's own featuredTourId, straight after the
        intro, inside a featured tour card. Exactly one per page. */}}
+  {{/* Viator tour: its own booking card, unframed (see booking-widget.html). */}}
+  {{ $viatorCard := eq $widgetTour.provider "viator" }}
   <section class="guide-availability article-section" id="guide-availability">
+    {{ if not $viatorCard }}
     <div class="tour-card tour-card--featured booking-card-shell">
       <div class="tour-card__body">
         <span class="tour-card__label">Check availability</span>
         {{ with $widgetTour.title }}<p class="tour-card__title">{{ $widgetTour.shortTitle | default . }}</p>{{ end }}
       </div>
+    {{ end }}
       <div class="booking-widget-wrapper">
         {{/* MIXED-PROVIDER SITE: the guide's own tour on ITS network. */}}
         {{ partial "availability-surface.html" (dict "Site" $site "tour" $widgetTour) }}
       </div>
-    </div>
+    {{ if not $viatorCard }}</div>{{ end }}
   </section>
 
   {{ if $aboveAuto }}
