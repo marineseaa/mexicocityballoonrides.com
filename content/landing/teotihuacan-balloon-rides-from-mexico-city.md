@@ -15,6 +15,7 @@ cardMeta: "Hotel pickups, meeting points and return times"
 cardImage: "/images/heroes/teotihuacan-balloon-rides-from-mexico-city.webp"
 
 tourId: "171986P1"
+widgetTourId: "1522004"
 dataKey: "mcbr_offers"
 
 heroImage: "/images/heroes/teotihuacan-balloon-rides-from-mexico-city.webp"

@@ -18,6 +18,8 @@
     {{ $widgetTour = . }}
   {{ end }}
 {{ end }}
+{{/* Live widget, never a static card: a Viator featuredTourId swaps to a GYG tour (widget-tour.html). */}}
+{{ $widgetTour = partial "widget-tour.html" (dict "Site" $site "Page" . "tour" $widgetTour) }}
 {{/* Derive the GYG location slug (e.g. "tokyo-l193") from the picked tour's
      own url so the fallback link is correct even when featuredTourId points
      at a tour in a different location than the sitewide default. */}}

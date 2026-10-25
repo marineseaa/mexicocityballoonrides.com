@@ -1,0 +1,28 @@
+{{- /* widget-tour.html — which tour the page's AVAILABILITY SURFACE books.
+     Returns a tour dict. dict: Site, Page, tour (the page's own tour).
+
+     Rule (Marina, 2026-10-25, mexicocityballoonrides.com): the booking section
+     shows a live availability WIDGET, never a static tour card. Viator has no
+     embeddable availability widget for affiliates, so when the page's own tour
+     is a Viator listing the surface books a relevant GetYourGuide tour instead:
+       1. page front matter `widgetTourId` (the closest GYG match for this page)
+       2. site param `gygWidgetTourID` (the sitewide GYG widget tour)
+     Only when neither resolves to a GYG tour (a Viator-only site) does the
+     Viator booking card remain as the fallback.
+     A GYG page tour is returned unchanged. The page's highlights, comparison
+     and copy keep selling its own tour; only the date-picker surface changes. */ -}}
+{{- $tour := .tour | default dict -}}
+{{- $site := .Site -}}
+{{- $page := .Page -}}
+{{- $out := $tour -}}
+{{- if and (eq $tour.provider "viator") $site.Params.gygPartnerID -}}
+  {{- $pageWid := "" -}}
+  {{- with $page -}}{{- $pageWid = .Params.widgetTourId | default "" -}}{{- end -}}
+  {{- $wid := string ($pageWid | default $site.Params.gygWidgetTourID | default "") -}}
+  {{- if $wid -}}
+    {{- range (index $site.Data $site.Params.offersDataKey) -}}
+      {{- if and (eq (string .id) $wid) (ne .provider "viator") -}}{{- $out = . -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

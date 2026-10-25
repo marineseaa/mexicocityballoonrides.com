@@ -15,6 +15,7 @@ cardMeta: "La Gruta, natural caves and buffets compared"
 cardImage: "/images/heroes/teotihuacan-balloon-rides-with-breakfast.webp"
 
 tourId: "247495P2"
+widgetTourId: "1520860"
 dataKey: "mcbr_offers"
 
 heroImage: "/images/heroes/teotihuacan-balloon-rides-with-breakfast.webp"
