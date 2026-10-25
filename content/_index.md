@@ -3,8 +3,10 @@ title: "Teotihuacán Balloon Rides from Mexico City | Fly, Eat & Tour"
 h1: "Mexico City Hot Air Balloon Rides"
 description: "Compare and book Teotihuacán balloon rides with hotel pickup, cave breakfast, pyramid visits, and private baskets. See reviews and prices before you reserve."
 readTime: "9 min read"
-highlightsTitle: "Our Pick: Viaja Teotihuacan's Sunrise Flight"
-highlightsSubtitle: "A shared flight over the Teotihuacán valley, sold as flight only or with hotel transport from Mexico City and a breakfast in a natural cave."
+highlightsTitle: "Our Pick: Viaja Teotihuacan Sunrise Balloon Flight"
+experiencesOverline: "Other flights we review"
+experiencesTitle: "More Teotihuacán Balloon Rides"
+highlightsSubtitle: "A shared sunrise flight over the Teotihuacán valley, available as flight only or with hotel transport from Mexico City and breakfast in a natural cave."
 galleryTitle: "The Teotihuacán Valley at Dawn"
 gallerySubtitle: "Where the balloons fly, about an hour northeast of Mexico City, and the ancient city you can visit after landing."
 editorialOverline: "Before you book"
@@ -28,7 +30,7 @@ For most first-time visitors staying in Mexico City, start by comparing flights 
 
 ## The flights are not over the city
 
-No balloon on this site takes off in Mexico City or flies over its skyline. The flights operate over the Teotihuacán valley in the State of Mexico, roughly 45 to 50 km northeast of the city by road. Most launch fields are in San Martín de las Pirámides, next to San Juan Teotihuacán, the municipality that holds the archaeological zone: a state official put the share of take-offs from San Martín at about 90% in February 2026. The drive takes roughly 45 to 60 minutes, and our page on [balloon rides from Mexico City](/teotihuacan-balloon-rides-from-mexico-city/) compares the transfers.
+No balloon on this site takes off in Mexico City or flies over its skyline. The flights operate over the Teotihuacán valley in the State of Mexico, roughly 45 to 50 km northeast of the city by road. Most balloons launch around San Martín de las Pirámides, beside the Teotihuacán archaeological zone; a state official put the share of take-offs there at about 90% in February 2026. The drive takes roughly 45 to 60 minutes, and our page on [balloon rides from Mexico City](/teotihuacan-balloon-rides-from-mexico-city/) compares the transfers.
 
 ## What the headline price buys
 
@@ -40,7 +42,7 @@ Admission to the archaeological zone is a separate cost on most packages. INAH c
 
 Most listings sell the same sunrise flight in several options, so the real choice is what you add to it. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) matches each package to a type of traveler. In short:
 
-- Staying in Mexico City without a car: book an option with round-trip transport. It costs more and removes the 4 a.m. problem.
+- Staying in Mexico City without a car: book an option with round-trip transport. It costs more, but solves the pre-dawn transport problem.
 - Driving yourself, or sleeping near the pyramids: the [flight-only option](/teotihuacan-balloon-flight-only/) is the cheapest way into the air.
 - Here for the cave breakfast: {{< tour-link tour="247495P2" >}}We Fly's La Gruta package{{< /tour-link >}} was about $203 if you make your own way there and about $274 with transport and an early return to the city. We Fly warns that the wait outside the restaurant is beyond its control. Our page on [balloon rides with breakfast](/teotihuacan-balloon-rides-with-breakfast/) compares the cave options.
 - Here for the history: a [balloon and guided pyramids tour](/teotihuacan-balloon-and-pyramids-tour/) adds a guide on the ground, which most shared packages leave out.

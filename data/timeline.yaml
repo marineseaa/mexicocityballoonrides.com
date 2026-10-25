@@ -5,7 +5,7 @@
 # Labels are plain Unicode; narrative/body allow inline HTML.
 overline: "How a flight morning runs"
 title: "A Balloon Morning, Hour by Hour"
-narrative: "The part first-timers miss is how small the flight is inside the morning. You spend under an hour in the air, often quoted as 45 to 60 minutes, out of a morning that runs five to nine hours from hotel pickup to drop-off. And you are not up there in the dark: balloons lift off at first light, so you are in the air around sunrise, not before it."
+narrative: "What first-timers often don't realize is how little of the morning is actually spent in the air. The flight itself usually lasts around 45 to 60 minutes, while the full experience can take five to nine hours from hotel pickup to drop-off. Despite the pre-dawn pickup, you don't fly in the dark. Balloons lift off around first light, putting you in the air around sunrise."
 stops:
   - label: "Pickup in the dark, about 4:30–5:40 a.m."
     body: "Hotel pickups from Mexico City typically leave between about 4:30 and 5:40, and the operator sends the exact time the day before. Be ready early: one operator, Globos Aerostáticos Teotihuacán, allows only 10 minutes' grace before the van leaves without you."
@@ -20,7 +20,7 @@ stops:
   - label: "Landing, toast and certificate"
     body: "The ground crew meets the balloon where it lands. Operators mark the landing with a sparkling-wine toast and hand out a personalized flight certificate."
   - label: "Breakfast, if your package includes it"
-    body: "Packages with breakfast continue to a restaurant, often one set inside a natural cave such as La Gruta. Flight-only tickets end at the toast."
+    body: "Packages with breakfast continue to a restaurant, sometimes a cave restaurant such as La Gruta. Flight-only tickets end at the toast."
   - label: "The pyramids, from 8:00"
     body: "The archaeological zone opens at 8:00, so a visit fits after breakfast. Admission (MX$210 for foreign visitors in 2026) is not included in most balloon packages, and the Pyramid of the Sun cannot be climbed."
   - label: "Back in the city, about 10:00 or 14:30"
