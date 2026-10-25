@@ -1,0 +1,14 @@
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-band-inner fade-up">
+      <h2 class="cta-title" id="cta-heading">{{ .Site.Params.ctaTitle }}</h2>
+      <p class="cta-body">{{ .Site.Params.ctaBody }}</p>
+      <a href="{{ .Site.Params.gygAffiliateURL }}"
+         class="btn-primary btn-lg cta-btn"
+         target="_blank" rel="sponsored noopener"
+         data-gyg-link>
+        {{ .Site.Params.ctaButton }}
+      </a>
+    </div>
+  </div>
+</section>

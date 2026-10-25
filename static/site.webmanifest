@@ -1,0 +1,11 @@
+{
+  "name": "Mexico City Balloon Rides",
+  "short_name": "Mexico City Balloon Rides",
+  "icons": [
+    { "src": "/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#1C2340",
+  "background_color": "#FFFFFF",
+  "display": "standalone"
+}

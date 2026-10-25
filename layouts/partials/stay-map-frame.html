@@ -1,0 +1,34 @@
+{{/* stay-map-frame (stay22-where-to-stay skill) -- the Stay22 map iframe, shared by the {{< stay-map >}}
+     shortcode and the homepage where-to-stay section.
+     Context: dict "Site" "Page" "address"; optional "zoom",
+     "height", "label" (the place named in the iframe title).
+     Bookings inside the map go through Allez, so they are attributed to
+     stay22AID; the two campaign labels match stay22-link.html. Parameters per
+     https://dev.stay22.com/docs/maps/parameters (read 2026-10-25): the
+     provider's hotels, optional stay22Currency (USD, EUR ...) and stay22MapColor
+     (the site's CTA hex, no #) params, scroll-zoom off so the page scrolls
+     past it. Use a plain "Town, Maui, Hawaii" address: lat/lng and a landmark
+     address ("Whalers Village, Kaanapali") both returned Stay22's "couldn't
+     load your map" page in testing on 2026-10-25, whatever the docs say. Needs https://www.stay22.com in the CSP frame-src (netlify.toml). */}}
+{{- $site := .Site -}}
+{{- $aid := $site.Params.stay22AID -}}
+{{- if $aid -}}
+{{- $siteLabel := replace ($site.Params.stay22Campaign | default "site") "-" "_" -}}
+{{- $pageLabel := "home" -}}
+{{- if not .Page.IsHome -}}{{- $pageLabel = replace (path.Base .Page.RelPermalink) "-" "_" -}}{{- end -}}
+{{- $where := "" -}}
+{{- if .address -}}
+  {{- $where = printf "address=%s" (replace (urlquery .address) "+" "%20") -}}
+{{- end -}}
+{{- if $where -}}
+{{- $zoom := .zoom | default 13 -}}
+{{- $provider := $site.Params.stay22Provider | default "expedia" -}}
+{{- $extra := "" -}}
+{{- with $site.Params.stay22Currency }}{{ $extra = printf "%s&currency=%s" $extra . }}{{ end -}}
+{{- with $site.Params.stay22MapColor }}{{ $extra = printf "%s&maincolor=%s" $extra (strings.TrimPrefix "#" .) }}{{ end -}}
+{{- $src := printf "https://www.stay22.com/embed/gm?aid=%s&%s&zoom=%v&hotelsapi=%s%s&scroll=disabled&campaign=%s&campaign=%s" $aid $where $zoom $provider $extra $siteLabel $pageLabel -}}
+<div class="stay-map">
+  <iframe src="{{ $src }}" title="Map of places to stay near {{ .label | default .address | default "the harbor" }}" style="width:100%;height:{{ .height | default 420 }}px;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+{{- end -}}
+{{- end -}}

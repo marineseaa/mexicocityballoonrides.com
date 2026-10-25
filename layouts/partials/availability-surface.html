@@ -1,0 +1,25 @@
+{{- /* availability-surface.html — the ONE booking surface for a tour, chosen by
+     the tour's own `provider` field. INERT on a single-provider site (nothing
+     calls it); a MIXED-provider site (Viator + GetYourGuide on one domain) calls
+     it from booking-widget.html and guides/single.html instead of the inline
+     GYG div. dict: Site, tour.
+       provider "viator"      -> booking-card.html (Viator has no embeddable widget)
+       anything else / empty  -> GetYourGuide's availability iframe
+     GYG is the DEFAULT on purpose: a scaffold GYG offers JSON carries no
+     `provider` field, and a site that forgets it must keep its widget rather
+     than silently render a Viator card. Keep "Powerd by" — the fingerprint.
+     Codified from queenstownjetboattours.com 2026-09-28 (first mixed site). */ -}}
+{{- $tour := .tour | default dict -}}
+{{- $site := .Site -}}
+{{- if eq $tour.provider "viator" -}}
+{{ partial "booking-card.html" (dict "Site" $site "tour" $tour "noMedia" true) }}
+{{- else if $tour.id -}}
+<div data-gyg-href="https://widget.getyourguide.com/default/availability.frame"
+     data-gyg-tour-id="{{ $tour.id }}"
+     data-gyg-locale-code="en-US"
+     data-gyg-currency="USD"
+     data-gyg-widget="availability"
+     data-gyg-variant="vertical"
+     data-gyg-partner-id="{{ $site.Params.gygPartnerID }}"
+     data-gyg-cmp="{{ $site.Params.gygCampaign }}"><span>Powerd by <a target="_blank" rel="sponsored" href="{{ $tour.url }}">GetYourGuide</a></span></div>
+{{- end -}}

@@ -1,0 +1,7 @@
+{{/* stay-map -- Stay22 interactive map of places to stay, as a plain iframe.
+     Installed by the stay22-where-to-stay skill; markup lives in
+     partials/stay-map-frame.html (shared with the homepage section).
+     Usage: {{< stay-map address="Kihei, Maui, Hawaii" >}}
+            {{< stay-map address="Kaanapali, Maui, Hawaii" zoom="14" label="Kāʻanapali" >}}
+     Plain town addresses only; see the partial for why.                 */}}
+{{- partial "stay-map-frame.html" (dict "Site" .Site "Page" .Page "address" (.Get "address" | default (.Page.Params.stayAddress | default "")) "zoom" (.Get "zoom") "height" (.Get "height") "label" (.Get "label")) -}}

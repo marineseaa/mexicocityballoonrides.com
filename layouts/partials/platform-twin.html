@@ -1,0 +1,45 @@
+{{- /* platform-twin.html — "the same ride on the other platform".
+     dict: Site, tour. Renders only when the tour's offers entry names a `twin`
+     (the identical product sold on the other network). A compact link card, NOT
+     a second widget: the availability-widget count per page stays exactly one.
+     Prices and ratings differ between the two platforms because each quotes its
+     own rate and collects its own reviews — the copy says so rather than
+     implying one of them is wrong.
+     CALL IT ONLY on a tour's own review page (tour/single.html) and on guide
+     pages. NEVER from booking-widget.html: the FEATURED tour's booking section
+     (homepage, landing spokes) shows ONE widget and nothing else -- Marina read
+     the twin box there as a second widget (ulurukatatjutatours 2026-10-11,
+     checklist EEEE). */ -}}
+{{- $tour := .tour | default dict -}}
+{{- $site := .Site -}}
+{{- $twin := dict -}}
+{{- with $tour.twin -}}
+  {{- $tid := string . -}}
+  {{- range (index $site.Data $site.Params.offersDataKey) -}}
+    {{- if eq (string .id) $tid -}}{{- $twin = . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $twin.url -}}
+{{- /* Name each network from the URL HOST, never from `provider`. A raw GYG scrape
+     writes the OPERATOR's name into `provider` ("Lagoon Service Bora Bora"), and
+     the old `cond (eq .provider "getyourguide") … "Viator"` labelled every such
+     listing "Viator" — a GetYourGuide link captioned as Viator. The host is
+     ground truth and is what aff-attr.html already keys on.
+     The noun is a param: the old hardcoded "Same ride" was jet-boat wording from
+     the first mixed site and shipped on a lagoon-tour site (boraboralagoontour.com
+     2026-10-01). Set twinNoun in hugo.toml ("ride", "cruise", "tour"). */ -}}
+{{- $name := cond (in . "getyourguide.com") "GetYourGuide" "Viator" -}}
+{{- $here := cond (in ($tour.url | default "") "getyourguide.com") "GetYourGuide" "Viator" -}}
+{{- $noun := $site.Params.twinNoun | default "tour" -}}
+<div class="platform-twin fade-up" data-twin-provider="{{ lower $name }}">
+  <div class="platform-twin-text">
+    <p class="platform-twin-label">Same {{ $noun }}, also on {{ $name }}</p>
+    <p class="platform-twin-facts">
+      {{- with $twin.formattedStartingPrice }}From <strong>{{ . }}</strong> {{ $twin.priceCategory | default "per person" }}{{ end -}}
+      {{- with $twin.rating }} · ★ {{ printf "%.1f" . }} from {{ lang.FormatNumber 0 ($twin.reviewCount | default 0) }} {{ $name }} reviews{{ end -}}
+    </p>
+    <p class="platform-twin-note">Each platform sets its own price and collects its own reviews, so compare both before you book on {{ $here }}.</p>
+  </div>
+  <a href="{{ . }}" {{ partial "aff-attr.html" (dict "url" .) }} class="btn-outline platform-twin-btn" target="_blank" rel="sponsored nofollow noopener noreferrer">Check {{ $name }} Availability</a>
+</div>
+{{- end -}}

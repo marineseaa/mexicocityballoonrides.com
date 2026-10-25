@@ -1,0 +1,66 @@
+{{ $tour  := .tour | default dict }}
+{{ $site  := .Site }}
+{{ $page  := .Page }}
+{{/* Site-wide price floor, not the featured tour's own price (HOMEPAGE-
+     CONVERSION-PATTERNS.md §6). Set sitePriceFrom in hugo.toml. */}}
+{{ $price := $site.Params.sitePriceFrom | default $tour.formattedStartingPrice | default "" }}
+
+{{/* Home + landing render the homepage section stack, so their nav anchors are
+     relative; every other page type jumps back to the homepage sections. */}}
+{{/* layout "stay" (where-to-stay page) is a landing page WITHOUT the local
+     sections, so its nav points home (kit 2026-10-25, ported to rome). */}}
+{{ $hasLocalSections := and (or $page.IsHome (eq $page.Type "landing")) (ne $page.Layout "stay") }}
+{{ $anchorPrefix := cond $hasLocalSections "" "/" }}
+
+{{/* ── Blog-article header (romeinaday.tours design) ──
+     A WHITE sticky bar on every page type, with a hairline under it. There is no
+     transparent-over-the-hero state any more: the hero is a white editorial band
+     with a framed photograph below the headline, so the header never sits over a
+     picture and needs no --solid variant. The wordmark is TEXT, with the accent
+     on the initial letters -- no SVG mark, so no other niche's drawing can leak. */}}
+{{ $bookingURL := printf "%s#availability" $anchorPrefix }}
+{{ if eq $page.Type "tour" }}{{ $bookingURL = "#tour-booking" }}{{ end }}
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-logo" aria-label="{{ $site.Params.siteName }} — home">
+      {{- with $site.Params.logoWords -}}
+        {{- range $i, $w := . -}}{{ if $i }} {{ end }}<span class="site-logo__accent">{{ substr $w 0 1 }}</span>{{ substr $w 1 }}{{- end -}}
+      {{- else -}}
+        {{ $site.Params.siteName }}
+      {{- end -}}
+    </a>
+
+    <nav class="primary-nav" aria-label="Main navigation">
+      {{ range $site.Params.navLinks }}
+        {{ $href := .href }}
+        {{ if and $hasLocalSections (hasPrefix $href "/#") }}{{ $href = strings.TrimPrefix "/" $href }}{{ end }}
+        <a href="{{ $href }}" class="nav-link">{{ .label }}</a>
+      {{ end }}
+      <a href="{{ $bookingURL }}" class="btn btn--sm nav-cta">{{ $site.Params.navCtaLabel | default "Book now" }}</a>
+    </nav>
+
+    <button class="nav-toggle hamburger" id="hamburger-btn" type="button"
+            aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  {{/* Mobile menu: a plain dropdown under the bar, as on the reference. The
+       backdrop and close button stay because main.js's initMobileMenu() binds
+       them; the backdrop is transparent and only catches outside taps. */}}
+  <div class="mobile-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <button class="mobile-close" id="mobile-close-btn" type="button" aria-label="Close navigation menu">Close ×</button>
+    <ul class="mobile-nav-list" role="list">
+      {{ range $site.Params.navLinks }}
+        {{ $href := .href }}
+        {{ if and $hasLocalSections (hasPrefix $href "/#") }}{{ $href = strings.TrimPrefix "/" $href }}{{ end }}
+        <li><a href="{{ $href }}" class="mobile-nav-link">{{ .label }}</a></li>
+      {{ end }}
+    </ul>
+    <a href="{{ $bookingURL }}" class="mobile-nav-link is-cta mobile-menu-cta">{{ $site.Params.navCtaLabel | default "Book now" }}{{ with $price }} — from {{ . }}{{ end }} →</a>
+  </div>
+</header>
+
+{{ partial "breadcrumb.html" (dict "Site" $site "Page" $page "tour" $tour) }}

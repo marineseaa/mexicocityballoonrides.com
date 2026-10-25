@@ -1,0 +1,24 @@
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $tour := .tour | default dict }}
+{{/* Breadcrumb bar under the header on every page (romeinaday.tours design).
+     The current crumb is a short label, never the full SEO title. */}}
+{{ $current := $page.Params.breadcrumbLabel | default $page.Params.navTitle | default $page.Title }}
+{{ if eq $page.Type "tour" }}{{ $current = $page.Params.breadcrumbLabel | default $tour.title | default $page.Title }}{{ end }}
+{{ if $page.IsHome }}{{ $current = $site.Params.homeBreadcrumb | default $site.Params.siteName }}{{ end }}
+{{ if eq $page.Kind "404" }}{{ $current = "Page not found" }}{{ end }}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb__inner">
+    {{ if $page.IsHome }}
+      <span class="breadcrumb__home">Home</span><span class="breadcrumb__sep" aria-hidden="true">›</span><span class="breadcrumb__current">{{ $current }}</span>
+    {{ else }}
+      <a href="/">Home</a><span class="breadcrumb__sep" aria-hidden="true">›</span>
+      {{ if and $page.IsPage (eq $page.Type "tour") }}
+        <a href="/tours/">{{ $site.Params.toursBreadcrumbLabel | default "Tours" }}</a><span class="breadcrumb__sep" aria-hidden="true">›</span>
+      {{ else if and $page.IsPage (eq $page.Type "guides") }}
+        <a href="/guides/">{{ $site.Params.guidesBreadcrumbLabel | default "Guides" }}</a><span class="breadcrumb__sep" aria-hidden="true">›</span>
+      {{ end }}
+      <span class="breadcrumb__current">{{ $current }}</span>
+    {{ end }}
+  </div>
+</nav>

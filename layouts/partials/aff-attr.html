@@ -1,0 +1,11 @@
+{{- /* aff-attr.html — returns the runtime-decoration attribute for an outbound
+     booking URL, chosen by HOST, so one template can carry both networks.
+       getyourguide.com -> data-gyg-href        (main.js adds partner_id + cmp)
+       anything else    -> data-affiliate-href  (main.js adds Viator pid + mcid + campaign)
+     Usage:  <a href="{{ $u }}" {{ partial "aff-attr.html" (dict "url" $u) }}>
+     queenstownjetboattours.com is a MIXED-provider site (Viator primary, GYG
+     secondary); keying on the URL rather than a page param means a Viator tour
+     can never be decorated with GYG params or the reverse. */ -}}
+{{- $u := .url | default "" -}}
+{{- $n := cond (in $u "getyourguide.com") "data-gyg-href" "data-affiliate-href" -}}
+{{- return (printf "%s=%q" $n $u | safeHTMLAttr) -}}

@@ -1,0 +1,26 @@
+<section class="section how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="how-it-works-heading">How It Works</h2>
+      <p class="section-subtitle">Three simple steps to your unforgettable Amsterdam canal experience.</p>
+    </div>
+
+    <ol class="steps-grid" role="list">
+      {{ range .Site.Params.steps }}
+      <li class="step-card fade-up">
+        <div class="step-number" aria-hidden="true">{{ .number }}</div>
+        <h3 class="step-title">{{ .title }}</h3>
+        <p class="step-body">{{ .body }}</p>
+      </li>
+      {{ end }}
+    </ol>
+
+    <div class="steps-cta fade-up">
+      <a href="#availability" class="btn-primary btn-lg">
+        Check Availability & Prices
+      </a>
+    </div>
+
+  </div>
+</section>

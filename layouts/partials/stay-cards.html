@@ -1,0 +1,50 @@
+{{/* stay-cards (stay22-where-to-stay skill) -- three hotel cards (photo, Expedia score, review count, three
+     points, dated "from" price, Stay22 button), then the sourcing note.
+     Data: data/stay.yaml `cards:` (each `key` must exist under `hotels:`), plus
+     cardsChecked / cardsNote. Used by where-to-stay.html on the homepage and by
+     the {{< stay-cards >}} shortcode on the where-to-stay page.
+     Button label: stay.yaml `cardsCta` ("See rates on Expedia"), so it never
+     reads the same as the tour buttons on the page.
+     Buttons are plain Stay22 Allez links with rel="sponsored": never
+     data-gyg-href, which main.js reserves for GetYourGuide.
+     Context: dict "Site" "Page" "heading" (h2|h3, default h3).               */}}
+{{- $site := .Site -}}
+{{- $page := .Page -}}
+{{- $stay := $site.Data.stay -}}
+{{- /* OTA name from stay.yaml `cardsSource`, else from stay22Provider (2026-10-25: the label was
+       hard-coded "Expedia" and printed "Expedia reviews" on Booking.com sites). */ -}}
+{{- $otaNames := dict "booking" "Booking.com" "expedia" "Expedia" "hotelscom" "Hotels.com" "vrbo" "Vrbo" "agoda" "Agoda" -}}
+{{- $ota := $stay.cardsSource | default (index $otaNames ($site.Params.stay22Provider | default "expedia")) | default "Expedia" -}}
+{{- with $stay.cards -}}
+<div class="stay-cards">
+  {{- range . }}
+  {{- $h := index $stay.hotels .key }}
+  {{- if not $h }}{{ errorf "stay-cards: hotel key %q not in data/stay.yaml hotels" .key }}{{ end }}
+  {{- $href := partial "stay22-link.html" (dict "Site" $site "Page" $page "hotel" $h) }}
+  <article class="stay-card">
+    <div class="stay-card__media">
+      <img class="stay-card__img" src="{{ .image }}" alt="{{ .alt }}" loading="lazy" decoding="async" width="800" height="500">
+      <span class="stay-card__price">from {{ .price }}<span class="stay-card__unit">/night</span></span>
+    </div>
+    <div class="stay-card__body">
+      <p class="stay-card__style">{{ .style }}</p>
+      <div class="stay-card__head">
+        <h3 class="stay-card__name">{{ $h.name }}</h3>
+        <span class="stay-card__score" title="Guest rating on {{ $ota }}">{{ .score }}<span class="stay-card__score-of">/10</span></span>
+      </div>
+      <p class="stay-card__meta">{{ .area }} &middot; {{ .distance }} &middot; {{ .reviews }} {{ $ota }} reviews</p>
+      <ul class="stay-card__points" role="list">
+        {{- range .points }}
+        <li>{{ . }}</li>
+        {{- end }}
+      </ul>
+      <div class="stay-card__foot">
+        <a class="btn-primary stay-card__cta" href="{{ $href }}" target="_blank" rel="sponsored nofollow noopener">{{ $stay.cardsCta | default "Check Availability" }}</a>
+      </div>
+    </div>
+  </article>
+  {{- end }}
+</div>
+{{- with $stay.cardsChecked }}<p class="stay-cards__checked">{{ . }}</p>{{ end }}
+{{- with $stay.cardsNote }}<p class="stay-cards__note">{{ . }}</p>{{ end }}
+{{- end -}}

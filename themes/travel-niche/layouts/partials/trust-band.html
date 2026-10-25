@@ -1,0 +1,15 @@
+<section class="trust-band" aria-label="Trust signals">
+  <div class="container">
+    <ul class="trust-grid" role="list">
+      {{ range .Site.Params.trustItems }}
+      <li class="trust-item fade-up">
+        <span class="trust-icon" aria-hidden="true">{{ .icon }}</span>
+        <div class="trust-text">
+          <span class="trust-metric">{{ .metric }}</span>
+          <span class="trust-label">{{ .label }}</span>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>

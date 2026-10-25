@@ -1,0 +1,265 @@
+{{ define "main" }}
+{{ $site := .Site }}
+{{ $tour := .Scratch.Get "tour" | default dict }}
+{{/* No literal price fallback: the scaffold's old "$74" printed on every clone whose guide
+     had no Scratch tour (fairbanksarcticcircletours.com 2026-10-04). Site floor, else nothing. */}}
+{{ $price := $tour.formattedStartingPrice | default $site.Params.sitePriceFrom | default "" }}
+
+{{/* ── Per-page featured tour — a guide can pick the tour most relevant to
+     its own topic via `featuredTourId` front matter; falls back to the
+     sitewide featured tour if a guide doesn't set one. Codified 2026-08-06
+     after a retrofit found every guide on a live site defaulting to the
+     same sitewide tour regardless of topic. ── */}}
+{{ $widgetTourID := .Params.featuredTourId | default $site.Params.featuredTourID | string }}
+{{ $allTours := index $site.Data $site.Params.offersDataKey }}
+{{ $widgetTour := dict }}
+{{ range $allTours }}
+  {{ if eq (string .id) $widgetTourID }}
+    {{ $widgetTour = . }}
+  {{ end }}
+{{ end }}
+{{/* Derive the GYG location slug (e.g. "tokyo-l193") from the picked tour's
+     own url so the fallback link is correct even when featuredTourId points
+     at a tour in a different location than the sitewide default. */}}
+{{ $locationSlug := "" }}
+{{ with $widgetTour.url }}
+  {{ $extracted := replaceRE `^.*getyourguide\.com/([a-z0-9-]+-l[0-9]+)/.*$` "$1" . }}
+  {{ if ne $extracted . }}{{ $locationSlug = $extracted }}{{ end }}
+{{ end }}
+{{ if not $locationSlug }}
+  {{/* Fall back to the site's own primary location if the tour's url didn't
+       match the expected pattern (e.g. a hand-authored data entry). */}}
+  {{ $locationSlug = $site.Params.gygLocationSlug | default "" }}
+{{ end }}
+
+{{/* ── Split the article body in THREE ──
+     intro (before <!--more-->)      → above the availability widget
+     the first TWO ## sections       → the separator between the two widgets
+     everything else                 → below the auto widget
+
+     Placement contract (Marina, 2026-08-26, final): the auto widget sits in
+     the TOP HALF of the page, separated from the featured tour's availability
+     widget by AT LEAST TWO full ## sections. Two earlier versions were both
+     wrong: the kit's original spliced it in after ONE section (two widgets
+     ~6% apart, reading as a single block), and the correction pushed it below
+     the whole article (~78%, past the point most readers reach). Two sections
+     is the middle: real content between them, still high enough to convert.
+
+     `after 2` on the split is what makes it two sections — the chunks are
+     [pre-h2, section1, section2, ...], so chunks 0-2 go above and 3+ below.
+     Guides with fewer than two ## sections degrade to "everything above",
+     which leaves the auto widget last rather than mis-splitting the article. ── */}}
+{{ $intro := .Summary }}
+{{ $rest := "" }}
+{{ if .Truncated }}
+  {{ $rest = strings.TrimPrefix $intro .Content }}
+{{ else }}
+  {{ $rest = .Content }}
+  {{ $intro = "" }}
+{{ end }}
+{{ $parts := strings.Split $rest "<h2" }}
+{{ $aboveAuto := $rest }}
+{{ $belowAuto := "" }}
+{{ if gt (len $parts) 3 }}
+  {{ $aboveAuto = printf "%s<h2%s<h2%s" (index $parts 0) (index $parts 1) (index $parts 2) }}
+  {{ $belowAuto = printf "<h2%s" (delimit (after 3 $parts) "<h2") }}
+{{ end }}
+
+{{/* ── romeinaday.tours blog-article frame ──
+     White hero zone (meta row, H1, deck), then a two-column body: the article
+     column (TOC, intro, availability widget, two sections, auto widget, the
+     rest, CTA) and a sticky sidebar AFTER it in the DOM, so the widget-placement
+     audit's article span (first .prose -> .cta-band) never includes it. The
+     breadcrumb renders sitewide from header.html. */}}
+{{ $readTime := .Params.readTime | default (printf "%d min read" (math.Max 3 (div (add .WordCount 150) 230) | int)) }}
+<div class="page-head guide-page-head">
+  <header class="article-header guide-header">
+    <div class="article-header__inner">
+      <div class="meta-row">
+        <span class="tag">{{ .Params.cardTag | default ($site.Params.guideTag | default "Guide") }}</span>
+        <span class="meta-row__item">{{ $readTime }}</span>
+        <span class="meta-row__item guide-meta">Updated {{ .Params.dateModified | default (.Lastmod.Format "2 January 2006") }}</span>
+      </div>
+      <h1 class="article-h1 guide-title">{{ .Params.h1 | default .Title }}</h1>
+      {{ with .Params.deck | default .Params.description }}<p class="article-deck guide-subtitle">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+</div>
+
+<div class="blog-layout">
+<article class="guide-article article-body">
+
+  {{ partial "author-bar.html" (dict "Site" $site "Page" .) }}
+  {{ if and (ne .Params.toc false) (gt (len (findRE "<h2" .Content)) 2) }}
+  <nav class="toc toc--auto" aria-label="In this guide">
+    <p class="toc__label">In this guide</p>
+    {{ .TableOfContents }}
+  </nav>
+  {{ end }}
+
+  {{ if $intro }}
+  <div class="guide-body guide-body-intro">
+    <div class="prose">{{ $intro | safeHTML }}</div>
+  </div>
+  {{ end }}
+
+  {{/* Availability widget — this guide's own featuredTourId, straight after the
+       intro, inside a featured tour card. Exactly one per page. */}}
+  <section class="guide-availability article-section" id="guide-availability">
+    <div class="tour-card tour-card--featured booking-card-shell">
+      <div class="tour-card__body">
+        <span class="tour-card__label">Check availability</span>
+        {{ with $widgetTour.title }}<p class="tour-card__title">{{ $widgetTour.shortTitle | default . }}</p>{{ end }}
+      </div>
+      <div class="booking-widget-wrapper">
+        {{/* MIXED-PROVIDER SITE: the guide's own tour on ITS network. */}}
+        {{ partial "availability-surface.html" (dict "Site" $site "tour" $widgetTour) }}
+      </div>
+    </div>
+  </section>
+
+  {{ if $aboveAuto }}
+  <div class="guide-body guide-body-above-auto">
+    <div class="prose">{{ $aboveAuto | safeHTML }}</div>
+  </div>
+  {{ end }}
+
+  {{/* Auto widget — top half, >= 2 full sections below the availability widget. */}}
+  <section class="alt-tours-section guide-auto-widget article-section" aria-labelledby="guide-auto-heading">
+    <div class="section-header">
+      <p class="section-overline">Other experiences</p>
+      <h2 class="section-title" id="guide-auto-heading">{{ $site.Params.guideAutoWidgetTitle | default "Other experiences you might enjoy" }}</h2>
+      <p class="section-subtitle">{{ .Params.autoWidgetIntro | default $site.Params.guideAutoWidgetIntro | default "More ways to explore the area. Each listing shows its own cancellation policy." | markdownify }}</p>
+    </div>
+    {{/* MIXED-PROVIDER SITE: Viator has no auto carousel, so a Viator-led site renders
+         the browse surface from its own offers JSON, excluding this guide's tour. */}}
+    {{ if eq $site.Params.affiliateProvider "viator" }}
+    {{ partial "alt-tours-grid.html" (dict "Site" $site "exclude" ($widgetTour.id | default "")) }}
+    {{ else }}
+    <div class="booking-widget-wrapper">
+      <div data-gyg-widget="auto"
+           data-gyg-partner-id="{{ $site.Params.gygPartnerID }}"
+           data-gyg-cmp="{{ $site.Params.gygCampaign }}"></div>
+    </div>
+    {{ end }}
+  </section>
+
+  {{ if $belowAuto }}
+  <div class="guide-body">
+    <div class="prose">{{ $belowAuto | safeHTML }}</div>
+  </div>
+  {{ end }}
+
+  <section class="cta-band" aria-labelledby="guide-cta-heading">
+    <div class="cta-band-inner">
+      <h2 class="cta-title" id="guide-cta-heading">{{ .Params.ctaTitle | default (.Site.Params.ctaTitle | default "Ready to book?") }}</h2>
+      <p class="cta-body">{{ $ctaFallback := cond (ne $price "") (printf "%sFrom <strong>%s</strong> %s." (cond (eq $tour.freeCancellation true) "Free cancellation. " "") $price ($tour.priceCategory | default "per person")) "Compare dates, prices and what is included." }}{{ .Params.ctaBody | default (.Site.Params.ctaBody | default $ctaFallback) | safeHTML }}</p>
+      <a href="#guide-availability" class="btn btn-primary btn-lg cta-btn">
+        {{ .Site.Params.ctaButton | default "Check Availability & Book" }}
+      </a>
+    </div>
+  </section>
+
+  {{ partial "share-row.html" (dict "Site" $site "Page" .) }}
+</article>
+{{ partial "sidebar.html" (dict "Site" $site "Page" . "tour" $widgetTour) }}
+</div>
+
+{{ partial "explore-hub.html" (dict "Site" $site "Page" .) }}
+
+
+
+
+{{/* ── Article Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Params.h1 | default .Title }}",
+  "description": "{{ .Description }}",
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  {{/* schema.org dateModified MUST be ISO 8601 — do NOT reuse .Params.dateModified.
+       That param feeds the VISIBLE "Updated {{ }}" line further up, whose default
+       format is "January 2006". The two defaults here differ ("2006-01-02" vs
+       "January 2006") precisely because two formats are intended — but sharing one
+       override param meant every guide that SET it (the scaffold's own placeholder
+       guides all do) shipped an unparseable "August 2026" as the Article schema's
+       dateModified. No build error, and the visible line looks correct, so only a
+       Rich Results test or a GSC warning ever surfaces it.
+       .Lastmod == .Date while enableGitInfo is false (the decoupled-build default).
+       Set dateModifiedISO in front matter to override with a real ISO date.
+       (Reported on rotoruahangiexperience.com 2026-08-24.) */}}
+  "dateModified": "{{ .Params.dateModifiedISO | default (.Lastmod.Format "2006-01-02") }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ $site.Params.siteName }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ $site.Params.siteName }}"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+}
+</script>
+
+{{/* ── FAQPage Structured Data (ported from victoriafallshelicoptertours.com, 2026-08-21) ──
+     Built from the RENDERED FAQ section, never from a front-matter duplicate.
+     Google requires the marked-up Q&A to match what the page visibly shows, and
+     a hand-maintained second copy drifts the first time someone edits the prose.
+     Deriving it makes that drift impossible by construction.
+
+     This is half the reason the "which one should I book?" page is a guide and
+     not a homepage block (HOMEPAGE-CONVERSION-PATTERNS.md §2): its "which is
+     cheapest / which departs from X" answers become rich-result eligible here,
+     and never could inside a homepage <section>.
+
+     Shape relied on (stable across every guide in this section):
+       <h2 id="frequently-asked-questions">…</h2>
+       <h3 id="…">Question</h3> <p>Answer</p>   (repeated)
+       <hr>                                      ← the `---` closing the block
+     Guides with no FAQ heading emit nothing at all. */}}
+{{ $faqBlock := "" }}
+{{ $split := split .Content "frequently-asked-questions" }}
+{{ if gt (len $split) 1 }}
+  {{ $faqBlock = index (split (index $split 1) "<hr") 0 }}
+{{ end }}
+{{ $faqs := slice }}
+{{ range $i, $chunk := (split $faqBlock "<h3") }}
+  {{ if gt $i 0 }}
+    {{/* Grouped FAQs: a topic <h2> (Booking, Aurora, ...) between questions would be glued
+         onto the previous answer. Strip any <h2> from the chunk first, so a guide may group
+         its questions under topic headings and still emit clean FAQPage answers
+         (fairbanksarcticcircletours.com 2026-10-04, arctic-circle-tour-faq). */}}
+    {{ $item := printf "<h3%s" $chunk | replaceRE `(?s)<h2[^>]*>.*?</h2>` "" }}
+    {{ $q := trim ($item | replaceRE `(?s)^<h3[^>]*>(.*?)</h3>.*$` "$1" | plainify | htmlUnescape) " \n\t" }}
+    {{ $a := trim ($item | replaceRE `(?s)^<h3[^>]*>.*?</h3>(.*)$` "$1" | plainify | htmlUnescape) " \n\t" }}
+    {{ if and (ne $q "") (ne $a "") }}
+      {{ $faqs = $faqs | append (dict "q" $q "a" $a) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ with $faqs }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+{{- range $i, $f := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $f.q | jsonify | safeJS }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $f.a | jsonify | safeJS }}
+      }
+    }
+{{- end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ end }}

@@ -1,0 +1,20 @@
+{{ $site := .Site }}
+<section class="section alt-tours-section" aria-labelledby="alt-tours-heading">
+  <div class="container container-narrow">
+    <div class="section-header fade-up">
+      <p class="section-overline">Can't Make These Dates?</p>
+      <h2 class="section-title" id="alt-tours-heading">Browse More Available Options</h2>
+      {{/* No blanket cancellation promise (checklist BBBB, copenhagencanaltour 2026-10-04): the
+           auto widget shows arbitrary listings and some have none -- on the reporting build it sat
+           beside a tour whose operator says "NOT refundable". Each card shows its own policy. */}}
+      <p class="section-subtitle">More tours and times nearby. Each listing shows its own cancellation policy.</p>
+    </div>
+    {{/* GYG loader script already loads once in <head> — don't repeat it here
+         (was tripling the loader per page; found via /final-check 2026-07-11). */}}
+    <div class="booking-widget-wrapper fade-up">
+      <div data-gyg-widget="auto"
+           data-gyg-partner-id="{{ $site.Params.gygPartnerID }}"
+           data-gyg-cmp="{{ $site.Params.gygCampaign }}"></div>
+    </div>
+  </div>
+</section>

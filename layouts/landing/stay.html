@@ -1,0 +1,28 @@
+{{ define "main" }}
+  {{/* Where-to-stay page layout (stay22-where-to-stay skill, 2026-10-25).
+       A `type: landing` page with `layout: stay`. The default landing layout is
+       a tour-selling stack (widget, highlights, how-it-works, gallery, tour
+       cards, tour reviews, CTA band, alt tours) and on this page every one of
+       those sat ABOVE the first hotel: the answer to "where should I stay"
+       started at the eighth H2 (audit 2026-10-25). Here the markdown body
+       (direct answer, hotel cards, area table, areas, map, booking tips) comes
+       straight after the hero, then ONE tour block (booking-widget.html keeps
+       its #availability id so the sticky bar, footer links and body links
+       still resolve), then the FAQ and the explore hub. */}}
+  {{ $tour := .Scratch.Get "tour" | default dict }}
+  {{ $ctx := dict "Site" .Site "Page" . "tour" $tour }}
+
+  {{ partial "hero.html" $ctx }}
+
+  <section class="section editorial-section stay-page" id="guide" aria-labelledby="hero">
+    <div class="container container-narrow">
+      <div class="prose editorial-prose fade-up">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+
+  {{ partial "booking-widget.html" $ctx }}
+  {{ partial "faq.html"            $ctx }}
+  {{ partial "explore-hub.html"    $ctx }}
+{{ end }}

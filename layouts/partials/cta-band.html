@@ -1,0 +1,39 @@
+{{/* Affiliate CTAs below carry a STATIC BARE tour URL as href (no
+     partner_id/cmp — those stay JS-only so tracking params never sit in
+     static HTML). main.js replaces it with the decorated affiliate URL
+     via data-gyg-link. Never ship href="" here: a no-JS click would just
+     reload the page and the booking is lost.
+     (mikumidaysafarifromzanzibar 2026-08-15) */}}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $tour := .tour | default dict }}
+{{ $price := $tour.formattedStartingPrice | default "" }}
+{{ $ctaTitle  := $page.Params.ctaTitle  | default $site.Params.ctaTitle }}
+{{ $ctaBody   := $page.Params.ctaBody   | default $site.Params.ctaBody }}
+{{ $ctaButton := $page.Params.ctaButton | default $site.Params.ctaButton | default "Book Now" }}
+
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-band-inner fade-up">
+      <p class="section-overline" aria-hidden="true">Limited Availability</p>
+      <h2 class="cta-title" id="cta-heading">{{ $ctaTitle }}</h2>
+      {{/* Price unit from the data, not hardcoded — see layouts/tour/single.html
+           (codified 2026-08-15, mountfujiprivatetours). */}}
+      <p class="cta-body">{{ $ctaBody }}{{ with $price }} Starting from <strong>{{ . }}</strong> {{ $tour.priceCategory | default "per person" }}.{{ end }}</p>
+      {{/* Static bare tour URL as href; JS swaps in the param'd GYG_AFFILIATE_URL via
+           data-gyg-link. Do NOT "restore" an empty href here — an affiliate CTA must work
+           without JS. (comment corrected 2026-08-16, mountfujiprivatetours) */}}
+      {{/* Per-page destination. main.js rewrites EVERY [data-gyg-link] to the
+           site-wide GYG_AFFILIATE_URL, which silently sends landing-page
+           visitors to the flagship tour instead of the one the page sells.
+           data-gyg-href decorates THIS element's own URL instead. Fall back to
+           data-gyg-link only when the page has no tour at all.
+           (beststockholmtours.com 2026-08-23; same class as rule #48.) */}}
+      <a href="{{ $tour.url | default "/" }}"
+         class="btn-primary btn-lg cta-btn"
+         {{ with $tour.url }}{{ partial "aff-attr.html" (dict "url" .) }}{{ else }}data-gyg-link{{ end }}>
+        {{ $ctaButton }}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+
+{{/* Facts strip — rendered INSIDE the hero zone (hero.html calls it), styled as
+     the reference's square .fact cards: an uppercase label over a bold value.
+     Four cells: rating, duration, and two niche tiles from params. Tile params
+     keep the scaffold's names (trustDishesMetric/Label, trustGuideMetric/Label)
+     and stay niche-neutral by default so a forgotten param cannot leak copy. */}}
+{{/* hideTourTrust: a page whose hero does not sell the tour (where-to-stay) drops
+     the rating and duration cells and may add trustExtraMetric/Label instead
+     (kit 2026-10-25, ported to rome). */}}
+{{ $tourTiles   := not $page.Params.hideTourTrust }}
+{{ $rating      := cond $tourTiles ($tour.rating      | default 0) 0 }}
+{{ $reviewCount := $tour.reviewCount | default 0 }}
+{{ $duration    := cond $tourTiles ($tour.duration    | default "") "" }}
+{{ $extraMetric := $page.Params.trustExtraMetric | default "" }}
+{{ $extraLabel  := $page.Params.trustExtraLabel  | default "" }}
+{{ $dishesMetric := $page.Params.trustDishesMetric | default $site.Params.trustDishesMetric | default "Top Rated" }}
+{{ $dishesLabel  := $page.Params.trustDishesLabel  | default $site.Params.trustDishesLabel  | default "Verified Reviews" }}
+{{ $guideMetric  := $page.Params.trustGuideMetric  | default $site.Params.trustGuideMetric  | default "Instant" }}
+{{ $guideLabel   := $page.Params.trustGuideLabel   | default $site.Params.trustGuideLabel   | default "Confirmation" }}
+
+<ul class="trust-band trust-grid fact-strip" role="list" aria-label="Key facts">
+  {{ if $rating }}
+  <li class="fact trust-item">
+    <span class="fact__label trust-label">{{ if $reviewCount }}{{ lang.FormatNumber 0 $reviewCount }} reviews{{ else }}Guest rating{{ end }}</span>
+    <span class="fact__value trust-metric"><span class="fact__star" aria-hidden="true">★</span> {{ printf "%.1f" $rating }} / 5</span>
+  </li>
+  {{ end }}
+  {{ with $duration }}
+  <li class="fact trust-item">
+    <span class="fact__label trust-label">{{ $page.Params.trustDurationLabel | default $site.Params.trustDurationLabel | default "Duration" }}</span>
+    <span class="fact__value trust-metric">{{ . }}</span>
+  </li>
+  {{ end }}
+  <li class="fact trust-item">
+    <span class="fact__label trust-label">{{ $dishesLabel }}</span>
+    <span class="fact__value trust-metric">{{ $dishesMetric }}</span>
+  </li>
+  <li class="fact trust-item">
+    <span class="fact__label trust-label">{{ $guideLabel }}</span>
+    <span class="fact__value trust-metric">{{ $guideMetric }}</span>
+  </li>
+  {{ if and $extraMetric $extraLabel }}
+  <li class="fact trust-item">
+    <span class="fact__label trust-label">{{ $extraLabel }}</span>
+    <span class="fact__value trust-metric">{{ $extraMetric }}</span>
+  </li>
+  {{ end }}
+</ul>

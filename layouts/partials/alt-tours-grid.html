@@ -1,0 +1,42 @@
+{{/* alt-tours-grid.html — 3-card "more options" grid from the offers JSON (no
+     section chrome). Used by alt-tours.html and guides/single.html.
+     dict: Site, exclude (tour id to omit). Emits data-affiliate-widget="auto".
+
+     This replaces GYG's `auto` carousel: Viator has no such widget, so the
+     browse surface is rendered from our own data. Cards for tours that HAVE a
+     page link internally; the rest deep-link to the listing with a bare href +
+     data-affiliate-href (decorated by main.js). */}}
+{{ $site := .Site }}
+{{ $exclude := .exclude | default "" }}
+{{ $all := index $site.Data $site.Params.offersDataKey }}
+{{ $pool := slice }}
+{{/* MIXED-PROVIDER SITE: skip the excluded tour's twin (same product, other network)
+     and rows whose offers JSON says hasPage: false. */}}
+{{ $excludeTwin := "" }}
+{{ range $all }}{{ if eq (string .id) (string $exclude) }}{{ $excludeTwin = .twin | default "" }}{{ end }}{{ end }}
+{{ range $all }}
+  {{ $keep := true }}
+  {{ if isset . "hasPage" }}{{ $keep = .hasPage }}{{ end }}
+  {{ if eq (string .id) (string $exclude) }}{{ $keep = false }}{{ end }}
+  {{ if and (ne $excludeTwin "") (eq (string .id) (string $excludeTwin)) }}{{ $keep = false }}{{ end }}
+  {{ if $keep }}{{ $pool = $pool | append . }}{{ end }}
+{{ end }}
+{{ $pool = sort $pool "reviewCount" "desc" }}
+<div class="alt-tours-grid" data-affiliate-widget="auto" role="list">
+  {{ range first 3 $pool }}
+    {{ $t := . }}
+    {{ $href := $t.url }}{{ $internal := false }}
+    {{ range $site.Pages }}{{ if and (eq .Type "tour") (eq (string .Params.tourId) (string $t.id)) }}{{ $href = .RelPermalink }}{{ $internal = true }}{{ end }}{{ end }}
+    {{ $img := "" }}{{ $imgAlt := $t.title }}
+    {{ with $t.galleryImages }}{{ $img = (index . 0).src }}{{ $imgAlt = (index . 0).alt }}{{ else }}{{ with $t.images }}{{ $img = index . 0 }}{{ end }}{{ end }}
+    <a class="alt-tour-card" role="listitem" href="{{ $href }}"{{ if not $internal }} {{ partial "aff-attr.html" (dict "url" $t.url) }} target="_blank" rel="sponsored nofollow noopener noreferrer"{{ end }}>
+      {{ with $img }}<img src="{{ . }}" alt="{{ $imgAlt }}" loading="lazy" decoding="async" width="360" height="240">{{ end }}
+      <span class="alt-tour-body">
+        <span class="alt-tour-title">{{ $t.shortTitle | default $t.title }}</span>
+        <span class="alt-tour-meta">{{ with $t.rating }}★ {{ printf "%.1f" . }} ({{ lang.FormatNumber 0 ($t.reviewCount | default 0) }}){{ end }}{{ with $t.duration }} · {{ . }}{{ end }}</span>
+        <span class="alt-tour-price">{{ with $t.formattedStartingPrice }}From {{ . }}{{ else }}{{ with $t.startingPrice }}From ${{ printf "%.0f" . }}{{ end }}{{ end }}{{ with $t.priceCategory }}{{ if ne . "per person" }} {{ . }}{{ end }}{{ end }}</span>
+      </span>
+    </a>
+  {{ end }}
+</div>
+<p class="alt-tours-more"><a href="/tours/">{{ $site.Params.altToursMoreText | default "See every tour" }} →</a></p>

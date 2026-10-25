@@ -1,0 +1,225 @@
+{{/* NOTE: every jsonify below is piped through safeJS. Inside a
+     <script> block Go's html/template treats the output as JS and
+     escapes it a SECOND time, shipping "name":"\"Foo\"" — a quoted
+     string inside a string. That silently breaks Offer.url and every
+     FAQPage answer with NO build error. safeJS suppresses the second
+     pass. Never remove it. (mikumidaysafarifromzanzibar 2026-08-15) */}}
+{{ if or .Page.IsHome (eq .Page.Type "landing") }}
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $isLanding   := eq $page.Type "landing" }}
+{{ $pageURL     := cond $isLanding $page.Permalink $site.BaseURL }}
+{{ $idBase      := cond $isLanding $page.Permalink $site.BaseURL }}
+{{ $rating      := $tour.rating      | default 4.9 }}
+{{ $reviewCount := $tour.reviewCount | default 0 }}
+{{ $price       := $tour.startingPrice | default ($tour.basePrice | default 0) }}
+{{ $currency    := $tour.currency    | default "USD" }}
+{{ $tourURL     := $tour.url         | default "" }}
+{{ $heroImg     := (partial "img-src.html" (dict "src" (partial "first-image.html" $tour.images) "alt" "" "Site" $site)).src }}
+{{ $heroImgAbs  := cond (hasPrefix $heroImg "http") $heroImg (printf "%s%s" ($site.BaseURL | strings.TrimSuffix "/") $heroImg) }}
+{{ $faqKey      := $page.Params.faqDataKey | default "faq" }}
+{{ $faqData     := index $site.Data $faqKey }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "TouristAttraction", "Organization"],
+      "@id": "{{ $site.BaseURL }}#business",
+      "name": "{{ $site.Params.siteName }}",
+      "description": "{{ $page.Params.businessDescription | default $page.Description | default $site.Params.description }}",
+      "url": "{{ $site.BaseURL }}",
+      "email": "{{ $site.Params.contactEmail }}",
+      "priceRange": "{{ $site.Params.schemaPriceRange }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{ $site.Params.schemaAddressLocality }}",
+        "addressCountry": "{{ $site.Params.schemaCountry }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": {{ $site.Params.schemaLat }},
+        "longitude": {{ $site.Params.schemaLong }}
+      }{{ with $heroImgAbs }},
+      "image": "{{ . }}"{{ end }}
+    },
+    {
+      "@type": "Product",
+      "@id": "{{ $idBase }}#tour",
+      "name": "{{ $tour.title | default $site.Params.siteName }}",
+      "description": "{{ $tour.abstract | default $site.Params.description }}",
+      "url": "{{ $tourURL }}"{{ with $heroImgAbs }},
+      "image": "{{ . }}"{{ end }},
+      "brand": {
+        "@type": "Brand",
+        "name": {{ ($tour.supplier | default (cond (eq $tour.provider "viator") "Viator" "GetYourGuide")) | jsonify | safeJS }}
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "{{ $currency }}",
+        "price": "{{ printf "%.2f" $price }}",
+        "validFrom": "{{ now.Format "2006-01-02" }}",
+        "priceValidUntil": "{{ now.AddDate 1 0 0 | dateFormat "2006-01-02" }}",
+        "availability": "https://schema.org/InStock",
+        "url": "{{ $tourURL }}",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "{{ $site.Params.schemaCountry | default "NO" }}",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 1,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "{{ $currency }}"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "{{ $site.Params.schemaCountry | default "NO" }}"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          }
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ printf "%.2f" $rating }}",
+        "reviewCount": "{{ $reviewCount }}",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ $idBase }}#faq",
+      "mainEntity": [
+        {{ range $i, $item := $faqData.items }}{{ if $i }},{{ end }}
+        {
+          "@type": "Question",
+          "name": "{{ $item.question }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ $item.answer }}"
+          }
+        }
+        {{ end }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ $site.BaseURL }}#website",
+      "url": "{{ $site.BaseURL }}",
+      "name": "{{ $site.Params.siteName }}",
+      "description": "{{ $site.Params.description }}",
+      "dateModified": "{{ now.Format "2006-01-02" }}"
+    }
+  ]
+}
+</script>
+{{ else if eq .Page.Type "tour" }}
+{{/* Tour single → Product + Offer + AggregateRating so search shows rich-result
+     stars/price. Tour looked up from the offers JSON by tourId. */}}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $tour := dict }}
+{{ range (index $site.Data $site.Params.offersDataKey) }}
+  {{ if eq (string .id) (string $page.Params.tourId) }}{{ $tour = . }}{{ end }}
+{{ end }}
+{{ $img := "" }}
+{{ with $tour.galleryImages }}{{ $img = (index . 0).src }}{{ else }}{{ with $tour.images }}{{ $img = index . 0 }}{{ end }}{{ end }}
+{{ $imgResolved := partial "img-src.html" (dict "src" $img "alt" $tour.title "Site" $site) }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "@id": "{{ $page.Permalink }}#tour",
+  "name": {{ $tour.title | jsonify | safeJS }},
+  "description": {{ (index ($tour.fullDescription | default (slice $tour.abstract)) 0) | jsonify | safeJS }},
+  {{ with $imgResolved.src }}"image": {{ (cond (hasPrefix . "http") . (printf "%s%s" ($site.BaseURL | strings.TrimSuffix "/") .)) | jsonify | safeJS }},{{ end }}
+  "brand": { "@type": "Brand", "name": {{ ($tour.supplier | default (cond (eq $tour.provider "viator") "Viator" "GetYourGuide")) | jsonify | safeJS }} },
+  {{ with $tour.rating }}"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ printf "%.2f" . }}",
+    "reviewCount": "{{ $tour.reviewCount }}",
+    "bestRating": "5"
+  },{{ end }}
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ printf "%.2f" ($tour.startingPrice | default 0.0) }}",
+    "priceCurrency": "{{ $tour.currency | default "USD" }}",
+    "validFrom": "{{ now.Format "2006-01-02" }}",
+    "priceValidUntil": "{{ now.AddDate 1 0 0 | dateFormat "2006-01-02" }}",
+    "availability": "https://schema.org/InStock",
+    "url": {{ $tour.url | jsonify | safeJS }},
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "{{ $site.Params.schemaCountry | default "NO" }}",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 1,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "{{ $tour.currency | default "USD" }}" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "{{ $site.Params.schemaCountry | default "NO" }}" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+      }
+    }
+  }
+}
+</script>
+{{ with $tour.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := . }}{{ if $i }},{{ end }}{
+      "@type": "Question",
+      "name": {{ $q.q | jsonify | safeJS }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $q.a | markdownify | plainify | jsonify | safeJS }} }
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}
+{{ else }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "{{ $page.Permalink }}#article",
+  "headline": "{{ $page.Title }}",
+  "description": "{{ $page.Params.description | default $page.Summary }}",
+  "url": "{{ $page.Permalink }}",
+  "dateModified": "{{ now.Format "2006-01-02" }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ $site.Params.siteName }}",
+    "url": "{{ $site.BaseURL }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ $site.Params.siteName }}",
+    "url": "{{ $site.BaseURL }}"
+  },
+  "isPartOf": {
+    "@id": "{{ $site.BaseURL }}#website"
+  }
+}
+</script>
+{{ end }}

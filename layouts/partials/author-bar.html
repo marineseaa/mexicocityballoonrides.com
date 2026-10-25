@@ -1,0 +1,12 @@
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{/* Author bar (romeinaday.tours design): an organisation byline, never a
+     fabricated person. The "last checked" date is the page's own lastmod. */}}
+{{ $checked := $page.Lastmod | default $page.Date }}
+<div class="author-bar">
+  <span class="author-bar__avatar" aria-hidden="true">{{ substr ($site.Params.siteName | default "B") 0 1 }}</span>
+  <div>
+    <div class="author-bar__name">{{ $site.Params.authorName | default (printf "%s editorial team" $site.Params.siteName) }}</div>
+    <div class="author-bar__role">{{ $site.Params.authorRole | default "Independent guide" }}{{ if not $checked.IsZero }} · prices and ratings checked {{ $checked.Format "2 January 2006" }}{{ end }}</div>
+  </div>
+</div>

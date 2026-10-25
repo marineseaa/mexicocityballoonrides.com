@@ -1,0 +1,56 @@
+{{ define "main" }}
+<meta name="robots" content="noindex">
+<section class="section clears-header" style="min-height: 60vh; display: flex; align-items: center;">
+  <div class="container container-narrow">
+    <div class="section-header fade-up" style="text-align: center;">
+      <p class="section-overline">404 Error</p>
+      <h1 class="section-title">Page Not Found</h1>
+      <p class="section-subtitle" style="max-width: 600px; margin-inline: auto;">
+        {{/* Niche-NEUTRAL copy + CTA label read from config — this page used to
+             hardcode "back to the food tour" / "Book Food Tour" and a paper-lantern
+             illustration, all of which shipped on clones. The 404 is easy to miss
+             during review because nothing links to it. (2026-08-16) */}}
+        The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+      </p>
+    </div>
+
+    {{/* flex + gap + wrap, NOT inline anchors with margin-right: the three
+         buttons wrap at narrow widths and the old markup gave the wrapped row no
+         vertical gap at all, so the primary CTA overlapped the row above it.
+         (Reported on waiotapu-tickets.com 2026-08-24.)
+
+         btn-outline, NOT btn-secondary-dark — this is the ROOT CAUSE behind the
+         overlap above, found the same day on rotoruahangiexperience.com.
+         .btn-secondary-dark is a colour-only MODIFIER (border-color + color); it
+         needs the .btn-secondary base for display/padding/border-width. Applied
+         alone — as this page did, and it was the only page in the scaffold using
+         it — the two links render as bare text with no button chrome, and the
+         btn-lg padding is what collided with the CTA. Adding .btn-secondary is
+         NOT the fix either: that base is a lighten-on-dark treatment
+         (rgba(255,255,255,.12)) and goes invisible on this LIGHT page. .btn-outline
+         is self-contained and built for light surfaces (transparent fill,
+         --canal-teal border + text). Nothing links to a 404, so only a screenshot
+         ever catches this class of bug. */}}
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); margin-top: var(--space-8);">
+      <a href="/" class="btn-outline btn-lg">
+        Back to Home
+      </a>
+      <a href="/tours/" class="btn-outline btn-lg">
+        {{ .Site.Params.tourBackLinkText | default "Browse All Tours" }}
+      </a>
+      <a href="/#availability" class="btn-primary btn-lg">
+        {{ .Site.Params.ctaButton | default "Check Availability & Book" }}
+      </a>
+    </div>
+
+    <div style="margin-top: var(--space-12); text-align: center;">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width="200" height="200" style="opacity: 0.3; margin: 0 auto;" aria-hidden="true">
+        {{/* Neutral compass rose — swap per niche alongside the header/footer mark. */}}
+        <circle cx="100" cy="100" r="62" stroke="var(--canal-teal)" stroke-width="2" fill="none"/>
+        <path d="M100 30 L116 84 L170 100 L116 116 L100 170 L84 116 L30 100 L84 84 Z"
+              stroke="var(--gold)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+{{ end }}

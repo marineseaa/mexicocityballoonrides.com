@@ -1,0 +1,39 @@
+{{/*
+  first-image.html — Pick first non-video URL from a GYG tour's images[] array.
+
+  GYG scraper occasionally puts Cloudflare Stream video manifest URLs
+  (.m3u8 / cloudflarestream.com) as the FIRST entry of images[] for tours
+  that have video media. CSS background-image and <img src=...> can't
+  render a video stream, so picking images[0] blindly breaks hero + cards.
+
+  This partial scans the array and returns the first URL that is NOT a
+  video manifest. Returns "" if none found.
+
+  Usage:
+    {{ $img := partial "first-image.html" $tour.images }}
+    {{ with $img }}<img src="{{ . }}">{{ end }}
+
+  Codified Run 24+ after lapedreracasamila.com hero + ticketseiffeltowersummit.com
+  tour-card image regressions traced to video-URL-as-images[0] (2026-06-01).
+
+  v2: Support {src,alt} object format from portable scraper v7. Hugo `cond` evaluates
+  both branches eagerly, so `index` on a string arg crashes even on the false branch.
+  Use if/else instead. Codified sydneybluemountainstour.com 2026-07-16.
+*/}}
+{{- $imgs := . | default slice -}}
+{{- $first := "" -}}
+{{- range $imgs -}}
+  {{- if not $first -}}
+    {{- /* Support both plain string URLs and {src, alt} object form from portable scraper v7 */}}
+    {{- $url := "" -}}
+    {{- if reflect.IsMap . -}}
+      {{- $url = index . "src" | default "" -}}
+    {{- else -}}
+      {{- $url = printf "%v" . -}}
+    {{- end -}}
+    {{- if not (or (strings.Contains $url ".m3u8") (strings.Contains $url "cloudflarestream")) -}}
+      {{- $first = $url -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $first -}}

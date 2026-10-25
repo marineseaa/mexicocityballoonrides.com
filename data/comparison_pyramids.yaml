@@ -1,0 +1,69 @@
+# Balloon + pyramids spoke comparison. Plain Unicode only. Option prices per person from the Viator/GetYourGuide schedules, checked 25 Oct 2026.
+# Last column (muted by CSS) = free time only, the option for people who do not want a guide.
+title: "Balloon and Pyramids Packages Compared"
+subtitle: "Who includes a guide, who includes the entry ticket, and how long you get at the ruins."
+highlight_column: 0
+columns:
+  - label: "Amigo Tours, guided + Guadalupe (GetYourGuide)"
+    badge: "OUR PICK"
+    highlight: true
+    cta: "Check dates"
+  - label: "Excellentravel"
+    highlight: false
+    url: "/tours/excellentravel-balloon-flight-private-transport-pyramids/"
+    cta: "Our review"
+  - label: "Luxury Tours private tour"
+    highlight: false
+    url: "/tours/luxury-tours-teotihuacan-private-tour-shared-balloon/"
+    cta: "Our review"
+  - label: "We Fly all included"
+    highlight: false
+    url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
+    cta: "Our review"
+  - label: "Volare + extra ruins time"
+    highlight: false
+    url: "/tours/volare-teotihuacan-balloon-flight-from-mexico-city/"
+    cta: "Our review"
+rows:
+  - label: "Price"
+    values:
+      - "From $148 (cheapest option); guided option $249 on its Viator twin"
+      - "$247 shared transport; $357 private"
+      - "$360 private tour, shared balloon"
+      - "$231 all included"
+      - "$186 with transport"
+  - label: "Guide at the ruins"
+    values:
+      - "Professional guide, about 3 hours"
+      - "SECTUR-certified guide, about 2:30 h"
+      - "Private guided visit"
+      - "Certified guide, 1–1:30 h on foot"
+      - "No guide, free time"
+  - label: "Zone entry (MX$210)"
+    values:
+      - "Included in the guided option"
+      - "Included"
+      - "Included"
+      - "Included in the all-included option"
+      - "Not included, cash at the gate"
+  - label: "Extras"
+    values:
+      - "Obsidian workshop, Basilica of Guadalupe"
+      - "Breakfast at a local restaurant"
+      - "Pulque, tequila and mezcal; obsidian workshop"
+      - "Cave breakfast, tasting and workshop"
+      - "Breakfast at the balloon port"
+  - label: "Transport"
+    values:
+      - "Coach from the Ángel de la Independencia"
+      - "Hotel pickup, private or shared"
+      - "Private SUV or minivan from your hotel or house"
+      - "Round trip from Mexico City"
+      - "Selected hotels"
+  - label: "Guest rating"
+    values:
+      - "4.6 from 1,285 reviews"
+      - "4.9 from 123 reviews"
+      - "4.9 from 25 reviews"
+      - "4.9 from 4,822 reviews"
+      - "4.8 from 4,438 reviews"

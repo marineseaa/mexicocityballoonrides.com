@@ -1,0 +1,88 @@
+/* provider-viator.css — booking card + alt-tours grid for VIATOR sites.
+
+   Loaded automatically by layouts/partials/head.html when
+   hugo.toml [params] affiliateProvider = "viator". A GetYourGuide site never
+   requests it, so it costs those builds nothing.
+
+   Why it is a separate FILE and not a per-site hand-port: on
+   rotoruamaoriexperience.com all 17 classes emitted by booking-card.html and
+   alt-tours-grid.html had NO rule anywhere, so the cards rendered on inherited
+   styles alone -- .booking-card-cta computed `display: block`, putting the
+   price and the CTA 4px apart on one line. The templates got ported; the CSS is
+   the half that gets forgotten, and a source grep cannot see a class that was
+   never defined. Name-space check:
+
+     diff <(grep -ohE '(booking-card|alt-tour)[a-z0-9-]*'               layouts/partials/booking-card.html layouts/partials/alt-tours-grid.html | sort -u)           <(grep -oE '\.(booking-card|alt-tour)[a-z0-9-]*'               static/css/main.css static/css/provider-viator.css | tr -d '.' | sort -u)
+
+   Tokens only, no literals, so a :root palette swap reaches every colour here.
+   (Codified from rotoruamaoriexperience.com 2026-08-28.) */
+
+.booking-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+@media (min-width: 768px) { .booking-card { grid-template-columns: 5fr 7fr; } }
+.booking-card-media img { width: 100%; height: 100%; min-height: 240px; object-fit: cover; display: block; }
+.booking-card-body { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
+.booking-card-title { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.25; color: var(--deep-canal); margin: 0; }
+.booking-card-facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); font-size: 1rem; color: var(--slate); }
+.booking-card-facts li { display: inline-flex; align-items: center; gap: var(--space-1); }
+/* A star must read as a star: --star-on-dark is the WARM token, kept separate
+   from the cool --gold accent this niche uses. */
+.booking-card-star { color: var(--gold-text); }
+.booking-card-includes { font-size: 1rem; color: var(--slate); margin: 0; }
+.booking-card-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); margin-top: auto; }
+.booking-card-price { display: inline-flex; align-items: baseline; gap: var(--space-1); color: var(--deep-canal); }
+.booking-card-price .price-amount { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; }
+.booking-card-price .price-from, .booking-card-price .price-per { font-size: 0.85rem; color: var(--stone); }
+.booking-card-note { font-size: 0.875rem; color: var(--stone); margin: 0; }
+
+.alt-tours-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+@media (min-width: 640px) { .alt-tours-grid { grid-template-columns: repeat(3, 1fr); } }
+.alt-tour-card {
+  display: flex; flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  color: inherit; text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.alt-tour-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.alt-tour-card img { width: 100%; aspect-ratio: 3 / 2; height: auto; object-fit: cover; display: block; }
+.alt-tour-body { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4); }
+.alt-tour-title { font-weight: 600; color: var(--deep-canal); font-size: 1rem; line-height: 1.35; }
+.alt-tour-meta { font-size: 0.875rem; color: var(--slate); }
+.alt-tour-price { font-weight: 700; color: var(--gold-text); font-size: 1rem; }
+.alt-tours-more { text-align: center; margin-top: var(--space-5); font-size: 1rem; }
+.alt-tours-more a { color: var(--gold-text); font-weight: 600; }
+.alt-tours-more a:hover { text-decoration: underline; }
+
+/* ── Platform twin card (mixed-provider sites) ─────────────────────────────
+   partials/platform-twin.html: "Same ride, also on <other platform>" — a link
+   card under the booking surface / in the tour sidebar, never a second widget.
+   Codified from queenstownjetboattours.com 2026-09-28. Tokens only. */
+.platform-twin {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4);
+  margin-top: var(--space-6); padding: var(--space-5) var(--space-6);
+  background: var(--white); border: 1px solid color-mix(in srgb, var(--deep-canal) 14%, transparent);
+  border-left: 4px solid var(--gold);
+}
+.platform-twin-text { flex: 1 1 320px; }
+.platform-twin-label { margin: 0 0 4px; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-text); }
+.platform-twin-facts { margin: 0 0 4px; color: var(--charcoal); font-size: 1rem; }
+.platform-twin-note { margin: 0; color: var(--stone); font-size: 0.875rem; line-height: 1.5; }
+.platform-twin-btn { flex: 0 0 auto; }
+.tour-booking-card .platform-twin { padding: var(--space-4); border-left-width: 3px; }
+.tour-booking-card .platform-twin-text { flex-basis: 100%; }
+.tour-booking-card .platform-twin-btn { width: 100%; text-align: center; }
+
+/* rome frame (booking-card noMedia): the featured tour-card shell already shows the
+   label and the tour name, so the card is one full-width column without its own title. */
+.booking-card.booking-card--framed { grid-template-columns: 1fr; border: 0; box-shadow: none; }
+@media (min-width: 768px) { .booking-card.booking-card--framed { grid-template-columns: 1fr; } }

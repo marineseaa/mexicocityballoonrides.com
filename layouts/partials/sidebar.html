@@ -1,0 +1,64 @@
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $tour := .tour | default dict }}
+{{ $allTours := index $site.Data $site.Params.offersDataKey }}
+
+{{/* Sticky sidebar (romeinaday.tours design): quick facts, top picks, CTA card.
+     - quickFacts: page front matter > site param, [{label, value}].
+     - Top picks: page `sidebarPicks` (ids) > site `sidebarPicks`. Each pick links
+       to OUR tour page (internal), never straight to GetYourGuide: the cards are
+       editorial pointers and every carded id must have a page (checklist KK).
+       Price basis is printed whenever it is not per person (checklist QQQ).
+     - CTA card: page > site params; the button scrolls to this page's widget. */}}
+{{ $facts := $page.Params.quickFacts | default $site.Params.quickFacts }}
+{{ $picks := $page.Params.sidebarPicks | default $site.Params.sidebarPicks }}
+
+<aside class="article-sidebar" aria-label="Quick reference">
+  {{ with $facts }}
+  <div class="side-card quick-facts">
+    <p class="side-card__title" role="heading" aria-level="2">{{ $page.Params.quickFactsTitle | default $site.Params.quickFactsTitle | default "Quick facts" }}</p>
+    <dl>
+      {{ range . }}
+      <div class="quick-facts__row"><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>
+      {{ end }}
+    </dl>
+  </div>
+  {{ end }}
+
+  {{ with $picks }}
+  <div class="side-card">
+    <p class="side-card__title" role="heading" aria-level="2">{{ $site.Params.sidebarPicksTitle | default "Top picks" }}</p>
+    <div class="mini-tours">
+      {{ range . }}
+        {{ $id := . }}
+        {{ range $allTours }}
+          {{ if eq (string .id) (string $id) }}
+            {{ $t := . }}
+            {{ $href := "" }}
+            {{ range where $site.RegularPages "Type" "tour" }}
+              {{ if eq (string .Params.tourId) (string $id) }}{{ $href = .RelPermalink }}{{ end }}
+            {{ end }}
+            {{ if $href }}
+            {{ $thumb := partial "first-image.html" $t.images }}
+            {{ with $t.galleryImages }}{{ $thumb = (index . 0).src }}{{ end }}
+            <a class="mini-tour" href="{{ $href }}">
+              {{ with $thumb }}<img class="mini-tour__thumb" src="{{ . }}" alt="" loading="lazy" width="56" height="56">{{ end }}
+              <span class="mini-tour__text">
+                <span class="mini-tour__title">{{ $t.shortTitle | default $t.title }}</span>
+                <span class="mini-tour__price">From {{ $t.formattedStartingPrice }}{{ with $t.priceCategory }}{{ if ne . "per person" }} {{ . }}{{ else }} / person{{ end }}{{ end }}{{ with $t.rating }} · {{ printf "%.1f" . }}★{{ end }}</span>
+              </span>
+            </a>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="cta-side">
+    <p class="cta-side__title" role="heading" aria-level="2">{{ $page.Params.sideCtaTitle | default $site.Params.sideCtaTitle | default "Check live availability" }}</p>
+    <p class="cta-side__body">{{ $page.Params.sideCtaBody | default $site.Params.sideCtaBody | default "Pick a date in the live calendar to see real times and prices." }}</p>
+    <a class="btn btn--full" href="{{ cond (eq $page.Type "guides") "#guide-availability" "#availability" }}">{{ $page.Params.sideCtaButton | default $site.Params.sideCtaButton | default "Open the calendar →" }}</a>
+  </div>
+</aside>

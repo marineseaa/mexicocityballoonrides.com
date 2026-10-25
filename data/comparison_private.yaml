@@ -1,0 +1,58 @@
+# Private spoke comparison. Plain Unicode only. Prices from the Viator schedules, checked 25 Oct 2026.
+# Zuyuá is priced PER GROUP of up to 2; every other column is per person.
+# Teotihuacán Feliz has no /tours/ page, so its column carries no url.
+title: "Private Balloon Options Compared"
+subtitle: "Who is in the basket with you, what you pay for two, and what the price covers."
+highlight_column: 0
+columns:
+  - label: "Zuyuá private balloon for 2"
+    badge: "OUR PICK"
+    highlight: true
+    cta: "Check dates"
+  - label: "Teotihuacán Feliz private flight"
+    highlight: false
+  - label: "Luxury Tours private tour"
+    highlight: false
+    url: "/tours/luxury-tours-teotihuacan-private-tour-shared-balloon/"
+    cta: "Our review"
+  - label: "Excellentravel private transport"
+    highlight: false
+    url: "/tours/excellentravel-balloon-flight-private-transport-pyramids/"
+    cta: "Our review"
+rows:
+  - label: "Price"
+    values:
+      - "$1,017 per group of up to 2"
+      - "$476 per person"
+      - "$360 per person"
+      - "$357 per person"
+  - label: "For a couple"
+    values:
+      - "$1,017"
+      - "About $952 + zone entry"
+      - "About $720"
+      - "About $714"
+  - label: "Balloon basket"
+    values:
+      - "Private"
+      - "Private"
+      - "Shared (private basket at extra cost)"
+      - "Shared, small groups"
+  - label: "Guide and zone entry"
+    values:
+      - "Certified guide; tickets included"
+      - "Entry ticket not included"
+      - "Guided visit; zone tickets included"
+      - "SECTUR-certified guide; entry included"
+  - label: "Pickup"
+    values:
+      - "Your accommodation"
+      - "Your accommodation"
+      - "Your hotel or house, SUV or minivan"
+      - "Your hotel lobby"
+  - label: "Guest rating"
+    values:
+      - "4.9 from 40 reviews"
+      - "5.0 from 20 reviews"
+      - "4.9 from 25 reviews"
+      - "4.9 from 123 reviews"

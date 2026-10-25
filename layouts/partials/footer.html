@@ -1,0 +1,48 @@
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+
+{{ $hasLocalSections := or $page.IsHome (eq $page.Type "landing") }}
+{{ $anchorPrefix := cond $hasLocalSections "" "/" }}
+
+{{/* Contact address: page front matter -> SITE param only. The scaffold's
+     tour-meeting-point fallback is deliberately dropped here: GYG's
+     meetingPoints[].name is usually an option label or a pier operator's
+     company name, never a postal address (checklist X). Fail closed. */}}
+{{ $contactAddress := $page.Params.contactAddress | default $site.Params.contactAddress | default "" }}
+
+{{/* ── Footer (romeinaday.tours design) ──
+     One centred dark band: wordmark, italic tagline, a single CTA, a row of
+     links, the keyword-link block, the affiliate disclosure and the copyright
+     line. No columns, no logo mark. */}}
+<footer class="site-footer" aria-label="Site footer">
+  <div class="site-footer__inner">
+    <p class="site-footer__logo footer-logo-text">
+      {{- with $site.Params.logoWords -}}
+        {{- range $i, $w := . -}}{{ if $i }} {{ end }}<span class="site-logo__accent">{{ substr $w 0 1 }}</span>{{ substr $w 1 }}{{- end -}}
+      {{- else -}}{{ $site.Params.siteName }}{{- end -}}
+    </p>
+    <p class="site-footer__tagline footer-brand-desc">{{ $site.Params.footerDescription }}</p>
+
+    <div class="site-footer__cta">
+      <a class="btn" href="{{ $anchorPrefix }}#availability">{{ $site.Params.footerCta | default "Check availability" }}</a>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Footer">
+      {{ range $site.Params.footerQuickLinks }}
+        {{ $href := .href }}
+        {{ if and $hasLocalSections (hasPrefix $href "/#") }}{{ $href = strings.TrimPrefix "/" $href }}{{ end }}
+        <a href="{{ $href }}" class="footer-link">{{ .label }}</a>
+      {{ end }}
+    </nav>
+
+    {{ partial "footer-seo-links.html" (dict "Site" $site "Page" $page) }}
+
+    {{ with $site.Params.affiliateDisclosure }}<p class="site-footer__disclosure footer-disclosure">{{ . }}</p>{{ end }}
+    {{ with $contactAddress }}<address class="footer-address">{{ . }}</address>{{ end }}
+    <p class="site-footer__copy footer-copy">
+      &copy; {{ now.Year }} {{ $site.Params.siteName }} · <a href="mailto:{{ $site.Params.contactEmail }}">{{ $site.Params.contactEmail }}</a>
+      {{ range $site.Params.footerLegalLinks }} · <a href="{{ .href }}" class="footer-legal-link">{{ .label }}</a>{{ end }}
+    </p>
+  </div>
+</footer>

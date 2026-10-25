@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ $site := .Site }}
+{{/* Featured tour for the widgets at the foot of this hub (see the note there). */}}
+{{ $featured := dict }}
+{{ range (index $site.Data $site.Params.offersDataKey) }}
+  {{ if eq (string .id) (string $site.Params.featuredTourID) }}{{ $featured = . }}{{ end }}
+{{ end }}
+
+<section class="section guides-listing clears-header">
+  <div class="container container-narrow">
+
+    <div class="section-header">
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-subtitle">{{ .Description | default $site.Params.guidesListDescription | default "Planning tips, comparisons, and everything you need to know before you book." }}</p>
+    </div>
+
+    {{/* ── Availability widget, HIGH: a visitor landing here from search can
+         book without another click. The auto widget is far below, after the
+         card grid and the CTA. ── */}}
+    <div class="container-narrow" style="margin-bottom: var(--space-12);">
+      {{ partial "booking-widget.html" (dict "Site" $site "Page" . "tour" $featured) }}
+    </div>
+
+    <div class="guides-grid related__grid">
+      {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="guide-card related-card">
+        {{ with .Params.cardImage | default .Params.ogImage }}<span class="related-card__media"><img src="{{ . }}" alt="" loading="lazy" width="800" height="450"></span>{{ end }}
+        <span class="related-card__body">
+          {{ with .Params.cardTag }}<span class="related-card__tag">{{ . }}</span>{{ end }}
+          <h2 class="guide-card-title related-card__title">{{ .Params.h1 | default .Title }}</h2>
+          <span class="guide-card-desc related-card__meta">{{ .Description }}</span>
+          <span class="guide-card-link">Read guide &rarr;</span>
+        </span>
+      </a>
+      {{ end }}
+    </div>
+
+    <div class="cta-band-inner" style="margin-top: var(--space-16); text-align: center;">
+      <p class="cta-body">{{ $site.Params.guidesListCTABody | default "Looking to book? <a href=\"/\" class=\"btn-primary\">See the featured tour &rarr;</a>" | safeHTML }}</p>
+    </div>
+
+  </div>
+</section>
+
+{{/* ── Auto widget — the LAST thing on the hub, many sections below the
+     availability widget near the top. The two are never adjacent, and
+     neither sits inside the reading flow. (Marina 2026-08-26 — this used
+     to render both partials back to back at the foot, which put a date
+     picker and a browse carousel in one undifferentiated block.) ── */}}
+{{ partial "alt-tours.html"      (dict "Site" $site "Page" . "tour" $featured) }}
+{{ end }}

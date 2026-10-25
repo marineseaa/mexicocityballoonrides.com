@@ -1,0 +1,77 @@
+{{ $page := .Page }}
+{{ $site := .Site }}
+{{ $tour := .tour | default dict }}
+{{ $highlights := $tour.highlights | default slice }}
+{{ $includes   := $tour.includes   | default slice }}
+{{ $hlTitle    := $page.Params.highlightsTitle    | default $site.Params.highlightsTitle    | default "What Makes This Tour Special" }}
+{{ $hlSubtitle := $page.Params.highlightsSubtitle | default $site.Params.highlightsSubtitle | default "Everything that makes this a top-rated experience." }}
+
+{{ if or $highlights $includes }}
+<section class="section highlights-section" id="highlights" aria-labelledby="highlights-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <p class="section-overline">The Experience</p>
+      <h2 class="section-title" id="highlights-heading">{{ $hlTitle }}</h2>
+      <p class="section-subtitle">{{ $hlSubtitle }}</p>
+    </div>
+
+    <div class="highlights-grid">
+
+      {{ if $highlights }}
+      <div class="highlights-col">
+        <h3 class="highlights-col-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="20" height="20" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          Highlights
+        </h3>
+        <ul class="highlights-list" role="list">
+          {{ range $highlights }}
+          <li class="highlight-item">
+            <svg class="highlight-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>{{ . }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+      {{ if $includes }}
+      <div class="highlights-col">
+        <h3 class="highlights-col-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="20" height="20" aria-hidden="true">
+            <path d="M20 12V22H4V12"/>
+            <path d="M22 7H2v5h20V7z"/>
+            <path d="M12 22V7"/>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+          </svg>
+          What's Included
+        </h3>
+        <ul class="highlights-list" role="list">
+          {{ range $includes }}
+          <li class="highlight-item">
+            <svg class="highlight-check highlight-check--gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>{{ . }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+    </div>
+
+    <div class="highlights-cta fade-up">
+      <a href="#availability" class="btn-primary btn-lg">
+        Check Availability & Book
+      </a>
+    </div>
+
+  </div>
+</section>
+{{ end }}

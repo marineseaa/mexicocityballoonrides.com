@@ -1,0 +1,9 @@
+{{/* Share row (romeinaday.tours design). Plain links, no third-party script;
+     the copy button is wired in main.js initShareRow(). */}}
+{{ $page := .Page }}
+<div class="share-row">
+  <span class="share-row__label">Share this guide</span>
+  <a href="https://twitter.com/intent/tweet?url={{ $page.Permalink | urlquery }}&amp;text={{ $page.Title | urlquery }}" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ $page.Permalink | urlquery }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="{{ $page.Permalink }}" data-share="copy">Copy link</a>
+</div>

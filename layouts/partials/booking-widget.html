@@ -1,0 +1,101 @@
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $tourID := $page.Params.tourId | default $site.Params.featuredTourID | default $site.Params.gygWidgetTourID }}
+
+{{/* ── Booking header (HOMEPAGE-CONVERSION-PATTERNS.md §3).
+     On the homepage this section sits directly under highlights.html, which
+     already names the tour and lists what is included — so the header here
+     is the date-picker instruction ("Check Availability & Prices"), not a
+     second sales pitch. Tour pages, which have no highlights block above the
+     widget, still derive "Book the <own tour>".
+     Duplication trap: price/rating/review count already appear in the trust
+     band above AND in this widget's own social-proof bar below — do NOT
+     repeat them in bookingOverline/featuredTourPitch.
+     Context-leakage trap: this partial is shared by the homepage, the guides
+     hub, landing pages and tour pages, so a flat pitch would render the
+     FEATURED tour's name/pitch on every page. Derive from $isFeatured. */}}
+{{ $isFeatured := or $page.IsHome (eq $page.Type "landing") }}
+{{ $tName := $tour.title | default "" }}
+{{ $bookingOverline := $page.Params.bookingOverline | default (cond $isFeatured ($site.Params.bookingOverline | default "Our Pick for Most Visitors") "Book Your Experience") }}
+{{/* bookingHeading (hugo.toml) overrides the derived "Book the <tour>" heading
+     on FEATURED pages only — tour pages still name their own tour. The
+     highlights block directly above already names and sells the tour, so the
+     booking header says what to do here, not why (§3, revised 2026-08-21). */}}
+{{ $derivedHeading := cond (ne $tName "") (printf "Book the %s" $tName) "Check Availability & Prices" }}
+{{/* A page may name its own heading/overline (the where-to-stay page's single
+     tour block; kit change 2026-10-25, ported to rome 2026-10-25). */}}
+{{ $bookingHeading := $page.Params.bookingHeading | default (cond $isFeatured ($site.Params.bookingHeading | default $derivedHeading) $derivedHeading) }}
+{{/* Scoped (scaffold-baked 2026-10-01, after cataniaboattrips / orlandofamilyactivities): the
+     SITE pitch belongs to the homepage only; a landing spoke takes its own `bookingPitch`,
+     so a spoke can never repeat the featured tour's sales line. */}}
+{{ $bookingPitch := cond $isFeatured (cond $page.IsHome ($site.Params.featuredTourPitch | default "") ($page.Params.bookingPitch | default "")) ($tour.abstract | default "") }}
+
+{{/* ── Load widget snippet from assets/widgets/gyg-availability-<tourID>.txt ── */}}
+{{ $txtPath := printf "assets/widgets/gyg-availability-%v.txt" $tourID }}
+{{ $widgetHTML := "" }}
+{{ if fileExists $txtPath }}
+  {{ $widgetHTML = readFile $txtPath }}
+{{ end }}
+
+<section class="section booking-section" id="availability" aria-labelledby="booking-heading">
+  <div class="container container-narrow">
+    <div class="section-header fade-up">
+      <p class="section-overline">{{ $bookingOverline }}</p>
+      <h2 class="section-title" id="booking-heading">{{ $bookingHeading }}</h2>
+      {{ if $bookingPitch }}
+      <p class="section-subtitle">{{ $bookingPitch }}</p>
+      {{ else }}
+      {{/* Cancellation is DATA, not a constant: official club/venue tickets often have NONE
+         (madridstadiumtours 2026-09-17, t194657). Never promise it unless the tour says so. */}}
+      <p class="section-subtitle">Select your preferred date and time.{{ if $tour.freeCancellation }} Instant confirmation — free cancellation up to 24 hours before departure.{{ else }} Tickets are issued for the entry time you choose.{{ end }}</p>
+      {{ end }}
+    </div>
+
+    {{/* romeinaday.tours "featured tour card": label + tour name, then the live
+         availability widget edge to edge below. No photo: the widget carries
+         the tour's own imagery, so a card photo above it repeats it. */}}
+    <article class="tour-card tour-card--featured booking-card-shell">
+      {{ with $tName }}<div class="tour-card__body">
+        {{ if $isFeatured }}<span class="tour-card__label">{{ $page.Params.bookingCardLabel | default $site.Params.bookingCardLabel | default "Editorial pick" }}</span>{{ end }}
+        <h3 class="tour-card__title">{{ $tour.shortTitle | default . }}</h3>
+      </div>{{ end }}
+    <div class="booking-widget-wrapper fade-up">
+      {{/* The GYG loader script is already in <head> (partials/head.html, gated
+           on gygPartnerID, loads once for every page) — do NOT repeat it here.
+           Found tripled on a single page during /final-check (2026-07-11). */}}
+      {{/* MIXED-PROVIDER SITE: GYG tours render GYG's iframe, Viator tours the
+           data-driven booking card (availability-surface.html), chosen by the
+           tour's own `provider`. "Powerd by" lives in availability-surface.html. */}}
+      {{ if $tour.id }}
+        {{ partial "availability-surface.html" (dict "Site" $site "tour" $tour) }}
+      {{ else }}
+        <div data-gyg-widget="auto"
+             data-gyg-partner-id="{{ $site.Params.gygPartnerID }}"
+             data-gyg-cmp="{{ $site.Params.gygCampaign }}"></div>
+      {{ end }}
+    </div>
+    </article>
+
+    {{/* ── Social proof trust bar ── */}}
+    {{ $rating := $tour.rating | default 0 }}
+    {{ $reviewCount := $tour.reviewCount | default 0 }}
+    {{ if $rating }}
+    <div class="booking-social-proof fade-up">
+      <div class="social-proof-item">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true" class="social-proof-star">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <strong>{{ printf "%.1f" $rating }}/5</strong> from {{ lang.FormatNumber 0 $reviewCount }} verified reviews
+      </div>
+      <div class="social-proof-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        {{ with $tour.includes }}<strong>Includes</strong> {{ delimit (first 2 .) " · " | truncate 70 }}{{ else }}<strong>Instant confirmation</strong> · mobile voucher{{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+  </div>
+</section>

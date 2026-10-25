@@ -1,0 +1,34 @@
+{{/* Narrative itinerary — HOMEPAGE-CONVERSION-PATTERNS.md §4.
+     NOT a card grid: a centred header, a narrative paragraph, then numbered
+     stops on a left-aligned connector line. Content lives in data/timeline.yaml
+     — REPLACE it per site with the niche's counter-intuitive operational truth;
+     this partial is niche-neutral. */}}
+{{ $site := .Site }}
+{{ $tl := index $site.Data "timeline" }}
+{{ if $tl }}
+<section class="section itinerary-section" id="timeline" aria-labelledby="timeline-heading">
+  <div class="container">
+
+    <div class="itinerary-header fade-up">
+      {{ with $tl.overline }}<p class="section-overline">{{ . }}</p>{{ end }}
+      <h2 class="section-title" id="timeline-heading">{{ $tl.title }}</h2>
+    </div>
+
+    {{ with $tl.narrative }}
+    <p class="itinerary-narrative fade-up">{{ . | safeHTML }}</p>
+    {{ end }}
+
+    <ol class="itinerary-list" role="list">
+      {{ range $i, $stop := $tl.stops }}
+      <li class="itinerary-item">
+        <span class="itinerary-num" aria-hidden="true">{{ add $i 1 }}</span>
+        <span class="itinerary-body">
+          <strong>{{ $stop.label }}</strong><span class="itinerary-sep"> — </span>{{ $stop.body | safeHTML }}
+        </span>
+      </li>
+      {{ end }}
+    </ol>
+
+  </div>
+</section>
+{{ end }}

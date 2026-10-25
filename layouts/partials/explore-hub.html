@@ -1,0 +1,78 @@
+{{/* Explore hub — HOMEPAGE-CONVERSION-PATTERNS.md §5, in the romeinaday.tours
+     "Keep reading" band: a full-width white strip after the two-column body.
+     1. Up to three image cards for `keepReading` (page > site param, a list of
+        content paths such as "guides/foo.md" or "landing/bar.md"), each card
+        reading its tag/title/meta/image from that page's own front matter.
+     2. Then the generated link lists — every tour and every guide, built from
+        the live sections so the hub grows as pages ship and cannot 404.
+     The BALANCED SPLIT rule is kept (one list much longer than the other is
+     split in two so the lists read as three even columns). */}}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $guides := where $site.RegularPages "Section" "guides" }}
+{{ $tours  := where $site.RegularPages "Section" "tours" }}
+{{ $spokes := where $site.RegularPages "Type" "landing" }}
+{{ if or $guides $tours }}
+{{ $cols := slice }}
+{{ with $spokes }}{{ $cols = $cols | append (slice (dict "title" ($site.Params.exploreHubSpokesLabel | default "Area guides") "pages" . "cont" false "group" "spokes")) }}{{ end }}
+{{ with $tours }}{{ $cols = $cols | append (slice (dict "title" ($site.Params.exploreHubToursLabel | default "Tours") "pages" . "cont" false "group" "tours")) }}{{ end }}
+{{ with $guides }}{{ $cols = $cols | append (slice (dict "title" ($site.Params.exploreHubGuidesLabel | default "Guides") "pages" . "cont" false "group" "guides")) }}{{ end }}
+{{ if eq (len $cols) 2 }}
+  {{ $a := index $cols 0 }}{{ $b := index $cols 1 }}
+  {{ $na := len $a.pages }}{{ $nb := len $b.pages }}
+  {{ $longIdx := cond (ge $na $nb) 0 1 }}
+  {{ $nl := cond (ge $na $nb) $na $nb }}{{ $ns := cond (ge $na $nb) $nb $na }}
+  {{ if and (ge $nl 6) (or (ge (sub $nl $ns) 6) (ge (mul $nl 4) (mul $ns 5))) }}
+    {{ $L := index $cols $longIdx }}
+    {{ $half := div (add $nl 1) 2 }}
+    {{ $c1 := merge $L (dict "pages" (first $half $L.pages)) }}
+    {{ $c2 := merge $L (dict "pages" (after $half $L.pages) "cont" true) }}
+    {{ if eq $longIdx 0 }}{{ $cols = slice $c1 $c2 $b }}{{ else }}{{ $cols = slice $a $c1 $c2 }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ $reads := $page.Params.keepReading | default $site.Params.keepReading }}
+<section class="related explore-section" id="explore" aria-labelledby="explore-heading">
+  <div class="related__inner">
+    <h2 class="related__title" id="explore-heading">{{ $site.Params.exploreHubTitle | default "Keep reading" }}</h2>
+    <p class="related__subtitle">{{ $site.Params.exploreHubSubtitle | default "Every review and planning guide on this site, in one place." }}</p>
+
+    {{ with $reads }}
+    <div class="related__grid">
+      {{ range first 3 . }}
+        {{ with $site.GetPage . }}
+          {{ if ne .RelPermalink $page.RelPermalink }}
+          <a class="related-card" href="{{ .RelPermalink }}">
+            {{ with .Params.cardImage | default .Params.heroImage | default .Params.ogImage }}
+            <span class="related-card__media"><img src="{{ . }}" alt="" loading="lazy" width="800" height="450"></span>
+            {{ end }}
+            <span class="related-card__body">
+              {{ with .Params.cardTag }}<span class="related-card__tag">{{ . }}</span>{{ end }}
+              <span class="related-card__title">{{ .Params.navTitle | default .Params.h1 | default .Title }}</span>
+              {{ with .Params.cardMeta }}<span class="related-card__meta">{{ . }}</span>{{ end }}
+            </span>
+          </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="explore-grid explore-lists" style="--explore-cols: {{ len $cols }};">
+      {{ range $cols }}
+      <div class="explore-col{{ if .cont }} explore-col--cont{{ end }}" data-explore-group="{{ .group }}">
+        {{ if .cont }}
+        <p class="explore-col__title explore-col-spacer" aria-hidden="true">&nbsp;</p>
+        {{ else }}
+        <h3 class="explore-col__title">{{ .title }}</h3>
+        {{ end }}
+        <ul class="explore-col__list" role="list">
+          {{ range .pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Params.h1 | default .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

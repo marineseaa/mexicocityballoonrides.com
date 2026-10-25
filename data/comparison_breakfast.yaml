@@ -1,0 +1,69 @@
+# Breakfast spoke comparison. Plain Unicode only. Option prices per person from the Viator schedules, checked 25 Oct 2026.
+# Last column (muted by CSS) = no cave: a balloon-port breakfast, for readers who came for the cave.
+title: "Balloon Breakfast Packages Compared"
+subtitle: "Where you eat, what is served, and what the breakfast adds to the price."
+highlight_column: 0
+columns:
+  - label: "We Fly, breakfast at La Gruta"
+    badge: "OUR PICK"
+    highlight: true
+    cta: "Check dates"
+  - label: "Skyteam, natural cave"
+    highlight: false
+    url: "/tours/skyteam-teotihuacan-balloon-flight-natural-cave/"
+    cta: "Our review"
+  - label: "Tlatoani, ancestral cave"
+    highlight: false
+    url: "/tours/tlatoani-teotihuacan-balloon-flight-cave-breakfast/"
+    cta: "Our review"
+  - label: "Visita Teotihuacan, natural cave"
+    highlight: false
+    url: "/tours/visita-teotihuacan-balloon-ride-all-inclusive/"
+    cta: "Our review"
+  - label: "Volare, at the balloon port"
+    highlight: false
+    url: "/tours/volare-teotihuacan-balloon-flight-from-mexico-city/"
+    cta: "Our review"
+rows:
+  - label: "Price"
+    values:
+      - "$203 driving yourself; $274 with express return to the city"
+      - "$181 driving yourself; $211 with transport"
+      - "$201 driving yourself; $240 with transport + ruins time"
+      - "$231 with transport + ruins time"
+      - "$159 driving yourself; $186 with transport"
+  - label: "Flight only, for comparison"
+    values:
+      - "$143"
+      - "$137"
+      - "$157"
+      - "$154"
+      - "Breakfast listed in every option"
+  - label: "Where you eat"
+    values:
+      - "La Gruta, behind the Pyramid of the Sun"
+      - "The operator's natural cave"
+      - "The operator's natural grotto"
+      - "Natural cave"
+      - "Volare's balloon port"
+  - label: "What is served"
+    values:
+      - "Not listed; waits outside the restaurant possible"
+      - "Not listed; drinks tasting included"
+      - "Not listed"
+      - "Fruit, bread, coffee, chilaquiles or omelet; vegan options"
+      - "Mexican breakfast"
+  - label: "Zone entry"
+    values:
+      - "Not included on the express option"
+      - "Not included"
+      - "Not included"
+      - "Not included"
+      - "Not included (MX$210 cash)"
+  - label: "Guest rating"
+    values:
+      - "4.9 from 4,822 reviews"
+      - "4.9 from 1,528 reviews"
+      - "4.9 from 7,663 reviews"
+      - "4.9 from 2,849 reviews"
+      - "4.8 from 4,438 reviews"

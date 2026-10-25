@@ -1,0 +1,87 @@
+# Best-rides pillar comparison. Plain Unicode only (no HTML entities).
+# Option prices from TOURS-DIGEST.md, schedules read 25 Oct 2026. Last column is muted by CSS.
+title: "Six Teotihuacán Balloon Rides Compared"
+subtitle: "The same sunrise flight over the valley, sold six different ways. Prices are the option named, per person unless stated, on dates we checked in late October 2026."
+highlight_column: 0
+columns:
+  - label: "Viaja Teotihuacan all-inclusive"
+    badge: "OUR PICK"
+    highlight: true
+    cta: "Check dates"
+  - label: "Skyteam flight only"
+    highlight: false
+    url: "/tours/skyteam-teotihuacan-balloon-flight-natural-cave/"
+    cta: "Our review"
+  - label: "Excellentravel balloon + guided pyramids"
+    highlight: false
+    url: "/tours/excellentravel-balloon-flight-private-transport-pyramids/"
+    cta: "Our review"
+  - label: "We Fly + La Gruta breakfast"
+    highlight: false
+    url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
+    cta: "Our review"
+  - label: "Zuyuá private basket for two"
+    highlight: false
+    url: "/tours/zuyua-private-sunrise-balloon-for-two/"
+    cta: "Our review"
+  - label: "Amigo Tours on GetYourGuide"
+    highlight: false
+    url: "/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/"
+    cta: "Our review"
+rows:
+  - label: "Price"
+    values:
+      - "$236 with transport + cave breakfast ($148 flight only)"
+      - "$137 flight only ($181 with cave breakfast)"
+      - "$247 with shared transport ($357 private transport)"
+      - "$203 with La Gruta breakfast, no transport"
+      - "$1,017 per group of up to 2"
+      - "From $148 (four options)"
+  - label: "Best for"
+    values:
+      - "First-timers staying in Mexico City"
+      - "Self-drivers and budget travelers"
+      - "History-first visitors"
+      - "A breakfast inside La Gruta"
+      - "Couples, proposals, celebrations"
+      - "Booking on GetYourGuide, pay later"
+  - label: "Transport from Mexico City"
+    values:
+      - "Round trip from your hotel"
+      - "No, location sent in advance"
+      - "Pickup from your accommodation"
+      - "No ($231 all-included option has it)"
+      - "Round trip from Mexico City"
+      - "In two of the four options"
+  - label: "Breakfast"
+    values:
+      - "In a natural cave"
+      - "No ($181 option adds a cave breakfast)"
+      - "At a local restaurant"
+      - "At La Gruta (wait outside possible)"
+      - "Included"
+      - "Depends on the option"
+  - label: "Pyramids ticket and guide"
+    values:
+      - "Free time; ticket not included"
+      - "Not included"
+      - "Ticket + guided visit of about 2.5 h"
+      - "Not on this option"
+      - "Ticket + certified guide"
+      - "In the full-day option only"
+  - label: "Weight rule"
+    values:
+      - "MXN 35 per kg over 100 kg"
+      - "MXN 35 per kg over 100 kg"
+      - "Not stated on the listing"
+      - "Penalty above 99 kg"
+      - "Not stated on the listing"
+      - "Surcharge above 100 kg"
+  - label: "Guest rating"
+    values:
+      - "4.9 from 8,158 reviews"
+      - "4.9 from 1,528 reviews"
+      - "4.9 from 123 reviews"
+      - "4.9 from 4,822 reviews"
+      - "4.9 from 40 reviews"
+      - "4.6 from 1,285 reviews"

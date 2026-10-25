@@ -1,0 +1,12 @@
+{{ $seoTitle := .Page.Params.footerSEOTitle | default .Site.Params.footerSEOTitle | default "Related Searches" }}
+{{ $seoLinks := .Page.Params.footerSEOLinks | default .Site.Params.footerSEOLinks }}
+{{ with $seoLinks }}
+<div class="footer-seo-links" aria-label="{{ $seoTitle }}">
+  <p class="footer-seo-title">{{ $seoTitle }}</p>
+  <ul class="footer-seo-grid" role="list">
+    {{ range . }}
+    <li><a href="{{ .href }}" class="footer-seo-link">{{ .label }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

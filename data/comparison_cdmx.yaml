@@ -1,0 +1,68 @@
+# From-Mexico-City spoke comparison. Plain Unicode only. Option prices per person from the Viator/GetYourGuide schedules, checked 25 Oct 2026.
+title: "Balloon Rides with Mexico City Transport Compared"
+subtitle: "Where each operator collects you, what the transport option costs and when you are back in the city."
+highlight_column: 0
+columns:
+  - label: "Volare with round-trip transport"
+    badge: "OUR PICK"
+    highlight: true
+    cta: "Check dates"
+  - label: "We Fly, La Gruta breakfast"
+    highlight: false
+    url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
+    cta: "Our review"
+  - label: "Viaja Teotihuacan full package"
+    highlight: false
+    url: "/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/"
+    cta: "Our review"
+  - label: "Amigo Tours (GetYourGuide)"
+    highlight: false
+    url: "/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/"
+    cta: "Our review"
+  - label: "Excellentravel private transport"
+    highlight: false
+    url: "/tours/excellentravel-balloon-flight-private-transport-pyramids/"
+    cta: "Our review"
+rows:
+  - label: "Price"
+    values:
+      - "$186 with transport; $159 driving yourself"
+      - "$231 all included; $274 express return + La Gruta"
+      - "$236 with transport + cave breakfast"
+      - "From $148; transport option $224 on its Viator twin"
+      - "$357 private transport + guided ruins"
+  - label: "Where you are collected"
+    values:
+      - "Selected hotels"
+      - "Meeting point by the Sheraton María Isabel"
+      - "Your hotel"
+      - "Ángel de la Independencia meeting point"
+      - "Your hotel lobby, private vehicle"
+  - label: "Breakfast"
+    values:
+      - "Mexican breakfast at the balloon port"
+      - "La Gruta / natural cave (waits possible)"
+      - "Natural cave"
+      - "Depends on the option"
+      - "Local restaurant"
+  - label: "Ruins time"
+    values:
+      - "Optional extra time, same price; entry MX$210 not included"
+      - "1–1:30 h on foot in the all-included option"
+      - "Time to visit; entry not included"
+      - "3-hour guided visit in the top option"
+      - "About 2:30 h guided, entry included"
+  - label: "Back in the city"
+    values:
+      - "About 6 hours after pickup (transport-only option)"
+      - "Early return on the express option"
+      - "Not stated"
+      - "Drop-off at the meeting point"
+      - "About 1:00 p.m."
+  - label: "Guest rating"
+    values:
+      - "4.8 from 4,438 reviews"
+      - "4.9 from 4,822 reviews"
+      - "4.9 from 8,158 reviews"
+      - "4.6 from 1,285 reviews"
+      - "4.9 from 123 reviews"

@@ -1,0 +1,86 @@
+{{ $data := .Site.Data.comparison }}
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $price := $tour.formattedStartingPrice | default "$69" }}
+{{ $priceCategory := $tour.priceCategory | default "per person" }}
+
+{{/* Extract partner ID from widget file for affiliate links */}}
+{{ $tourID := $site.Params.featuredTourID | default $site.Params.gygWidgetTourID }}
+{{ $txtPath := printf "assets/widgets/gyg-availability-%s.txt" $tourID }}
+{{ $partnerID := "" }}
+{{ if fileExists $txtPath }}
+  {{ $widgetHTML := readFile $txtPath }}
+  {{ $match := index (findRE `data-gyg-partner-id="[^"]+"` $widgetHTML) 0 }}
+  {{ $partnerID = replaceRE `data-gyg-partner-id="([^"]+)"` "$1" $match }}
+{{ end }}
+{{ $campaign := $site.Params.gygCampaign | default "widget" }}
+
+<section class="section comparison-section" id="comparison" aria-labelledby="comparison-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="comparison-heading">{{ $data.title }}</h2>
+      <p class="section-subtitle">{{ $data.subtitle }}</p>
+    </div>
+
+    <div class="comparison-wrapper fade-up" role="region" aria-label="Tour comparison table — scroll horizontally on mobile">
+      <table class="comparison-table" aria-label="Comparison of Amsterdam tour options">
+        <thead>
+          <tr>
+            <th scope="col" class="comparison-label-col">
+              <span class="sr-only">Feature</span>
+            </th>
+            {{ range $i, $col := $data.columns }}
+            <th scope="col" class="comparison-col{{ if $col.highlight }} comparison-col--highlight{{ end }}">
+              {{ if $col.badge }}
+              <span class="comparison-badge" aria-label="Recommended">{{ $col.badge }}</span>
+              {{ end }}
+              {{ $col.label }}
+            </th>
+            {{ end }}
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $rowIndex, $row := $data.rows }}
+          <tr>
+            <th scope="row" class="comparison-row-label">{{ $row.label }}</th>
+            {{ range $i, $val := $row.values }}
+            {{ $col := index $data.columns $i }}
+            <td class="comparison-cell{{ if $col.highlight }} comparison-cell--highlight{{ end }}">
+              {{- if and (eq $row.label "Starting Price") (eq $i 0) -}}
+                From {{ $price }} {{ $priceCategory }}
+              {{- else -}}
+                {{- $val -}}
+              {{- end -}}
+            </td>
+            {{ end }}
+          </tr>
+          {{ end }}
+
+          {{/* ── Per-column CTA row ── */}}
+          <tr class="comparison-cta-row">
+            <th scope="row" class="comparison-row-label"></th>
+            {{ range $i, $col := $data.columns }}
+            <td class="comparison-cell comparison-cta-cell{{ if $col.highlight }} comparison-cell--highlight{{ end }}">
+              {{ if $col.highlight }}
+                <a href="/#availability" class="btn-primary btn-sm comparison-btn">
+                  {{ $col.cta | default "Book Now" }}
+                </a>
+              {{ else if $col.url }}
+                {{ $affiliateURL := $col.url }}
+                {{ if $partnerID }}
+                  {{ $affiliateURL = printf "%s?partner_id=%s&utm_medium=online_publisher&cmp=%s" $col.url $partnerID $campaign }}
+                {{ end }}
+                <a href="{{ $affiliateURL }}" class="btn-outline btn-sm comparison-btn" target="_blank" rel="sponsored noopener">
+                  {{ $col.cta | default "View Options" }}
+                </a>
+              {{ end }}
+            </td>
+            {{ end }}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>

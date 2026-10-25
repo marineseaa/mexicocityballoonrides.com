@@ -1,0 +1,47 @@
+{{ define "main" }}
+  {{/* Landing spoke: the homepage's blog-article frame driven by page front
+       matter (tourId, dataKey, hero/CTA/FAQ overrides). $tour comes from
+       baseof.html's "landing" branch. timeline.html is intentionally NOT called:
+       it reads the site-level data/timeline.yaml, which is homepage content. */}}
+  {{ $tour := .Scratch.Get "tour" | default dict }}
+  {{ $ctx := dict "Site" .Site "Page" . "tour" $tour }}
+
+  {{ partial "hero.html" $ctx }}
+
+  <div class="blog-layout">
+    <div class="article-body">
+      {{ partial "author-bar.html" $ctx }}
+      {{ partial "toc.html" $ctx }}
+
+      {{ partial "booking-widget.html" $ctx }}
+      {{ partial "highlights.html"     $ctx }}
+      {{ partial "how-it-works.html"   $ctx }}
+      {{ partial "gallery.html"        $ctx }}
+      {{ partial "comparison.html"     $ctx }}
+      {{ partial "experiences.html"    $ctx }}
+
+      {{ if .Content }}
+      <section class="section editorial-section article-section" id="guide" aria-labelledby="editorial-heading">
+        <div class="section-header">
+          {{ with .Params.editorialOverline }}<p class="section-overline">{{ . }}</p>{{ end }}
+          {{ with .Params.editorialTitle }}<h2 class="section-title" id="editorial-heading">{{ . }}</h2>{{ end }}
+          {{ with .Params.editorialSubtitle }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+        </div>
+        <div class="prose editorial-prose">
+          {{ .Content }}
+        </div>
+      </section>
+      {{ end }}
+
+      {{ partial "reviews.html"   $ctx }}
+      {{ partial "cta-band.html"  $ctx }}
+      {{ partial "alt-tours.html" $ctx }}
+      {{ partial "faq.html"       $ctx }}
+      {{ partial "share-row.html" $ctx }}
+    </div>
+
+    {{ partial "sidebar.html" $ctx }}
+  </div>
+
+  {{ partial "explore-hub.html" $ctx }}
+{{ end }}

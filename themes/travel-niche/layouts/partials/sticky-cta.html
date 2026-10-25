@@ -1,0 +1,17 @@
+<div class="sticky-cta" id="sticky-cta" aria-label="Sticky booking bar" aria-hidden="true">
+  <div class="sticky-cta-inner">
+    <div class="sticky-cta-price">
+      <span class="sticky-price-from">From</span>
+      <span class="sticky-price-amount">{{ .Site.Params.startingPrice }}</span>
+      {{/* Price unit from params, not hardcoded (codified 2026-08-16, mountfujiprivatetours).
+           Dormant theme copy — used only if a site drops `theme =`. */}}
+      <span class="sticky-price-per">{{ .Site.Params.priceCategory | default "per person" }}</span>
+    </div>
+    <a href="{{ .Site.Params.gygAffiliateURL }}"
+       class="btn-primary sticky-cta-btn"
+       target="_blank" rel="sponsored noopener"
+       data-gyg-link>
+      Book Now
+    </a>
+  </div>
+</div>

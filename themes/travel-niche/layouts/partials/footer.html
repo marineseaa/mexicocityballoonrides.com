@@ -1,0 +1,82 @@
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      {{/* ── Brand column ── */}}
+      <div class="footer-col footer-brand">
+        <a href="/" class="footer-logo" aria-label="{{ .Site.Params.siteName }} — home">
+          <span class="footer-logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="16">
+              <path d="M2 16 L10 8 L20 12 L30 6 L38 10 L38 16 Z" fill="currentColor" opacity="0.9"/>
+              <path d="M0 16 L40 16 L36 20 L4 20 Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="footer-logo-text">{{ upper .Site.Params.siteName }}</span>
+        </a>
+        <p class="footer-brand-desc">{{ .Site.Params.footerDescription }}</p>
+      </div>
+
+      {{/* ── Quick links ── */}}
+      <div class="footer-col">
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links" role="list">
+          {{ range .Site.Params.footerQuickLinks }}
+          <li><a href="{{ .href }}" class="footer-link">{{ .label }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      {{/* ── Tour links ── */}}
+      <div class="footer-col">
+        <h3 class="footer-col-title">Our Tours</h3>
+        <ul class="footer-links" role="list">
+          {{ range .Site.Params.footerTourLinks }}
+          <li><a href="{{ .href }}" class="footer-link">{{ .label }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      {{/* ── Contact ── */}}
+      <div class="footer-col">
+        <h3 class="footer-col-title">Contact</h3>
+        <ul class="footer-links" role="list">
+          <li>
+            <a href="mailto:{{ .Site.Params.contactEmail }}" class="footer-link">
+              {{ .Site.Params.contactEmail }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ .Site.Params.gygAffiliateURL }}"
+               class="footer-link"
+               target="_blank" rel="sponsored noopener"
+               data-gyg-link>
+              Book Online
+            </a>
+          </li>
+          <li>
+            <address class="footer-address">
+              {{ .Site.Params.schemaStreetAddress }},<br>
+              {{ .Site.Params.schemaAddressLocality }},<br>
+              {{ .Site.Params.schemaPostalCode }}
+            </address>
+          </li>
+        </ul>
+      </div>
+
+    </div>{{/* .footer-grid */}}
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="footer-copy">
+        &copy; {{ now.Year }} {{ .Site.Params.siteName }}. All rights reserved.
+      </p>
+      <nav class="footer-legal" aria-label="Legal links">
+        {{ range .Site.Params.footerLegalLinks }}
+        <a href="{{ .href }}" class="footer-legal-link">{{ .label }}</a>
+        {{ end }}
+      </nav>
+    </div>
+  </div>
+
+</footer>

@@ -1,0 +1,87 @@
+{{ $tour  := .tour | default dict }}
+{{ $site  := .Site }}
+{{ $page  := .Page }}
+{{ $galleryTitle    := $page.Params.galleryTitle    | default $site.Params.galleryTitle    | default "Through the Lens" }}
+{{ $gallerySubtitle := $page.Params.gallerySubtitle | default $site.Params.gallerySubtitle    | default "Captured by our guests and guides." }}
+{{ $galleryAltBase  := $page.Params.galleryAltBase  | default $site.Params.galleryAltBase    | default "Tour gallery photo" }}
+
+{{/* Source priority (first non-empty wins):
+     1. data/gallery.yaml  — curated {src, alt, caption} list; add this per site for best quality.
+     2. $tour.galleryImages — [{src,alt}] populated by _gyg_tour_gallery_portable.py; covers the
+        common case where gallery.yaml is absent but enrichment was run.
+     3. $tour.images[] after skipping [0] — last resort; will be empty on most sites because
+        _selfhost_images.py only writes a single /99 thumbnail to images[].
+     data/gallery.yaml shape:
+       items:
+         - src: "/images/<niche>/01-example.jpg"
+           alt: "Descriptive alt text for accessibility/SEO"
+           caption: "Short caption shown under the photo" */}}
+{{ $galleryData := $site.Data.gallery }}
+{{ $items := slice }}
+{{/* Landing spokes sell their OWN tour, so they show that tour's photos, not the sitewide curated set (madridstadiumtours 2026-09-17). */}}
+{{ if and $galleryData (not $page.Params.tourId) }}
+  {{ range $galleryData.items }}
+    {{ $items = $items | append (dict "src" .src "alt" .alt "caption" .caption) }}
+  {{ end }}
+{{ else if $tour.galleryImages }}
+  {{ range $tour.galleryImages }}
+    {{ $items = $items | append (dict "src" .src "alt" .alt "caption" "") }}
+  {{ end }}
+{{ else }}
+  {{ $images := $tour.images | default slice }}
+  {{/* Skip images[0] — used as hero background. Use the rest for gallery. */}}
+  {{ range $i, $img := (after 1 $images) }}
+    {{ $items = $items | append (dict "src" $img "alt" (printf "%s — image %d" $galleryAltBase (add $i 1)) "caption" "") }}
+  {{ end }}
+{{ end }}
+
+{{/* Fixed shape: one lead photo + a 2x2 grid, so never more than five. */}}
+{{ $items = first 5 $items }}
+
+<section class="section gallery-section" id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-overline">Photo Gallery</p>
+      <h2 class="section-title" id="gallery-heading">{{ $galleryTitle }}</h2>
+      <p class="section-subtitle">{{ $gallerySubtitle }}</p>
+    </div>
+  </div>
+
+  {{/* Photo-essay grid (romeinaday.tours article grammar): the first photo leads
+       at full column width and the other four sit 2-up beneath it.
+       Every photo opens in the <dialog> lightbox below (initGalleryLightbox). */}}
+  <div class="gallery-grid">
+    {{ range $i, $item := $items }}
+    {{ $resolved := partial "img-src.html" (dict "src" $item.src "alt" $item.alt "Site" $site) }}
+    <figure class="gallery-item fade-up">
+      <button class="gallery-open" type="button" data-gallery-index="{{ $i }}" aria-label="Enlarge photo {{ add $i 1 }} of {{ len $items }}">
+        <img
+          src="{{ $resolved.src }}"
+          alt="{{ $resolved.alt }}"
+          width="1600"
+          height="884"
+          sizes="{{ if eq $i 0 }}(min-width: 1180px) 760px, 100vw{{ else }}(min-width: 760px) 380px, 100vw{{ end }}"
+          loading="lazy"
+          decoding="async">
+      </button>
+      {{ with $item.caption }}<figcaption class="gallery-caption"><span class="gallery-num">{{ add $i 1 }}</span>{{ . }}</figcaption>{{ end }}
+    </figure>
+    {{ end }}
+  </div>
+
+  <dialog class="gallery-lightbox" aria-label="Photo viewer">
+    <figure class="gallery-lightbox__figure">
+      <img class="gallery-lightbox__img" src="" alt="">
+      <figcaption class="gallery-lightbox__caption"></figcaption>
+    </figure>
+    <button class="gallery-lightbox__btn gallery-lightbox__close" type="button" aria-label="Close photo viewer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+    <button class="gallery-lightbox__btn gallery-lightbox__prev" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="gallery-lightbox__btn gallery-lightbox__next" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </dialog>
+</section>

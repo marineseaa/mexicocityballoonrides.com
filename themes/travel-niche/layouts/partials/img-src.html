@@ -1,0 +1,36 @@
+{{/*
+  img-src.html — Image URL + alt text resolver with optional local override.
+
+  Usage:
+    {{ $img := partial "img-src.html" (dict "src" $cdnUrl "alt" $defaultAlt "Site" .Site) }}
+    {{ $img.src }}  → local path or original CDN URL
+    {{ $img.alt }}  → custom alt or default alt passed in
+
+  data/image_map.json format:
+    String entry (src override only):
+      "https://cdn.getyourguide.com/.../99.jpg": "/images/tours/654876-00.webp"
+
+    Object entry (src + alt override):
+      "https://cdn.getyourguide.com/.../99.jpg": {
+        "src": "/images/tours/my-hero.webp",
+        "alt": "Yakitori grilling at Omoide Yokocho"
+      }
+
+  No image_map.json = pure CDN passthrough (default for new sites).
+*/}}
+
+{{- $src := .src | default "" -}}
+{{- $alt := .alt | default "" -}}
+{{- $map := .Site.Data.image_map | default dict -}}
+
+{{- $entry := index $map $src -}}
+{{- if $entry -}}
+  {{- if reflect.IsMap $entry -}}
+    {{- $src = $entry.src | default $src -}}
+    {{- $alt = $entry.alt | default $alt -}}
+  {{- else -}}
+    {{- $src = $entry -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "src" $src "alt" $alt) -}}

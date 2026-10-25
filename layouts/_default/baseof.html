@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  {{/* Load tour data once — available to head via .Scratch */}}
+  {{ $tour := dict }}
+  {{ if eq .Type "tour" }}
+    {{/* For tour pages, load the specific tour from the offers JSON (key via offersDataKey) */}}
+    {{ $allTours := index .Site.Data .Site.Params.offersDataKey }}
+    {{ $tourID := .Params.tourId }}
+    {{ range $allTours }}
+      {{ if eq (string .id) (string $tourID) }}
+        {{ $tour = . }}
+      {{ end }}
+    {{ end }}
+  {{ else if eq .Type "landing" }}
+    {{/* Landing pages: tour ID from front matter. Try gyg_activity_<id> first, then fall back to the all-tours data file named in front matter dataKey. */}}
+    {{ $tourID := .Params.tourId | default "" }}
+    {{ if $tourID }}
+      {{ $key := printf "gyg_activity_%s" $tourID }}
+      {{ $tour = index .Site.Data $key | default dict }}
+      {{ if and (eq (len $tour) 0) .Params.dataKey }}
+        {{ $allTours := index .Site.Data .Params.dataKey }}
+        {{ range $allTours }}
+          {{ if eq (string .id) (string $tourID) }}
+            {{ $tour = . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{/* For other pages, load the featured tour from the offers JSON (centralized via offersDataKey) */}}
+    {{ $tourID := .Site.Params.featuredTourID | string }}
+    {{ $allTours := index .Site.Data .Site.Params.offersDataKey }}
+    {{ range $allTours }}
+      {{ if eq (string .id) $tourID }}
+        {{ $tour = . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ .Scratch.Set "tour" $tour }}
+  {{ partial "head.html" (dict "Site" .Site "Page" . "tour" $tour) }}
+</head>
+<body>
+  {{ $tour := .Scratch.Get "tour" | default dict }}
+  {{ partial "header.html" (dict "Site" .Site "Page" . "tour" $tour) }}
+
+  <main id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html"          (dict "Site" .Site "Page" . "tour" $tour) }}
+  {{/* Sticky mobile booking bar — content pages only (home, tour, guide
+       articles, landing). .IsPage excludes section/list pages (/tours/,
+       /guides/), which have no single featured tour to point the bar at.
+       Never on utility/legal pages (404, privacy, terms). Codified
+       2026-08-06 after a retrofit found this partial rendering on every
+       page unconditionally, including a dead-anchor instance on /guides/
+       and on privacy/terms/404. */}}
+  {{ if or .IsHome (and .IsPage (or (eq .Type "tour") (eq .Type "guides") (eq .Type "landing"))) }}
+    {{ partial "sticky-cta.html" (dict "Site" .Site "Page" . "tour" $tour) }}
+  {{ end }}
+  {{ partial "structured-data.html" (dict "Site" .Site "Page" . "tour" $tour) }}
+
+  <script src="/js/main.js?v={{ now.Unix }}" defer></script>
+</body>
+</html>

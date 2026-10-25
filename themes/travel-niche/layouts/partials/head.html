@@ -1,0 +1,72 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{{/* ── Title ── */}}
+{{ $title := .Title }}
+{{ if .IsHome }}{{ $title = .Site.Params.siteName }}{{ end }}
+<title>{{ $title }}</title>
+
+{{/* ── Meta description ── */}}
+{{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+{{ with .Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+{{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ end }}
+
+{{/* ── Canonical ── */}}
+{{ $canonical := .Permalink }}
+{{ with .Params.canonicalURL }}{{ $canonical = . }}{{ end }}
+<link rel="canonical" href="{{ $canonical }}">
+
+{{/* ── hreflang alternates ── */}}
+{{ range .Params.alternates }}
+<link rel="alternate" hreflang="{{ .lang }}" href="{{ .url }}">
+{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}">
+
+{{/* ── Open Graph ── */}}
+{{ $ogTitle := $title }}
+{{ $ogDesc  := .Description | default .Site.Params.siteDescription }}
+{{ $ogImage := .Params.ogImage | default .Site.Params.ogImage }}
+{{ $ogURL   := $canonical }}
+<meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:site_name"   content="{{ .Site.Params.siteName }}">
+<meta property="og:title"       content="{{ .Params.ogTitle | default $ogTitle }}">
+<meta property="og:description" content="{{ .Params.ogDescription | default $ogDesc }}">
+<meta property="og:url"         content="{{ $ogURL }}">
+{{ with $ogImage }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+
+{{/* ── Twitter Card ── */}}
+<meta name="twitter:card"    content="{{ .Site.Params.twitterCard | default "summary_large_image" }}">
+<meta name="twitter:title"   content="{{ .Params.ogTitle | default $ogTitle }}">
+<meta name="twitter:description" content="{{ .Params.ogDescription | default $ogDesc }}">
+{{ with .Site.Params.twitterSite }}<meta name="twitter:site" content="{{ . }}">{{ end }}
+{{ with $ogImage }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
+
+{{/* ── Favicon ── */}}
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png"     href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon"          href="/apple-touch-icon.png">
+<link rel="manifest"                  href="/site.webmanifest">
+
+{{/* ── Fonts ── */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+  media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+</noscript>
+
+{{/* ── Stylesheet ── */}}
+<link rel="stylesheet" href="/css/main.css">
+
+{{/* ── Hero image preload (home page only) ── */}}
+{{ if .IsHome }}
+<link rel="preload" as="image"
+  href="{{ .Site.Params.heroImage }}"
+  imagesrcset="{{ .Site.Params.heroImage }} 1x"
+  fetchpriority="high">
+{{ end }}

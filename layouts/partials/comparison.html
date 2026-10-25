@@ -1,0 +1,108 @@
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $compKey := $page.Params.comparisonDataKey | default "comparison" }}
+{{ $data := index $site.Data $compKey }}
+{{ $price := $tour.formattedStartingPrice | default "$179" }}
+{{ $priceCategory := $tour.priceCategory | default "per person" }}
+
+{{/* Extract partner ID from widget file for affiliate links */}}
+{{ $tourID := $page.Params.tourId | default $site.Params.featuredTourID | default $site.Params.gygWidgetTourID }}
+{{ $txtPath := printf "assets/widgets/gyg-availability-%v.txt" $tourID }}
+{{ $partnerID := "" }}
+{{ if fileExists $txtPath }}
+  {{ $widgetHTML := readFile $txtPath }}
+  {{ $match := index (findRE `data-gyg-partner-id="[^"]+"` $widgetHTML) 0 }}
+  {{ $partnerID = replaceRE `data-gyg-partner-id="([^"]+)"` "$1" $match }}
+{{ end }}
+{{ $campaign := $site.Params.gygCampaign | default "" }}
+
+<section class="section comparison-section" id="comparison" aria-labelledby="comparison-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="comparison-heading">{{ $data.title }}</h2>
+      <p class="section-subtitle">{{ $data.subtitle }}</p>
+    </div>
+
+    <div class="comparison-wrapper fade-up" role="region" aria-label="Scroll horizontally on mobile to see all options">
+      <table class="comparison-table" aria-label="{{ $site.Params.comparisonAriaLabel | default "Comparison of tour options" }}">
+        <thead>
+          <tr>
+            <th scope="col" class="comparison-label-col">
+              <span class="sr-only">Feature</span>
+            </th>
+            {{ range $i, $col := $data.columns }}
+            <th scope="col" class="comparison-col{{ if $col.highlight }} comparison-col--highlight{{ end }}">
+              {{ if $col.badge }}
+              <span class="comparison-badge" aria-label="Recommended">{{ $col.badge }}</span>
+              {{ end }}
+              {{ $col.label }}
+            </th>
+            {{ end }}
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $rowIndex, $row := $data.rows }}
+          <tr>
+            <th scope="row" class="comparison-row-label">{{ $row.label }}</th>
+            {{ range $i, $val := $row.values }}
+            {{ $col := index $data.columns $i }}
+            <td class="comparison-cell{{ if $col.highlight }} comparison-cell--highlight{{ end }}">
+              {{- if and (eq $row.label "Starting Price") $col.highlight -}}
+                From {{ $price }} {{ $priceCategory }}
+              {{- else -}}
+                {{- $val -}}
+              {{- end -}}
+            </td>
+            {{ end }}
+          </tr>
+          {{ end }}
+
+          {{/* ── Per-column CTA row ── */}}
+          <tr class="comparison-cta-row">
+            <th scope="row" class="comparison-row-label"></th>
+            {{ range $i, $col := $data.columns }}
+            <td class="comparison-cell comparison-cta-cell{{ if $col.highlight }} comparison-cell--highlight{{ end }}">
+              {{ if $col.highlight }}
+                <a href="#availability" class="btn-primary btn-sm comparison-btn">
+                  {{ $col.cta | default "Book Now" }}
+                </a>
+              {{ else if $col.url }}
+                {{/* A column URL is EITHER a bare GYG destination OR one of this
+                     site's own pages — the column-order rule in data/comparison.yaml
+                     explicitly invites the second ("the option we steer people away
+                     from" usually links to our own guide). Decide which, and emit
+                     the affiliate attributes ONLY for the first.
+
+                     rel must match reality: "sponsored nofollow" on an internal
+                     link tells Google not to follow a link to our own spoke page,
+                     and a mis-tagged link is itself a disclosure error. js/main.js
+                     has always got this right at runtime (`isGYGUrl(bare) ? ... `);
+                     this template shipped the sponsored rel unconditionally, so the
+                     static HTML Google crawls was wrong until JS ran.
+                     (greatoceanroad-tours.com 2026-09-11, /final-check-short §4.) */}}
+                {{ $isExternal := or (hasPrefix $col.url "http://") (hasPrefix $col.url "https://") }}
+                {{ if $isExternal }}
+                {{/* Bare GYG URL only — partner_id/utm/cmp appended at runtime by
+                     js/main.js (data-gyg-href) so they never sit in static HTML (/final-check §4). */}}
+                {{/* href MUST be present alongside data-gyg-href — see layouts/tour/single.html
+                     (codified 2026-08-16, mountfujiprivatetours). */}}
+                <a href="{{ $col.url }}" {{ partial "aff-attr.html" (dict "url" $col.url) }} class="btn-outline btn-sm comparison-btn" target="_blank" rel="sponsored nofollow noopener">
+                  {{ $col.cta | default "View Options" }}
+                </a>
+                {{ else }}
+                <a href="{{ $col.url }}" class="btn-outline btn-sm comparison-btn">
+                  {{ $col.cta | default "View Options" }}
+                </a>
+                {{ end }}
+              {{ end }}
+            </td>
+            {{ end }}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,51 @@
+# Hugo build output
+/public/
+/resources/_gen/
+
+# Hugo cache
+/.hugo_build.lock
+
+*.py
+# ...but the scaffold's own tour-page generator must ship: the kit mandates
+# the .py over the .ps1 (PowerShell 5.1 mis-parses the .ps1 here-string
+# front matter), so blanket-ignoring it leaves a rebuild with only the
+# broken script. (mikumidaysafarifromzanzibar 2026-08-15)
+!scripts/generate-tour-pages.py
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Node modules (if using npm for assets)
+/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+_tmp_*.txt
+_tmp_*.md
+_commit_msg_*.txt
+.tmp*
+
+# Local documentation (not for deployment)
+/docs/
+bash.exe.stackdump

@@ -1,0 +1,93 @@
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TouristAttraction",
+      "@id": "{{ .Site.BaseURL }}#business",
+      "name": "{{ .Site.Params.siteName }}",
+      "description": "{{ .Site.Params.siteDescription }}",
+      "url": "{{ .Site.BaseURL }}",
+      "telephone": "{{ .Site.Params.schemaPhone }}",
+      "email": "{{ .Site.Params.contactEmail }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ .Site.Params.schemaStreetAddress }}",
+        "addressLocality": "{{ .Site.Params.schemaAddressLocality }}",
+        "postalCode": "{{ .Site.Params.schemaPostalCode }}",
+        "addressCountry": "{{ .Site.Params.schemaCountry }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": {{ .Site.Params.schemaLat }},
+        "longitude": {{ .Site.Params.schemaLong }}
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ .Site.Params.reviewsAggregate }}",
+        "reviewCount": "{{ .Site.Params.reviewsTotalCount | replaceRE "[^0-9]" "" }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "priceRange": "{{ .Site.Params.schemaPriceRange }}",
+      "image": "{{ .Site.Params.heroImage | absURL }}"
+    },
+    {
+      "@type": "Product",
+      "@id": "{{ .Site.BaseURL }}#product",
+      "name": "Amsterdam Private Canal Cruise",
+      "description": "Private guided canal cruise through Amsterdam's UNESCO World Heritage waterways. Expert guide, free cancellation, all-season operation.",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ .Site.Params.siteName }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "{{ .Site.Params.startingPriceCurrency }}",
+        "price": "24.00",
+        "validFrom": "{{ now.Format "2006-01-02" }}",
+        "priceValidUntil": "{{ now.AddDate 1 0 0 | dateFormat "2006-01-02" }}",
+        "availability": "https://schema.org/InStock",
+        "url": "{{ .Site.Params.gygAffiliateURL }}"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ .Site.Params.reviewsAggregate }}",
+        "reviewCount": "{{ .Site.Params.reviewsTotalCount | replaceRE "[^0-9]" "" }}",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ .Site.BaseURL }}#faq",
+      "mainEntity": [
+        {{ range $i, $item := .Site.Data.faq }}{{ if $i }},{{ end }}
+        {
+          "@type": "Question",
+          "name": {{ $item.question | jsonify | safeJS }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ $item.answer | jsonify | safeJS }}
+          }
+        }
+        {{ end }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "{{ .Site.Params.siteName }}",
+      "description": "{{ .Site.Params.siteDescription }}"
+    }
+  ]
+}
+</script>
+{{ end }}

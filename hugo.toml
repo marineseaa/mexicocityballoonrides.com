@@ -1,0 +1,259 @@
+baseURL = "https://mexicocityballoonrides.com/"
+title = "Mexico City Balloon Rides"
+theme = "travel-niche"
+languageCode = "en-US"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+buildFuture = true
+# false during content build/dev so `hugo` works BEFORE `git init` (the decoupled
+# flow inits git only at the end). Flip to true after git init if you want
+# git-based .Lastmod / dateModified. See START-HERE §0 "Building before git init".
+enableGitInfo = false
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.goldmark.parser]
+    autoHeadingIDType = "github-ascii"
+[params]
+# ── rome design params (apply-design.py) ──
+logoWords = ["Mexico City", "Balloon", "Rides"]
+navCtaLabel = "Book a flight"
+homeBreadcrumb = "Teotihuacán balloon rides"
+heroAlt = "Dozens of hot-air balloons rising at sunrise over the Teotihuacán valley, with a red-checked balloon in the foreground"
+heroCaption = "Sunrise over the Teotihuacán valley, about an hour northeast of Mexico City"
+heroCTASecondaryHref = "#comparison"
+authorName = "Mexico City Balloon Rides editors"
+authorRole = "Independent guide"
+bookingCardLabel = "Editorial pick"
+exploreHubTitle = "Keep reading"
+exploreHubSpokesLabel = "Ways to book"
+exploreHubGuidesLabel = "Planning guides"
+footerCta = "Check availability"
+sideCtaTitle = "Check sunrise availability"
+trustDurationLabel = "Whole morning"
+sideCtaBody = "The booking page shows the real price for your date and option. The headline from-price is usually the flight-only option."
+sideCtaButton = "Check dates and prices →"
+tourTag = "Flight review"
+guideTag = "Planning guide"
+guidesBreadcrumbLabel = "Guides"
+guideAutoWidgetTitle = "Other Teotihuacán balloon flights to compare"
+quickFactsTitle = "Quick facts"
+sidebarPicksTitle = "Top picks"
+sidebarPicks = ["357659P1", "366381P1", "247495P2", "309496P6"]
+siteName      = "Mexico City Balloon Rides"
+siteTagline   = "TEOTIHUACÁN · MEXICO"
+description   = "Compare hot-air balloon rides over Teotihuacán from Mexico City: flight only, hotel pickup, cave breakfast, pyramids tours and private baskets."
+heroSubtitle  = "Sunrise balloon flights over the Teotihuacán valley, about an hour northeast of Mexico City. Compare flight-only tickets, hotel pickups, cave breakfasts and private baskets before you book."
+
+# ── MIXED-PROVIDER SITE (kit memory feedback_mixed_provider_site.md) ──
+# One offers JSON holds both networks; every tour carries `provider` (network) and
+# `supplier` (operator). Viator API key lives ONLY in ~/.claude/viator.env.
+featuredTourID = "357659P1"
+gygWidgetTourID = "696822"
+offersDataKey  = "mcbr_offers"
+affiliateProvider     = "viator"
+affiliateProviderName = "Viator"
+affiliatePartnerID    = "P00285896"
+affiliateMcid         = "42383"
+affiliateCampaign     = "mexicocityballoonrides-viator"
+# GetYourGuide (secondary): partner id from this project's gyg_analytics_head_code.txt
+gygPartnerID    = "GLBKRID"
+gygAffiliateURL = ""
+gygCampaign     = "mexicocityballoonrides"
+gygLocationSlug = "mexico-city-l194"
+twinNoun        = "flight"
+# Stay22 (set by the stay22-where-to-stay installer)
+stay22AID       = "marinesea"
+stay22Campaign  = "mexicocityballoonrides"
+stay22Provider  = "booking"
+stay22MapColor  = "B0431F"
+stay22Currency  = "USD"
+contactEmail   = "info@mexicocityballoonrides.com"
+
+bookingOverline    = "Our pick for most visitors"
+bookingHeading     = "Check dates and prices"
+featuredTourPitch  = ""
+sitePriceFrom = "$137"
+exploreHubSubtitle = "Every flight review and planning guide on this site, in one place."
+
+reviewsTitle      = "What passengers say"
+reviewsSource     = "verified Viator travelers"
+reviewsDisclaimer = "Ratings and review counts are the operators' live figures on Viator and GetYourGuide, checked in October 2026, and shift slightly day to day."
+affiliateDisclosure = "This site earns a commission when you book through our links to Viator, GetYourGuide or hotel booking sites, at no extra cost to you. Bookings and payment happen on those platforms, not on this site."
+
+ctaTitle  = "Pick your sunrise"
+ctaBody   = "Flights leave at dawn and the best dates in the dry season fill early. Compare options and check your date."
+ctaButton = "Check dates and prices"
+
+trustDishesMetric = "45–60 min"
+trustDishesLabel  = "In the air"
+trustGuideMetric  = "Not included"
+trustGuideLabel   = "Pyramids entry"
+
+schemaLat     = "19.6925"
+schemaLong    = "-98.8438"
+schemaPriceRange = "$$"
+schemaAddressLocality = "San Juan Teotihuacán, State of Mexico"
+schemaCountry = "MX"
+
+ogImage     = "/images/og/mexicocityballoonrides.jpg"
+heroImage   = "/images/hero.webp"
+twitterCard = "summary_large_image"
+
+footerDescription = "An independent guide to hot-air balloon rides over Teotihuacán from Mexico City: what each package includes, what it really costs and how to choose."
+
+[[params.footerQuickLinks]]
+  label = "Compare balloon rides"
+  href = "/best-teotihuacan-balloon-rides/"
+[[params.footerQuickLinks]]
+  label = "Prices"
+  href = "/teotihuacan-balloon-ride-prices/"
+[[params.footerQuickLinks]]
+  label = "From Mexico City"
+  href = "/teotihuacan-balloon-rides-from-mexico-city/"
+[[params.footerQuickLinks]]
+  label = "Private flights"
+  href = "/private-teotihuacan-balloon-rides/"
+[[params.footerQuickLinks]]
+  label = "Flight reviews"
+  href = "/tours/"
+[[params.footerQuickLinks]]
+  label = "Planning guides"
+  href = "/guides/"
+
+[[params.footerQuickLinks]]
+  label = "Where to Stay"
+  href = "/where-to-stay-teotihuacan-balloon-ride/"
+
+[[params.footerLegalLinks]]
+  label = "About"
+  href = "/pages/about/"
+[[params.footerLegalLinks]]
+  label = "Affiliate disclosure"
+  href = "/pages/affiliate-disclosure/"
+[[params.footerLegalLinks]]
+  label = "Privacy"
+  href = "/pages/privacy/"
+[[params.footerLegalLinks]]
+  label = "Terms"
+  href = "/pages/terms/"
+
+[[params.footerSEOLinks]]
+  label = "teotihuacan hot air balloon"
+  href = "/best-teotihuacan-balloon-rides/"
+[[params.footerSEOLinks]]
+  label = "hot air balloon mexico city price"
+  href = "/teotihuacan-balloon-ride-prices/"
+[[params.footerSEOLinks]]
+  label = "teotihuacan balloon ride with breakfast"
+  href = "/teotihuacan-balloon-rides-with-breakfast/"
+[[params.footerSEOLinks]]
+  label = "teotihuacan balloon and pyramids tour"
+  href = "/teotihuacan-balloon-and-pyramids-tour/"
+[[params.footerSEOLinks]]
+  label = "private hot air balloon teotihuacan"
+  href = "/private-teotihuacan-balloon-rides/"
+[[params.footerSEOLinks]]
+  label = "teotihuacan balloon flight only"
+  href = "/teotihuacan-balloon-flight-only/"
+[[params.footerSEOLinks]]
+  label = "is the teotihuacan balloon ride worth it"
+  href = "/guides/is-teotihuacan-balloon-ride-worth-it/"
+[[params.footerSEOLinks]]
+  label = "best time for teotihuacan balloon ride"
+  href = "/guides/best-time-teotihuacan-balloon-ride/"
+[[params.footerSEOLinks]]
+  label = "teotihuacan balloon ride safety"
+  href = "/guides/teotihuacan-balloon-ride-safety/"
+[[params.footerSEOLinks]]
+  label = "teotihuacan balloon cancelled weather"
+  href = "/guides/teotihuacan-balloon-weather-cancellations/"
+[[params.footerSEOLinks]]
+  label = "what to wear hot air balloon teotihuacan"
+  href = "/guides/what-to-wear-teotihuacan-balloon-ride/"
+[[params.footerSEOLinks]]
+  label = "teotihuacan balloon ride faq"
+  href = "/guides/teotihuacan-balloon-ride-faq/"
+
+[[params.steps]]
+  number = "1"
+  title  = "Choose the option, not just the listing"
+  body   = "Most listings sell several options. The headline price is usually the flight alone; hotel pickup, the cave breakfast and a guided pyramids visit cost more."
+[[params.steps]]
+  number = "2"
+  title  = "Book a morning early in your trip"
+  body   = "Flights depend on the wind at dawn. An early date leaves room to reschedule if the operator cancels for weather."
+[[params.steps]]
+  number = "3"
+  title  = "Confirm pickup the day before"
+  body   = "Operators send the pickup time or the balloon port location by message the day before. Pickups from Mexico City usually leave between about 4:30 and 5:40 a.m."
+[[params.steps]]
+  number = "4"
+  title  = "Fly at sunrise, then explore"
+  body   = "You fly for roughly 45 to 60 minutes, land with a toast and a certificate, and most packages continue to breakfast and the archaeological zone."
+
+[[params.quickFacts]]
+  label = "Where"
+  value = "Teotihuacán valley, about 50 km northeast of Mexico City"
+[[params.quickFacts]]
+  label = "In the air"
+  value = "About 45–60 minutes"
+[[params.quickFacts]]
+  label = "Pickup"
+  value = "About 4:30–5:40 a.m. from Mexico City"
+[[params.quickFacts]]
+  label = "From"
+  value = "$137 flight only; about $210–$240 with transfer and breakfast"
+[[params.quickFacts]]
+  label = "Pyramids entry"
+  value = "MX$210, usually not included"
+
+[[params.navLinks]]
+  label = "Compare"
+  href = "/best-teotihuacan-balloon-rides/"
+[[params.navLinks]]
+  label = "Prices"
+  href = "/teotihuacan-balloon-ride-prices/"
+[[params.navLinks]]
+  label = "From CDMX"
+  href = "/teotihuacan-balloon-rides-from-mexico-city/"
+[[params.navLinks]]
+  label = "Private"
+  href = "/private-teotihuacan-balloon-rides/"
+[[params.navLinks]]
+  label = "Guides"
+  href = "/guides/"
+
+[[params.homeToc]]
+  id = "highlights"
+  label = "Our pick, in brief"
+[[params.homeToc]]
+  id = "availability"
+  label = "Check dates and prices"
+[[params.homeToc]]
+  id = "how-it-works"
+  label = "How booking works"
+[[params.homeToc]]
+  id = "timeline"
+  label = "A balloon morning, hour by hour"
+[[params.homeToc]]
+  id = "comparison"
+  label = "The options compared"
+[[params.homeToc]]
+  id = "experiences"
+  label = "Other flights"
+[[params.homeToc]]
+  id = "guide"
+  label = "How to choose"
+[[params.homeToc]]
+  id = "reviews"
+  label = "What passengers say"
+[[params.homeToc]]
+  id = "faq"
+  label = "FAQ"
+[[params.homeToc]]
+  id = "explore"
+  label = "Keep reading"

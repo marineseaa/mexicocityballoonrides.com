@@ -1,0 +1,38 @@
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $hiwTitle    := $page.Params.howItWorksTitle    | default $site.Params.howItWorksTitle    | default "How It Works" }}
+{{ $hiwSubtitle := $page.Params.howItWorksSubtitle | default $site.Params.howItWorksSubtitle | default "Four simple steps to your booking." }}
+{{ $steps       := $page.Params.steps              | default $site.Params.steps }}
+
+{{/* Balanced 2-row grid — top row gets the extra card when the count is odd,
+     both rows equal when even. Generalizes the fixed 2-column layout to any
+     step count instead of assuming exactly 4. */}}
+{{ $stepCount := len $steps }}
+{{ $stepCols  := int (math.Ceil (div $stepCount 2.0)) }}
+
+<section class="section how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="how-it-works-heading">{{ $hiwTitle }}</h2>
+      <p class="section-subtitle">{{ $hiwSubtitle }}</p>
+    </div>
+
+    <ol class="steps-grid" role="list" style="--steps-cols: {{ $stepCols }};">
+      {{ range $steps }}
+      <li class="step-card fade-up">
+        <div class="step-number" aria-hidden="true">{{ .number }}</div>
+        <h3 class="step-title">{{ .title }}</h3>
+        <p class="step-body">{{ .body }}</p>
+      </li>
+      {{ end }}
+    </ol>
+
+    <div class="steps-cta fade-up">
+      <a href="#availability" class="btn-primary btn-lg">
+        Check Availability & Prices
+      </a>
+    </div>
+
+  </div>
+</section>

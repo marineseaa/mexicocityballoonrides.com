@@ -1,0 +1,114 @@
+# data/stay.yaml -- Where to Stay section + hotel lookup (stay22-where-to-stay skill).
+# Every hotel opened and matched by name on Booking.com in the CDP Chrome (port 9227), 25 October 2026.
+# Notes come from each hotel's own Booking.com listing. Card prices: Booking.com total for
+# 15-16 January 2027, two adults, one room, USD, "Includes taxes and fees" as displayed.
+overline: "Where to Stay"
+title: "Where to Stay for a Teotihuacán Balloon Ride"
+subtitle: "Balloons launch in the Teotihuacán valley, about an hour from Mexico City. The hotel pickups collect in Centro, Juárez, Roma, Condesa and Polanco, so sleep there, or sleep in Teotihuacán itself if you are booking the flight only."
+page: "/where-to-stay-teotihuacan-balloon-ride/"
+cta: "Read the full where-to-stay guide"
+
+cardsChecked: "Lowest nightly room rate Booking.com showed for 15–16 January 2027, two adults, one room, in US dollars with taxes and fees included as displayed; checked 25 October 2026."
+cardsCta: "See rates on Booking.com"
+cardsNote: "We haven't stayed at these hotels. Scores, review counts and prices are what Booking.com listed. Tap through for current numbers, and treat them as guest opinion, not our verdict."
+mapLead: "Travelling on other dates, or want a base somewhere else? Browse places to stay on the map; prices update for the dates you pick."
+map: { address: "San Juan Teotihuacán, State of Mexico, Mexico", zoom: 9, label: "Hotels in the Teotihuacán valley and Mexico City" }
+cards:
+  - key: hotel_catedral
+    style: "Best value inside the pickup zone"
+    image: "/images/stay/hotel_catedral.webp"
+    alt: "Rooftop terrace tables at Hotel Catedral with the dome of Mexico City's Metropolitan Cathedral behind"
+    area: "Centro Histórico"
+    distance: "About 50 minutes' drive to the balloon ports before dawn"
+    score: "9.2"
+    reviews: "4,407"
+    price: "$137"
+    points:
+      - "Inside We Fly's free-pickup radius around the Angel of Independence"
+      - "Free private parking listed, and no minimum check-in age"
+      - "Rooftop terrace facing the cathedral dome"
+  - key: villas_arqueologicas
+    style: "Sleep beside the balloon ports"
+    image: "/images/stay/villas_arqueologicas.webp"
+    alt: "Pool and two-story courtyard wings at Villas Arqueologicas Teotihuacan"
+    area: "San Juan Teotihuacán"
+    distance: "About 6 minutes' drive to the balloon-port area"
+    score: "8.5"
+    reviews: "171"
+    price: "$127"
+    points:
+      - "For flight-only bookings: no 4:30 a.m. city pickup"
+      - "Free private parking and a heated outdoor pool listed"
+      - "Shuttle service listed; ask the hotel about a pre-dawn run"
+  - key: sofitel_reforma
+    style: "A splurge on Reforma"
+    image: "/images/stay/sofitel_reforma.webp"
+    alt: "Guest in the glass-walled indoor pool at Sofitel Mexico City Reforma, looking over the city at dusk"
+    area: "Juárez / Reforma"
+    distance: "About 3 minutes' drive to the Angel of Independence pickup corner"
+    score: "9.2"
+    reviews: "263"
+    price: "$835"
+    points:
+      - "On Paseo de la Reforma, inside the pickup neighborhoods"
+      - "Heated indoor pool with a view; spa and fitness center"
+      - "Valet parking US$12 a day; minimum check-in age 18"
+
+areas:
+  - key: juarez
+    name: "Juárez and Reforma"
+    why: "The Angel of Independence is the pickup corner several operators use, and Juárez sits around it. Walkable, central, inside every shuttle list we read."
+    address: "Juarez, Mexico City, Mexico"
+    searchLabel: "All stays in Juárez"
+    hotels: [hotel_geneve, sofitel_reforma, four_seasons]
+  - key: centro
+    name: "Centro Histórico"
+    why: "The closest of the pickup neighborhoods to the northbound road out of the city, with the best-reviewed value hotels. Quiet streets after dark."
+    address: "Centro Historico, Mexico City, Mexico"
+    searchLabel: "All stays in Centro Histórico"
+    hotels: [hotel_catedral, gran_hotel]
+  - key: teotihuacan
+    name: "San Juan Teotihuacán"
+    why: "Minutes from the balloon ports and the right base for a flight-only booking. Small hotels with free parking; little to do at night."
+    address: "San Juan Teotihuacan, Mexico"
+    searchLabel: "All stays in San Juan Teotihuacán"
+    hotels: [villas_arqueologicas, quinto_sol, finca_abuelo]
+  - key: romacondesa
+    name: "Roma Norte and Condesa"
+    why: "Leafy streets and restaurants, inside the pickup lists, a few minutes farther from the exit road than Centro."
+    address: "Roma Norte, Mexico City, Mexico"
+    searchLabel: "All stays in Roma and Condesa"
+    hotels: [villa_condesa, casa_decu, brick]
+  - key: polanco
+    name: "Polanco"
+    why: "The upscale hotel district. On We Fly's express shuttle list, but outside its free pickup radius."
+    address: "Polanco, Mexico City, Mexico"
+    searchLabel: "All stays in Polanco"
+    hotels: [hyatt_regency, las_alcobas]
+  - key: airport
+    name: "Mexico City airport (AICM)"
+    why: "For a late arrival or an early flight out. No shuttle list we read includes it."
+    address: "Mexico City International Airport, Mexico"
+    hotels: [hilton_airport]
+
+hotels:
+  hotel_catedral: { name: "Hotel Catedral", url: "https://www.booking.com/hotel/mx/catedral-ciudad-de-mexico.html", tier: "mid", area: "centro", note: "República de Guatemala 16, Centro Histórico; free private parking; no minimum check-in age." }
+  gran_hotel: { name: "Gran Hotel Ciudad de México Zócalo View", url: "https://www.booking.com/hotel/mx/gran-ciudad-de-mexico.html", tier: "upper", area: "centro", note: "Avenida 16 de Septiembre 82, Centro; on-site parking US$10 a day." }
+  hotel_geneve: { name: "Hotel Geneve CD de Mexico", url: "https://www.booking.com/hotel/mx/geneve-cd-de-mexico.html", tier: "mid", area: "juarez", note: "Historic hotel on Londres in Juárez; free parking nearby; spa; minimum check-in age 18." }
+  sofitel_reforma: { name: "Sofitel Mexico City Reforma", url: "https://www.booking.com/hotel/mx/sofitel-mexico-city-reforma.html", tier: "luxury", area: "juarez", note: "Reforma 297; heated indoor pool with a view; valet parking US$12 a day; check-in age 18." }
+  four_seasons: { name: "Four Seasons Hotel Mexico City", url: "https://www.booking.com/hotel/mx/four-season-mexico-d-f.html", tier: "luxury", area: "juarez", note: "Reforma 500; outdoor heated pool, spa; parking US$30 a day." }
+  villa_condesa: { name: "Hotel Villa Condesa", url: "https://www.booking.com/hotel/mx/villa-condesa.html", tier: "upper", area: "romacondesa", note: "Colima 428, Roma Norte; no parking available; no minimum check-in age." }
+  casa_decu: { name: "Casa Decu", url: "https://www.booking.com/hotel/mx/casa-decu.html", tier: "upper", area: "romacondesa", note: "Culiacán 10, Hipódromo Condesa; continental breakfast free; no parking; check-in age 18." }
+  brick: { name: "Brick Hotel Mexico City", url: "https://www.booking.com/hotel/mx/brick.html", tier: "luxury", area: "romacondesa", note: "Orizaba 95, Roma Norte; adults only; no parking available." }
+  hyatt_regency: { name: "Hyatt Regency Mexico City", url: "https://www.booking.com/hotel/mx/hyatt-regency-mexico-city.html", tier: "upper", area: "polanco", note: "Campos Elíseos 204, Polanco; heated indoor pool; on-site parking, charges may apply." }
+  las_alcobas: { name: "Las Alcobas, a Luxury Collection Hotel", url: "https://www.booking.com/hotel/mx/las-alcobas-df.html", tier: "luxury", area: "polanco", note: "Presidente Masaryk 390; continental breakfast in the rate; free parking; check-in age 18." }
+  villas_arqueologicas: { name: "Villas Arqueologicas Teotihuacan", url: "https://www.booking.com/hotel/mx/villa-arqueologica-teothiuacan.html", tier: "mid", area: "teotihuacan", note: "Listing says moments from the ruins; heated outdoor pool; free private parking." }
+  quinto_sol: { name: "GS Quinto Sol Teotihuacan", url: "https://www.booking.com/hotel/mx/quinto-sol-san-juan-teotihuacan.html", tier: "mid", area: "teotihuacan", note: "Av. Hidalgo 26 in San Juan Teotihuacán; outdoor heated pool; free parking." }
+  finca_abuelo: { name: "La Finca del Abuelo Teotihuacan", url: "https://www.booking.com/hotel/mx/la-finca-del-abuelo-san-juan-teotihuacan-de-arista.html", tier: "budget", area: "teotihuacan", note: "Garden hotel in San Juan Teotihuacán; free private parking; 24-hour security." }
+  hilton_airport: { name: "Hilton Mexico City Airport", url: "https://www.booking.com/hotel/mx/hilton-mexico-city-airport.html", tier: "mid", area: "airport", note: "At the airport; free shuttle to Terminal 2 subject to availability; no parking." }
+  area_juarez: { name: "Juárez stays", address: "Juarez, Mexico City, Mexico" }
+  area_centro: { name: "Centro Histórico stays", address: "Centro Historico, Mexico City, Mexico" }
+  area_romacondesa: { name: "Roma Norte stays", address: "Roma Norte, Mexico City, Mexico" }
+  area_polanco: { name: "Polanco stays", address: "Polanco, Mexico City, Mexico" }
+  area_teotihuacan: { name: "San Juan Teotihuacán stays", address: "San Juan Teotihuacan, Mexico" }
+  area_airport: { name: "Airport stays", address: "Mexico City International Airport, Mexico" }

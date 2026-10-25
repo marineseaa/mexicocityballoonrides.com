@@ -1,0 +1,79 @@
+# Prices page comparison. Plain Unicode only (no HTML entities).
+# Option prices from TOURS-DIGEST.md, schedules read 25 Oct 2026. Last column is muted by CSS.
+title: "Balloon Ride Prices by Option"
+subtitle: "Per person unless stated, for the option named, on dates we checked in late October 2026. Viator schedules are priced in pesos, so dollar figures move."
+highlight_column: 0
+columns:
+  - label: "Tlatoani"
+    badge: "THREE CLEAR TIERS"
+    highlight: true
+    cta: "Check dates"
+  - label: "Skyteam"
+    highlight: false
+    url: "/tours/skyteam-teotihuacan-balloon-flight-natural-cave/"
+    cta: "Our review"
+  - label: "Viaja Teotihuacan"
+    highlight: false
+    url: "/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/"
+    cta: "Our review"
+  - label: "We Fly"
+    highlight: false
+    url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
+    cta: "Our review"
+  - label: "Excellentravel guided"
+    highlight: false
+    url: "/tours/excellentravel-balloon-flight-private-transport-pyramids/"
+    cta: "Our review"
+  - label: "Zuyuá private basket"
+    highlight: false
+    url: "/tours/zuyua-private-sunrise-balloon-for-two/"
+    cta: "Our review"
+rows:
+  - label: "Price"
+    values:
+      - "$157 flight only"
+      - "$137 flight only"
+      - "$148 flight only"
+      - "$143 flight only"
+      - "$247 with shared transport and guided tour"
+      - "$1,017 per group of up to 2"
+  - label: "Flight + cave breakfast, own transport"
+    values:
+      - "$201"
+      - "$181"
+      - "Not sold"
+      - "$203 at La Gruta"
+      - "Not sold"
+      - "Not sold"
+  - label: "With Mexico City transport"
+    values:
+      - "$240 all-inclusive, up to 2 h at the pyramids"
+      - "$211 with cave breakfast"
+      - "$236 with cave breakfast and pyramids time"
+      - "$231 all included; $274 express return + La Gruta"
+      - "$247 shared; $357 private transport"
+      - "Included in the price"
+  - label: "Pyramids ticket (MX$210)"
+    values:
+      - "Not included"
+      - "Not included"
+      - "Not included"
+      - "Included in the all-included option"
+      - "Included, with a guide"
+      - "Included, with a guide"
+  - label: "Weight surcharge"
+    values:
+      - "MXN 500 at 100–120 kg, MXN 1,000 at 120–140 kg"
+      - "MXN 35 per kg over 100 kg"
+      - "MXN 35 per kg over 100 kg"
+      - "Penalty above 99 kg"
+      - "Not stated on the listing"
+      - "Not stated on the listing"
+  - label: "Guest rating"
+    values:
+      - "4.9 from 7,663 reviews"
+      - "4.9 from 1,528 reviews"
+      - "4.9 from 8,158 reviews"
+      - "4.9 from 4,822 reviews"
+      - "4.9 from 123 reviews"
+      - "4.9 from 40 reviews"

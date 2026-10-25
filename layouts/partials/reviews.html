@@ -1,0 +1,175 @@
+{{/* Affiliate CTAs below carry a STATIC BARE tour URL as href (no
+     partner_id/cmp — those stay JS-only so tracking params never sit in
+     static HTML). main.js replaces it with the decorated affiliate URL
+     via data-gyg-link. Never ship href="" here: a no-JS click would just
+     reload the page and the booking is lost.
+     (mikumidaysafarifromzanzibar 2026-08-15) */}}
+{{ $tour    := .tour | default dict }}
+{{ $site    := .Site }}
+{{ $page    := .Page }}
+{{ $reviews := $tour.sampleReviews | default slice }}
+{{ $rating  := $tour.rating      | default 0 }}
+{{ $count   := $tour.reviewCount | default 0 }}
+
+{{/* Build reviews URL for structured-data only — NOT exposed as href (JS-only) */}}
+{{ $featuredID := $page.Params.tourId | default $site.Params.featuredTourID | default $site.Params.gygWidgetTourID }}
+{{ $txtPath := printf "assets/widgets/gyg-availability-%v.txt" $featuredID }}
+{{ $partnerID := "" }}
+{{ $campaign := $site.Params.gygCampaign | default "" }}
+{{ if fileExists $txtPath }}
+  {{ $widgetHTML := readFile $txtPath }}
+  {{ $match := index (findRE `data-gyg-partner-id="[^"]+"` $widgetHTML) 0 }}
+  {{ $partnerID = replaceRE `data-gyg-partner-id="([^"]+)"` "$1" $match }}
+  {{ $cmpMatch := index (findRE `data-gyg-cmp="[^"]+"` $widgetHTML) 0 }}
+  {{ if $cmpMatch }}
+    {{ $campaign = replaceRE `data-gyg-cmp="([^"]+)"` "$1" $cmpMatch }}
+  {{ end }}
+{{ end }}
+
+{{/* reviewsURL used only for tail CTA — href="" is empty, JS injects real URL */}}
+{{ $reviewsURL := $tour.url }}
+{{ if and $reviewsURL $partnerID }}
+  {{ $reviewsURL = printf "%s?partner_id=%s&utm_medium=online_publisher&cmp=%s" $tour.url $partnerID $campaign }}
+{{ end }}
+
+{{/* ── THIN-DATA BRANCH (codified 2026-09-02, winetoursfromcapetown.com) ──
+     A featured tour with NEITHER an aggregate rating NOR sampleReviews renders
+     this section as a bare header over empty space. That is not an edge case:
+     it is the normal state of a PRIVATE GYG tour, which sells few seats and so
+     accumulates reviews slowly even when it runs well — and of any newly listed
+     departure. Same class as the gallery guard for thin tours
+     (kyoto-page/SKILL.md "Empty GALLERY section"); kyoto-page's own "empty
+     reviews bug" note only covers the fixable case (pick another featured tour,
+     or backfill from the scrape), not the case where the product genuinely has
+     no reviews yet.
+
+     DO NOT "fix" this by dropping the section. header.html anchors #reviews in
+     both the desktop and the mobile nav on every home/landing page, and each
+     spoke's own footerSEOLinks commonly do too — removing the id leaves a dead
+     anchor, which _audit_rendered.py check 11 fails on. Keep the id, say plainly
+     that the listing is new, and point at the operator's page. Honest about the
+     data AND structurally sound. */}}
+{{ if not (or $reviews $rating) }}
+<section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+  <div class="container container-narrow">
+    <div class="section-header fade-up">
+      <p class="section-overline">Guest Reviews</p>
+      <h2 class="section-title" id="reviews-heading">{{ $page.Params.reviewsTitle | default $site.Params.reviewsTitle | default "What Our Guests Say" }}</h2>
+      <p class="section-subtitle">{{ $site.Params.reviewsEmptyState | default "This is a newly listed departure and has not collected verified reviews yet. Judge it on what the itinerary actually names, and check the operator's live listing for the latest." }}</p>
+    </div>
+    {{ with $tour.url }}
+    <div class="reviews-cta fade-up" style="text-align:center;">
+      <a href="{{ . }}" class="btn-primary" {{ partial "aff-attr.html" (dict "url" .) }} target="_blank" rel="sponsored noopener noreferrer">
+        See This Tour on {{ $site.Params.affiliateProviderName | default "GetYourGuide" }}
+      </a>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ else }}
+<section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <p class="section-overline">Guest Reviews</p>
+      <h2 class="section-title" id="reviews-heading">{{ $page.Params.reviewsTitle | default $site.Params.reviewsTitle | default "What Our Guests Say" }}</h2>
+
+      {{ if $rating }}
+      <div class="reviews-aggregate fade-up" aria-label="Aggregate rating: {{ printf "%.1f" $rating }} out of 5 from {{ $count }} reviews">
+        <div class="aggregate-stars" aria-hidden="true">
+          {{ range seq 5 }}
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          {{ end }}
+        </div>
+        <span class="aggregate-score">{{ printf "%.1f" $rating }}/5</span>
+        <span class="aggregate-count">from {{ $count }} {{ $site.Params.reviewsSource | default "verified guests" }}</span>
+      </div>
+      {{ end }}
+
+      {{/* Cheap honesty, pre-empts the "your number doesn't match GYG" complaint
+           (HOMEPAGE-CONVERSION-PATTERNS.md §6) — DEFAULT, not opt-in. Set
+           reviewsDisclaimer in hugo.toml. */}}
+      {{ with $site.Params.reviewsDisclaimer }}
+      <p class="reviews-disclaimer fade-up">{{ . }}</p>
+      {{ end }}
+
+    </div>
+  </div>
+
+  <div class="reviews-scroll-wrapper" role="region" aria-label="Guest reviews — scroll to browse">
+    <div class="reviews-scroll">
+      {{ range $reviews }}
+        {{/* Skip reviews with no text */}}
+        {{ if .text }}
+        <article class="review-card fade-up" aria-label="Review by {{ .author | default .reviewer }}">
+
+          <div class="review-stars" aria-label="{{ .rating }} out of 5 stars">
+            {{ range seq .rating }}
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            {{ end }}
+          </div>
+
+          <blockquote class="review-text">
+            <p>"{{ .text }}"</p>
+          </blockquote>
+
+          {{ if .media }}
+          <div class="review-photos" aria-label="Photos from this review">
+            {{ range first 2 .media }}
+            {{ $revImg := partial "img-src.html" (dict "src" . "alt" "Guest photo from review" "Site" $site) }}
+            <img src="{{ $revImg.src }}" alt="{{ $revImg.alt }}" width="80" height="80" loading="lazy" decoding="async">
+            {{ end }}
+          </div>
+          {{ end }}
+
+          <footer class="review-meta">
+            <span class="review-name">{{ .author | default .reviewer }}</span>
+            {{ with .country }}
+            <span class="review-separator" aria-hidden="true">·</span>
+            <span class="review-country">{{ . }}</span>
+            {{ end }}
+            {{ with .date }}
+            <span class="review-separator" aria-hidden="true">·</span>
+            <time class="review-date">{{ . }}</time>
+            {{ end }}
+          </footer>
+
+        </article>
+        {{ end }}
+      {{ end }}
+
+      {{/* Tail CTA card — static bare tour URL as href; JS swaps in the param'd
+           GYG_AFFILIATE_URL via data-gyg-link. Never ship an empty href.
+           (comment corrected 2026-08-16, mountfujiprivatetours) */}}
+      {{ if $reviewsURL }}
+      <div class="review-card review-card--cta fade-up" aria-label="Read all reviews">
+        <div class="review-cta-inner">
+          <div class="aggregate-stars" aria-hidden="true">
+            {{ range seq 5 }}
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            {{ end }}
+          </div>
+          <p class="review-cta-text">Read all {{ $count }} verified reviews</p>
+          {{/* Per-page destination — see the note in cta-band.html.
+               (beststockholmtours.com 2026-08-23) */}}
+          <a href="{{ $tour.url }}" class="btn-primary"
+             {{ with $tour.url }}{{ partial "aff-attr.html" (dict "url" .) }}{{ else }}data-gyg-link{{ end }}>
+            See All Reviews
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+{{ end }}

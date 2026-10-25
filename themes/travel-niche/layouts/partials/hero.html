@@ -1,0 +1,41 @@
+<section class="hero" id="hero"
+  style="background-image: url('{{ .Site.Params.heroImage }}');"
+  aria-label="Hero — {{ .Site.Params.heroTitle }}">
+
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+    <div class="hero-text fade-up">
+      <h1 class="hero-title">{{ .Site.Params.heroTitle }}</h1>
+      <p class="hero-subtitle">{{ .Site.Params.heroSubtitle }}</p>
+      <div class="hero-actions">
+        <a href="#availability"
+           class="btn-primary btn-lg">
+          {{ .Site.Params.heroCTAPrimary }}
+        </a>
+        <a href="#how-it-works"
+           class="btn-secondary btn-lg">
+          {{ .Site.Params.heroCTASecondary }}
+        </a>
+      </div>
+    </div>
+
+    {{/* ── Floating price badge ── */}}
+    <div class="hero-price-badge fade-up" aria-label="Starting price">
+      <span class="price-from">From</span>
+      <span class="price-amount">{{ .Site.Params.startingPrice }}</span>
+      {{/* Price unit from params, not hardcoded (codified 2026-08-15, mountfujiprivatetours).
+           This dormant theme copy is normally overridden by the project-root hero.html,
+           but a site that drops `theme =` falls back to it. */}}
+      <span class="price-per">{{ .Site.Params.priceCategory | default "per person" }}</span>
+    </div>
+  </div>
+
+  {{/* ── Scroll indicator ── */}}
+  <div class="hero-scroll-indicator" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </div>
+
+</section>

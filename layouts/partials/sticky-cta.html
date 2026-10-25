@@ -1,0 +1,70 @@
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{ $price := $tour.formattedStartingPrice | default "" }}
+{{ $per   := $tour.priceCategory | default "per person" }}
+
+{{/* On guide pages the widget is #guide-availability; on the homepage/landing
+     it's #availability. Codified 2026-08-06: this partial used to hardcode
+     #availability for every page type, which was always a dead anchor on
+     guide pages (they had no such id) until guides/single.html grew its own
+     availability widget. */}}
+{{ $widgetAnchor := "#availability" }}
+{{ $isTour := false }}
+{{/* A tour page has NO on-page availability widget, so #availability was a
+     DEAD anchor on every one of them. Point it at the tour's own bare GYG
+     URL instead (data-gyg-href lets main.js decorate it at runtime).
+     The guides branch was fixed 2026-08-06; tour pages were missed then.
+     (mikumidaysafarifromzanzibar 2026-08-15) */}}
+{{ if eq $page.Type "guides" }}
+  {{ $widgetAnchor = "#guide-availability" }}
+{{ else if and (eq $page.Type "tour") $tour.url }}
+  {{ $widgetAnchor = $tour.url }}
+  {{ $isTour = true }}
+{{ end }}
+
+<div class="sticky-cta" id="sticky-cta" aria-label="Sticky booking bar" aria-hidden="true">
+  <div class="sticky-cta-inner">
+    <div class="sticky-cta-price">
+      {{ if $price }}
+      <span class="sticky-price-from">From</span>
+      <span class="sticky-price-amount">{{ $price }}</span>
+      {{/* Price unit from the data, not hardcoded (codified 2026-08-16, mountfujiprivatetours).
+           NOTE the spelling: "/ person" here vs "per person" elsewhere — a grep for one
+           misses the other, which is exactly how this instance survived the first sweep. */}}
+      <span class="sticky-price-per">{{ $per }}</span>
+      {{ else }}
+      <span class="sticky-price-amount">Book Now</span>
+      {{ end }}
+    </div>
+    <a href="{{ $widgetAnchor }}"
+       class="btn-primary sticky-cta-btn"
+       {{ if $isTour }}{{ partial "aff-attr.html" (dict "url" $tour.url) }}{{ end }}>
+      Book Now
+    </a>
+  </div>
+</div>
+<script>
+(function(){
+  var cta = document.getElementById('sticky-cta');
+  var hero = document.getElementById('hero');
+  var widget = document.getElementById('availability') || document.getElementById('guide-availability');
+  if (!cta || !hero) return;
+  var lastY = 0;
+  var scrollingDown = false;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    scrollingDown = y > lastY;
+    lastY = y;
+    var pastHero = y > hero.offsetHeight;
+    var widgetVisible = false;
+    if (widget) {
+      var r = widget.getBoundingClientRect();
+      widgetVisible = r.top < window.innerHeight && r.bottom > 0;
+    }
+    var show = pastHero && scrollingDown && !widgetVisible;
+    cta.classList.toggle('visible', show);
+    cta.setAttribute('aria-hidden', String(!show));
+  }, {passive:true});
+})();
+</script>

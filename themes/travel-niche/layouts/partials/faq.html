@@ -1,0 +1,43 @@
+<section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+  <div class="container container-narrow">
+
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know before you board.</p>
+    </div>
+
+    <div class="faq-list" role="list">
+      {{ range $i, $item := .Site.Data.faq }}
+      <div class="faq-item" role="listitem">
+        <button class="faq-question"
+                id="faq-q-{{ $i }}"
+                aria-expanded="false"
+                aria-controls="faq-a-{{ $i }}">
+          <span>{{ $item.question }}</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-answer"
+             id="faq-a-{{ $i }}"
+             role="region"
+             aria-labelledby="faq-q-{{ $i }}"
+             hidden>
+          <div class="faq-answer-inner">
+            <p>{{ $item.answer }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="faq-contact fade-up">
+      <p>Still have questions?
+        <a href="mailto:{{ .Site.Params.contactEmail }}" class="faq-contact-link">
+          Email us at {{ .Site.Params.contactEmail }}
+        </a>
+      </p>
+    </div>
+
+  </div>
+</section>

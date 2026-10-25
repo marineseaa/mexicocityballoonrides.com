@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="page-single">
+  {{/* .clears-header, NOT an inline padding-top. main.css pins that class to the
+     END of the file because .section padding-block is redefined in later @media
+     blocks -- but an INLINE style beats a stylesheet rule at any source order, so
+     a hand-typed padding here silently defeats the fix. --space-20 is 80px against
+     a ~66px fixed header, close enough to clip by a pixel at one width only.
+     (ammandeadseatours.com 2026-09-05 -- checklist ZZ.) */}}
+  <div class="container container-narrow clears-header" style="padding-bottom: var(--space-20);">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="page-content prose">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,18 @@
+{{ $site := .Site }}
+{{ $page := .Page }}
+{{/* "In this guide" box (romeinaday.tours design). Entries come from the page's
+     front matter `toc: [{id, label}]`, falling back to the site param `homeToc`
+     on the homepage. Every id must exist on the page -- _audit_rendered.py's
+     dead-anchor check fails the build otherwise. */}}
+{{ $items := $page.Params.toc }}
+{{ if and (not $items) $page.IsHome }}{{ $items = $site.Params.homeToc }}{{ end }}
+{{ with $items }}
+<nav class="toc" aria-label="In this guide">
+  <p class="toc__label">In this guide</p>
+  <ol class="toc__list" style="--toc-rows: {{ math.Ceil (div (len .) 2.0) | int }};">
+    {{ range $i, $it := . }}
+    <li><a href="#{{ $it.id }}"><span class="toc__num">{{ printf "%02d" (add $i 1) }}</span><span>{{ $it.label }}</span></a></li>
+    {{ end }}
+  </ol>
+</nav>
+{{ end }}

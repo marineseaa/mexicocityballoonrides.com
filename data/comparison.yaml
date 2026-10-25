@@ -1,0 +1,86 @@
+# Homepage comparison table. Row-centric shape (rows[].values[] in column order).
+# Plain Unicode only: comparison.html prints cell values without safeHTML.
+# Prices: option-level prices read from the operators' Viator schedules on
+# 25 October 2026 (TOURS-DIGEST.md), not the listings' headline "from" figures.
+# The first row is NOT labelled "Starting Price" on purpose: that label makes the
+# template overwrite the highlighted cell with the flight-only from-price.
+# Restrictions, inclusions and flight length: each listing's own text (TOURS-DIGEST.md).
+# Admission fee: ../scrape/ledger.md section 5 (INAH, 2026).
+title: "Four Ways to Fly Over Teotihuacán, Compared"
+subtitle: "Four real listings and the options that matter, priced on dates we checked in late October 2026. They differ most in transport, breakfast and what happens at the pyramids."
+
+highlight_column: 0
+
+columns:
+  - label: "Viaja Teotihuacan: flight, cave breakfast and hotel transfer"
+    badge: "OUR PICK"
+    highlight: true
+    cta: "Check dates"
+  - label: "Skyteam Teotihuacán: flight only, self-drive"
+    highlight: false
+    url: "/tours/skyteam-teotihuacan-balloon-flight-natural-cave/"
+    cta: "Read our review"
+  - label: "We Fly: breakfast at La Gruta"
+    highlight: false
+    url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
+    cta: "Read our review"
+  - label: "Zuyuá: private basket for two"
+    highlight: false
+    url: "/tours/zuyua-private-sunrise-balloon-for-two/"
+    cta: "Read our review"
+
+rows:
+  - label: "Price by option"
+    values:
+      - "$148 flight only; $236 with hotel transfer + cave breakfast"
+      - "$137 flight only; $211 with transfer + cave breakfast"
+      - "$203 flight + La Gruta (own transport); $274 with transport and early return"
+      - "$1,017 per group of up to 2"
+  - label: "Transport"
+    values:
+      - "Round trip from your Mexico City hotel ($236 option), or drive yourself"
+      - "Drive yourself to the balloon port; transfer from Mexico City in the $211 option"
+      - "Own way to We Fly's reception, or transport with early return ($274)"
+      - "Private round trip from your accommodation"
+  - label: "Time in the air"
+    values:
+      - "45 minutes (listing)"
+      - "Not stated on the listing"
+      - "30–60 minutes (listing)"
+      - "Not stated on the listing"
+  - label: "Breakfast"
+    values:
+      - "In a natural cave, $236 option only"
+      - "In a natural cave, $181 and $211 options"
+      - "Inside La Gruta; the listing warns of a wait at the door"
+      - "Included"
+  - label: "Archaeological visit"
+    values:
+      - "Free time at the pyramids in the $236 option, no guide"
+      - "Up to 2 hours at the pyramids in the $211 option; guide extra, bought on site"
+      - "Not in the La Gruta options; guided walk in the all-inclusive option"
+      - "Guided visit with a certified guide"
+  - label: "Pyramids admission"
+    values:
+      - "Not included (MX$210)"
+      - "Not included (MX$210)"
+      - "Not included on the La Gruta options"
+      - "Tickets listed as included"
+  - label: "Cancellation"
+    values:
+      - "Free up to 24 h before; weather on the operator's terms"
+      - "Free up to 24 h before; weather on the operator's terms"
+      - "Free up to 24 h before; weather on the operator's terms"
+      - "Free up to 24 h before; weather on the operator's terms"
+  - label: "Restrictions"
+    values:
+      - "Over 100 kg: MX$35 per extra kilo; no flying in pregnancy or with heart, back or knee problems"
+      - "Over 100 kg: MX$35 per extra kilo; not advised in pregnancy or with spinal or heart conditions"
+      - "Minimum age 4; extra-weight penalty above 99 kg; no flying after alcohol"
+      - "None stated on the listing; ask before booking"
+  - label: "Guest rating"
+    values:
+      - "4.9 from 8,158 reviews"
+      - "4.9 from 1,528 reviews"
+      - "4.9 from 4,822 reviews"
+      - "4.9 from 40 reviews"

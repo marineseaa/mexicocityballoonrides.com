@@ -1,0 +1,4131 @@
+/* ============================================================
+   Travel Niche — Main Stylesheet
+   Mobile-first, CSS custom properties, no dependencies
+   Coastal / Arctic aesthetic
+   ============================================================ */
+
+/* ── 1. Design Tokens ─────────────────────────────────────── */
+:root {
+  /* Brand Colors — remap the VALUES per niche, keep the NAMES.
+     Comments describe each token's ROLE, not a motif: a niche-flavoured comment
+     ships verbatim in public/css/main.css and trips _audit_rendered.py's own
+     scaffold-leak scan. (Codified 2026-08-21, niagarariverjetboat.) */
+  --deep-canal:    #1C2340;   /* Dark surface + display headings   */
+  --gold:          #B0431F;   /* Primary CTA — proven gold         */
+  --gold-light:    #B84A26;   /* Gold gradient end                 */
+  --gold-dark:     #8E3417;   /* Gold pressed state                */
+  /* Darkened gold for TEXT on a light background: --gold-dark measures 3.16:1
+     on --marble-white (fails 4.5:1 AA); this clears 4.70:1. Used by
+     .section-overline. Recompute if a niche remaps these tokens.
+     (/final-check, 2026-07-11)
+     WARNING — do NOT fold this note back onto the declaration line, and never
+     open a second comment inside an open one. CSS comments do NOT nest: an
+     unclosed opener on a declaration line gets closed by the NEXT terminator,
+     and any leftover prose after that ends in a DANGLING terminator. The
+     parser's error recovery then swallows the following declaration whole.
+     That is exactly how --dutch-orange computed to EMPTY on every clone of this
+     scaffold until 2026-08-16. The stylesheet still reads correctly in source and
+     Hugo reports no error; only a computed-style read in a real browser catches
+     it. Detector: strip all comments, then assert no terminator survives.
+     (picoarierosunrisetours.com 2026-08-16) */
+  --gold-text:     #B0431F;
+
+  /* Accent text + halo — auto-derive from --gold so a palette swap is safe.
+     Set --on-accent to #FFFFFF when --gold is a DARK colour (white text),
+     or var(--charcoal) when --gold is LIGHT (dark text). Halo follows --gold. */
+  --on-accent:          #FFFFFF;
+  /* Accent ink for anything drawn ON the dark --deep-canal surface (the fixed
+     header, the tour-page body, a hero scrim). --dutch-orange and --canal-teal are
+     BRIGHT in this scaffold's own palette, so inking them there reads fine here --
+     but a niche that remaps either to a dark colour drops those rules to ~2:1 and
+     nothing greps for it (no geo token, no build error, correct-looking source).
+     Route every accent-on-dark use through this token instead of a raw accent.
+     (buenosairestangoshows.com 2026-08-25.) */
+  --accent-on-dark:     #F2C46D;
+  /* Rating stars drawn on the dark --deep-canal surface. Kept SEPARATE from
+     --accent-on-dark because the roles differ: accent ink may legitimately be
+     a cool colour, but a star must read as a star, so this one wants a warm
+     tone. Defaults to the accent so the scaffold is unchanged; remap it
+     alongside --accent-on-dark whenever --gold is not a warm gold.
+     (topkapipalace-tours.com 2026-08-28.) */
+  --star-on-dark:       var(--accent-on-dark);
+  /* Accent ink drawn over the HERO PHOTOGRAPH — a THIRD surface, and the only
+     one no audit can measure. --on-accent is text ON the accent fill;
+     --accent-on-dark is accent ink on the flat --deep-canal chrome (header,
+     footer, tour-page body). Neither governs a scrim over a photo: --hero-overlay
+     is a translucent charcoal wash, so what actually sits behind .hero-overline
+     is the PICTURE, and it is lighter than --deep-canal wherever the sky is.
+
+     Why this is its own token and not a third use of --accent-on-dark:
+     _audit_accent_on_dark.py resolves each element's first OPAQUE ancestor
+     background, so it cannot see through a scrim to an image — it passed
+     311/311 on a build whose hero overline measured 3.12:1. There is no string
+     to grep and no computed style to read; only sampling the composited pixels
+     finds it. Default is deliberately LIGHTER than --accent-on-dark so a clone
+     that forgets to remap it degrades toward legible rather than away from it.
+
+     THAT SENTENCE WAS FALSE FOR A YEAR AND THE VALUE BELOW NOW MAKES IT TRUE
+     (dolomitestoursfromvenice.com 2026-09-17). The default used to be
+     `var(--star-on-dark)`, which aliases to --accent-on-dark, which aliases to
+     --gold-light — so the "deliberately lighter" fallback was byte-identical to
+     the token it claimed to be lighter than, and a clone that trusted the
+     comment inherited the failure the comment promised to prevent. It measured
+     3.47:1 over a green-gold alpine meadow. The default below is now a pale
+     warm ink that is genuinely lighter (~5.2:1 over those same pixels).
+
+     IT IS A LITERAL HEX ON PURPOSE — DO NOT "IMPROVE" IT INTO A color-mix().
+     That was tried first, on the same build, because a derived value would
+     follow a palette recolour. Chrome serializes a color-mix() result as
+     0-to-1 floats (`rgb(0.956078, 0.913529, 0.796863)`), and
+     _audit_hero_contrast.py reads rgb() components as 0-to-255 — so a token
+     that renders correctly in the browser measured as near-BLACK and the sweep
+     reported 110 false failures out of 495 runs. A token any audit samples must
+     be a literal. (--accent-halo can stay a color-mix: nothing parses it as a
+     text colour.) Remap this per site when a hero is brighter still; never
+     alias it back to another token, and never make it computed.
+
+     MANDATORY per site with a photographic hero: run
+     `python _audit_hero_contrast.py <site>` after setting heroImage, and again
+     whenever the hero image or the palette changes. A dark accent over a bright
+     hero fails here even when it passes everywhere else.
+     (lanzarotevolcanotours.com 2026-08-30.) */
+  --accent-on-hero:     #FBE3B0;
+  --accent-halo:        color-mix(in srgb, var(--gold) 40%, transparent);
+  --accent-halo-strong: color-mix(in srgb, var(--gold) 55%, transparent);
+
+  /* Surface / scrim / hairline tints — DERIVED, so a palette swap reaches them.
+     These used to be hardcoded rgba() literals (a pale blue #D4EEF8 wash, a navy
+     scrim, a slate shadow, a food-tour-red glow). No :root remap could touch
+     them, so on a warm-cream niche the comparison table's highlight column
+     rendered PALE BLUE and the trust icons glowed red. Never reintroduce a
+     literal rgba() for a tint — add a token here instead.
+     (Reported on waiotapu-tickets.com 2026-08-24.) */
+  --tint-surface:        color-mix(in srgb, var(--canal-light) 30%, transparent);
+  --tint-surface-soft:   color-mix(in srgb, var(--canal-light) 15%, transparent);
+  --tint-surface-faint:  color-mix(in srgb, var(--canal-light) 6%,  transparent);
+  --tint-surface-strong: color-mix(in srgb, var(--canal-light) 60%, transparent);
+  --scrim-dark:          color-mix(in srgb, var(--deep-canal) 55%, transparent);
+  --hairline:            color-mix(in srgb, var(--deep-canal) 6%,  transparent);
+  --shadow-tint:         color-mix(in srgb, var(--deep-canal) 12%, transparent);
+  --shadow-tint-strong:  color-mix(in srgb, var(--deep-canal) 18%, transparent);
+
+  --dutch-orange:  #B8862B;   /* Urgency / badges only             */
+  --canal-teal:    #1F5A78;   /* Secondary accent — links, icons   */
+  --canal-light:   #F6E2D8;   /* Pale tint — SURFACE role (rule 45)*/
+  --amber-warm:    #F3EBDF;   /* Warm tint — SURFACE role (rule 45)*/
+
+  /* Neutrals */
+  --marble-white:  #F8F4EE;   /* Warm off-white base background    */
+  --charcoal:      #1E2230;   /* Near-black primary text           */
+  --slate:         #4B5163;   /* Secondary text */
+  /* Darkened from #94A3B8: measured 2.43:1 on marble-white here (fails 4.5:1
+     AA) — this clears 5.95:1. Only used as text color sitewide. Recompute
+     if a niche remaps marble-white. (/final-check, 2026-07-11) */
+  --stone:         #5E5A55;   /* Tertiary text  */
+  --silver:        #D9D1C6;   /* Light text     */
+  --mist:          #F1E8DC;   /* Warm cream mist                   */
+  --white:         #FFFFFF;
+
+  /* Gradients */
+  /* HERO SCRIM — dark charcoal on the LEFT, fading to fully transparent on the
+     RIGHT, so the photograph is veiled only where the copy sits and the rest of
+     the frame stays as shot. This replaced a 100deg --deep-canal diagonal plus a
+     bottom vignette. (Marina 2026-08-29, villamonasterovarenna.com.)
+
+     Three things are load-bearing:
+
+     1. --charcoal, NOT --deep-canal. A hue-carrying scrim tints the photograph:
+        the teal version laid a green cast over a lake hero. Charcoal darkens
+        without colouring, which is the entire job of a scrim. --deep-canal stays
+        the CHROME colour (header, footer, gallery theatre); it is not a veil.
+     2. Stops are color-mix, never hardcoded rgba(). A literal survives every
+        palette swap; that is how a navy scrim once ended up over a warm hero.
+        (waiotapu-tickets.com 2026-08-24 — the rule that produced this token.)
+     3. The 58% stop is where the hero COPY ends, not an arbitrary midpoint. The
+        subtitle's longest line reaches ~57% of the viewport at 1024px, which is
+        the widest it gets relative to the frame. An earlier 52%/54% pair left
+        those lines at 3.7:1 over a bright hero. If a niche's hero photo is
+        bright on the left, MEASURE — a scrim over a photograph cannot be checked
+        with getComputedStyle, only by sampling the composited pixels behind each
+        line of text.
+
+     The fade ends at `--charcoal 0%` rather than the bare `transparent` keyword
+     so the interpolation stays on one hue from end to end. */
+  --hero-overlay:    linear-gradient(to right,
+                       color-mix(in srgb, var(--charcoal) 88%, transparent) 0%,
+                       color-mix(in srgb, var(--charcoal) 80%, transparent) 30%,
+                       color-mix(in srgb, var(--charcoal) 64%, transparent) 58%,
+                       color-mix(in srgb, var(--charcoal) 26%, transparent) 80%,
+                       color-mix(in srgb, var(--charcoal)  0%, transparent) 100%);
+  /* Narrow viewports: the hero copy spans the FULL width, so a left-to-right fade
+     would leave the end of every line unscrimmed. Below the mobile-nav breakpoint
+     the scrim holds most of its weight right across the frame and only relaxes at
+     the far edge — same charcoal, same token discipline, different geometry. */
+  --hero-overlay-narrow: linear-gradient(to right,
+                       color-mix(in srgb, var(--charcoal) 86%, transparent) 0%,
+                       color-mix(in srgb, var(--charcoal) 80%, transparent) 55%,
+                       color-mix(in srgb, var(--charcoal) 68%, transparent) 100%);
+  /* BOTH STOPS CARRY --on-accent TEXT, so both must clear AA against it.
+     This paints .btn-primary, .step-number and .itinerary-num, every one of
+     which sets `color: var(--on-accent)` — so the ink is composited over the
+     whole gradient, not just its first stop. A LIGHTER second stop therefore
+     cannot work on a dark accent: white needs a fill at relative luminance
+     <= 0.175, and a typical dark --gold is already at the edge of that. On
+     columbiaglaciertours.com (--gold #287D9B) the old form measured
+     4.67:1 at the start, 3.84:1 in the MIDDLE where the button label actually
+     sits, and 3.19:1 at the end — a primary CTA below AA on every page.
+
+     Nothing in the kit caught it, and this is why: a gradient background
+     computes `background-color: rgba(0,0,0,0)`, so _audit_accent_on_dark.py
+     resolved the first OPAQUE ancestor and measured the SECTION behind the
+     button instead of the button. Regression-proved on that build: with this
+     line in its old form the audit reported 366/366 PASS and every other
+     audit was green. (The script now samples gradient stops — see its
+     `gradient_stops()`. Same blind spot --accent-on-hero exists for, one
+     surface over.)
+
+     Anchored to --gold-dark instead: 4.67:1 -> 6.92:1 on that palette, and
+     inert-to-beneficial for the scaffold's own light gold. --gold-light keeps
+     its other roles; this token is the one that carries text.
+     (Reported on columbiaglaciertours.com 2026-09-03.) */
+  --gold-shimmer:    linear-gradient(135deg, var(--gold), var(--gold-dark));
+  --ocean-depth:     linear-gradient(135deg, var(--deep-canal),
+                     color-mix(in srgb, var(--deep-canal) 78%, var(--canal-teal)));
+  /* DERIVED, never literal. This paints .cta-band, whose title/body/overline
+     are --white / white-85% / --accent-on-dark, so the band MUST stay dark.
+     Anchored 78% in --deep-canal rather than a straight two-token gradient
+     because --canal-teal is a free accent a niche may remap light; measured
+     worst case (--canal-teal := #FFFFFF) still reads white at 7.41:1.
+     Until 2026-08-30 this was a raw `linear-gradient(135deg, #0D1B2A, #E63946)`
+     that no :root remap could reach, so every clone shipped a scaffold-navy
+     to food-tour-red CTA band. Gate 18a missed it: that grep only matches
+     `rgba(`, not a raw hex inside a gradient.
+     (Reported on lanzarotedolphintours.com 2026-08-30.) */
+
+  /* Typography */
+  --font-body:     'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  --font-display:  'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+  /* Spacing (8px grid) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Radii */
+  --rounded-sm:   0;
+  --rounded-md:   0;
+  --rounded-lg:   0;
+  --rounded-xl:   0;
+  --rounded-2xl:  0;
+  --rounded-full: 0;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --shadow-lg:  0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+  --shadow-xl:  0 20px 25px -5px rgba(0,0,0,0.10), 0 8px 10px -6px rgba(0,0,0,0.04);
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+}
+
+/* ── 2. Reset & Base ──────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--marble-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; height: auto; }
+/* Guide-article hook image: honour its 1200x630 ratio. HTML width/height attrs
+   (e.g. <img class="hook-image" width="1200" height="630">) set the rendered
+   height literally UNLESS the global rule above carries height:auto — without it
+   the image squishes to container-width x 630px in .container-narrow.
+   (Reported on milancomodaytrip 2026-07-17.) */
+.hook-image { width: 100%; height: auto; border-radius: var(--rounded-lg); margin: 0 0 var(--space-6); }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+address { font-style: normal; }
+
+/* ── 3. Utilities ─────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container-narrow {
+  max-width: 768px;
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.w-full { width: 100%; }
+
+/* ── 4. Buttons ───────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: var(--gold-shimmer);
+  color: var(--on-accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--rounded-md);
+  box-shadow: 0 4px 18px var(--accent-halo);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px var(--accent-halo-strong);
+  filter: brightness(1.05);
+}
+.btn-primary:active { transform: translateY(0) scale(0.99); }
+.btn-primary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--rounded-md);
+  border: 1.5px solid rgba(255,255,255,0.55);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.85);
+}
+.btn-secondary:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+/* Ghost button for LIGHT backgrounds. It is used STANDALONE (layouts/404.html),
+   NOT as a `.btn-secondary` modifier, so it must carry the whole button box
+   itself. With only border-color + color it inherited no display, padding,
+   border-width or radius and rendered as bare unstyled text — which is exactly
+   how both 404 secondary CTAs shipped on every clone of this scaffold. The 404
+   is easy to miss in review because nothing links to it.
+   white-space is deliberately `normal`: this button carries the long
+   `tourBackLinkText` label, which overflowed the viewport at 320px when nowrap
+   stopped it wrapping. (Reported on waiotapu-tickets.com 2026-08-24.) */
+.btn-secondary-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: transparent;
+  border: 1.5px solid var(--deep-canal);
+  border-radius: var(--rounded-md);
+  color: var(--deep-canal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  padding: var(--space-3) var(--space-6);
+  text-decoration: none;
+  text-align: center;
+  white-space: normal;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.btn-secondary-dark:hover {
+  background: var(--deep-canal);
+  color: var(--white);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border: 2px solid var(--canal-teal);
+  border-radius: var(--rounded-lg);
+  background: transparent;
+  color: var(--canal-teal);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  /* `normal`, NOT `nowrap`: this is the class /404.html actually uses for its
+     two secondary CTAs, and one of them carries the long `tourBackLinkText`
+     label. The identical fix was written for this exact 320px overflow and
+     applied to `.btn-secondary-dark` (see its comment above) — the class the
+     404 used BEFORE the same repair moved it here, so the defect outlived its
+     own fix. `max-width` is the other half: white-space cannot save a button
+     whose longest single word already exceeds the container.
+     (waiotapu-tickets.com 2026-08-24; recurred rotoruamaorivillage.com
+     2026-08-25 at 328px in a 320px viewport.) */
+  white-space: normal;
+  max-width: 100%;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  background: var(--canal-teal);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn-outline:active { transform: translateY(0); }
+
+.btn-sm  { padding: var(--space-2) var(--space-4); font-size: 0.875rem; }
+.btn-lg  { padding: var(--space-4) var(--space-8); font-size: 1rem; }
+
+/* ── 5. Section base ──────────────────────────────────────── */
+.section {
+  padding-block: var(--space-12); /* tightened section rhythm */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.section-overline {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+  margin-bottom: var(--space-3);
+}
+/* Dark sections (gallery, cta-band) need a lighter tint for AA contrast —
+   var(--gold-dark) reads too dark on the dark surface, var(--gold-light)
+   passes ~7:1. Recompute per-palette if a niche remaps these tokens. */
+.gallery-section .section-overline,
+.cta-band .section-overline {
+  color: var(--accent-on-dark);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--slate);
+  max-width: 560px;
+  margin-inline: auto;
+  line-height: 1.65;
+}
+
+/* ── 6. Header & Navigation ───────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding-block: var(--space-3);
+  transition: background var(--transition-slow), padding var(--transition-slow), box-shadow var(--transition-slow), transform 0.3s ease;
+}
+
+.site-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+.site-header.scrolled {
+  /* color-mix on the token (not a hardcoded rgba) so a palette/token swap
+     re-colors the header with zero edits */
+  /* Opaque token fallback for browsers without color-mix — a fallback cannot
+     itself use color-mix, so it must be a plain token rather than a hardcoded
+     rgba() that a palette swap would leave navy. The line below re-adds the
+     transparency wherever color-mix is supported. */
+  background: var(--deep-canal);
+  background: color-mix(in srgb, var(--deep-canal) 95%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding-block: var(--space-2);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Pages without a dark hero (tour pages, guides, legal, 404): the white
+   logo/nav would merge with the light body — keep the header solid always.
+   Paired with the `site-header--solid` conditional in partials/header.html. */
+.site-header--solid {
+  /* Opaque token fallback for browsers without color-mix — a fallback cannot
+     itself use color-mix, so it must be a plain token rather than a hardcoded
+     rgba() that a palette swap would leave navy. The line below re-adds the
+     transparency wherever color-mix is supported. */
+  background: var(--deep-canal);
+  background: color-mix(in srgb, var(--deep-canal) 97%, transparent);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  color: var(--white);
+  opacity: 0.95;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-primary {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+.logo-tagline {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--accent-on-dark);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Desktop nav */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+.nav-link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--rounded-md);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.10);
+}
+
+.nav-cta { 
+  display: none; /* Hidden on mobile */
+  margin-left: var(--space-2); 
+  font-size: 1rem; /* balance with enlarged .nav-link (1.05rem) */
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: var(--space-2);
+  border-radius: var(--rounded-md);
+  margin-left: auto;
+  transition: background var(--transition-fast);
+}
+.hamburger:hover { background: rgba(255,255,255,0.10); }
+.hamburger-line {
+  display: block;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+/* Mobile menu backdrop */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  background: var(--scrim-dark);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+.mobile-backdrop.open { opacity: 1; pointer-events: all; }
+
+/* Mobile menu panel */
+.mobile-menu {
+  position: fixed;
+  top: 0; right: 0;
+  z-index: 1002;
+  width: min(80vw, 320px);
+  height: 100dvh;
+  background: var(--white);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  overflow-y: auto;
+}
+.mobile-menu.open { transform: translateX(0); }
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--silver);
+}
+
+.mobile-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-md);
+  color: var(--slate);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.mobile-close:hover { background: var(--mist); color: var(--charcoal); }
+
+.mobile-nav-list {
+  flex: 1;
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-weight: 500;
+  color: var(--charcoal);
+  border-radius: var(--rounded-md);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.mobile-nav-link:hover { background: var(--canal-light); color: var(--deep-canal); }
+
+.mobile-menu-footer {
+  padding: var(--space-5) var(--space-6);
+  border-top: 1px solid var(--silver);
+}
+
+/* ── 7. Hero ──────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay);
+  z-index: 0;
+}
+
+/* Matches the breakpoint at which the nav collapses and .hero-content stops
+   being a left-hand column — see --hero-overlay-narrow. */
+@media (max-width: 768px) {
+  .hero-overlay { background: var(--hero-overlay-narrow); }
+}
+
+/* ── Hero extras ── */
+.hero-overline {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  /* --accent-on-hero, NOT --accent-on-dark: this label sits on the hero
+     PHOTOGRAPH, not on the flat dark chrome. See the token's own note. */
+  color: var(--accent-on-hero);
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--dutch-orange);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--rounded-sm);
+}
+
+.price-free-cancel {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: var(--space-2);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding-top: calc(var(--space-20) + 60px); /* clear fixed header */
+  padding-bottom: var(--space-20);
+}
+
+.hero-text {
+  max-width: 680px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: var(--space-5);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: rgba(255,255,255,0.90);
+  line-height: 1.65;
+  margin-bottom: var(--space-8);
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Price badge */
+/* A WHITE WASH UNDER WHITE INK. This badge sits over the hero PHOTOGRAPH and
+   inks itself --white. Its fill used to be rgba(255,255,255,0.12), which
+   lightens exactly the pixels the white text has to beat -- the wash was
+   working against its own contents. Over a bright hero the price is the first
+   thing on the page to become unreadable: .price-amount measured 2.35:1 on
+   ammandeadseatours.com against a 3.0 large-text floor, and .price-per 1.98:1
+   against 4.5.
+
+   Nothing caught it for two independent reasons, and both generalise:
+     - exit-gate 18a's hardcoded-tint grep exempts rgba(255,255,255, and
+       rgba(0,0,0, on purpose, because those are usually legitimate. A white
+       tint is therefore invisible to the one check that reads this property.
+     - _audit_accent_on_dark.py resolves the first OPAQUE ancestor, and a
+       translucent wash over a photo has none, so it never measures this at all.
+   Only _audit_hero_contrast.py, which composites through to the picture, sees
+   it -- and only on a hero bright enough to fail.
+
+   Charcoal now, through color-mix, so a palette swap still reaches it. Same
+   argument as the flat system's facts strip: an element that carries small text
+   over open photograph carries its own wash. After this fix the same figures
+   measured 12.4-13.9:1.
+
+   RULE: a translucent fill under text must darken when the text is light and
+   lighten when the text is dark. Check the ink before choosing the wash.
+   (Reported on ammandeadseatours.com 2026-09-05 -- checklist YY.) */
+.hero-price-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: color-mix(in srgb, var(--charcoal) 78%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in srgb, var(--white) 30%, transparent);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-4) var(--space-6);
+  color: var(--white);
+  min-width: 110px;
+}
+.price-from  { font-size: 0.75rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.06em; }
+.price-amount { font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1; }
+.price-per   { font-size: 0.75rem; opacity: 0.8; }
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.65);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── 8. Trust Band ────────────────────────────────────────── */
+.trust-band {
+  background: var(--white);
+  padding-block: var(--space-6);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 2;
+}
+
+.trust-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5) var(--space-8);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.trust-icon { font-size: 1.5rem; line-height: 1; }
+
+.trust-icon-svg {
+  color: var(--canal-teal);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--rounded-md);
+  background: var(--canal-light);
+}
+
+.trust-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.trust-metric {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+}
+
+.trust-label {
+  font-size: 0.75rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── 9. How It Works ──────────────────────────────────────── */
+.how-it-works { background: var(--marble-white); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.step-card {
+  background: var(--white);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--hairline);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  counter-increment: steps;
+}
+.step-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--rounded-md);
+  background: var(--gold-shimmer);
+  color: var(--on-accent);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+  box-shadow: 0 2px 8px var(--accent-halo);
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--deep-canal);
+  margin-bottom: var(--space-3);
+}
+
+.step-body { color: var(--slate); line-height: 1.65; }
+
+.steps-cta {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+/* ── 10. Gallery — full-width horizontal scroll, dark theatre ── */
+/* Pattern codified 2026-07 (apachetrailtour.com build) — see
+   site-builder CLAUDE.md "Gallery pattern" for the full contract and the
+   img width/height-vs-aspect-ratio gotcha this replaced. */
+.gallery-section {
+  background: var(--deep-canal);
+  padding-bottom: var(--space-8);
+}
+.gallery-section .section-title { color: var(--white); }
+.gallery-section .section-subtitle { color: rgba(255,255,255,0.72); }
+
+.gallery-wrapper {
+  position: relative;
+  margin-top: var(--space-6);
+}
+.gallery-wrapper--full {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.gallery-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 14px; width: 60px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, var(--deep-canal) 100%);
+  z-index: 2;
+}
+
+.gallery-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-2) var(--space-5) var(--space-4);
+  padding-left: max(var(--space-5), calc((100vw - 1200px) / 2));
+  padding-right: max(var(--space-5), calc((100vw - 1200px) / 2));
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) rgba(255,255,255,0.15);
+}
+.gallery-scroll::-webkit-scrollbar { height: 8px; }
+.gallery-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.12); border-radius: var(--rounded-full); }
+.gallery-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: var(--rounded-full); }
+
+.gallery-item {
+  flex: 0 0 78vw;
+  max-width: 480px;
+  scroll-snap-align: start;
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+@media (min-width: 720px)  { .gallery-item { flex-basis: 44vw; } }
+@media (min-width: 1080px) { .gallery-item { flex-basis: 29vw; } }
+.gallery-item:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+.gallery-item img {
+  width: 100%;
+  height: auto; /* MUST be set — see gotcha note below */
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
+}
+/* GOTCHA (found on apachetrailtour.com build): the <img width="800"
+   height="533"> HTML attributes are read by browsers as literal pixel
+   dimensions (a presentational-hint height), not just an intrinsic-ratio
+   hint. Without `height: auto` here, that 533px hint wins over
+   `aspect-ratio` once the container is narrower than ~800px (i.e. on
+   every gallery card), producing a mismatched near-portrait box. Always
+   keep `height: auto` on any <img> that also carries HTML width/height
+   attributes AND a CSS aspect-ratio. */
+
+.gallery-caption {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  padding: var(--space-2) var(--space-3);
+  background: rgba(255,255,255,0.06);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--rounded-full);
+  border: 0;
+  cursor: pointer;
+  background: var(--white);
+  color: var(--deep-canal);
+  box-shadow: var(--shadow-md);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.gallery-arrow:hover { background: var(--gold); color: var(--on-accent); }
+.gallery-arrow--prev { left: max(var(--space-4), calc((100vw - 1200px) / 2)); }
+.gallery-arrow--next { right: max(var(--space-4), calc((100vw - 1200px) / 2)); }
+@media (min-width: 1080px) { .gallery-arrow { display: flex; } }
+
+/* ── 11. Booking Widget ───────────────────────────────────── */
+.booking-section { background: var(--white); }
+
+.booking-widget-wrapper {
+  max-width: 800px;
+  margin-inline: auto;
+  background: var(--mist);
+  border-radius: var(--rounded-2xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+}
+
+.widget-fallback {
+  display: none; /* Hidden when real GYG widget loads */
+}
+
+/* Show fallback if widget script hasn't loaded (no gyg elements present) */
+.booking-widget-wrapper:not(:has([data-gyg-href] iframe)) .widget-fallback {
+  display: block;
+}
+
+.widget-fallback-inner {
+  text-align: center;
+  padding: var(--space-12) var(--space-8);
+  background: var(--white);
+  border-radius: var(--rounded-xl);
+  border: 1px solid var(--silver);
+  box-shadow: var(--shadow-md);
+}
+
+.widget-fallback-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--rounded-xl);
+  background: var(--canal-light);
+  color: var(--canal-teal);
+  margin: 0 auto var(--space-5);
+}
+
+.widget-fallback-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-bottom: var(--space-3);
+}
+
+.widget-fallback-body {
+  color: var(--slate);
+  margin-bottom: var(--space-6);
+}
+
+.widget-fallback-inner .btn-primary { margin-inline: auto; }
+
+.widget-trust-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  list-style: none;
+  padding: 0;
+}
+
+.widget-trust-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--stone);
+}
+
+.widget-trust-list svg { color: var(--canal-teal); flex-shrink: 0; }
+
+.booking-social-proof {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+  padding: var(--space-4) var(--space-5);
+  background: var(--tint-surface);
+  border-radius: var(--rounded-lg);
+  border: 1px solid var(--tint-surface-strong);
+}
+.social-proof-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.825rem;
+  color: var(--slate);
+}
+.social-proof-item strong {
+  color: var(--deep-canal);
+}
+.social-proof-star {
+  color: var(--gold);
+}
+.social-proof-item svg:not(.social-proof-star) {
+  color: var(--canal-teal);
+}
+
+/* ── 12. Comparison Table ─────────────────────────────────── */
+.comparison-section { background: var(--mist); }
+
+.comparison-wrapper {
+  overflow-x: auto;
+  border-radius: var(--rounded-xl);
+  box-shadow: var(--shadow-lg);
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--rounded-xl);
+  overflow: hidden;
+}
+
+.comparison-table thead {
+  background: var(--deep-canal);
+  color: var(--white);
+}
+
+.comparison-col,
+.comparison-label-col {
+  padding: var(--space-4) var(--space-5);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.comparison-label-col {
+  text-align: left;
+  width: 30%;
+  color: rgba(255,255,255,0.75);
+  font-weight: 400;
+}
+
+.comparison-col--highlight {
+  background: var(--deep-canal);
+  color: var(--white);
+  border-bottom: 3px solid var(--gold);
+}
+
+.comparison-badge {
+  /* block + fit-content so the badge stacks on its own line ABOVE the column
+     label (inline-block rendered it beside/wrapped with the label) */
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  background: var(--gold);
+  color: var(--on-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: var(--rounded-sm);
+  margin-bottom: var(--space-2);
+}
+.comparison-col--highlight .comparison-badge {
+  background: var(--gold);
+  color: var(--on-accent);
+}
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid var(--mist);
+  transition: background var(--transition-fast);
+}
+.comparison-table tbody tr:last-child { border-bottom: none; }
+.comparison-table tbody tr:hover { background: var(--tint-surface); }
+
+.comparison-row-label {
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--slate);
+}
+
+.comparison-cell {
+  padding: var(--space-4) var(--space-5);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--charcoal);
+}
+
+.comparison-cell--highlight {
+  background: var(--tint-surface);
+  font-weight: 600;
+  color: var(--deep-canal);
+}
+
+.comparison-cta {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+.comparison-cta-row { border-bottom: none !important; }
+.comparison-cta-row:hover { background: transparent !important; }
+.comparison-cta-cell { padding-top: var(--space-5) !important; padding-bottom: var(--space-6) !important; }
+.comparison-btn { width: 100%; max-width: 180px; font-size: 0.8rem; }
+
+/* ── 12b. More Experiences ────────────────────────────────── */
+.experiences-section { background: var(--white); }
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Homepage "Explore More" section only (scoped by #experiences) — balanced
+   2-row grid computed from the actual card count (top row gets the extra
+   card when odd), instead of the shared auto-fill wrap used on /tours/. */
+#experiences .experiences-grid {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  #experiences .experiences-grid { grid-template-columns: repeat(var(--experiences-cols, 3), 1fr); }
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--mist);
+  border-radius: var(--rounded-xl);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--charcoal);
+  transition: all var(--transition-normal);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--canal-teal);
+}
+
+.experience-image {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--mist);
+}
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.experience-card:hover .experience-image img {
+  transform: scale(1.06);
+}
+
+.experience-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: var(--gold);
+  color: var(--on-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--rounded-sm);
+  z-index: 1;
+}
+
+.experience-content {
+  padding: var(--space-5) var(--space-5) var(--space-3);
+  flex: 1;
+}
+
+.experience-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-bottom: var(--space-2);
+  line-height: 1.3;
+}
+
+.experience-desc {
+  font-size: 0.9rem;
+  color: var(--slate);
+  line-height: 1.5;
+  margin-bottom: var(--space-3);
+}
+
+.experience-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 0.8rem;
+  color: var(--slate);
+}
+
+.experience-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--gold);
+  font-weight: 600;
+}
+/* THE STAR MUST NOT BE ALLOWED TO SHRINK, and `width="14" height="14"` on the
+   <svg> does not stop it. Those attributes set an INTRINSIC size, not a floor;
+   inside a flex row the default `flex: 0 1 auto` lets the browser squeeze the
+   only shrinkable item, and an inline SVG with no min-width squeezes all the way
+   to zero.
+
+   Measured on walterpeakbbq.com 2026-09-06: on `/tours/`, where the cards are
+   narrower than the homepage's and `.experience-meta` carries three items
+   (rating, duration, "Free cancellation"), the star rendered at **3.9px, 2.4px
+   and 0px** on the first three cards -- while the IDENTICAL markup on the
+   homepage measured a correct 14px. It reads as a stray dot before the rating,
+   or as nothing at all.
+
+   Nothing in either kit catches it: the markup is valid, the CSS is valid, the
+   build is green, and no audit measures an ICON's rendered size --
+   _audit_viewport.py measures overflow and header clearance, audit_design.py
+   measures radius, elevation and heading contrast. Only getBoundingClientRect on
+   the element itself finds it. Verify:
+     [...document.querySelectorAll('.experience-rating svg')]
+       .map(s => s.getBoundingClientRect().width)      // every entry must be 14
+   Inert on the homepage; corrects every hub. See checklist AAA.
+
+   THE SAME BUG SITS ON BOTH LOGO MARKS, and a portfolio sweep is what found
+   them (61 of 71 sites, 2026-09-06): `.logo-icon` measured 48px declared ->
+   44.8px and `.footer-logo-icon` 32px -> 25.7px at 1024. Milder than the star
+   because those rows have fewer items to fight over, but the same cause.
+
+   `.logo` ALREADY carries `flex-shrink: 0` -- so the fix was half-applied: the
+   logo BLOCK is protected against the nav, and the icon INSIDE it was left to
+   fight its own text. Protecting a flex container says nothing about its
+   children. */
+.experience-rating svg,
+.logo-icon,
+.footer-logo-icon { flex: 0 0 auto; }
+.experience-review-count {
+  color: var(--slate);
+  font-weight: 400;
+}
+
+.experience-duration {
+  color: var(--canal-teal);
+  font-weight: 500;
+}
+
+.experience-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  border-top: 1px solid var(--mist);
+  background: var(--tint-surface-soft);
+}
+
+.experience-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+}
+.experience-price-from {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--slate);
+  margin-right: 2px;
+}
+
+.experience-cta-text {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--canal-teal);
+  transition: color var(--transition-fast);
+}
+.experience-card:hover .experience-cta-text {
+  color: var(--deep-canal);
+}
+
+/* ── 13. Reviews ──────────────────────────────────────────── */
+.reviews-section { background: var(--canal-light); }
+
+.reviews-aggregate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.aggregate-stars {
+  display: flex;
+  gap: 2px;
+  color: var(--gold);
+}
+
+.aggregate-score {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+}
+
+.aggregate-count {
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+
+.reviews-disclaimer {
+  font-size: 0.8rem;
+  color: var(--stone);
+  max-width: 560px;
+  margin: var(--space-3) auto 0;
+  text-align: center;
+}
+
+.reviews-scroll-wrapper { overflow: hidden; }
+
+.reviews-scroll {
+  display: flex;
+  gap: var(--space-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: var(--space-4) var(--space-5) var(--space-8);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--silver) transparent;
+}
+
+.review-card {
+  flex-shrink: 0;
+  width: min(320px, 85vw);
+  scroll-snap-align: start;
+  background: var(--white);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+.review-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-4px); }
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  color: var(--gold);
+}
+
+.review-text {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--charcoal);
+  line-height: 1.65;
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.review-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--stone);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--mist);
+}
+
+.review-name { font-weight: 600; color: var(--charcoal); }
+.review-separator { color: var(--silver); }
+
+/* ── 14. FAQ ──────────────────────────────────────────────── */
+.faq-section { background: var(--marble-white); }
+
+.faq-list { display: flex; flex-direction: column; }
+
+.faq-item {
+  border-bottom: 1px solid var(--silver);
+}
+.faq-item:first-child { border-top: 1px solid var(--silver); }
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-5) 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.faq-question:hover { color: var(--deep-canal); }
+.faq-question:focus-visible {
+  outline: 2px solid var(--dutch-orange);
+  outline-offset: 2px;
+  border-radius: var(--rounded-sm);
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--stone);
+  transition: transform var(--transition-normal), color var(--transition-fast);
+}
+.faq-question[aria-expanded="true"] .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--gold);
+}
+
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--transition-slow), padding var(--transition-slow);
+}
+.faq-answer:not([hidden]) {
+  max-height: 500px;
+}
+.faq-answer[hidden] { display: block !important; max-height: 0; } /* override hidden for animation */
+
+.faq-answer-inner {
+  padding-bottom: var(--space-5);
+  font-size: 1rem;
+  color: var(--slate);
+  line-height: 1.7;
+}
+
+.faq-contact {
+  text-align: center;
+  margin-top: var(--space-10);
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+
+.faq-contact-link {
+  color: var(--canal-teal);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+.faq-contact-link:hover { color: var(--deep-canal); }
+
+.faq-answer-inner a {
+  color: var(--canal-teal);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+.faq-answer-inner a:hover { color: var(--deep-canal); }
+
+/* ── 15. CTA Band ─────────────────────────────────────────── */
+.cta-band {
+  background: var(--ocean-depth);
+  padding-block: var(--space-16);
+  text-align: center;
+}
+
+.cta-band-inner { max-width: 640px; margin-inline: auto; }
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-5);
+}
+
+.cta-body {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: var(--space-8);
+  line-height: 1.65;
+}
+
+/* ── 16. Footer ───────────────────────────────────────────── */
+.site-footer {
+  background: var(--deep-canal);
+  color: var(--silver);
+  padding-top: var(--space-16);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: var(--space-4);
+}
+
+.footer-logo-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.footer-brand-desc {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--silver);
+  max-width: 280px;
+}
+
+.footer-col-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-on-dark);
+  margin-bottom: var(--space-4);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-link {
+  font-size: 0.9375rem;
+  color: var(--silver);
+  transition: color var(--transition-fast);
+}
+.footer-link:hover { color: var(--white); }
+
+.footer-address {
+  font-size: 0.9375rem;
+  color: var(--silver);
+  line-height: 1.65;
+}
+
+.footer-bottom {
+  padding-block: var(--space-6);
+}
+
+.footer-bottom .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.footer-disclosure {
+  font-size: 0.8rem;
+  color: var(--silver);
+  max-width: 620px;
+}
+
+.footer-copy { font-size: 0.875rem; color: var(--silver); }
+
+.footer-legal {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.footer-legal-link {
+  font-size: 0.875rem;
+  color: var(--silver);
+  transition: color var(--transition-fast);
+}
+.footer-legal-link:hover { color: var(--white); }
+
+/* ── 17. Sticky CTA (mobile) ──────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 900;
+  background: var(--white);
+  border-top: 1px solid var(--silver);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+  pointer-events: none;
+}
+.sticky-cta.visible {
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.sticky-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.sticky-cta-price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+}
+.sticky-price-from   { font-size: 0.75rem; color: var(--stone); }
+.sticky-price-amount {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+}
+.sticky-price-per    { font-size: 0.75rem; color: var(--stone); }
+
+.sticky-cta-btn { flex-shrink: 0; }
+
+/* ── 18. Single Page Prose ────────────────────────────────── */
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-bottom: var(--space-8);
+}
+
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+.prose p { color: var(--slate); line-height: 1.75; margin-bottom: var(--space-4); }
+.prose ul { list-style: disc; padding-left: var(--space-6); color: var(--slate); }
+.prose li { margin-bottom: var(--space-2); line-height: 1.65; }
+.prose strong { color: var(--charcoal); }
+.prose a { color: var(--canal-teal); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── 19. Fade-Up Animation ────────────────────────────────── */
+/* Scroll-reveal. The hidden state is gated on `.js`, set by an inline script in
+   <head> BEFORE first paint (partials/head.html). Without that class nothing is
+   ever hidden, so a browser with JS blocked, broken or still loading main.js
+   (which is `defer`red) renders the full page instead of a blank one.
+   52 elements on a homepage carry .fade-up, so the un-gated version meant
+   "no JS = no website". Same principle as the affiliate-CTA static-href rule:
+   content must never depend on JS to exist.
+   (Reported on rotoruamaoriexperience.com 2026-08-28.) */
+.js .fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.js .fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Above-the-fold content is never scroll-revealed: there is nothing to scroll
+   it into view, and .hero-title is the LCP element -- gating it on a deferred
+   script measured >800ms at opacity:0 after networkidle. */
+.js .hero-text.fade-up,
+.js .hero-price-badge.fade-up {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .fade-up { opacity: 1; transform: none; transition: none; }
+}
+
+/* Stagger children */
+.steps-grid .fade-up:nth-child(2) { transition-delay: 0.1s; }
+.steps-grid .fade-up:nth-child(3) { transition-delay: 0.2s; }
+.trust-grid .fade-up:nth-child(2) { transition-delay: 0.05s; }
+.trust-grid .fade-up:nth-child(3) { transition-delay: 0.10s; }
+.trust-grid .fade-up:nth-child(4) { transition-delay: 0.15s; }
+.trust-grid .fade-up:nth-child(5) { transition-delay: 0.20s; }
+
+/* ── 20. Accessibility ────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .fade-up { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ── 21. Responsive — sm (640px) ──────────────────────────── */
+@media (min-width: 640px) {
+  .hero-actions {
+    flex-direction: row;
+    max-width: none;
+  }
+
+  .trust-grid {
+    gap: var(--space-5) var(--space-10);
+  }
+
+  .review-card  { width: 340px; }
+}
+
+/* ── 22. Responsive — md (768px) ──────────────────────────── */
+@media (min-width: 768px) {
+  .section { padding-block: 56px; }
+
+  .section-title { font-size: 2.25rem; }
+
+  .steps-grid { grid-template-columns: repeat(var(--steps-cols, 2), 1fr); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+
+  .footer-bottom .container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* ── 23. Responsive — lg (1024px) ─────────────────────────── */
+@media (min-width: 1024px) {
+  /* Show desktop nav, hide hamburger */
+  .nav-links  { display: flex; }
+  .nav-cta    { display: block; }
+  .hamburger  { display: none; }
+
+  /* Hide sticky mobile CTA */
+  .sticky-cta { display: none; }
+
+  .section { padding-block: 72px; }
+
+  .section-title { font-size: 2.5rem; }
+
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+
+/* ── 24. Responsive — xl (1280px) ─────────────────────────── */
+@media (min-width: 1280px) {
+  .container { padding-inline: var(--space-8); }
+}
+
+/* ── 25. Highlights Section ───────────────────────────────── */
+.highlights-section { background: var(--amber-warm); }
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .highlights-grid { grid-template-columns: 1fr 1fr; gap: var(--space-12); }
+}
+
+.highlights-col {
+  background: var(--white);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--hairline);
+}
+
+.highlights-col-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--canal-light);
+}
+
+.highlights-col-title svg { color: var(--gold); flex-shrink: 0; }
+
+.highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 1rem;
+  color: var(--slate);
+  line-height: 1.55;
+}
+
+.highlight-check {
+  flex-shrink: 0;
+  color: var(--canal-teal);
+  margin-top: 2px;
+}
+
+.highlight-check--gold { color: var(--gold); }
+
+.highlights-cta {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+/* ── 26. Review Extras ────────────────────────────────────── */
+.review-photos {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.review-photos img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--mist);
+}
+
+.review-card--cta {
+  /* Lighter than the reviews-section background (--canal-light) so the CTA card
+     lifts off the section instead of blending into it. Token-relative wash +
+     subtle border survive any palette remap. (Reported on milancomodaytrip 2026-07-17.) */
+  background: color-mix(in srgb, var(--white) 62%, var(--canal-light));
+  border: 1px solid color-mix(in srgb, var(--canal-teal) 22%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.review-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.review-cta-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--deep-canal);
+  max-width: 220px;
+  line-height: 1.4;
+}
+
+/* ── Tour Detail Pages ──────────────────────────────────────── */
+.tour-page {
+  padding-top: 100px;
+  padding-bottom: var(--space-8);
+  background: var(--deep-canal);
+  min-height: 100vh;
+}
+
+/* Guide article — clear the fixed header (first child is the breadcrumb) */
+.guide-article {
+  padding-top: 100px;
+}
+
+.tour-breadcrumb {
+  font-size: 0.9rem;
+  color: var(--mist);
+  margin-bottom: var(--space-4);
+}
+
+.tour-breadcrumb a {
+  /* gold-light, not dutch-orange: the accent token can be dark (rosewood) and
+     vanish against the deep-canal tour-page background */
+  color: var(--accent-on-dark);
+  text-decoration: none;
+}
+
+.tour-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.tour-hero {
+  margin-bottom: var(--space-6);
+}
+
+.tour-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-3);
+  line-height: 1.2;
+}
+
+.tour-rating-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tour-stars {
+  display: flex;
+  gap: 2px;
+  color: var(--star-on-dark);
+}
+
+.tour-rating-text {
+  font-size: 0.95rem;
+  color: var(--mist);
+}
+
+.tour-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+}
+
+.tour-gallery-main img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.tour-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.tour-gallery-grid img {
+  width: 100%;
+  height: calc(200px - var(--space-3) / 2);
+  object-fit: cover;
+}
+
+.tour-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.tour-main-content {
+  color: var(--white);
+}
+
+.tour-section {
+  margin-bottom: var(--space-8);
+}
+
+.tour-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-4);
+}
+
+.tour-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--mist);
+  /* fullDescription is an ARRAY — tour/single.html emits one <p> per
+     element. Without this, every paragraph of an enriched tour page
+     butts against the next. (mikumidaysafarifromzanzibar 2026-08-15) */
+  margin-bottom: var(--space-4);
+}
+.tour-description:last-child { margin-bottom: 0; }
+
+.tour-highlights,
+.tour-includes,
+.tour-excludes {
+  list-style: none;
+  padding: 0;
+}
+
+.tour-highlights li,
+.tour-includes li,
+.tour-excludes li {
+  padding: var(--space-3);
+  margin-bottom: var(--space-2);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--rounded-md);
+  color: var(--mist);
+}
+
+.tour-info-content {
+  color: var(--mist);
+  line-height: 1.7;
+}
+
+.tour-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.tour-booking-card {
+  background: var(--white);
+  padding: var(--space-6);
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-xl);
+  margin-bottom: var(--space-4);
+}
+
+.tour-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--mist);
+}
+
+.tour-price-label {
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tour-price-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  line-height: 1;
+  margin-block: var(--space-1);
+}
+
+.tour-price-unit {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.tour-detail-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  color: var(--charcoal);
+  font-size: 0.95rem;
+}
+
+.tour-detail-item svg {
+  flex-shrink: 0;
+  color: var(--deep-canal);
+}
+
+.tour-booking-note {
+  font-size: 0.8rem;
+  color: var(--charcoal);
+  text-align: center;
+  margin-top: var(--space-3);
+  opacity: 0.7;
+}
+
+.tour-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tour-badge {
+  background: var(--gold);
+  color: var(--on-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--rounded-sm);
+}
+
+.tour-back-link {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tour-back-link a {
+  /* gold-light for contrast on the dark tour-page background (see breadcrumb) */
+  color: var(--accent-on-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tour-back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .tour-title {
+    font-size: 1.75rem;
+  }
+  
+  .tour-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .tour-gallery-main img {
+    height: 300px;
+  }
+  
+  .tour-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .tour-sidebar {
+    position: static;
+  }
+}
+
+.review-cta-inner .aggregate-stars { color: var(--gold); }
+
+/* ── Related Tours Section ──────────────────────────────────── */
+.related-tours {
+  margin-top: var(--space-16);
+  padding-top: var(--space-12);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.related-tours-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+.related-tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.related-tour-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  text-decoration: none;
+  display: block;
+}
+
+.related-tour-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.related-tour-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.related-tour-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  padding: var(--space-4) var(--space-4) var(--space-2);
+  line-height: 1.3;
+}
+
+.related-tour-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-on-dark);
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+/* Site-specific overrides */
+.faq-question:hover { color: var(--canal-teal); }
+.hero-overline { letter-spacing: 0.35em; text-transform: uppercase; font-size: 0.8125rem; }
+.hero-badge { background: rgba(0,0,0,0.55); color: var(--white); border: 1px solid var(--accent-on-dark); backdrop-filter: blur(4px); }
+.btn-secondary { backdrop-filter: blur(6px); background: rgba(255,255,255,0.12); }
+.btn-secondary:hover { background: rgba(255,255,255,0.22); }
+.comparison-col--highlight { border-color: var(--canal-teal); }
+
+/* Visually mute the last comparison column (a deliberately weaker
+   alternative comparison variant). MUST be scoped to
+   exclude highlighted cells — otherwise, on any site where
+   `highlight_column` points to the last column, this rule fades the
+   very header/cells that should stand out. Body cells are rescued by
+   `.comparison-cell--highlight { opacity: 1 !important }`, but the
+   header has no analogous rescue, producing an inconsistent 55%-faded
+   badge + label on top of a fully-opaque column body. */
+.comparison-table th:last-child:not(.comparison-col--highlight),
+.comparison-table td:last-child:not(.comparison-cta-cell):not(.comparison-cell--highlight) {
+  opacity: 0.55;
+  font-style: italic;
+}
+.comparison-table th:last-child:not(.comparison-col--highlight) {
+  font-style: normal;
+}
+
+/* Neon glow accent on trust band icons */
+.trust-icon-svg { filter: drop-shadow(0 0 6px color-mix(in srgb, var(--canal-teal) 15%, transparent)); }
+
+/* Gold accent for highlight check marks */
+.highlight-check--gold { stroke: var(--gold); }
+
+/* ── Footer SEO Links ── */
+.footer-seo-links {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: var(--space-8) 0;
+}
+.footer-seo-title {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-on-dark);
+  margin-bottom: var(--space-4);
+}
+.footer-seo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-seo-link {
+  font-size: 0.8125rem;
+  color: var(--silver);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+.footer-seo-link:hover {
+  color: var(--canal-light);
+  text-decoration: underline;
+}
+
+/* ── Guide / Article Pages ─────────────────────────────────── */
+
+/* Breadcrumb */
+.breadcrumb {
+  background: var(--mist);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--silver);
+}
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--stone);
+}
+.breadcrumb-list li:not(:last-child)::after {
+  content: "›";
+  margin-left: var(--space-2);
+  color: var(--silver);
+}
+.breadcrumb-list a {
+  color: var(--canal-teal);
+  text-decoration: none;
+}
+.breadcrumb-list a:hover {
+  text-decoration: underline;
+}
+.breadcrumb-list [aria-current="page"] {
+  color: var(--slate);
+  font-weight: 500;
+}
+
+/* Guide Header */
+.guide-header {
+  padding: var(--space-12) 0 var(--space-8);
+  text-align: center;
+}
+.guide-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-bottom: var(--space-3);
+  line-height: 1.2;
+}
+.guide-subtitle {
+  font-size: 1.05rem;
+  color: var(--slate);
+  max-width: 640px;
+  margin: 0 auto var(--space-3);
+  line-height: 1.6;
+}
+.guide-meta {
+  font-size: 0.85rem;
+  color: var(--stone);
+}
+
+/* Guide Body */
+.guide-body {
+  padding-bottom: var(--space-16);
+}
+
+/* Prose extensions for article content */
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: 0.92rem;
+}
+.prose thead {
+  background: var(--deep-canal);
+  color: var(--white);
+}
+.prose th {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.prose td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--silver);
+  color: var(--slate);
+  line-height: 1.5;
+}
+.prose tbody tr:hover {
+  background: var(--tint-surface-soft);
+}
+.prose ol {
+  list-style: decimal;
+  padding-left: var(--space-6);
+  color: var(--slate);
+}
+.prose ol li {
+  margin-bottom: var(--space-2);
+  line-height: 1.65;
+}
+
+/* Guide Listing Cards */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+.guide-card {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--silver);
+  border-radius: var(--rounded-lg);
+  padding: var(--space-6);
+  text-decoration: none;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+.guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.guide-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--deep-canal);
+  margin-bottom: var(--space-2);
+}
+.guide-card-desc {
+  font-size: 0.92rem;
+  color: var(--slate);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+}
+.guide-card-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--canal-teal);
+}
+
+/* Responsive table scroll on mobile */
+@media (max-width: 640px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ── Editorial section + figure (homepage index.html + kyoto-page spoke/landing pages) ── */
+.editorial-section { background: var(--mist); }
+.editorial-prose { margin-top: 1.5rem; }
+.editorial-figure { margin: 0 0 2rem; }
+.editorial-figure a { display: block; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px var(--shadow-tint); transition: transform .25s ease, box-shadow .25s ease; }
+.editorial-figure a:hover { transform: translateY(-3px); box-shadow: 0 16px 40px var(--shadow-tint-strong); }
+.editorial-figure img { display: block; width: 100%; height: auto; }
+.editorial-figure figcaption { margin-top: .75rem; font-size: .85rem; color: var(--slate, #475569); text-align: center; font-style: italic; line-height: 1.5; }
+/* ── Tour page: enriched content sections (Norway build) ───── */
+.tour-to-bring { list-style: none; padding: 0; }
+.tour-to-bring li {
+  position: relative; padding: var(--space-3) var(--space-3) var(--space-3) 2.2rem;
+  margin-bottom: var(--space-2); background: rgba(255,255,255,0.05);
+  border-radius: var(--rounded-md); color: var(--mist);
+}
+.tour-to-bring li::before {
+  content: ""; position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%);
+  width: 9px; height: 9px; background: var(--canal-teal);
+}
+/* Good to know / caveats — amber left-accent to read as "note" */
+.tour-good-to-know { list-style: none; padding: 0; }
+.tour-good-to-know li {
+  padding: var(--space-3) var(--space-4); margin-bottom: var(--space-2);
+  background: var(--tint-surface-faint); border-left: 3px solid var(--accent-on-dark);
+  color: var(--mist); line-height: 1.55;
+}
+/* Not suitable for */
+.tour-not-suitable ul { list-style: none; padding: 0; }
+.tour-not-suitable li {
+  position: relative; padding: var(--space-2) var(--space-3) var(--space-2) 2.2rem;
+  margin-bottom: var(--space-2); color: var(--mist);
+}
+.tour-not-suitable li::before {
+  content: "\00d7"; position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%);
+  color: var(--accent-on-dark); font-weight: 700; font-size: 1.1rem;
+}
+/* Traveler reviews */
+.tour-reviews-summary { color: var(--mist); font-size: 1.05rem; margin-bottom: var(--space-4); }
+.tour-reviews-summary strong { color: var(--white); }
+.tour-reviews-list { display: grid; gap: var(--space-4); }
+.tour-review {
+  margin: 0; padding: var(--space-5); background: rgba(255,255,255,0.05);
+  border-radius: var(--rounded-lg); border: 1px solid rgba(255,255,255,0.08);
+}
+.tour-review-stars { color: #E8C06B; display: flex; gap: 2px; margin-bottom: var(--space-2); }
+.tour-review p { color: var(--mist); font-style: italic; line-height: 1.6; margin: 0 0 var(--space-2); }
+.tour-review cite { color: rgba(255,255,255,0.7); font-style: normal; font-weight: 600; font-size: 0.9rem; }
+/* FAQ accordion */
+.tour-faq-list { display: grid; gap: var(--space-2); }
+.tour-faq-item {
+  background: rgba(255,255,255,0.05); border-radius: var(--rounded-md);
+  border: 1px solid rgba(255,255,255,0.08); overflow: hidden;
+}
+.tour-faq-item summary {
+  cursor: pointer; padding: var(--space-4); font-family: var(--font-display);
+  font-weight: 600; color: var(--white); list-style: none; position: relative; padding-right: 2.5rem;
+}
+.tour-faq-item summary::-webkit-details-marker { display: none; }
+.tour-faq-item summary::after {
+  content: "+"; position: absolute; right: var(--space-4); top: 50%; transform: translateY(-50%);
+  color: var(--canal-light); font-size: 1.4rem; font-weight: 400; transition: var(--transition-fast);
+}
+.tour-faq-item[open] summary::after { content: "\2212"; }
+.tour-faq-answer { padding: 0 var(--space-4) var(--space-4); }
+.tour-faq-answer p { color: var(--mist); line-height: 1.6; margin: 0; }
+
+/* Excludes read as the negative of includes — same card, muted left rule
+   and a x marker so the two lists are never confused at a glance. The
+   scaffold shipped NO .tour-excludes rule, so these <li>s rendered as bare
+   unstyled text beside card-styled siblings.
+   (mikumidaysafarifromzanzibar 2026-08-15) */
+.tour-excludes li {
+  position: relative;
+  padding-left: var(--space-8);
+  border-left: 3px solid var(--stone);
+  color: var(--silver);
+}
+.tour-excludes li::before {
+  content: "\00d7";
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-on-dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ── Key-takeaways / explore-hub in-body links (HOMEPAGE-CONVERSION-PATTERNS
+   §8) ── DEFAULT, not opt-in. The global reset (`a { color: inherit;
+   text-decoration: none; }`) makes any link inside .highlights-list invisible
+   without an override. Colour + weight carry the affordance at rest,
+   underline only on hover, so a 4-8 link list doesn't turn into visual
+   noise. --gold-text, not --gold — the latter is the CTA/button colour and
+   fails contrast as small body text on the pale section backgrounds. */
+#explore .highlight-item a {
+  color: var(--gold-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+#explore .highlight-item a:hover {
+  color: var(--gold-dark);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+#explore .highlight-item a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ── Narrative itinerary (HOMEPAGE-CONVERSION-PATTERNS §4) ── DEFAULT, not
+   opt-in. Written against existing tokens so a palette swap re-colours it
+   with zero edits. Header is CENTRED (matches every other .section-header
+   on this page — a left-aligned block is the one thing off the page's
+   centre axis). The stops stay LEFT-aligned inside a centred <ol> — a
+   sequence on a connector line needs a common left edge. */
+.itinerary-header {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 780px;
+  margin-bottom: var(--space-6);
+}
+.itinerary-narrative {
+  max-width: 700px;
+  margin: 0 auto var(--space-10);
+  text-align: center;
+  color: var(--slate);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+.itinerary-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 640px;
+  text-align: left;
+}
+.itinerary-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--space-4);
+  padding-bottom: var(--space-8);
+}
+.itinerary-item:last-child { padding-bottom: 0; }
+.itinerary-item::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background: var(--silver);
+}
+.itinerary-item:last-child::before { display: none; }
+.itinerary-num {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--rounded-md);
+  background: var(--gold-shimmer);
+  color: var(--on-accent);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+.itinerary-body {
+  padding-top: var(--space-1);
+  color: var(--slate);
+  line-height: 1.65;
+}
+.itinerary-body strong {
+  color: var(--charcoal);
+  font-family: var(--font-display);
+}
+@media (max-width: 640px) {
+  .itinerary-body strong { display: block; margin-bottom: var(--space-1); }
+  .itinerary-sep { display: none; }
+}
+/* ── Guide-page widget top spacing ────────────────────────────────────────
+   Both guide widgets (.guide-availability right after the intro paragraph,
+   .guide-auto-widget after the required separator section — see
+   layouts/guides/single.html) inherit the shared .section padding-block
+   (48/56/72px responsive) on top AND bottom by default, so each widget opens
+   with as much air above it as a full new section — fighting the "reads as
+   immediately following the paragraph above it" placement contract in
+   memory/reference_guide_widget_placement.md. Scoped to these two guide-only
+   classes; placed after the .section responsive breakpoint rules above so it
+   wins by source order without !important (CLAUDE.md rule #42: edit
+   site-local CSS at the source, don't fight it with specificity tricks).
+   Bottom padding is untouched, so spacing below each widget still scales
+   normally with viewport. (Codified 2026-08-21, niagarariverjetboat.com —
+   reported as a per-site fix, then generalized: the underlying markup and
+   .section rule are scaffold-wide, so every future guide page would have
+   shipped with this same oversized gap.) */
+.guide-body-intro,
+.guide-body-above-auto {
+  /* The FACING EDGE. .guide-body carries padding-bottom: var(--space-16) (64px),
+     and the two blocks that sit directly above a widget pay it straight into the
+     widget's seam. The trailing .guide-body keeps its padding — it still needs
+     the gap before the CTA band. (2026-08-21, champagnedaytoursfromparis.com:
+     the 2026-08-21 padding-top fix below, shipped alone, removed 24px of a 172px
+     stack and the complaint came back within days. Fix the seam, not one term.)
+
+     THE SELECTOR NAME IS LOAD-BEARING. This rule was written as
+     `.guide-body-section1` while layouts/guides/single.html has always rendered
+     `guide-body-above-auto` — so it selected NOTHING on every clone from the day
+     the three-way body split landed, and every guide page shipped 168px of dead
+     air above its auto widget against a 110px budget. Nothing caught it: the
+     stylesheet reads correctly, hugo builds clean, and _audit_widget_spacing.py
+     printed the same dead class name in its own remedy, so an agent following
+     the tool's advice re-applied the bug. Re-bound 2026-08-27
+     (korouomafrozenwaterfalls.com). If the template's class ever changes again,
+     change it HERE in the same commit. */
+  padding-bottom: 0;
+}
+
+/* Generic widget sections FIRST: .alt-tours-section and .guide-auto-widget are
+   both single-class selectors, so they tie on specificity and SOURCE ORDER
+   decides. With this rule last, a guide's auto widget silently takes the
+   homepage's value instead of the guide's. */
+.booking-section,
+.alt-tours-section {
+  padding-top: var(--space-8);
+}
+
+.guide-availability,
+.guide-auto-widget {
+  padding-top: var(--space-6);
+}
+
+/* NOT trimmed on purpose: .booking-widget-wrapper's own padding is the card's
+   symmetric inset. Trimming only its top renders the card lopsided.
+   Gate: python _audit_widget_spacing.py <site-dir>  (measures getComputedStyle;
+   a source grep cannot see a class that was never defined, a specificity tie,
+   or a token that computes to 0). */
+
+/* ── Fixed-header clearance ───────────────────────────────────────────────────
+   The header is position:fixed and ~60px (mobile) / ~66px (desktop) tall. Any
+   page whose first section starts at the very top of <main> has its opening
+   line rendered UNDERNEATH it: the default .section padding-block is only 48px
+   at mobile. /404.html and /guides/ shipped clipped at <=768px on every clone.
+   The recipe was already codified (memory/reference_fixed_header_traps.md,
+   Trap 1) but had never been baked into the scaffold.
+
+   MUST stay at the END of this file. .section's padding-block is redefined
+   inside later @media blocks; placed earlier, this rule loses on source order
+   and the clip returns at exactly the breakpoints the media queries cover — it
+   passed at 390px and 1440px while still failing at 768px.
+   (Reported on waiotapu-tickets.com 2026-08-24.) */
+.clears-header { padding-top: calc(66px + var(--space-8)); }
+@media (min-width: 768px) { .clears-header { padding-top: calc(66px + var(--space-10)); } }
+
+
+/* ── Button labels can never widen the page ───────────────────────────────
+   Every button class in this scaffold sets `white-space: nowrap`, and several
+   carry per-site labels from hugo.toml (`tourBackLinkText`,
+   `toursListBottomCTAButton`, `ctaButton`, `heroCTAPrimary`). A long one blows
+   past a 320px viewport and the WHOLE PAGE gains a horizontal scrollbar.
+
+   This was first fixed on `.btn-secondary-dark`, then re-fixed on `.btn-outline`
+   when the 404 changed class — and a portfolio sweep on 2026-08-25 found the
+   identical defect a third time on `.btn-primary`: waitomocavestour.com's
+   /tours/ hub measured 463px inside 320px (a 143px overflow) from its bottom-CTA
+   label alone. 20 of 31 sites showed some form of it. Fixing one selector at a
+   time is what let it survive twice, so this rule covers the family.
+
+   Desktop appearance is unchanged: `max-width` only bites when the button would
+   otherwise overflow, and the wrap is scoped to narrow viewports.
+   (rotoruamaorivillage.com 2026-08-25 — see checklist V.) */
+.btn-primary, .btn-secondary, .btn-secondary-dark, .btn-outline, .btn-sm, .btn-lg {
+  max-width: 100%;
+}
+@media (max-width: 480px) {
+  .btn-primary, .btn-secondary, .btn-secondary-dark, .btn-outline {
+    white-space: normal;
+  }
+  .btn-lg { padding: var(--space-3) var(--space-5); }
+}
+
+/* ── Narrow-viewport chrome: nowrap labels wider than the viewport ─────────
+   Two sitewide 320px horizontal-scroll bugs, both in SHARED chrome, so both
+   fail on every page type at once — home, tours, guides, legal AND /404.html.
+   Neither is greppable: the build is green, the markup audit is green, and the
+   stylesheet source reads correctly. Only _audit_viewport.py's 320px sweep
+   sees them. (Reported on knossospalacetours.com 2026-08-27.)
+
+   1. HEADER LOGO. `.logo` above is `flex-shrink: 0` and `.logo-tagline` is
+      never hidden, so the header row is as wide as the site NAME plus a
+      0.18em-tracked tagline, whatever the viewport. That makes the bug scale
+      with the name: a short two-word name fits inside 320px and a longer
+      three-word one does not, so the scaffold ships it LATENT and it surfaces
+      only on some clones. `.hamburger` must NOT shrink — it is the tap target.
+
+      This was codified as rule #39 in memory/feedback_new_project_workflow.md
+      for the Option-B kyoto scaffold in 2026, and never carried into this
+      Option-A base — which is why it resurfaced here.
+
+   2. FOOTER SEO LINKS. `.footer-seo-link` is `white-space: nowrap` so a keyword
+      phrase reads as one line. Right at desktop, wrong at 320px: a long phrase
+      is wider than the ~280px content box.
+
+      This is the SAME failure family as the `.btn-*` block directly above
+      (checklist V, rotoruamaorivillage.com 2026-08-25), whose own comment warns
+      that "fixing one selector at a time is what let it survive twice". It did:
+      that block never covered `.footer-seo-link`. Extended here rather than
+      patched in isolation — when this recurs on a THIRD selector, add it to
+      this rule, do not write a fourth block.
+
+   Desktop is unchanged in both cases: `min-width`/`max-width` only bite when the
+   element would otherwise overflow, and the wraps are scoped to narrow widths.
+   Appended at the END on purpose — these must win over the base rules above. */
+.nav-inner       { min-width: 0; }
+.logo            { flex-shrink: 1; min-width: 0; }
+.logo-text       { min-width: 0; }
+.hamburger       { flex-shrink: 0; }
+.footer-seo-grid { min-width: 0; }
+.footer-seo-link { max-width: 100%; overflow-wrap: anywhere; }
+
+/* Long UNBREAKABLE TOKENS -- the contact email, above all (codified 2026-09-03,
+   anchorageglacierhelicoptertour.com). `contactEmail` renders in three places on
+   every clone: .faq-contact-link on the homepage FAQ, .footer-link in the footer
+   contact column, and twice inside .prose on each legal page. On an exact-match
+   domain of five or more words that address is 35-45 characters with no break
+   opportunity in it, which is WIDER THAN A 320px VIEWPORT -- so the page gains a
+   horizontal scrollbar and _audit_viewport.py check [2] fails.
+
+   Measured on the reporting site (info@anchorageglacierhelicoptertour.com, 40
+   chars): documentElement.scrollWidth was 327px on the homepage, 343px on
+   /pages/privacy/ and 338px on /pages/terms/, against a 320px viewport. Nothing
+   else on that site overflowed at any swept width.
+
+   It is NOT a per-site quirk and it is NOT about that one domain -- the trigger
+   is the length of the EMD, which the builder does not choose, so a short-domain
+   clone passes and a long-domain clone fails on identical markup. `.footer-seo-link`
+   one line above already carries the same fix for long keyword labels; this
+   generalises it to the places the email actually lands.
+
+   `.tour-main-content` is in the list for a SECOND, older instance of the same
+   bug, found while regression-testing this patch: THE PRISTINE SCAFFOLD ITSELF
+   fails `tour @320px h-scroll 369>320`, because `$tour.meetingPoint` is rendered
+   as a bare <p> and GYG operators routinely paste a `https://maps.app.goo.gl/...`
+   link into that field. Measured min-content of that one paragraph: 349px. It
+   reproduced with this patch reverted, so it predates it -- which means every
+   clone whose meeting point carries a URL has been shipping a horizontally
+   scrolling tour page at 320px. `overflow-wrap` inherits, so scoping it to the
+   container covers every text block on the page without naming each one.
+
+   It needs `min-width: 0` ALONGSIDE the wrap, and that is the non-obvious half.
+   `.tour-main-content` is a GRID ITEM (`.tour-content-wrapper` is
+   `grid-template-columns: 1fr 380px`), and a grid item's automatic minimum is
+   min-content -- so the track still grows to fit the unbreakable URL no matter
+   how the text is allowed to wrap inside it. `overflow-wrap: break-word` alone
+   left the failure at exactly 369>320, unchanged. This is the same `min-width: 0`
+   the scaffold already applies to `.nav-inner` and `.footer-seo-grid` two rules
+   above, for the same reason.
+
+   `break-word` rather than `anywhere`: it breaks a token only when it would
+   otherwise overflow, and unlike `anywhere` it does not shrink min-content
+   sizing, so it cannot disturb the flex/grid layouts these elements sit in.
+   Regression-proved BOTH ways on the scaffold: `tour @320px` fails at 369>320
+   with the block removed and passes with it in place, and no other page type or
+   width changes verdict.
+   Verify: python <kit>/_audit_viewport.py <site>   # check [2], 320px column */
+.prose,
+.faq-contact,
+.faq-contact-link,
+.footer-link,
+.footer-address { overflow-wrap: break-word; }
+/* `min-width: 0` only where it is load-bearing: .tour-main-content is a grid
+   item and needs it, the five selectors above are in normal flow where
+   `min-width: auto` already resolves to 0 and the declaration would be inert. */
+.tour-main-content { overflow-wrap: break-word; min-width: 0; }
+
+@media (max-width: 480px) {
+  .logo-tagline { display: none; }
+  /* WRAP, never ellipsis. The old nowrap + text-overflow: ellipsis cut every
+     EMD-length site name mid-word at 390px ("TORRES DEL PAINE FULL DAY TOU...")
+     -- the brand is the one string the header must show whole. Two short lines
+     fit the 50px affixed bar at 320px. (Reported on
+     torresdelpainefulldaytours.com 2026-10-01.) */
+  .logo-primary {
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    white-space: normal;
+  }
+  .footer-seo-link { white-space: normal; }
+}
+
+/* Guides hub — the FACING EDGE above the template-placed auto widget.
+   `.guides-listing` is a `.section`, so it carries the responsive
+   padding-bottom (72px at desktop) and pays all of it into the seam above
+   `alt-tours.html`, measuring 200px against _audit_widget_spacing.py's 180px
+   budget on every clone. Same failure family as `.guide-body-above-auto`
+   (checklist Y1): fix the seam, not one term of it, and scope it to the
+   facing edge so the section keeps its rhythm everywhere else.
+   (Codified 2026-08-27, korouomafrozenwaterfalls.com; confirmed on four
+   earlier clones during the same-day sweep.) */
+.guides-listing { padding-bottom: var(--space-8); }
+
+
+
+/* THE HERO'S SECONDARY CTA IS THE THIRD THING OVER THE PHOTOGRAPH.
+   Same defect as .hero-price-badge, same fix, and it hid for longer because
+   _audit_hero_contrast.py's selector list stopped at text and never included a
+   button. .btn-secondary is glass -- rgba(255,255,255,0.12) fill, --white ink --
+   and hero.html renders it inside .hero, so it is white text over a white wash
+   over a picture. Measured 3.86-3.93:1 against 4.5 on a sunlit spoke once the
+   audit was finally pointed at it.
+
+   DESCENDANT-SCOPED on purpose. The only other place this class renders is
+   /404.html, where .btn-secondary-dark layers on top of it over a flat surface
+   and is already correct -- a global change would restyle a button that was
+   never the problem. Same discipline as the .hero .trust-* rules.
+   (ammandeadseatours.com 2026-09-05 -- checklist YY.) */
+.hero .btn-secondary {
+  background: color-mix(in srgb, var(--charcoal) 70%, transparent);
+  border-color: color-mix(in srgb, var(--white) 35%, transparent);
+}
+.hero .btn-secondary:hover {
+  background: color-mix(in srgb, var(--charcoal) 82%, transparent);
+}
+
+/* ── WHERE-TO-STAY SECTION (stay22-where-to-stay skill) ───────────────────────
+   Three area cards reusing .highlights-col, so they take each site's own card
+   treatment (rounded on classic builds, square and flat on flat builds -- the
+   flat overlay already covers .highlights-col). Only the grid width and the
+   link colour are new. Token-only: nothing here survives a palette swap wrongly.
+   Fewer than three areas: the grid shrinks to the columns it has and stays
+   centred (the base .highlights-grid rule sets margin-inline: auto) instead of
+   leaving an empty slot on the right -- the explore hub's F14 lesson, reused.
+   apply.py replaces everything between this header and the end marker when the
+   skill's copy changes, so edit the skill's patch, not a site's copy.          */
+@media (min-width: 900px) {
+  .stay-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8); max-width: 1140px; }
+  .stay-grid:not(:has(> :nth-child(3))) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 750px; }
+  .stay-grid:not(:has(> :nth-child(2))) { grid-template-columns: minmax(0, 1fr); max-width: 360px; }
+}
+.stay-why { color: var(--slate); font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-5); }
+.stay-link { color: var(--gold-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.stay-link:hover, .stay-link:focus-visible { color: var(--deep-canal); }
+.stay-note { color: var(--stone); font-weight: 400; }
+.stay-search { font-size: 0.925rem; }
+.stay-map { margin-block: var(--space-8); border: 1px solid var(--hairline); }
+.prose .stay-link { font-weight: 600; }
+/* CARD MODE (2026-10-25, codified from mauiwhalewatchingcruise.com): hotel cards
+   + the Stay22 map block. Square and flat (no radius, no shadow), which is what the
+   flat and rome designs require and what their audits check; token-only, so a
+   palette swap carries through. */
+.stay-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); max-width: 1140px; margin-inline: auto; }
+@media (min-width: 760px) { .stay-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .stay-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.stay-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--hairline); border-radius: 0; box-shadow: none; overflow: hidden; }
+.stay-card__media { position: relative; }
+.stay-card__img { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; border-radius: 0; }
+/* Price sits on the photo's top edge over a dark-to-clear scrim (Marina
+   2026-10-25). The scrim is the chrome navy at 78% fading to clear by
+   60% of the height, so white text reads on a sky-blue or white-cloud top. */
+.stay-card__media::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--deep-canal) 78%, transparent) 0%, color-mix(in srgb, var(--deep-canal) 35%, transparent) 30%, transparent 60%); }
+.stay-card__price { position: absolute; z-index: 1; top: var(--space-4); left: var(--space-5); color: var(--white); font-weight: 700; font-size: 1.25rem; line-height: 1.2; text-shadow: 0 1px 2px color-mix(in srgb, var(--deep-canal) 60%, transparent); }
+.stay-card__unit { font-weight: 400; font-size: 0.875rem; color: var(--white); opacity: 0.9; }
+.stay-card__body { display: flex; flex-direction: column; flex: 1; padding: var(--space-5); }
+.stay-card__style { font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-text); margin: 0 0 var(--space-2); }
+.stay-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); }
+.stay-card__name { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.3; margin: 0; color: var(--charcoal); }
+.stay-card__score { flex: none; background: var(--deep-canal); color: var(--white); font-weight: 700; font-size: 0.95rem; padding: 0.2rem 0.5rem; line-height: 1.4; }
+.stay-card__score-of { font-weight: 400; font-size: 0.75rem; opacity: 0.85; }
+.stay-card__meta { color: var(--slate); font-size: 0.875rem; margin: var(--space-2) 0 var(--space-4); }
+.stay-card__points { list-style: none; padding: 0; margin: 0 0 var(--space-5); display: grid; gap: var(--space-2); }
+.stay-card__points li { position: relative; padding-left: 1.1rem; font-size: 0.925rem; line-height: 1.55; color: var(--charcoal); }
+.stay-card__points li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; background: var(--gold); }
+/* The button follows the points directly: no divider and no push to the card's
+   foot (Marina 2026-10-25: the rule and the gap read as a separate block). */
+.stay-card__foot { display: flex; align-items: center; justify-content: flex-start; gap: var(--space-3); flex-wrap: wrap; }
+.stay-cards__checked, .stay-cards__note { max-width: 760px; margin: var(--space-4) auto 0; text-align: center; font-size: 0.85rem; color: var(--slate); line-height: 1.6; }
+.stay-cards__note { margin-top: var(--space-2); }
+.stay-map-block { max-width: 1140px; margin: var(--space-10) auto 0; }
+.stay-map-lead { text-align: center; color: var(--slate); margin: 0 auto var(--space-4); max-width: 640px; }
+.stay-map-block .stay-map { margin-block: 0; }
+/* Inside an article (.prose, ~700px wide) three columns are too narrow: one
+   card per row, photo left and text right from 640px up. The prose list and
+   paragraph rules are reset so the cards look the same as on the homepage. */
+.prose .stay-cards { grid-template-columns: minmax(0, 1fr); margin-block: var(--space-6); }
+@media (min-width: 640px) {
+  .prose .stay-card { flex-direction: row; }
+  .prose .stay-card__media { width: 38%; flex: none; }
+  .prose .stay-card__img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+}
+.prose .stay-card__points { list-style: none; padding-left: 0; margin: 0 0 var(--space-5); }
+.prose .stay-card__points li { margin: 0; padding-left: 1.1rem; }
+.prose .stay-card__points li::marker { content: none; }
+.prose .stay-card__name { margin: 0; font-size: 1.2rem; }
+.prose .stay-card__style { color: var(--gold-text); margin: 0 0 var(--space-2); font-size: 0.75rem; line-height: 1.5; }
+.prose .stay-card__meta { color: var(--slate); font-size: 0.875rem; margin: var(--space-2) 0 var(--space-4); line-height: 1.5; }
+.prose .stay-card__body p, .prose .stay-card__points li { max-width: none; }
+.prose .stay-cards__checked, .prose .stay-cards__note { text-align: left; margin-left: 0; }
+.prose a.stay-card__cta, .prose a.stay-card__cta:hover, .prose a.stay-card__cta:focus-visible { color: var(--on-accent); text-decoration: none; }
+/* Button labels such as "See rates on Booking.com" overflowed the narrow homepage cards under the
+   kit's nowrap button rule (mexicocityballoonrides 2026-10-25): let them wrap. */
+.stay-card__cta { white-space: normal; text-align: center; max-width: 100%; }
+/* ── end where-to-stay ── */
+
+/* ════════════════════════════════════════════════════════════════════════════
+   BLOG-ARTICLE DESIGN OVERLAY — after romeinaday.tours (styles.css, measured)
+   ────────────────────────────────────────────────────────────────────────────
+   Applied 2026-10-23 on budapestdinnerrivercruise.com in place of the
+   hugo-site-factory-flat overlay. The visual grammar is the reference's:
+     - white sticky header + white breadcrumb bar, both on a 1px hairline;
+     - a WHITE hero zone (tag/meta row, serif H1 ~44px, 20px deck) with the
+       photograph FRAMED inside the 1140px measure, 16:9, max 420px, a bottom
+       gradient and an italic caption -- no copy over the picture;
+     - a two-column body: article column + 300px sticky sidebar from 1000px;
+     - H2s set inline-block with a 2px accent rule ABOVE them;
+     - square corners everywhere, hairline borders instead of elevation, one
+       soft shadow on hover only;
+     - Cormorant Garamond headings, Source Sans 3 body at 17px / 1.75;
+     - a dark, centred footer.
+   The factory's section INVENTORY and order are untouched; only the frame and
+   the components' skin changed. Token-only: no literal rgba() tint and no raw
+   hex enters a :root gradient (gate 18a / 18a2).
+   ════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg-page:        var(--marble-white);
+  --bg-surface:     var(--white);
+  --bg-subtle:      var(--amber-warm);
+  --accent-tint:    var(--canal-light);
+  --accent-border:  color-mix(in srgb, var(--gold) 32%, var(--white));
+  --border:         color-mix(in srgb, var(--charcoal) 12%, transparent);
+  --border-md:      color-mix(in srgb, var(--charcoal) 20%, transparent);
+  --shadow-card:       0 2px 8px -2px var(--shadow-tint);
+  --shadow-card-hover: 0 6px 16px -4px var(--shadow-tint-strong);
+  --measure:        1140px;
+  --sidebar-w:      300px;
+}
+
+/* ── 1. Base ─────────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--slate);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(--charcoal); line-height: 1.2; }
+strong { color: var(--charcoal); font-weight: 600; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+section[id], div[id], article[id] { scroll-margin-top: 76px; }
+
+/* Square corners, everywhere. The tokens are already 0; this catches the
+   literal radii scattered through the scaffold. The author avatar is the one
+   round element on the reference. */
+*, *::before, *::after { border-radius: 0 !important; }
+.author-bar__avatar { border-radius: 50% !important; }
+
+/* Flat: no elevation on content. Hover lifts are removed card by card below. */
+.experience-card, .review-card, .step-card, .faq-item, .highlights-col, .guide-card,
+.related-tour-card, .tour-booking-card, .comparison-wrapper, .booking-widget-wrapper,
+.gallery-item, .hero-price-badge, .cta-band-inner { box-shadow: none; }
+
+/* The scaffold's fade-up hides content until an observer fires; the reference
+   has no entrance animation, and a long article column must never sit blank. */
+.fade-up { opacity: 1 !important; transform: none !important; }
+
+.container { max-width: var(--measure); padding-inline: 20px; }
+
+/* ── 2. Buttons — the reference's flat .btn ──────────────────────────────── */
+.btn, .btn-primary, .btn-outline, .btn-secondary, .btn-secondary-dark {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 1.4;
+  padding: 11px 22px;
+  text-align: center;
+  text-transform: none;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  cursor: pointer;
+}
+.btn, .btn-primary { background: var(--gold); color: var(--on-accent); border-color: var(--gold); }
+.btn:hover, .btn-primary:hover { background: var(--deep-canal); border-color: var(--deep-canal); color: var(--white); transform: translateY(-1px); box-shadow: none; }
+.btn-primary:active { transform: none; }
+.btn--sm, .btn-sm { padding: 8px 16px; font-size: 14px; }
+.btn-lg { padding: 13px 28px; font-size: 16px; }
+.btn--full, .w-full { display: block; width: 100%; }
+.btn--ghost, .btn-outline, .btn-secondary, .btn-secondary-dark {
+  background: transparent;
+  color: var(--slate);
+  border-color: var(--border-md);
+  backdrop-filter: none;
+}
+.btn--ghost:hover, .btn-outline:hover, .btn-secondary:hover, .btn-secondary-dark:hover {
+  background: transparent; color: var(--gold); border-color: var(--gold); transform: none;
+}
+
+/* ── 3. Header + breadcrumb ──────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: none;
+  min-height: 58px;
+  transform: none;
+  backdrop-filter: none;
+}
+.site-header.scrolled, .site-header--solid { background: var(--bg-surface); box-shadow: none; backdrop-filter: none; padding: 0; }
+.site-header__inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.site-logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: 0.3px;
+  line-height: 1.15;
+  min-width: 0;
+}
+.site-logo__accent { color: var(--gold); }
+.primary-nav { display: none; align-items: center; gap: 22px; }
+.primary-nav .nav-link {
+  font-size: 15px; font-weight: 500; color: var(--slate);
+  padding: 0; letter-spacing: 0; text-transform: none; background: none;
+}
+.primary-nav .nav-link:hover { color: var(--gold); background: none; }
+.primary-nav .nav-cta, .primary-nav .nav-cta:hover { color: var(--on-accent); font-size: 14px; }
+.primary-nav .nav-cta:hover { color: var(--white); }
+
+.nav-toggle {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 44px; height: 44px; padding: 0;
+  background: transparent; border: 1px solid var(--border-md);
+}
+.nav-toggle:hover { background: var(--bg-subtle); }
+.nav-toggle__bar, .nav-toggle__bar::before, .nav-toggle__bar::after {
+  display: block; width: 20px; height: 2px; background: var(--charcoal);
+}
+.nav-toggle__bar { position: relative; }
+.nav-toggle__bar::before, .nav-toggle__bar::after { content: ''; position: absolute; left: 0; }
+.nav-toggle__bar::before { top: -6px; }
+.nav-toggle__bar::after  { top:  6px; }
+
+/* Mobile menu: a dropdown under the bar, not a side drawer. */
+.mobile-backdrop { position: fixed; inset: 0; z-index: 90; background: transparent; backdrop-filter: none; }
+.mobile-menu {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 101;
+  width: auto; height: auto; max-height: calc(100dvh - 58px); overflow-y: auto;
+  display: none; transform: none;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 18px -10px var(--shadow-tint-strong);   /* the one elevated element: it covers the page */
+  padding: 8px 20px 18px;
+}
+.mobile-menu.open { display: block; transform: none; }
+.mobile-close {
+  display: block; width: auto; height: auto; margin: 0 0 4px auto; padding: 6px 0;
+  font-size: 14px; color: var(--stone); background: none;
+}
+.mobile-close:hover { background: none; color: var(--gold); }
+.mobile-nav-list { padding: 0; gap: 0; }
+.mobile-nav-link {
+  display: block; padding: 13px 0; font-size: 17px; font-weight: 500;
+  color: var(--charcoal); border-bottom: 1px solid var(--border); background: none;
+}
+.mobile-nav-link:hover { background: none; color: var(--gold); }
+.mobile-nav-link.is-cta { color: var(--gold); font-weight: 600; border-bottom: 0; }
+@media (min-width: 1000px) {
+  .primary-nav { display: flex; }
+  .nav-toggle { display: none; }
+  .mobile-menu, .mobile-backdrop { display: none !important; }
+}
+
+.breadcrumb {
+  background: var(--bg-surface);
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--stone);
+}
+.breadcrumb__inner { max-width: var(--measure); margin: 0 auto; padding: 10px 20px; }
+.breadcrumb a, .breadcrumb__home { color: var(--stone); }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb__sep { margin: 0 6px; }
+.breadcrumb__current { color: var(--charcoal); }
+
+/* ── 4. Hero zone ────────────────────────────────────────────────────────── */
+.hero, .hero-zone, .page-head {
+  position: static;
+  min-height: 0;
+  display: block;
+  background: var(--bg-surface);
+  background-image: none !important;
+  padding: 0 0 clamp(28px, 4vw, 48px);
+  color: var(--slate);
+}
+.article-header { background: var(--bg-surface); }
+.article-header__inner { max-width: var(--measure); margin: 0 auto; padding: 22px 20px 0; }
+.meta-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  margin-bottom: 14px; font-size: 13px; color: var(--stone);
+}
+.tag, .hero .tag.hero-overline {
+  display: inline-block;
+  background: var(--accent-tint);
+  color: var(--gold-dark);
+  border: 1px solid var(--accent-border);
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 600; line-height: 1.5;
+  letter-spacing: 0.6px; text-transform: uppercase;
+  padding: 4px 11px; margin: 0;
+}
+.article-h1, .hero .hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5.6vw, 46px);
+  font-weight: 600;
+  color: var(--charcoal);
+  max-width: 860px;
+  margin: 0 0 16px;
+  line-height: 1.12;
+  letter-spacing: -0.3px;
+  text-shadow: none;
+}
+.article-deck, .hero .hero-subtitle {
+  font-size: clamp(17px, 2vw, 20px);
+  color: var(--slate);
+  max-width: 760px;
+  line-height: 1.55;
+  margin: 0 0 20px;
+  text-shadow: none;
+}
+.hero .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 22px; }
+
+/* Facts strip: the reference's square .fact cards, four across from 690px. */
+.fact-strip {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
+  margin: 0 0 24px; padding: 0; list-style: none;
+  background: none; border: 0; box-shadow: none; position: static;
+}
+@media (min-width: 690px) { .fact-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.fact, .fact-strip .trust-item {
+  display: flex; flex-direction: column; gap: 4px;
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  padding: 13px 16px;
+  text-align: left;
+  align-items: flex-start;
+}
+.fact__label, .fact-strip .trust-label {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 700; line-height: 1.3;
+  letter-spacing: 0.7px; text-transform: uppercase;
+  color: var(--stone);
+}
+.fact__value, .fact-strip .trust-metric {
+  font-family: var(--font-body);
+  font-size: 16px; font-weight: 600; line-height: 1.35;
+  color: var(--charcoal);
+}
+.fact__star { color: var(--dutch-orange); }
+
+.hero-figure { position: relative; max-width: var(--measure); margin: 0 auto; padding: 0 20px; }
+.hero-figure__media {
+  position: relative; width: 100%;
+  aspect-ratio: 16 / 9; max-height: 440px; overflow: hidden;
+  background: var(--deep-canal);
+}
+.hero-figure__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.hero-figure__media::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, transparent 55%, color-mix(in srgb, var(--deep-canal) 70%, transparent) 100%);
+}
+.hero-figure__caption {
+  position: absolute; left: 18px; right: 18px; bottom: 12px; z-index: 2;
+  color: var(--accent-on-hero);
+  font-size: 13px; font-style: italic; line-height: 1.4;
+}
+@media (max-width: 689px) {
+  .hero-figure__media { aspect-ratio: 4 / 3; max-height: 300px; }
+  .hero-figure__caption { font-size: 12px; }
+}
+
+/* ── 5. Two-column body + sidebar ────────────────────────────────────────── */
+.blog-layout {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 32px 20px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+@media (min-width: 1000px) {
+  .blog-layout { grid-template-columns: minmax(0, 1fr) var(--sidebar-w); gap: 48px; }
+}
+.article-body { min-width: 0; }
+.article-sidebar { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+@media (min-width: 1000px) {
+  .article-sidebar { position: sticky; top: 80px; align-self: start; max-height: calc(100vh - 96px); overflow-y: auto; }
+}
+
+/* Everything the factory renders as a full-width .section becomes an article
+   section inside the column: no band backgrounds, no inner container gutter. */
+.article-body .section,
+.article-body .article-section {
+  padding: 0;
+  margin: 0 0 48px;
+  background: none;
+}
+.article-body .container,
+.article-body .container-narrow { max-width: none; padding-inline: 0; margin: 0; }
+.article-body .section-header { text-align: left; margin-bottom: 18px; }
+.article-body .section-subtitle { margin-inline: 0; max-width: 700px; }
+
+.section-overline {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--stone);
+  margin: 0 0 8px;
+}
+.section-title,
+.prose h2,
+.tour-section h2,
+.article-section > h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.6vw, 32px);
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.2;
+  letter-spacing: 0;
+  display: inline-block;
+  padding-top: 10px;
+  margin: 0 0 14px;
+  border-top: 2px solid var(--gold);
+}
+.section-subtitle { font-size: 17px; color: var(--slate); line-height: 1.65; }
+
+/* Author bar + TOC */
+.author-bar {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--gold);
+  padding: 14px 16px; margin: 0 0 24px;
+}
+.author-bar__avatar {
+  width: 42px; height: 42px; flex: 0 0 42px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--gold); color: var(--on-accent);
+  font-family: var(--font-display); font-weight: 700; font-size: 18px;
+}
+.author-bar__name { font-size: 15px; font-weight: 600; color: var(--charcoal); line-height: 1.4; }
+.author-bar__role { font-size: 13px; color: var(--stone); margin-top: 2px; line-height: 1.4; }
+
+.toc {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  padding: 18px 22px; margin: 0 0 32px;
+}
+.toc__label {
+  font-family: var(--font-body); font-size: 13px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--stone);
+  margin: 0 0 10px;
+}
+.toc__list, .toc--auto ul, .toc--auto ol {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px 28px;
+}
+@media (min-width: 560px) {
+  .toc__list { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(var(--toc-rows, 5), auto); grid-auto-flow: column; }
+  .toc--auto ul, .toc--auto ol { grid-template-columns: 1fr 1fr; }
+}
+.toc__list li, .toc--auto li { margin: 0; }
+.toc__list a, .toc--auto a {
+  display: flex; gap: 10px; padding: 5px 0;
+  font-size: 15px; line-height: 1.4; color: var(--slate); text-decoration: none;
+}
+.toc__list a:hover, .toc--auto a:hover { color: var(--gold); }
+.toc__num { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--gold); min-width: 22px; }
+.toc--auto ul ul { display: none; }
+
+/* Sidebar cards */
+.side-card { background: var(--bg-surface); border: 1px solid var(--border); padding: 18px 20px; }
+.side-card__title, .cta-side__title {
+  font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.25;
+  color: var(--charcoal); margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.quick-facts dl { margin: 0; display: flex; flex-direction: column; }
+.quick-facts__row {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+  font-size: 14px; line-height: 1.45; padding: 9px 0; border-bottom: 1px solid var(--border);
+}
+.quick-facts__row:last-child { border-bottom: 0; padding-bottom: 0; }
+.quick-facts dt { color: var(--stone); font-weight: 400; }
+.quick-facts dd { margin: 0; font-weight: 600; color: var(--charcoal); text-align: right; }
+.mini-tours { display: flex; flex-direction: column; }
+.mini-tour {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--slate);
+}
+.mini-tour:last-child { border-bottom: 0; padding-bottom: 0; }
+.mini-tour__thumb { width: 56px; height: 56px; flex: 0 0 56px; object-fit: cover; background: var(--bg-subtle); }
+.mini-tour__text { display: flex; flex-direction: column; min-width: 0; }
+.mini-tour__title { font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--charcoal); margin: 0 0 3px; }
+.mini-tour__price { font-size: 13px; line-height: 1.4; color: var(--gold-text); font-weight: 600; }
+.mini-tour:hover .mini-tour__title { color: var(--gold); }
+.cta-side { background: var(--accent-tint); border: 1px solid var(--accent-border); padding: 18px 20px; }
+.cta-side__title { color: var(--gold-dark); border-bottom-color: var(--accent-border); }
+.cta-side__body { font-size: 14px; line-height: 1.6; color: var(--charcoal); margin: 0 0 14px; }
+
+/* Share row */
+.share-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  margin: 32px 0 8px; padding: 18px 0 8px; border-top: 1px solid var(--border);
+}
+.share-row__label { font-size: 14px; color: var(--stone); margin-right: 6px; }
+.share-row a {
+  display: inline-flex; align-items: center; padding: 7px 16px;
+  font-size: 13px; color: var(--slate);
+  background: var(--bg-surface); border: 1px solid var(--border-md);
+}
+.share-row a:hover { color: var(--gold); border-color: var(--gold); background: var(--accent-tint); }
+
+/* Callouts + fact grids for authored prose (guides, editorial body). */
+.callout {
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-border);
+  border-left: 4px solid var(--gold);
+  padding: 16px 20px; margin: 22px 0;
+}
+.callout p { color: var(--charcoal); font-size: 16px; line-height: 1.65; margin: 0; }
+.callout p + p { margin-top: 8px; }
+.callout strong { color: var(--gold-dark); }
+.callout--navy { background: var(--bg-subtle); border-color: var(--border-md); border-left-color: var(--canal-teal); }
+.callout--navy strong { color: var(--canal-teal); }
+.fact-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin: 18px 0 24px; }
+@media (min-width: 540px) { .fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fact-grid .fact { background: var(--bg-surface); }
+.pullquote {
+  font-family: var(--font-display); font-style: italic;
+  font-size: clamp(21px, 2.6vw, 25px); line-height: 1.45; color: var(--charcoal);
+  border-left: 3px solid var(--gold); padding: 8px 0 8px 22px; margin: 24px 0;
+}
+
+/* ── 6. Prose ────────────────────────────────────────────────────────────── */
+.prose { font-size: 17px; line-height: 1.75; color: var(--slate); }
+.prose p, .prose li { font-size: 17px; line-height: 1.75; color: var(--slate); }
+.prose h2 { margin-top: 34px; }
+.prose h3 { font-family: var(--font-display); font-size: clamp(21px, 2.6vw, 25px); font-weight: 600; color: var(--charcoal); margin: 26px 0 10px; line-height: 1.3; }
+.prose h4 { font-family: var(--font-body); font-size: 15px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--charcoal); margin: 20px 0 8px; }
+.prose a { color: var(--gold-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.prose a:hover { color: var(--deep-canal); }
+.prose ul { list-style: disc; padding-left: 1.25em; }
+.prose ol { padding-left: 1.4em; }
+.prose blockquote { border-left: 3px solid var(--gold); padding: 6px 0 6px 20px; margin: 22px 0; font-style: italic; color: var(--charcoal); background: none; }
+.prose table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 15.5px; background: var(--bg-surface); border: 1px solid var(--border); display: block; overflow-x: auto; }
+.prose thead { background: var(--accent-tint); }
+.prose th {
+  text-align: left; padding: 10px 13px; font-family: var(--font-body);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+  color: var(--gold-dark); background: var(--accent-tint); border-bottom: 1px solid var(--accent-border);
+}
+.prose td { padding: 10px 13px; border-bottom: 1px solid var(--border); color: var(--slate); line-height: 1.5; vertical-align: top; }
+.prose tbody tr:last-child td { border-bottom: 0; }
+.prose tbody tr:hover { background: var(--bg-page); }
+.prose hr { border: 0; border-top: 1px solid var(--border); margin: 32px 0; }
+.hook-image { margin: 4px 0 26px; border: 1px solid var(--border); }
+.editorial-prose > p:first-of-type::first-letter {
+  font-family: var(--font-display); font-size: 4em; float: left; line-height: 0.85;
+  margin: 0.06em 0.08em 0 0; color: var(--gold); font-weight: 600;
+}
+
+/* ── 7. Cards: highlights, steps, experiences, reviews, guides ────────────── */
+.highlights-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; max-width: none; }
+@media (min-width: 690px) { .article-body .highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.highlights-col {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  padding: 20px 22px; box-shadow: none;
+}
+.highlights-col-title {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: 21px; font-weight: 600; color: var(--charcoal);
+  margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.highlights-col-title svg { color: var(--gold); }
+.highlight-item { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; line-height: 1.6; color: var(--slate); padding: 5px 0; }
+.highlight-check { color: var(--canal-teal); flex: 0 0 16px; margin-top: 5px; }
+.highlight-check--gold { color: var(--gold); }
+.highlights-cta, .steps-cta { text-align: left; margin-top: 18px; }
+
+.steps-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; counter-reset: none; }
+@media (min-width: 690px) { .article-body .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.step-card {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  padding: 20px 22px; text-align: left; box-shadow: none;
+}
+.step-card:hover { transform: none; box-shadow: var(--shadow-card-hover); }
+.step-number {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; margin: 0 0 10px;
+  background: var(--gold); color: var(--on-accent);
+  font-family: var(--font-body); font-size: 16px; font-weight: 700; line-height: 1; box-shadow: none;
+}
+.step-title { font-family: var(--font-display); font-size: 21px; font-weight: 600; color: var(--charcoal); margin: 0 0 6px; }
+.step-body { font-size: 16px; line-height: 1.65; color: var(--slate); }
+
+.experiences-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+@media (min-width: 690px) { .experiences-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .clears-header .experiences-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+#experiences .experiences-grid { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 690px) { #experiences .experiences-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.experience-card {
+  display: flex; flex-direction: column;
+  background: var(--bg-surface); border: 1px solid var(--border);
+  overflow: hidden; box-shadow: none; transition: box-shadow 0.18s ease;
+}
+.experience-card:hover { transform: none; box-shadow: var(--shadow-card-hover); }
+.experience-image { position: relative; aspect-ratio: 16 / 9; background: var(--bg-subtle); overflow: hidden; }
+.experience-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.32s ease; }
+.experience-card:hover .experience-image img { transform: scale(1.03); }
+.experience-badge, .tour-card__label {
+  position: absolute; top: 12px; left: 14px; right: auto; bottom: auto; width: auto; max-width: calc(100% - 28px); z-index: 2;
+  background: var(--gold); color: var(--on-accent);
+  font-family: var(--font-body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.7px; text-transform: uppercase; padding: 4px 10px; line-height: 1.5;
+}
+.experience-content { padding: 16px 18px 6px; flex: 1 1 auto; }
+.experience-title { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.25; color: var(--charcoal); margin: 0 0 6px; }
+.experience-card:hover .experience-title { color: var(--gold); }
+.experience-desc { font-size: 15px; line-height: 1.6; color: var(--slate); }
+.experience-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 13.5px; color: var(--stone); }
+.experience-rating { display: inline-flex; align-items: center; gap: 4px; color: var(--charcoal); font-weight: 600; }
+.experience-rating svg { color: var(--dutch-orange); }
+.experience-review-count { color: var(--stone); font-weight: 400; }
+.experience-duration { color: var(--stone); }
+.experience-footer {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding: 12px 18px; margin-top: 10px;
+  border-top: 1px solid var(--border); background: var(--bg-page);
+}
+.experience-price { font-size: 17px; font-weight: 700; color: var(--charcoal); }
+.experience-price-from { font-size: 12px; font-weight: 600; color: var(--stone); text-transform: uppercase; letter-spacing: 0.5px; }
+.experience-cta-text { font-size: 14px; font-weight: 600; color: var(--gold); }
+
+/* Featured tour card wrapping the availability widget (reference .tour-card--featured). */
+.tour-card { background: var(--bg-surface); border: 1px solid var(--border); overflow: hidden; margin: 0; }
+.tour-card__body { padding: 18px 22px 4px; display: flex; flex-direction: column; align-items: flex-start; }
+.tour-card__body .tour-card__label { position: static; margin: 0 0 8px; }
+.tour-card__title { font-family: var(--font-display); font-size: 23px; font-weight: 600; line-height: 1.25; color: var(--charcoal); margin: 0 0 8px; }
+.booking-widget-wrapper { background: none; border: 0; padding: 8px 14px 14px; min-height: 320px; box-shadow: none; }
+.booking-card-shell .booking-widget-wrapper { background: var(--bg-surface); }
+.booking-social-proof {
+  display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: flex-start;
+  margin-top: 12px; padding: 12px 16px; font-size: 14px; color: var(--slate);
+  background: var(--bg-subtle); border: 1px solid var(--border);
+}
+.social-proof-item { display: inline-flex; align-items: center; gap: 6px; }
+.social-proof-star { color: var(--dutch-orange); }
+
+/* Reviews */
+.reviews-section { background: none; }
+.reviews-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+@media (min-width: 690px) { .article-body .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.review-card { background: var(--bg-surface); border: 1px solid var(--border); padding: 18px 20px; box-shadow: none; }
+.review-card:hover { transform: none; box-shadow: none; }
+.review-text { font-size: 16px; line-height: 1.65; color: var(--slate); font-style: normal; }
+.review-stars, .aggregate-stars { color: var(--dutch-orange); }
+.aggregate-score { font-family: var(--font-display); color: var(--charcoal); }
+
+/* ── 8. Itinerary timeline, gallery, comparison ──────────────────────────── */
+.itinerary-section { background: none; }
+.itinerary-header { text-align: left; }
+.itinerary-narrative { font-size: 17px; line-height: 1.75; color: var(--slate); max-width: none; margin: 0 0 18px; text-align: left; }
+.itinerary-list { max-width: none; margin: 0; border: 1px solid var(--border); background: var(--bg-surface); padding: 6px 20px; }
+.itinerary-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.itinerary-item:last-child { border-bottom: 0; }
+.itinerary-item::before, .itinerary-list::before { display: none !important; }
+.itinerary-num {
+  flex: 0 0 32px; width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--gold); color: var(--on-accent);
+  font-family: var(--font-body); font-weight: 700; font-size: 15px; line-height: 1; box-shadow: none; position: static;
+}
+.itinerary-body { font-size: 16px; line-height: 1.65; color: var(--slate); }
+.itinerary-body strong { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--charcoal); }
+
+.gallery-section, .article-body .gallery-section { background: none; color: inherit; }
+.gallery-section .section-title { color: var(--charcoal); }
+.gallery-section .section-subtitle { color: var(--slate); }
+.gallery-section .section-overline { color: var(--stone); }
+.gallery-wrapper, .gallery-wrapper--full {
+  position: relative; width: auto; max-width: none; margin: 0; left: auto; right: auto; transform: none;
+  background: none; padding: 0;
+}
+.gallery-wrapper::after, .gallery-wrapper--full::after { display: none; }
+/* Photo-essay grid: lead photo full width, then the other four 2-up. */
+.gallery-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px 20px; }
+@media (min-width: 640px) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery-item:first-child { grid-column: 1 / -1; }
+}
+.gallery-item { margin: 0; background: none; border: 0; flex: none; max-width: none; }
+.gallery-item:hover { transform: none; box-shadow: none; }
+.gallery-open {
+  display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none;
+  cursor: zoom-in; overflow: hidden;
+}
+.gallery-open:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.gallery-item img {
+  width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block;
+  transition: transform .5s ease;
+}
+.gallery-open:hover img { transform: scale(1.025); }
+.gallery-caption {
+  position: static; background: none; backdrop-filter: none; border: 0;
+  display: flex; gap: 10px; align-items: baseline;
+  color: var(--slate); font-family: var(--font-display); font-size: 17px; font-style: italic; line-height: 1.4;
+  padding: 10px 0 0; border-top: 1px solid var(--border); margin-top: 10px;
+}
+.gallery-num {
+  flex: none; font-family: var(--font-body); font-style: normal; font-weight: 700;
+  font-size: 12px; letter-spacing: .08em; color: var(--gold);
+}
+.gallery-item:first-child .gallery-caption { font-size: 19px; }
+
+/* Lightbox */
+.gallery-lightbox {
+  width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 56px 16px 24px;
+  border: 0; background: var(--charcoal); color: var(--white);
+}
+.gallery-lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.gallery-lightbox::backdrop { background: var(--charcoal); }
+.gallery-lightbox__figure { margin: 0; max-width: 1200px; width: 100%; }
+.gallery-lightbox__img { display: block; width: 100%; height: auto; max-height: calc(100vh - 150px); object-fit: contain; }
+.gallery-lightbox__caption {
+  margin-top: 12px; text-align: center; font-family: var(--font-display); font-style: italic;
+  font-size: 18px; color: var(--accent-on-dark);
+}
+.gallery-lightbox__btn {
+  position: absolute; display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; padding: 0; cursor: pointer;
+  background: none; color: var(--white); border: 1px solid var(--accent-on-dark);
+}
+.gallery-lightbox__btn:hover, .gallery-lightbox__btn:focus-visible { background: var(--accent-on-dark); color: var(--charcoal); }
+.gallery-lightbox__close { top: 10px; right: 16px; }
+.gallery-lightbox__prev  { left: 16px;  top: 50%; transform: translateY(-50%); }
+.gallery-lightbox__next  { right: 16px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 760px) {
+  .gallery-lightbox__prev, .gallery-lightbox__next { top: auto; bottom: 16px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .gallery-item img { transition: none; } }
+
+.comparison-section { background: none; }
+.comparison-wrapper { background: var(--bg-surface); border: 1px solid var(--border); overflow-x: auto; box-shadow: none; }
+.comparison-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 15px; }
+.comparison-table thead, .comparison-table thead th { background: var(--accent-tint); color: var(--gold-dark); }
+.comparison-table th, .comparison-table td { padding: 11px 13px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; line-height: 1.5; }
+.comparison-table thead th {
+  font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.4px; text-transform: none;
+  border-bottom: 1px solid var(--accent-border); opacity: 1; font-style: normal;
+}
+.comparison-row-label { font-family: var(--font-display); font-size: 16.5px; font-weight: 600; color: var(--charcoal); background: var(--bg-surface); white-space: nowrap; }
+.comparison-cell { color: var(--slate); }
+.comparison-col--highlight, .comparison-cell--highlight { background: color-mix(in srgb, var(--canal-light) 45%, var(--white)); }
+.comparison-table thead .comparison-col--highlight { background: var(--canal-light); color: var(--gold-dark); }
+.comparison-badge {
+  display: block; width: max-content; position: static; margin: 0 0 6px;
+  background: var(--gold); color: var(--on-accent);
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase; padding: 3px 8px;
+}
+.comparison-cta-row td, .comparison-cta-row th { border-bottom: 0; }
+/* Equal weight for every column: the scaffold mutes the last one (opacity +
+   italic) as "the weaker alternative"; the reference has no such device, and a
+   real option should never look disabled. Same reversal as flat overlay §15. */
+.comparison-table th:last-child:not(.comparison-col--highlight),
+.comparison-table td:last-child:not(.comparison-cta-cell):not(.comparison-cell--highlight) { opacity: 1; font-style: normal; color: var(--slate); }
+.comparison-table thead th:last-child:not(.comparison-col--highlight) { color: var(--gold-dark); }
+.comparison-btn { white-space: nowrap; }
+
+/* ── 9. Where to stay, CTA band, alt tours, FAQ ──────────────────────────── */
+.stay-section { background: none; }
+.cta-band { background: none; padding: 0; margin: 0 0 48px; }
+.cta-band-inner {
+  background: var(--deep-canal); color: var(--white);
+  padding: 26px 28px; text-align: left; max-width: none; border-left: 4px solid var(--gold);
+}
+.cta-band .section-overline { color: var(--accent-on-dark); }
+.cta-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 29px); font-weight: 600; color: var(--white); margin: 0 0 8px; line-height: 1.2; }
+.cta-body { font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--white) 86%, transparent); margin: 0 0 16px; max-width: none; }
+.cta-body strong { color: var(--white); }
+.cta-band .btn-primary:hover { background: var(--white); color: var(--deep-canal); border-color: var(--white); }
+
+.faq-section { background: none; }
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: var(--bg-surface); border: 1px solid var(--border); box-shadow: none; }
+.faq-item:hover { transform: none; box-shadow: none; }
+.faq-question {
+  position: relative; width: 100%; display: block; text-align: left;
+  padding: 16px 48px 16px 20px;
+  font-family: var(--font-display); font-size: 19.5px; font-weight: 600; line-height: 1.3;
+  color: var(--charcoal); background: none;
+}
+.faq-question:hover { color: var(--gold); background: none; }
+.faq-question .faq-chevron { display: none; }
+.faq-question::after {
+  content: '+'; position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-body); font-size: 24px; font-weight: 400; line-height: 1; color: var(--gold);
+}
+.faq-question[aria-expanded="true"]::after { content: '\2013'; }
+.faq-item:has(.faq-question[aria-expanded="true"]) { border-color: var(--accent-border); box-shadow: var(--shadow-card); }
+.faq-answer-inner { padding: 0 20px 18px; font-size: 16.5px; line-height: 1.7; color: var(--slate); }
+.faq-answer-inner p { font-size: 16.5px; }
+.faq-answer-inner a { color: var(--gold-text); text-decoration: underline; text-underline-offset: 3px; }
+.faq-contact { text-align: left; margin-top: 16px; font-size: 15px; color: var(--stone); }
+.faq-contact-link { color: var(--gold-text); text-decoration: underline; }
+
+/* ── 10. "Keep reading" band (explore hub) ───────────────────────────────── */
+.related { background: var(--bg-surface); border-top: 1px solid var(--border); padding: 40px 20px 44px; }
+.related__inner { max-width: var(--measure); margin: 0 auto; }
+.related__title { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--charcoal); margin: 0 0 4px; }
+.related__subtitle { font-size: 15.5px; color: var(--stone); margin: 0 0 22px; }
+.related__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin: 0 0 30px; }
+@media (min-width: 690px) { .related__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.related-card {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--bg-subtle); border: 1px solid var(--border);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.related-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+.related-card__media { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--silver); }
+.related-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.related-card__body { display: flex; flex-direction: column; align-items: flex-start; padding: 14px 16px 18px; }
+.related-card__tag {
+  display: inline-block; background: var(--accent-tint); color: var(--gold-dark);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+  padding: 4px 9px; margin: 0 0 8px; line-height: 1.4;
+}
+.related-card__title { font-family: var(--font-display); font-size: 19px; font-weight: 600; line-height: 1.3; color: var(--charcoal); margin: 0 0 5px; }
+.related-card__meta { font-size: 13.5px; line-height: 1.5; color: var(--stone); }
+.related-card:hover .related-card__title { color: var(--gold); }
+
+.explore-lists { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 28px; border-top: 1px solid var(--border); padding-top: 20px; }
+@media (min-width: 690px) { .explore-lists { grid-template-columns: repeat(var(--explore-cols, 3), minmax(0, 1fr)); } }
+.explore-col__title {
+  font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--stone); margin: 0 0 8px;
+}
+.explore-col__list { list-style: none; margin: 0 0 18px; padding: 0; }
+.explore-col__list li { margin: 0; border-bottom: 1px solid var(--border); }
+.explore-col__list a { display: block; padding: 8px 0; font-size: 15px; line-height: 1.45; color: var(--slate); }
+.explore-col__list a:hover { color: var(--gold); }
+@media (max-width: 689px) { .explore-col-spacer { display: none; } .explore-col--cont { margin-top: -18px; } }
+
+/* ── 11. Footer ──────────────────────────────────────────────────────────── */
+.site-footer {
+  background: var(--deep-canal);
+  color: color-mix(in srgb, var(--marble-white) 86%, transparent);
+  padding: 44px 20px 30px;
+  font-size: 14px;
+  text-align: center;
+  border-top: 0;
+}
+.site-footer__inner { max-width: var(--measure); margin: 0 auto; }
+.site-footer__logo { font-family: var(--font-display); font-size: 25px; font-weight: 700; color: var(--white); margin: 0 0 6px; letter-spacing: 0.3px; }
+.site-footer__logo .site-logo__accent { color: var(--accent-on-dark); }
+.site-footer__tagline {
+  font-family: var(--font-display); font-style: italic; font-size: 18px; line-height: 1.5;
+  color: color-mix(in srgb, var(--marble-white) 82%, transparent);
+  max-width: 640px; margin: 0 auto 18px;
+}
+.site-footer__cta { margin: 0 0 22px; }
+.site-footer__cta .btn { padding: 13px 32px; }
+.site-footer__cta .btn:hover { background: var(--white); color: var(--deep-canal); border-color: var(--white); }
+.site-footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin: 0 0 22px; }
+.site-footer__links a, .site-footer .footer-link { color: color-mix(in srgb, var(--marble-white) 92%, transparent); font-size: 14px; }
+.site-footer__links a:hover { color: var(--accent-on-dark); }
+.footer-seo-links { background: none; border-top: 1px solid color-mix(in srgb, var(--white) 14%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--white) 14%, transparent); padding: 18px 0; margin: 0 0 18px; }
+.footer-seo-title { font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-on-dark); margin: 0 0 10px; }
+.footer-seo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; list-style: none; padding: 0; margin: 0; }
+.footer-seo-link { font-size: 13px; color: color-mix(in srgb, var(--marble-white) 80%, transparent); white-space: nowrap; }
+.footer-seo-link:hover { color: var(--accent-on-dark); }
+.site-footer__disclosure { font-size: 13px; line-height: 1.65; color: color-mix(in srgb, var(--marble-white) 76%, transparent); max-width: 760px; margin: 0 auto 12px; }
+.footer-address { font-size: 13px; color: color-mix(in srgb, var(--marble-white) 76%, transparent); margin: 0 0 10px; }
+.site-footer__copy { font-size: 12.5px; color: color-mix(in srgb, var(--marble-white) 76%, transparent); margin: 0; }
+.site-footer__copy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.site-footer__copy a:hover { color: var(--accent-on-dark); }
+
+/* ── 12. Tour page ───────────────────────────────────────────────────────── */
+.tour-page { background: var(--bg-page); color: var(--slate); padding: 0; }
+.tour-page > .container { max-width: none; padding: 0; }
+.tour-hero-zone { padding-bottom: clamp(24px, 3vw, 36px); }
+.tour-title { color: var(--charcoal); }
+.tour-rating-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px; }
+.tour-stars { color: var(--dutch-orange); letter-spacing: 2px; font-size: 17px; }
+.tour-rating-text { font-size: 15px; color: var(--slate); }
+.tour-gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin: 0; }
+@media (min-width: 760px) { .tour-gallery { grid-template-columns: 3fr 2fr; } }
+.tour-gallery-main img { width: 100%; height: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.tour-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tour-gallery-grid img { width: 100%; height: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.tour-content-wrapper.blog-layout { margin: 0 auto; }
+.tour-main-content { color: var(--slate); }
+.tour-section { margin: 0 0 36px; padding: 0; background: none; border: 0; }
+.tour-description { font-size: 17px; line-height: 1.75; color: var(--slate); margin: 0 0 14px; }
+.tour-description a { color: var(--gold-text); text-decoration: underline; }
+.tour-highlights, .tour-includes, .tour-excludes, .tour-to-bring, .tour-good-to-know, .tour-not-suitable ul {
+  list-style: none; margin: 0; padding: 4px 20px;
+  background: var(--bg-surface); border: 1px solid var(--border);
+}
+.tour-highlights li, .tour-includes li, .tour-excludes li, .tour-to-bring li, .tour-good-to-know li, .tour-not-suitable li {
+  position: relative; padding: 10px 0 10px 28px; border-bottom: 1px solid var(--border);
+  font-size: 16px; line-height: 1.6; color: var(--slate); background: none;
+}
+.tour-highlights li:last-child, .tour-includes li:last-child, .tour-excludes li:last-child,
+.tour-to-bring li:last-child, .tour-good-to-know li:last-child, .tour-not-suitable li:last-child { border-bottom: 0; }
+.tour-highlights li::before, .tour-includes li::before, .tour-excludes li::before,
+.tour-to-bring li::before, .tour-good-to-know li::before, .tour-not-suitable li::before {
+  position: absolute; left: 2px; top: 10px; font-weight: 700; line-height: 1.6;
+}
+.tour-highlights li::before { content: '\2605'; color: var(--dutch-orange); }
+.tour-includes li::before { content: '\2713'; color: var(--canal-teal); }
+.tour-excludes li::before, .tour-not-suitable li::before { content: '\2715'; color: var(--gold); }
+.tour-to-bring li::before { content: '\2022'; color: var(--canal-teal); }
+.tour-good-to-know li::before { content: 'i'; color: var(--canal-teal); font-family: var(--font-display); font-style: italic; left: 6px; }
+.tour-reviews-summary { font-size: 16px; color: var(--slate); margin: 0 0 12px; }
+.tour-reviews-list { display: grid; gap: 12px; }
+.tour-review { background: var(--bg-surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 16px 20px; margin: 0; }
+.tour-review p { font-size: 16px; line-height: 1.65; color: var(--slate); margin: 6px 0; font-style: normal; }
+.tour-review cite { font-size: 13.5px; color: var(--stone); font-style: normal; }
+.tour-review-stars { color: var(--dutch-orange); }
+.tour-faq-list { display: flex; flex-direction: column; gap: 10px; }
+.tour-faq-item { background: var(--bg-surface); border: 1px solid var(--border); }
+.tour-faq-item summary {
+  position: relative; cursor: pointer; list-style: none;
+  padding: 15px 46px 15px 20px; font-family: var(--font-display); font-size: 19px; font-weight: 600; line-height: 1.3; color: var(--charcoal);
+}
+.tour-faq-item summary::-webkit-details-marker { display: none; }
+.tour-faq-item summary::after { content: '+'; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-size: 24px; font-weight: 400; color: var(--gold); }
+.tour-faq-item[open] summary::after { content: '\2013'; }
+.tour-faq-item[open] { border-color: var(--accent-border); }
+.tour-faq-answer { padding: 0 20px 16px; }
+.tour-faq-answer p { font-size: 16.5px; line-height: 1.7; color: var(--slate); }
+.tour-faq-answer a { color: var(--gold-text); text-decoration: underline; }
+
+.tour-sidebar { position: static; }
+.tour-booking-card {
+  background: var(--bg-surface); border: 1px solid var(--border); border-top: 3px solid var(--gold);
+  padding: 20px 22px; box-shadow: none;
+}
+.tour-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.tour-price-label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--stone); }
+.tour-price-amount { font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--charcoal); line-height: 1; }
+.tour-price-unit { font-size: 14px; color: var(--stone); }
+.tour-detail-item { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--slate); padding: 4px 0; }
+.tour-detail-item svg { color: var(--canal-teal); flex: 0 0 18px; }
+.tour-booking-card .btn-primary { display: block; width: 100%; margin-top: 14px; }
+.tour-booking-note { font-size: 13px; line-height: 1.5; color: var(--stone); margin-top: 10px; }
+.tour-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.tour-badge { background: var(--accent-tint); color: var(--gold-dark); border: 1px solid var(--accent-border); font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; padding: 4px 9px; }
+
+.related-tours { max-width: var(--measure); margin: 0 auto; padding: 36px 20px 8px; border-top: 1px solid var(--border); background: none; }
+.related-tours-title { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--charcoal); margin: 0 0 18px; }
+.related-tours-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+@media (min-width: 690px) { .related-tours-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.related-tour-card { display: flex; flex-direction: column; background: var(--bg-surface); border: 1px solid var(--border); overflow: hidden; }
+.related-tour-card:hover { transform: none; box-shadow: var(--shadow-card-hover); }
+.related-tour-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.related-tour-card h3 { font-family: var(--font-display); font-size: 18.5px; font-weight: 600; line-height: 1.3; color: var(--charcoal); margin: 0; padding: 12px 16px 4px; }
+.related-tour-price { font-size: 14px; font-weight: 600; color: var(--gold-text); padding: 0 16px 14px; margin: 0; }
+.tour-back-link { max-width: var(--measure); margin: 0 auto; padding: 18px 20px 40px; }
+.tour-back-link a { color: var(--gold-text); font-weight: 600; }
+
+/* ── 13. Guides, hubs, legal, 404 ────────────────────────────────────────── */
+.guide-article { padding: 0; background: none; }
+.guide-header { text-align: left; padding: 0; background: var(--bg-surface); border: 0; }
+.guide-header .guide-title { font-size: clamp(32px, 5.6vw, 46px); text-align: left; margin: 0 0 16px; max-width: 860px; }
+.guide-header .guide-subtitle { text-align: left; margin: 0 0 8px; max-width: 760px; }
+.guide-header .guide-meta { margin: 0; font-size: 13px; color: var(--stone); }
+.toc--auto ol, .toc--auto ul { counter-reset: toc; }
+.toc--auto li { counter-increment: toc; }
+.toc--auto li > a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--gold); min-width: 22px;
+}
+.guide-page-head { padding-bottom: 8px; }
+.guide-body { padding: 0; margin: 0 0 8px; }
+.guide-availability { margin: 26px 0 40px; }
+.guide-auto-widget { margin: 30px 0 40px; }
+.guide-article .cta-band { margin-top: 36px; }
+.clears-header { padding-top: 40px; }
+.guides-listing, .section.clears-header { background: none; }
+.guides-listing .section-header, .clears-header > .container > .section-header { text-align: left; }
+.guides-listing .section-subtitle, .clears-header .section-subtitle { margin-inline: 0; }
+.guides-grid.related__grid { margin-top: 28px; }
+.guide-card .guide-card-title { font-size: 20px; border: 0; padding: 0; display: block; }
+.guide-card-link { margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--gold); }
+.page-single { background: none; }
+.page-title {
+  font-family: var(--font-display); font-size: clamp(30px, 4.4vw, 40px); font-weight: 600; color: var(--charcoal);
+  display: inline-block; padding-top: 8px; margin: 0 0 18px; border-top: 2px solid var(--gold);
+}
+
+/* ── 14. Sticky mobile CTA ───────────────────────────────────────────────── */
+.sticky-cta { background: var(--bg-surface); border-top: 1px solid var(--border-md); box-shadow: none; }
+.sticky-price-from, .sticky-price-per { color: var(--stone); }
+.sticky-price-amount { color: var(--charcoal); font-family: var(--font-display); font-weight: 700; }
+@media (min-width: 1000px) { .sticky-cta { display: none !important; } }
+
+/* ── 15. Narrow viewports ────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .site-logo { font-size: 20px; }
+  .btn, .btn-primary, .btn-outline, .btn--ghost { white-space: normal; }
+  .hero .hero-actions .btn { flex: 1 1 100%; }
+  .toc { padding: 16px 16px; }
+  .cta-band-inner { padding: 22px 20px; }
+}
+/* ── end blog-article design overlay ── */
+
+
+/* ── Single-weight display faces ──────────────────────────────────────────────
+   READ THIS BEFORE CHANGING A DISPLAY FONT.
+
+   The scaffold's own --font-display (Playfair Display) ships 600 and 700, so the
+   `font-weight: 600/700` in the rules above are real weights and this block is
+   INERT for it — the declarations below simply restate what the face already does.
+
+   It stops being inert the moment a niche swaps in a SINGLE-WEIGHT face. DM Serif
+   Display, Prata, Abril Fatface, Yeseva One and most condensed didones ship 400 and
+   nothing else. The browser then SYNTHESISES a bold by smearing the outline, which
+   on a high-contrast serif reads as a rendering fault rather than emphasis — and
+   nothing catches it: `document.fonts.check()` returns true, the CSS source is
+   correct, no audit measures stroke weight, and it looks "slightly off" rather than
+   broken. Four sites hit it before this block existed (beststockholmtours 2026-08-23,
+   timanfayatours + mountfujiprivatetours, winetoursfromcapetown 2026-09-02) and all
+   four fixed it in their own copy without patching the scaffold, so the fifth
+   rediscovered it. That is the eyeball-vs-token pattern: fixing the instance does
+   nothing for the class.
+
+   WHY IT IS ONE DECLARATION AND NOT A font-weight PIN
+   An earlier draft of this block also set `font-weight: 400`, which fixes the
+   single-weight case and BREAKS the multi-weight one — it would flatten Playfair's
+   real 700 on every clone that keeps the scaffold font. `font-synthesis-weight: none`
+   alone is correct for both: the browser's font matching still picks the nearest
+   AVAILABLE weight, it just may not fake one that is absent. Multi-weight face ->
+   the real bold, block inert. Single-weight face -> the real 400 outlines instead of
+   a smeared fake. No per-site decision, nothing to delete, nothing to remember.
+   (Caught by checklist GG's own detector while it was being regression-tested —
+   the check found the flaw in the fix it was written to verify.)
+
+   Chrome 97+, Safari 16.4+, Firefox 111+. Older browsers fall back to today's
+   behaviour, which is the synthesised bold — no worse than before. Do NOT reach for
+   the `font-synthesis` shorthand: it also disables ITALIC synthesis, and neither
+   Inter nor most body faces here are loaded with a real italic axis, so every <em>
+   would go upright.
+
+   Placement is load-bearing: this sits at the END of the file because several of
+   the selectors below are redefined inside later @media blocks, and an earlier
+   placement loses to them. NEVER WRITE A LITERAL CSS COMMENT TERMINATOR INSIDE A CSS COMMENT.
+
+   The one-liner below calls strip_css_comments() rather than inlining the
+   comment-stripping regex. Spelling that regex out here puts a literal comment
+   terminator inside THIS comment: the parser closes the comment early, reads the
+   rest of this prose as CSS, and error recovery swallows the whole selector list
+   below -- so font-synthesis-weight never applies and the single-weight face this
+   block exists to protect ships a synthesised bold anyway. Proven in headless
+   chromium: computed `auto` as shipped, `none` once the literal was removed.
+
+   This is the same failure family as the jsonify header comment and checklist
+   Y1's orphan-class diff -- a file's own documentation being read as data -- but
+   inverted and worse: there the CHECK misread the comment and reported a false
+   failure; here the BROWSER misreads it and ships a real defect, while the check
+   that would catch it (silent-failure B, "dangling comment terminator") reads as
+   the already-documented false positive. On the pristine scaffold that check must
+   be 0. If it is 1, this is the bug, not a false alarm.
+   (mountetnawinetours.com 2026-09-02, 5th instance.)
+
+   Regenerate the list if a new display-font rule is added:
+     python -c "import re,io; s=strip_css_comments(io.open('static/css/main.css',encoding='utf-8').read(),flags=re.S);        print(',
+'.join(dict.fromkeys(' '.join(m.group(1).split()) for m in re.finditer(r'([^{}]+)\{([^{}]*)\}',s) if 'var(--font-display)' in m.group(2))))"
+   (Codified 2026-09-02, winetoursfromcapetown.com — 4th instance.)             */
+.btn-outline,
+.section-title,
+.logo-primary,
+.hero-title,
+.price-amount,
+.trust-metric,
+.step-number,
+.step-title,
+.widget-fallback-title,
+.aggregate-score,
+.cta-title,
+.footer-logo-text,
+.sticky-price-amount,
+.page-title,
+.prose h2,
+.highlights-col-title,
+.guide-title,
+.prose h3,
+.guide-card-title,
+.tour-faq-item summary,
+.itinerary-body strong {
+  font-synthesis-weight: none;
+}
+
+/* ── EXPLORE-HUB BALANCED SPLIT (explore-hub.html) ────────────────────────────
+   When one of the hub's two columns is much longer, the partial splits it into
+   two halves, so the grid has THREE children. Three even columns at >= 900px;
+   below that one column, because the base .highlights-grid goes two-up at 768px
+   and three cards there would wrap two-plus-one. The second half has no heading:
+   a hidden spacer the height of a column title keeps the lists aligned, and
+   when stacked the continuation joins the card above it instead of reading as a
+   headless card. A hub with two balanced columns is untouched.
+   Same rule as hugo-site-factory-flat overlay section 12 -- change both.
+   (Marina, materasassitour.com 2026-10-22.)                                     */
+.explore-col-spacer { visibility: hidden; }
+@media (min-width: 900px) {
+  .explore-grid:has(> :nth-child(3)) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8); max-width: 1140px; }
+}
+@media (max-width: 899px) {
+  .explore-grid:has(> :nth-child(3)) { grid-template-columns: minmax(0, 1fr); }
+  .explore-col--cont { margin-top: calc(-1 * var(--space-8)); border-top: 0; padding-top: 0;
+                       border-top-left-radius: 0; border-top-right-radius: 0; }
+  .explore-grid > .highlights-col:has(+ .explore-col--cont) { border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+                       border-bottom: 0; padding-bottom: var(--space-4); box-shadow: none; }
+  .explore-col-spacer { display: none; }
+}
+/* ── end explore-hub balanced split ── */

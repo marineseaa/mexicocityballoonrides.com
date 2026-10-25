@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Mexico City Balloon Rides: a hot-air balloon over a dawn disc. Colours: dark chrome, ember accent, sunrise gold. -->
+  <rect width="64" height="64" fill="#1C2340"/>
+  <rect x="6" y="59" width="52" height="2" fill="#F2C46D"/>
+  <path d="M32 6c-11 0-19 8-19 18 0 9 7 15 12 21h14c5-6 12-12 12-21 0-10-8-18-19-18z" fill="#B0431F"/>
+  <path d="M32 6c-5 0-8 8-8 18 0 9 3 15 4 21h8c1-6 4-12 4-21 0-10-3-18-8-18z" fill="#F2C46D"/>
+  <path d="M26 45l2 5M38 45l-2 5" stroke="#F8F4EE" stroke-width="1.6"/>
+  <rect x="27" y="50" width="10" height="7" rx="1" fill="#F8F4EE"/>
+</svg>

@@ -1,0 +1,45 @@
+{{/* booking-card.html — the Viator booking card element only (no section chrome).
+     Used by booking-widget.html (homepage/landing) and guides/single.html.
+     dict: Site, tour. Emits data-affiliate-widget="availability" for the audits.
+
+     Viator has NO embeddable availability iframe for affiliates, so this card IS
+     the availability surface: it renders the product's own live facts from the
+     offers JSON and deep-links to the listing, where the visitor picks a date.
+     The href is the BARE product URL (no pid/mcid) so tracking params never sit
+     in static HTML; main.js decorates data-affiliate-href at runtime. A no-JS
+     click still reaches the right product and loses only the commission. */}}
+{{ $tour := .tour | default dict }}
+{{ $site := .Site }}
+{{ $tName := $tour.title | default "" }}
+{{/* MIXED-PROVIDER SITE: name the network from the tour URL HOST. */}}
+{{ $provider := cond (in ($tour.url | default "") "getyourguide.com") "GetYourGuide" "Viator" }}
+{{ $img := "" }}{{ $imgAlt := $tName }}
+{{ with $tour.galleryImages }}{{ $img = (index . 0).src }}{{ $imgAlt = (index . 0).alt }}{{ else }}{{ with $tour.images }}{{ $img = index . 0 }}{{ end }}{{ end }}
+{{ $price := $tour.formattedStartingPrice | default (cond (gt ($tour.startingPrice | default 0) 0) (printf "$%.0f" ($tour.startingPrice | default 0)) "") }}
+<div class="booking-card{{ if .noMedia }} booking-card--framed{{ end }}" data-affiliate-widget="availability" data-affiliate-tour-id="{{ $tour.id }}">
+  {{/* rome design (CHECKLIST E6): inside the featured booking frame the card has no
+       photo of its own; availability-surface.html passes noMedia. */}}
+  {{ if not .noMedia }}{{ with $img }}
+  <div class="booking-card-media">
+    {{ $bImg := partial "img-src.html" (dict "src" . "alt" $imgAlt "Site" $site) }}
+    <img src="{{ $bImg.src }}" alt="{{ $bImg.alt }}" loading="lazy" decoding="async" width="720" height="480">
+  </div>
+  {{ end }}{{ end }}
+  <div class="booking-card-body">
+    {{ if not .noMedia }}<h3 class="booking-card-title">{{ $tName }}</h3>{{ end }}
+    <ul class="booking-card-facts" role="list">
+      {{ with $tour.rating }}<li><span class="booking-card-star" aria-hidden="true">★</span> <strong>{{ printf "%.1f" . }}</strong>/5 ({{ lang.FormatNumber 0 ($tour.reviewCount | default 0) }} reviews)</li>{{ end }}
+      {{ with $tour.duration }}<li>{{ . }}</li>{{ end }}
+      {{ if $tour.freeCancellation }}<li>Free cancellation</li>{{ end }}
+      {{ with $tour.supplier }}<li>Operated by {{ . }}</li>{{ end }}
+    </ul>
+    {{ with $tour.includes }}
+    <p class="booking-card-includes"><strong>Includes</strong> {{ delimit (first 3 .) " · " | truncate 120 }}</p>
+    {{ end }}
+    <div class="booking-card-cta">
+      {{ with $price }}<span class="booking-card-price"><span class="price-from">From</span> <span class="price-amount">{{ . }}</span> <span class="price-per">{{ $tour.priceCategory | default "per person" }}</span></span>{{ end }}
+      <a href="{{ $tour.url }}" {{ partial "aff-attr.html" (dict "url" $tour.url) }} class="btn-primary" target="_blank" rel="sponsored nofollow noopener noreferrer">Check {{ $provider }} Availability</a>
+    </div>
+    <p class="booking-card-note">You'll choose your date and complete the booking on {{ $provider }}.{{ if $tour.freeCancellation }} Free cancellation up to 24 hours before departure.{{ end }}</p>
+  </div>
+</div>

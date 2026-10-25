@@ -1,0 +1,133 @@
+{{ define "main" }}
+{{- $allTours := index .Site.Data .Site.Params.offersDataKey -}}
+{{- $site := .Site -}}
+
+{{/* ── Hub card badges, from config (HOMEPAGE-CONVERSION-PATTERNS §7) ──
+     The scraped offers JSON has NO badge data — every tour is flags.bestSeller:false
+     — so gating a card badge on .flags means the hub renders every card unbadged
+     while homepage cards (which read data/experiences_config.yaml) are labelled.
+     Build the lookup from that same config; `all_badges` is the hub's superset,
+     falling back to `featured_tours` when a site hasn't defined one.
+
+     `int` is load-bearing: JSON numbers are float64 and Go's %v formats those with
+     %g, so 7-digit tour IDs stringify to "1.117095e+06" while 6-digit ones don't.
+     A map key is an equality test in disguise — normalise BOTH sides the same way
+     or you badge most cards and silently drop the rest. See HUGO-FLOAT64-ID-BUG.md.
+
+     Capture $id BEFORE `with .badge` — inside that block the dot is the badge
+     string and `.id` is gone. */}}
+{{- $badgeMap := dict -}}
+{{- with index $site.Data "experiences_config" -}}
+  {{- range (.all_badges | default .featured_tours) -}}
+    {{- $id := string .id -}}
+    {{- with .badge -}}{{- $badgeMap = merge $badgeMap (dict $id .) -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* .clears-header, NOT an inline padding-top. main.css pins that class to the
+     END of the file because .section padding-block is redefined in later @media
+     blocks -- but an INLINE style beats a stylesheet rule at any source order, so
+     a hand-typed padding here silently defeats the fix. --space-20 is 80px against
+     a ~66px fixed header, close enough to clip by a pixel at one width only.
+     (ammandeadseatours.com 2026-09-05 -- checklist ZZ.) */}}
+<section class="section clears-header">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <p class="section-overline">{{ $site.Params.toursListOverline | default "Our Tours" }}</p>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-subtitle">
+        {{ $site.Params.toursListSubtitle | default "Compare our tours side by side: price, length, rating and what is included." }}
+      </p>
+    </div>
+
+    {{/* DO NOT add fade-up class to this grid — see HUGO-SITE-DEPLOYMENT-CHECKLIST.md
+         "Tours grid IntersectionObserver" rule. With 30+ cards the container exceeds
+         the 12% visibility threshold and all cards remain at opacity:0. */}}
+    <div class="experiences-grid">
+      {{/* ByWeight, NOT bare .Pages: generated tour pages all carry the same
+           date, so an unsorted range yields an arbitrary hub order - it put the
+           site's own OUR PICK card last and interleaved multi-day tours against
+           the hub's own "day trips first" subtitle. Set `weight` in each tour's
+           front matter (ascending price reads well); pages without a weight sort
+           after those with one. (Reported on ziontoursfromlasvegas.com 2026-08-21.) */}}
+      {{- range .Pages.ByWeight -}}
+        {{- $page := . -}}
+        {{- $tourID := .Params.tourId -}}
+        {{- $tour := dict -}}
+        {{- range $allTours -}}
+          {{- if eq (string .id) (string $tourID) -}}
+            {{- $tour = . -}}
+          {{- end -}}
+        {{- end -}}
+        {{- with $tour -}}
+        <a href="{{ $page.RelPermalink }}" class="experience-card">
+          <div class="experience-image">
+            {{- with .images -}}
+            {{ $listImg := partial "img-src.html" (dict "src" (index . 0) "alt" $tour.title "Site" $site) }}
+            <img src="{{ $listImg.src }}" alt="{{ $listImg.alt }}" loading="lazy" width="600" height="400">
+            {{- end -}}
+            {{/* Config-driven badge, with the (effectively never-true) JSON flag as fallback. */}}
+            {{- $badge := index $badgeMap (string .id) -}}
+            {{- if and (not $badge) .flags -}}
+              {{- if .flags.bestSeller -}}{{- $badge = "Best Seller" -}}{{- end -}}
+            {{- end -}}
+            {{- with $badge -}}
+            <span class="experience-badge">{{ . }}</span>
+            {{- end -}}
+          </div>
+
+          <div class="experience-content">
+            <h2 class="experience-title">{{ .shortTitle | default .title }}</h2>
+            <p class="experience-desc">{{ .abstract }}</p>
+
+            <div class="experience-meta">
+              {{- if .rating -}}
+              <div class="experience-rating" aria-label="Rating: {{ printf "%.1f" .rating }} from {{ lang.FormatNumber 0 .reviewCount }} reviews">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span>{{ printf "%.1f" .rating }}</span>
+                <span class="experience-review-count">({{ lang.FormatNumber 0 .reviewCount }})</span>
+              </div>
+              {{- end -}}
+              {{- with .duration -}}
+              <span class="experience-duration">{{ . }}</span>
+              {{- end -}}
+              {{- if .freeCancellation -}}
+              <span class="experience-duration">Free cancellation</span>
+              {{- end -}}
+            </div>
+          </div>
+
+          <div class="experience-footer">
+            <span class="experience-price">
+              <span class="experience-price-from">From</span>
+              {{ .formattedStartingPrice }}
+              {{- /* Price basis only when it is NOT per person: a per-group charter otherwise reads
+                   as a per-person price on the card (checklist QQQ, mooreawhalewatchingtours 2026-09-30). */ -}}
+              {{ with .priceCategory }}{{ if ne . "per person" }} <span class="experience-price-from">{{ . }}</span>{{ end }}{{ end }}
+            </span>
+            <span class="experience-cta-text">View Details →</span>
+          </div>
+        </a>
+        {{- end -}}
+      {{- end -}}
+    </div>
+
+    {{/* NO widget partial on the tours hub — deliberate, same rule as the tour
+         pages themselves (Marina 2026-08-17). The card grid IS the browse UI and
+         the CTA below sends the visitor to the homepage availability widget.
+         See memory/feedback_widgets_on_guide_pages_only.md */}}
+    <div class="section-header fade-up" style="margin-top: var(--space-12); text-align: center;">
+      <p style="color: var(--slate); margin-bottom: var(--space-4);">
+        {{ $site.Params.toursListBottomCTA | default "Want to book our top-rated tour right now?" }}
+      </p>
+      <a href="/#availability" class="btn-primary btn-lg">
+        {{ $site.Params.toursListBottomCTAButton | default "Check Availability for Featured Tour" }}
+      </a>
+    </div>
+
+  </div>
+</section>
+{{ end }}

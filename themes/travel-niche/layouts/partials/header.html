@@ -1,0 +1,82 @@
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+
+      {{/* ── Logo ── */}}
+      <a href="/" class="logo" aria-label="{{ .Site.Params.siteName }} — home">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="20">
+            <path d="M2 16 L10 8 L20 12 L30 6 L38 10 L38 16 Z" fill="currentColor" opacity="0.9"/>
+            <path d="M0 16 L40 16 L36 20 L4 20 Z" fill="currentColor"/>
+            <rect x="18" y="2" width="2" height="8" fill="currentColor" opacity="0.7"/>
+            <path d="M20 2 L26 7 L20 7 Z" fill="#E8821C"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-primary">{{ upper .Site.Params.siteName }}</span>
+          <span class="logo-tagline">{{ .Site.Params.siteTagline }}</span>
+        </span>
+      </a>
+
+      {{/* ── Desktop Navigation ── */}}
+      <ul class="nav-links" role="list">
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#gallery"      class="nav-link">Gallery</a></li>
+        <li><a href="#comparison"   class="nav-link">Compare</a></li>
+        <li><a href="#reviews"      class="nav-link">Reviews</a></li>
+        <li><a href="#faq"          class="nav-link">FAQ</a></li>
+      </ul>
+
+      {{/* ── Header CTA ── */}}
+      <a href="{{ .Site.Params.gygAffiliateURL }}"
+         class="btn-primary btn-sm nav-cta"
+         target="_blank" rel="sponsored noopener"
+         data-gyg-link>
+        Book Now
+      </a>
+
+      {{/* ── Mobile Hamburger ── */}}
+      <button class="hamburger" id="hamburger-btn"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+    </nav>
+  </div>
+
+  {{/* ── Mobile Menu ── */}}
+  <div class="mobile-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <div class="mobile-menu-header">
+      <span class="logo-primary" style="color: var(--deep-canal); font-family: var(--font-display);">
+        {{ .Site.Params.siteName }}
+      </span>
+      <button class="mobile-close" id="mobile-close-btn" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="#how-it-works" class="mobile-nav-link">How It Works</a></li>
+      <li><a href="#gallery"      class="mobile-nav-link">Gallery</a></li>
+      <li><a href="#comparison"   class="mobile-nav-link">Compare Tours</a></li>
+      <li><a href="#reviews"      class="mobile-nav-link">Reviews</a></li>
+      <li><a href="#faq"          class="mobile-nav-link">FAQ</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <a href="{{ .Site.Params.gygAffiliateURL }}"
+         class="btn-primary w-full"
+         target="_blank" rel="sponsored noopener"
+         data-gyg-link>
+        Book Now — From {{ .Site.Params.startingPrice }}
+      </a>
+    </div>
+  </div>
+
+</header>

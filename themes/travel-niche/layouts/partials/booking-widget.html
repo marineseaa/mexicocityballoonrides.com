@@ -1,0 +1,48 @@
+<section class="section booking-section" id="availability" aria-labelledby="booking-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="booking-heading">{{ .Site.Params.bookingTitle }}</h2>
+      <p class="section-subtitle">{{ .Site.Params.bookingSubtitle }}</p>
+    </div>
+
+    <div class="booking-widget-wrapper fade-up">
+      {{/*
+        GetYourGuide Widget — replace data-tour_id with your actual GYG tour ID.
+        Find your widget code at: partners.getyourguide.com
+        Documentation: https://partner.getyourguide.com/en-us/product/widgets
+      */}}
+      <div data-gyg-href="https://widget.getyourguide.com/default/activitiy.frame"
+           data-gyg-tour_id="{{ .Site.Params.gygWidgetTourID }}"
+           data-gyg-locale-code="{{ .Site.Params.gygWidgetLocale }}"
+           data-gyg-widget="activitiy"
+           data-gyg-partner-id="YOUR_PARTNER_ID"
+           data-gyg-currency="{{ .Site.Params.gygWidgetCurrency }}"
+           data-gyg-cmp="widget-booking">
+      </div>
+      <script async
+        defer
+        src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+        data-gyg-partner-id="YOUR_PARTNER_ID">
+      </script>
+
+      {{/* Fallback CTA shown when widget is loading or unavailable */}}
+      <div class="widget-fallback">
+        <p>Check live availability and book instantly through our secure booking partner.</p>
+        <a href="{{ .Site.Params.gygAffiliateURL }}"
+           class="btn-primary btn-lg"
+           target="_blank" rel="sponsored noopener"
+           data-gyg-link>
+          Check Availability & Book →
+        </a>
+        <p class="widget-trust-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Secure booking · Instant confirmation · Free cancellation
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

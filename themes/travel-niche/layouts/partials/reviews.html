@@ -1,0 +1,46 @@
+<section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="reviews-heading">{{ .Site.Params.reviewsTitle }}</h2>
+      <div class="reviews-aggregate fade-up" aria-label="Aggregate rating: {{ .Site.Params.reviewsAggregate }} out of 5 from {{ .Site.Params.reviewsTotalCount }} reviews">
+        <div class="aggregate-stars" aria-hidden="true">
+          {{ range seq 5 }}
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          {{ end }}
+        </div>
+        <span class="aggregate-score">{{ .Site.Params.reviewsAggregate }}/5</span>
+        <span class="aggregate-count">from {{ .Site.Params.reviewsTotalCount }} reviews on {{ .Site.Params.reviewsSource }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="reviews-scroll-wrapper" role="region" aria-label="Guest reviews — scroll to browse">
+    <div class="reviews-scroll">
+      {{ range .Site.Data.reviews }}
+      <article class="review-card fade-up" aria-label="Review by {{ .name }}">
+        <div class="review-stars" aria-label="{{ .rating }} out of 5 stars">
+          {{ range seq .rating }}
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          {{ end }}
+        </div>
+        <blockquote class="review-text">
+          <p>"{{ .text }}"</p>
+        </blockquote>
+        <footer class="review-meta">
+          <span class="review-name">{{ .name }}</span>
+          <span class="review-separator" aria-hidden="true">·</span>
+          <span class="review-country">{{ .country }}</span>
+          <span class="review-separator" aria-hidden="true">·</span>
+          <time class="review-date">{{ .date }}</time>
+        </footer>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

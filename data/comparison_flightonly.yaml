@@ -1,0 +1,79 @@
+# Flight-only page comparison. Plain Unicode only (no HTML entities).
+# Flight-only option prices from TOURS-DIGEST.md, schedules read 25 Oct 2026. Last column is muted by CSS.
+title: "Flight-Only Options Compared"
+subtitle: "The no-transport option on six listings we review, per person, on dates we checked in late October 2026. You get yourself to the balloon port."
+highlight_column: 0
+columns:
+  - label: "Skyteam flight only"
+    badge: "OUR PICK"
+    highlight: true
+    cta: "Check dates"
+  - label: "We Fly, no transport or breakfast"
+    highlight: false
+    url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
+    cta: "Our review"
+  - label: "Viaja Teotihuacan flight only"
+    highlight: false
+    url: "/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/"
+    cta: "Our review"
+  - label: "Visita Teotihuacan flight only"
+    highlight: false
+    url: "/tours/visita-teotihuacan-balloon-ride-all-inclusive/"
+    cta: "Our review"
+  - label: "Volare, no transport"
+    highlight: false
+    url: "/tours/volare-teotihuacan-balloon-flight-from-mexico-city/"
+    cta: "Our review"
+  - label: "Cielo Azteca flight only"
+    highlight: false
+    url: "/tours/cielo-azteca-teotihuacan-balloon-flight-pickup-breakfast/"
+    cta: "Our review"
+rows:
+  - label: "Price"
+    values:
+      - "$137 flight only (MXN 2,500)"
+      - "$143 flight only (MXN 2,600)"
+      - "$148 flight only (MXN 2,699)"
+      - "$154 flight only (MXN 2,799)"
+      - "$159 flight + breakfast (MXN 2,900)"
+      - "$159 flight only (MXN 2,899)"
+  - label: "Before the flight"
+    values:
+      - "Not stated for this option"
+      - "Complimentary coffee break at reception"
+      - "Tea, coffee and bottled water"
+      - "Coffee break with cookies"
+      - "Coffee break"
+      - "Not stated for this option"
+  - label: "After landing"
+    values:
+      - "Flight certificate"
+      - "Toast and flight certificate"
+      - "Sparkling-wine toast"
+      - "Sparkling-wine toast and certificate"
+      - "Toast and diploma"
+      - "Not stated for this option"
+  - label: "Breakfast"
+    values:
+      - "No ($181 option adds a cave breakfast)"
+      - "No ($203 option adds La Gruta)"
+      - "No"
+      - "No"
+      - "Mexican breakfast at the balloon port"
+      - "No"
+  - label: "Where you meet"
+    values:
+      - "Balloon port, location sent in advance"
+      - "We Fly reception, 5 min from the archaeological zone"
+      - "Near the Pemex Pirámides station; pin sent the day before"
+      - "Gran Vuelo Teotihuacan office; details the day before"
+      - "Volare Balloon Port"
+      - "Take-off area, secure parking at the entrance"
+  - label: "Guest rating"
+    values:
+      - "4.9 from 1,528 reviews"
+      - "4.9 from 4,822 reviews"
+      - "4.9 from 8,158 reviews"
+      - "4.9 from 2,849 reviews"
+      - "4.8 from 4,438 reviews"
+      - "4.9 from 1,112 reviews"

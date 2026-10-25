@@ -1,0 +1,39 @@
+<section class="section gallery-section" id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h2 class="section-title" id="gallery-heading">Amsterdam from the Water</h2>
+      <p class="section-subtitle">Discover why our guests say the canal cruise is the best way to experience Amsterdam.</p>
+    </div>
+  </div>
+
+  <div class="gallery-scroll-wrapper" role="region" aria-label="Photo gallery — scroll to browse">
+    <div class="gallery-scroll">
+      {{ range $i, $img := .Site.Params.galleryImages }}
+      <figure class="gallery-item fade-up">
+        <img
+          src="{{ $img.src }}"
+          alt="{{ $img.alt }}"
+          width="800"
+          height="600"
+          loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}"
+          decoding="async">
+        {{ with $img.caption }}
+        <figcaption class="gallery-caption">{{ . }}</figcaption>
+        {{ end }}
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="gallery-scroll-hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Scroll to see more photos</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </div>
+  </div>
+</section>

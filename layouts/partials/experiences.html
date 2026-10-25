@@ -1,0 +1,139 @@
+{{ $allTours := index .Site.Data .Site.Params.offersDataKey }}
+{{ $config := .Site.Data.experiences_config }}
+{{ $site := .Site }}
+{{ $page := .Page }}
+
+{{/* Extract partner ID and campaign from widget file for affiliate links */}}
+{{ $featuredID := $page.Params.tourId | default $site.Params.featuredTourID | default $site.Params.gygWidgetTourID }}
+{{ $txtPath := printf "assets/widgets/gyg-availability-%v.txt" $featuredID }}
+{{ $partnerID := "" }}
+{{ $campaign := $site.Params.gygCampaign | default "" }}
+{{ if fileExists $txtPath }}
+  {{ $widgetHTML := readFile $txtPath }}
+  {{ $match := index (findRE `data-gyg-partner-id="[^"]+"` $widgetHTML) 0 }}
+  {{ $partnerID = replaceRE `data-gyg-partner-id="([^"]+)"` "$1" $match }}
+  {{ $cmpMatch := index (findRE `data-gyg-cmp="[^"]+"` $widgetHTML) 0 }}
+  {{ if $cmpMatch }}
+    {{ $campaign = replaceRE `data-gyg-cmp="([^"]+)"` "$1" $cmpMatch }}
+  {{ end }}
+{{ end }}
+
+{{/* PAGE-LEVEL CARD SET (scaffold-baked 2026-10-01, palermostreetfoodtours.com — the 4th
+     flat site to hand-port it after favignanaandlevanzoboattours, cataniaboattrips and
+     orlandofamilyactivities). A landing spoke that sets `experienceIDs` (+ index-aligned
+     `experienceBadges`, + optional experiencesOverline/Title/Subtitle) gets its own cards;
+     otherwise the site-level data/experiences_config.yaml list is used. Without this every
+     spoke re-rendered the HOMEPAGE's cards. Every id must still have a tour page (checklist KK). */}}
+{{ $cardList := slice }}
+{{ with $page.Params.experienceIDs }}
+  {{ $badges := $page.Params.experienceBadges | default slice }}
+  {{ range $i, $id := . }}
+    {{ $b := "" }}{{ if lt $i (len $badges) }}{{ $b = index $badges $i }}{{ end }}
+    {{ $cardList = $cardList | append (dict "id" $id "badge" $b) }}
+  {{ end }}
+{{ else }}
+  {{ with $config }}{{ $cardList = .featured_tours }}{{ end }}
+{{ end }}
+{{ if and $allTours $cardList }}
+{{/* Balanced 2-row grid — top row gets the extra card when the count is odd,
+     both rows equal when even. Scoped to THIS section only (via inline style
+     + #experiences-scoped CSS) so /tours/ list page keeps its own auto-fill
+     wrapping for an arbitrary/larger card count. */}}
+{{ $expCount := len $cardList }}
+{{ $expCols  := int (math.Ceil (div $expCount 2.0)) }}
+<section class="section experiences-section" id="experiences" aria-labelledby="experiences-heading">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <p class="section-overline">{{ $page.Params.experiencesOverline | default $site.Params.experiencesOverline | default "More Options" }}</p>
+      <h2 class="section-title" id="experiences-heading">{{ $page.Params.experiencesTitle | default $site.Params.experiencesTitle | default "Explore More Tours" }}</h2>
+      <p class="section-subtitle">{{ $page.Params.experiencesSubtitle | default $site.Params.experiencesSubtitle | default "Looking for something different? Browse popular alternatives." }}</p>
+    </div>
+
+    <div class="experiences-grid" style="--experiences-cols: {{ $expCols }};">
+      {{/* Loop through config to get desired tour IDs and badges */}}
+      {{ range $cardList }}
+        {{ $targetID := .id }}
+        {{ $badge := .badge }}
+
+        {{/* Find matching tour in the full tours array */}}
+        {{ range $allTours }}
+          {{ if eq (string .id) (string $targetID) }}
+            {{ $tour := . }}
+
+            {{/* Check if tour has a dedicated page */}}
+            {{ $slug := $tour.title | urlize }}
+            {{ $tourPage := printf "/tours/%s/" $slug }}
+            {{ $hasPage := false }}
+            {{ range $site.Pages }}
+              {{ if and (eq .Type "tour") (eq (string .Params.tourId) (string $targetID)) }}
+                {{ $hasPage = true }}
+                {{ $tourPage = .RelPermalink }}
+              {{ end }}
+            {{ end }}
+
+            {{/* Use internal link if page exists — keeps user on-site */}}
+            {{ $affiliateURL := $tour.url }}
+            {{ $linkTarget := "_blank" }}
+            {{ $linkRel := "sponsored noopener" }}
+            {{ if $hasPage }}
+              {{ $affiliateURL = $tourPage }}
+              {{ $linkTarget = "_self" }}
+              {{ $linkRel = "" }}
+            {{ else if $partnerID }}
+              {{ $affiliateURL = printf "%s?partner_id=%s&utm_medium=online_publisher&cmp=%s" $tour.url $partnerID $campaign }}
+            {{ end }}
+
+            {{/* Get first non-video image (filters Cloudflare Stream .m3u8 manifests) */}}
+            {{ $imageURL := partial "first-image.html" $tour.images }}
+            {{ $expImg := partial "img-src.html" (dict "src" $imageURL "alt" $tour.title "Site" $site) }}
+
+            <a href="{{ $affiliateURL }}" class="experience-card" target="{{ $linkTarget }}" rel="{{ $linkRel }}">
+              <div class="experience-image">
+                {{ with $expImg.src }}
+                <img src="{{ . }}" alt="{{ $expImg.alt }}" loading="lazy" width="600" height="400">
+                {{ end }}
+                {{ with $badge }}
+                <span class="experience-badge">{{ . }}</span>
+                {{ end }}
+              </div>
+
+              <div class="experience-content">
+                <h3 class="experience-title">{{ $tour.shortTitle | default $tour.title }}</h3>
+                <p class="experience-desc">{{ $tour.abstract }}</p>
+
+                <div class="experience-meta">
+                  {{ if $tour.rating }}
+                  <div class="experience-rating" aria-label="Rating: {{ printf "%.1f" $tour.rating }} from {{ lang.FormatNumber 0 $tour.reviewCount }} reviews">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <span>{{ printf "%.1f" $tour.rating }}</span>
+                    <span class="experience-review-count">({{ lang.FormatNumber 0 $tour.reviewCount }})</span>
+                  </div>
+                  {{ end }}
+                  {{ with $tour.duration }}
+                  <span class="experience-duration">{{ . }}</span>
+                  {{ end }}
+                </div>
+              </div>
+
+              <div class="experience-footer">
+                <span class="experience-price">
+                  <span class="experience-price-from">From</span>
+                  {{ $tour.formattedStartingPrice }}
+                  {{- /* Price basis only when it is NOT per person: a per-group charter otherwise reads
+                       as a per-person price on the card (checklist QQQ, mooreawhalewatchingtours 2026-09-30). */ -}}
+                  {{ with $tour.priceCategory }}{{ if ne . "per person" }} <span class="experience-price-from">{{ . }}</span>{{ end }}{{ end }}
+                </span>
+                <span class="experience-cta-text">View Details →</span>
+              </div>
+            </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}

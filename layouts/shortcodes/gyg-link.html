@@ -1,0 +1,38 @@
+{{/* gyg-link — inline affiliate link to a tour's OWN GetYourGuide page.
+
+     Usage in content:
+         {{< gyg-link tour="654876" >}}Shinjuku food tour{{< /gyg-link >}}
+         {{< gyg-link tour="654876" />}}      → label falls back to the listing title
+
+     Rule it exists for: every time body copy names a specific tour, the name
+     links to that tour's GetYourGuide page (codified 2026-08-21,
+     victoriafallshelicoptertours.com). Internal /tours/ links are for "read
+     our breakdown"; the tour NAME is the affiliate link.
+
+     Why a shortcode and not a Markdown link: js/main.js appends partner_id +
+     cmp at runtime ONLY to anchors carrying data-gyg-href. A plain
+     [name](https://www.getyourguide.com/…) opens the listing and earns nothing.
+     This emits the bare URL as BOTH href (static fallback — never a param'd
+     URL in static HTML) and data-gyg-href (what the JS decorates), plus the
+     same rel the tour-page CTA uses.
+
+     The URL is looked up from the offers JSON by id so it lives in one place.
+     Unknown id → build error, on purpose: a silent fallback would ship a dead
+     or wrong-product link. int-casts both sides (HUGO-FLOAT64-ID-BUG.md).
+
+     THIS FILE MUST END IMMEDIATELY AFTER </a> WITH NO TRAILING NEWLINE. A
+     shortcode's output includes the file's final newline, which renders as a
+     visible space before any punctuation that follows the link ("Pickup , from")
+     and lands in the derived FAQPage answer text too. */}}
+{{- $site := .Site -}}
+{{- $id   := .Get "tour" -}}
+{{- $tour := dict -}}
+{{- range (index $site.Data $site.Params.offersDataKey) -}}
+  {{- if eq (string .id) (string $id) -}}{{- $tour = . -}}{{- end -}}
+{{- end -}}
+{{- $url := index (split ($tour.url | default "") "?") 0 -}}
+{{- $label := trim (.Inner | default "") " \n\t" | default ($tour.title | default "") -}}
+{{- if not $url -}}
+  {{- errorf "gyg-link: tour %q not found in data/%s.json (page %s)" $id $site.Params.offersDataKey .Page.File.Path -}}
+{{- end -}}
+<a href="{{ $url }}" {{ partial "aff-attr.html" (dict "url" $url) }} target="_blank" rel="sponsored nofollow noopener noreferrer">{{ .Page.RenderString $label }}</a>
