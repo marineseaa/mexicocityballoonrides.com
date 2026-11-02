@@ -195,7 +195,8 @@
 }
 </script>
 {{ end }}
-{{ else }}
+{{/* guides/single.html emits its own Article (with datePublished); a second one here was a duplicate on every guide (2026-11-02). */}}
+{{ else if ne .Page.Type "guides" }}
 {{ $site := .Site }}
 {{ $page := .Page }}
 <script type="application/ld+json">

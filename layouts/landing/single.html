@@ -13,9 +13,15 @@
       {{ partial "author-bar.html" $ctx }}
       {{ partial "toc.html" $ctx }}
 
+      {{/* autoWidgetAfterSections (1|2, per page): render the auto widget (alt-tours.html)
+           that many blocks below the availability widget instead of near the foot. Set on
+           landing pages whose availability widget is a GetYourGuide widget (2026-11-02). */}}
+      {{ $autoAfter := int (.Params.autoWidgetAfterSections | default 0) }}
       {{ partial "booking-widget.html" $ctx }}
       {{ partial "highlights.html"     $ctx }}
+      {{ if eq $autoAfter 1 }}{{ partial "alt-tours.html" $ctx }}{{ end }}
       {{ partial "how-it-works.html"   $ctx }}
+      {{ if eq $autoAfter 2 }}{{ partial "alt-tours.html" $ctx }}{{ end }}
       {{ partial "gallery.html"        $ctx }}
       {{ partial "comparison.html"     $ctx }}
       {{ partial "experiences.html"    $ctx }}
@@ -35,7 +41,7 @@
 
       {{ partial "reviews.html"   $ctx }}
       {{ partial "cta-band.html"  $ctx }}
-      {{ partial "alt-tours.html" $ctx }}
+      {{ if not $autoAfter }}{{ partial "alt-tours.html" $ctx }}{{ end }}
       {{ partial "faq.html"       $ctx }}
       {{ partial "share-row.html" $ctx }}
     </div>
