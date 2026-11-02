@@ -21,7 +21,7 @@ cardImage: "/images/teotihuacan-balloon-weather-cancellations-hook.webp"
 
 <img class="hook-image" src="/images/teotihuacan-balloon-weather-cancellations-hook.webp" alt="Weather-cancelled Teotihuacán balloon flights are usually moved to a new date; refund terms vary by operator" width="1200" height="630">
 
-If wind, fog or rain grounds your Teotihuacán balloon flight, the usual outcome is a free new date, not a refund. We Fly Teotihuacan and Globos Aerostáticos Teotihuacán both reschedule at no cost, while a Civitatis-sold tour refunds the price minus a MX$420 ground-transport fee. Your cleanest exit is the booking platform's own rule: on Viator listings marked free cancellation you get a full refund if you cancel at least 24 hours before the start time, so for a 5:00 a.m. pickup that means by 5:00 a.m. the day before.
+If wind, fog or rain grounds your Teotihuacán balloon flight, the usual outcome is a free new date, not a refund. We Fly Teotihuacan and Globos Aerostáticos Teotihuacán both reschedule at no cost, while a Civitatis-sold tour refunds the price minus a MX$420 ground-transport fee. Your cleanest exit is the booking platform's own rule: on Viator listings marked free cancellation you get a full refund if you cancel at least 24 hours before the start time, so for a 5:00 a.m. pickup that means by 5:00 a.m. the day before. Our guide on [how to book](/guides/how-to-book-teotihuacan-balloon-ride/) sets the operators' own cancellation windows side by side.
 
 <!--more-->
 
@@ -39,7 +39,7 @@ A flight can also be cut short. Globos Aerostáticos Teotihuacán says flight ti
 
 There is no single rule. Each balloon company sets its own terms for a weather cancellation, and resellers add their own on top. These are the policies we could source:
 
-- We Fly Teotihuacan (direct bookings): if it cannot fly on your date, it reschedules you to another sunrise free, at no extra cost. Its terms do not state a refund for weather.
+- We Fly Teotihuacan (direct bookings): if it cannot fly on your date, it reschedules you to another sunrise free, at no extra cost. Its two policy pages differ on refunds: the cancellation policy also offers a refund of the flight portion, while the policies-and-restrictions page limits weather refunds to international passengers on the standard fare and gives everyone else a gift certificate valid for six months (both pages checked 2 November 2026).
 - Globos Aerostáticos Teotihuacán (direct bookings): no refund for weather. The balloon flight is rescheduled free, but extras such as transport, lodging, ruins entry and restaurant are not recoverable. If you do not rebook at the venue, you have 90 calendar days to reschedule. Foreign visitors who can show a departing itinerary can be refunded, minus extra services already used.
 - Civitatis (reseller, balloon and ruins tour): if weather prevents the flight, it refunds the price minus MX$420 per passenger for the ground transport, about $22.
 - Arc Tours (Viator listing): if cancelled because of poor conditions, you will be offered another date.
@@ -88,7 +88,7 @@ If you are choosing between operators, our [comparison of the flights we review]
 
 ### Do I get a refund if my Teotihuacán balloon flight is cancelled for weather?
 
-Not always. We Fly and Globos Aerostáticos Teotihuacán reschedule for free and do not promise a refund, and a Civitatis tour refunds minus MX$420 for transport. Policies vary, so check yours before booking.
+Not always. Globos Aerostáticos Teotihuacán reschedules for free and does not promise a refund, We Fly reschedules for free and refunds weather cancellations only in limited cases, and a Civitatis tour refunds minus MX$420 for transport. Policies vary, so check yours before booking.
 
 ### Who decides whether the balloons fly?
 
@@ -111,7 +111,7 @@ Wind thresholds 10-15 km/h (El Universal experts) vs GA-MX >20 km/h, fog, prolon
 Pilot decides: ledger s2 (GA-MX). AFAC commission decides on weather, 5:00-9:00 (Milenio): ledger s4a.
 1 Feb 2026 cold front 32: ledger s6.
 Early landing no refund, approximate duration: ledger s2 (GA-MX). 30-60 min quoted: ledger s2.
-WeFly reschedule free, no refund stated: ledger s7. GA-MX no refund, extras not recoverable, 90 days, foreign visitors refund minus extras: ledger s7. Civitatis MX$420 (about $22 at FIX 18.667): ledger s7, s14. Arc Tours another date: digest 484176P1 goodToKnow. El Universal pattern quote: ledger s7.
+WeFly reschedule free: ledger s7. WeFly weather refund wording (2026-11-02): wefly.com.mx/en/politica-de-cancelacion s7 'refund of the component corresponding to the flight'; wefly.com.mx/en/politicas-y-restricciones s6 refunds only for international passengers on the standard fare, else 6-month gift certificate. GA-MX no refund, extras not recoverable, 90 days, foreign visitors refund minus extras: ledger s7. Civitatis MX$420 (about $22 at FIX 18.667): ledger s7, s14. Arc Tours another date: digest 484176P1 goodToKnow. El Universal pattern quote: ledger s7.
 Viator 24 h, local time, vast majority, check listing; weather outcome not confirmed: ledger s7. All offers freeCancellation True: digest. GYG wording "Cancel up to 24 hours in advance for a full refund": offers JSON cancellationDescription (696822, 34858 etc.).
 Pickup/check-in 4:30-5:40: ledger s2, digest 1432828. UTC-6: ledger s15.
 Viator weather outcome not sourced; page only suggests contacting support.

@@ -104,7 +104,7 @@ keywords:
   - "teotihuacan hot air balloon for couples"
 ---
 
-For a basket with nobody else in it, book {{< tour-link tour="309496P6" >}}Zuyuá's private sunrise balloon for two{{< /tour-link >}}. It is priced per group, not per person: about $1,017 for up to two people on dates we checked in late October 2026, or roughly $509 each. That covers pickup from your accommodation, breakfast, a certified guide at the pyramids and the entry tickets. It is rated 4.9 from 40 reviews. The cheaper "private" tours on Viator mostly mean a private car and guide, with a shared balloon. [Our review →](/tours/zuyua-private-sunrise-balloon-for-two/)
+For a basket with nobody else in it, book {{< tour-link tour="309496P6" >}}Zuyuá's private sunrise balloon for two{{< /tour-link >}}. It is priced per group, not per person: about $1,017 for up to two people on dates we checked in late October 2026, or roughly $509 each. That covers pickup from your accommodation, breakfast, a certified guide at the pyramids and the entry tickets. It is rated 4.9 from 41 reviews. The cheaper "private" tours on Viator mostly mean a private car and guide, with a shared balloon. [Our review →](/tours/zuyua-private-sunrise-balloon-for-two/)
 
 ## Private basket or private ground tour
 
@@ -132,7 +132,7 @@ Excellentravel's private option was about $357 per person, with lobby pickup, br
 
 ## Proposals, anniversaries and couples
 
-None of the private listings here describes a proposal package, decorations or a set routine for celebrations. If you plan to propose in the basket, message the operator through the booking before you pay and ask what they can arrange. Only a private basket guarantees the moment is yours: on a shared flight you will have company. Weight rules still apply, and whether you pass over the pyramids still depends on the wind.
+None of the marketplace listings here describes a proposal package, decorations or a set routine for celebrations. HappyFly sells one direct: a celebration package for two at MXN 9,500 (operator's price page, checked 2 November 2026) with a private basket, a banner, roses, a cake and a photo session; our [ride for two guide](/guides/teotihuacan-balloon-ride-for-two/) compares it with the other couple options. If you plan to propose on a listing here, message the operator through the booking before you pay and ask what they can arrange. Only a private basket guarantees the moment is yours: on a shared flight you will have company. Weight rules still apply, and whether you pass over the pyramids still depends on the wind.
 
 ## Who each option suits
 
@@ -149,6 +149,6 @@ Zuyuá inclusions (breakfast, certified guide, tickets, AC vehicle, round trip f
 Feliz private: private transport, breakfast, entry ticket excluded, 6.1 h, pickup from accommodation: digest 5553640P2. "Private ride, just my wife and me": sampleReviews 5553640P2 (Mar 2026). Certified guide not in its includes list (checked).
 Luxury Tours: private transport, guided visit, zone tickets, breakfast, alcoholic drinks, shared balloon, private balloon extra cost, SUV/minivan, hotel or house: digest 323089P1. Anniversary reviews: sampleReviews 323089P1 (two entries).
 Excellentravel: quote "balloon flight is shared in small groups..." , lobby pickup, local restaurant breakfast, ~2:30 h guided visit, SECTUR guide, return ~1:00 pm: digest 333644P5.
-No proposal package described: checked includes/descriptions of 309496P6, 5553640P2, 323089P1, 333644P5.
+No proposal package described on the listings: checked includes/descriptions of 309496P6, 5553640P2, 323089P1, 333644P5. HappyFly celebration package MXN 9,500 for two, direct only (no listing): https://happyfly.mx/en/prices/ checked 2026-11-02.
 Zone entry MX$210: ledger s5. Overflight depends on wind: ledger s3. AFAC permit, licence, insurance checks: ledger s4a. UTC-6: ledger s15.
 -->

@@ -73,7 +73,7 @@ Acolman suits two kinds of traveller: those who drive themselves to a [flight-on
 
 The Basilica of Guadalupe stands in the north of Mexico City, about 37 km southwest of the site and close to Insurgentes Norte, the road most tours use to leave and re-enter the city. One news outlet gives its hours as 6:00 to 20:00 daily; confirm on the basilica's own site before you go.
 
-The easiest way to add it is to book it with the flight. Amigo Tours LATAM's {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}} has a top option with guided visits to both Teotihuacán and the Basilica; the drop-off is the meeting point, but you may stay at the Basilica and make your own way back. It is rated 4.6 from 1,285 reviews on GetYourGuide. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/) The same product is sold on Viator as {{< tour-link tour="5885P459" >}}Balloon Flight with Teotihuacan & Guadalupe Shrine{{< /tour-link >}}.
+The easiest way to add it is to book it with the flight. Amigo Tours LATAM's {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}} has a top option with guided visits to both Teotihuacán and the Basilica; the drop-off is the meeting point, but you may stay at the Basilica and make your own way back. It is rated 4.6 from 1,306 reviews on GetYourGuide. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/) The same product is sold on Viator as {{< tour-link tour="5885P459" >}}Balloon Flight with Teotihuacan & Guadalupe Shrine{{< /tour-link >}}.
 
 ## If you are not flying, or want a second day
 
@@ -81,8 +81,8 @@ Some people in a group skip the balloon, and some flights are grounded by wind. 
 
 | Tour | Price | What it is |
 |---|---|---|
-| {{< tour-link tour="34858" >}}Teotihuacan Early Access Tour{{< /tour-link >}} | $68 | Guided morning visit with entry, obsidian workshop and tequila tasting; groups up to 15; 4.6 from 1,922 reviews |
-| {{< tour-link tour="979732" >}}Morning Express Teotihuacan Tour{{< /tour-link >}} | $86 | Pickup from Polanco, Roma, Condesa or Centro, arrival around 8:00, back by midday; 5.0 from 57 reviews |
+| {{< tour-link tour="34858" >}}Teotihuacan Early Access Tour{{< /tour-link >}} | $68 | Guided morning visit with entry, obsidian workshop and tequila tasting; groups up to 15; 4.6 from 1,927 reviews |
+| {{< tour-link tour="979732" >}}Morning Express Teotihuacan Tour{{< /tour-link >}} | $86 | Pickup from Polanco, Roma, Condesa or Centro, arrival around 8:00, back by midday; 5.0 from 59 reviews |
 | {{< tour-link tour="429068" >}}Teotihuacan Skip-the-Line Ticket{{< /tour-link >}} | $29 | Entry ticket only, no guide; 4.0 from 102 reviews |
 | {{< tour-link tour="1241575" >}}Teotihuacan & Guadalupe with barbacoa lunch{{< /tour-link >}} | $138 | Teotihuacán, the Basilica and Tlatelolco with a guide; 5.0 from 2 reviews |
 
@@ -134,6 +134,6 @@ La Gruta cave, ~200 m from Puerta 5, early 20th century (dates conflict), ~700 s
 Workshops: TOURS-DIGEST 357659P1, 482323P1, 323089P1, 696822 itinerary (Artesanías El Quetzal 45 min); Civitatis list: ledger s13. Obsidian as volcanic glass worked at Teotihuacan: general knowledge.
 Acolman Museo Virreinal/ex-convent San Agustín, 9-17:30, MX$65 in 2022 (outdated), free Sundays for Mexicans etc., ~10 km SW straight line: ledger s13.
 Basilica ~37 km SW, near Insurgentes Norte, 6-20 (single outlet): ledger s13, s1.
-696822 Basilica option, drop-off/stay at Basilica, 4.6 from 1,285: TOURS-DIGEST, offers JSON. Same product 5885P459: TOURS-DIGEST. Duration 4.2-12 h: TOURS-DIGEST 5885P459.
-GYG no-balloon tours prices/ratings: TOURS-DIGEST/offers JSON (34858 $68 4.6/1,922, small group up to 15, starts Hostal Amigo; 979732 $86 5.0/57, pickup areas, ~8:00 arrival, back by midday; 429068 $29 4.0/102, listing mentions climbing the Sun; 1241575 $138 5.0/2, Tlatelolco).
+696822 Basilica option, drop-off/stay at Basilica, 4.6 from 1,306: TOURS-DIGEST, offers JSON. Same product 5885P459: TOURS-DIGEST. Duration 4.2-12 h: TOURS-DIGEST 5885P459.
+GYG no-balloon tours prices/ratings: TOURS-DIGEST/offers JSON (34858 $68 4.6/1,927, small group up to 15, starts Hostal Amigo; 979732 $86 5.0/57, pickup areas, ~8:00 arrival, back by midday; 429068 $29 4.0/102, listing mentions climbing the Sun; 1241575 $138 5.0/2, Tlatelolco).
 Return times: GA-MX 10:00 and 14:30 (ledger s2, s13); Explora 1-2 pm (TOURS-DIGEST 394927P1). Drive 45-60 min: ledger s1. Midday traffic remark: general, hedged. -->

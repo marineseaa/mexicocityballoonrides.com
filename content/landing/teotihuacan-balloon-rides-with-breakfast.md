@@ -104,7 +104,7 @@ keywords:
   - "teotihuacan balloon breakfast la gruta price"
 ---
 
-If the point is breakfast at La Gruta, the cave restaurant behind the Pyramid of the Sun, book {{< tour-link tour="247495P2" >}}We Fly's balloon flight with breakfast at La Gruta{{< /tour-link >}}. On dates we checked in late October 2026 the flight plus La Gruta was about $203 per person if you drive to We Fly's reception, and about $274 with transport and an express return to Mexico City. We Fly warns that the wait outside the restaurant is beyond its control. If any natural cave will do, other operators charge less. We Fly is rated 4.9 from 4,822 reviews. [Our review →](/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/)
+If the point is breakfast at La Gruta, the cave restaurant behind the Pyramid of the Sun, book {{< tour-link tour="247495P2" >}}We Fly's balloon flight with breakfast at La Gruta{{< /tour-link >}}. On dates we checked in late October 2026 the flight plus La Gruta was about $203 per person if you drive to We Fly's reception, and about $274 with transport and an express return to Mexico City. We Fly warns that the wait outside the restaurant is beyond its control. If any natural cave will do, other operators charge less. We Fly is rated 4.9 from 4,823 reviews. [Our review →](/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/)
 
 ## Three kinds of balloon breakfast
 
@@ -139,15 +139,15 @@ For drive-yourself details, see [flight-only tickets](/teotihuacan-balloon-fligh
 
 ## Cave breakfast with transport: prices
 
-With round-trip transport from Mexico City, the cave packages cluster between about $211 and $240. Skyteam's all-inclusive was about $211, {{< tour-link tour="484134P1" >}}Cielo Azteca{{< /tour-link >}} about $217, {{< tour-link tour="5491014P1" >}}Teotihuacan Adventures{{< /tour-link >}} about $228, {{< tour-link tour="5553640P1" >}}Teotihuacán Feliz{{< /tour-link >}} about $231, {{< tour-link tour="357659P1" >}}Viaja Teotihuacan{{< /tour-link >}} about $236 and Tlatoani about $240. {{< tour-link tour="426035P21" >}}Magic Balloons{{< /tour-link >}} sells a single cave-and-transport option at about $181, with 120 reviews against thousands for the larger operators. None of these includes the MX$210 zone entry unless the option says so. The full spread is on our [prices page](/teotihuacan-balloon-ride-prices/).
+With round-trip transport from Mexico City, the cave packages cluster between about $211 and $240. Skyteam's all-inclusive was about $211, {{< tour-link tour="484134P1" >}}Cielo Azteca{{< /tour-link >}} about $217, {{< tour-link tour="5491014P1" >}}Teotihuacan Adventures{{< /tour-link >}} about $228, {{< tour-link tour="5553640P1" >}}Teotihuacán Feliz{{< /tour-link >}} about $231, {{< tour-link tour="357659P1" >}}Viaja Teotihuacan{{< /tour-link >}} about $236 and Tlatoani about $240. {{< tour-link tour="456146P3" >}}Visita Teotihuacan{{< /tour-link >}} sells the same cave-and-transport package at about $231, with 4.9 stars from more than 2,800 reviews. None of these includes the MX$210 zone entry unless the option says so. The full spread is on our [prices page](/teotihuacan-balloon-ride-prices/).
 
 ## Which breakfast suits you
 
 Book We Fly if La Gruta itself is the draw and you can live with a possible wait. Book Skyteam or Tlatoani for a cave breakfast at a lower price, with or without transfer. Pick Visita Teotihuacan or Explora México if you want to know the menu in advance, and Volare if you would rather eat at the balloon port and keep the morning short. Whatever you book, dawn in the valley is cold, with average lows of about 2 to 4 °C from December to March, so read [what to wear](/guides/what-to-wear-teotihuacan-balloon-ride/). Our [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) page compares every flight.
 
 <!-- GK-AUDIT: teotihuacan-balloon-rides-with-breakfast
-Prices (TOURS-DIGEST / mcbr_offers priceOptions, 25 Oct 2026): 247495P2 TG7 $203, TG5 $274, TG1 $231, TG6 $143; 482323P1 TG3 $181, TG2 $137, TG1 $211; 366381P1 TG2 $201, TG3 $157, TG1 $240; 456146P3 TG3 $231; 394927P1 TG1 $219, TG4 $203; 377048P1 TG3 $208; 171986P1 TG3 $159; 484134P1 TG1 $217; 5491014P1 TG1 $228; 5553640P1 $231; 357659P1 TG1 $236; 426035P21 $181 (120 reviews); 193670P3 $350 (offers JSON USD).
-Range $181-$274 and +$44 to +$60: arithmetic on the above. Rating 247495P2 4.9/4,822 (digest).
+Prices (TOURS-DIGEST / mcbr_offers priceOptions, 25 Oct 2026): 247495P2 TG7 $203, TG5 $274, TG1 $231, TG6 $143; 482323P1 TG3 $181, TG2 $137, TG1 $211; 366381P1 TG2 $201, TG3 $157, TG1 $240; 456146P3 TG3 $231; 394927P1 TG1 $219, TG4 $203; 377048P1 TG3 $208; 171986P1 TG3 $159; 484134P1 TG1 $217; 5491014P1 TG1 $228; 5553640P1 $231; 357659P1 TG1 $236; 193670P3 $350 (offers JSON USD).
+Range $181-$274 and +$44 to +$60: arithmetic on the above. Rating 247495P2 4.9/4,823 (digest).
 We Fly waiting-time warnings, "subject to availability", "may be a timeout", "La Cueva" in TG1: digest 247495P2 option texts. Review "breakfast at the cave wasn't provided" (Mar 2026): mcbr_offers sampleReviews 247495P2.
 La Gruta: natural volcanic cave, ~200 m from Puerta 5 behind Pyramid of the Sun, early 20th century, breakfast 8:00-11:00 (Chilango 2021), cool ~6 °C (Chilango, single-source, attributed): ledger s9. Not claimed buffet; not claimed all operators use it.
 WeFly sells La Gruta package: ledger s9. Paseos Olmedo La Gruta stop optional, food not included: digest 193670P3. Arc Tours buffet optional in Restaurant La Cueva: digest 484176P1.

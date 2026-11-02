@@ -27,7 +27,7 @@ Children can fly over Teotihuacán, but the minimum age depends on the operator:
 
 ## Minimum ages by operator
 
-There is no single rule for the valley. Each operator sets its own, and the same company can state it differently in different places. We Fly is the clearest example: its own website says children may fly with an adult and names no minimum age, while its Viator listing, {{< tour-link tour="247495P2" >}}flight with breakfast at La Gruta{{< /tour-link >}}, says the minimum age to fly is 4. When two sources disagree, plan on the stricter one and ask before you book.
+There is no single rule for the valley. Each operator sets its own, and the same company can state it differently in different places. We Fly is the clearest example: its policies page recommends that children be at least 5 years old and 1.10 m tall, while its Viator listing, {{< tour-link tour="247495P2" >}}flight with breakfast at La Gruta{{< /tour-link >}}, says the minimum age to fly is 4. When two sources disagree, plan on the stricter one and ask before you book.
 
 Four is the most common floor. Globos Aerostáticos Teotihuacán does not fly children under 4 or shorter than 1.20 m, and requires minors to fly with an adult. Amigo Tours sets the same pair of rules on its Viator listing, at least 4 years old and taller than 1.20 m, and lists under-4s as not suitable on its GetYourGuide version, {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}}. Luxury Tours says its balloon flight is from 4 years of age, and the reseller Civitatis does not take under-4s either.
 

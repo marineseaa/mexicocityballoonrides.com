@@ -26,7 +26,7 @@ keywords:
   - "private hot air balloon teotihuacan"
 ---
 
-For most first-time visitors staying in Mexico City, start by comparing flights with round-trip transfers and an optional visit to the archaeological site. It solves the hardest part of the morning, reaching a balloon field about an hour away before dawn. Our pick is the {{< tour-link tour="357659P1" >}}Viaja Teotihuacan balloon flight with cave breakfast and hotel transport{{< /tour-link >}}: about $236 per person with transport and breakfast on dates we checked in late October 2026, rated 4.9 from 8,158 reviews on Viator, more reviews than any other listing we track. [Our review →](/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/)
+For most first-time visitors staying in Mexico City, start by comparing flights with round-trip transfers and an optional visit to the archaeological site. It solves the hardest part of the morning, reaching a balloon field about an hour away before dawn. Our pick is the {{< tour-link tour="357659P1" >}}Viaja Teotihuacan balloon flight with cave breakfast and hotel transport{{< /tour-link >}}: about $236 per person with transport and breakfast on dates we checked in late October 2026, rated 4.9 from 8,211 reviews on Viator, more reviews than any other listing we track. [Our review →](/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/)
 
 ## The flights are not over the city
 
@@ -42,11 +42,11 @@ Admission to the archaeological zone is a separate cost on most packages. INAH c
 
 Most listings sell the same sunrise flight in several options, so the real choice is what you add to it. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) matches each package to a type of traveler. In short:
 
-- Staying in Mexico City without a car: book an option with round-trip transport. It costs more, but solves the pre-dawn transport problem.
+- Staying in Mexico City without a car: book an option with round-trip transport. It costs more, but solves the pre-dawn transport problem. Our guide on [how to book](/guides/how-to-book-teotihuacan-balloon-ride/) covers pickup zones and cancellation rules.
 - Driving yourself, or sleeping near the pyramids: the [flight-only option](/teotihuacan-balloon-flight-only/) is the cheapest way into the air.
 - Here for the cave breakfast: {{< tour-link tour="247495P2" >}}We Fly's La Gruta package{{< /tour-link >}} was about $203 if you make your own way there and about $274 with transport and an early return to the city. We Fly warns that the wait outside the restaurant is beyond its control. Our page on [balloon rides with breakfast](/teotihuacan-balloon-rides-with-breakfast/) compares the cave options.
 - Here for the history: a [balloon and guided pyramids tour](/teotihuacan-balloon-and-pyramids-tour/) adds a guide on the ground, which most shared packages leave out.
-- Couples and celebrations: a [private basket](/private-teotihuacan-balloon-rides/) costs several times a shared seat.
+- Couples and celebrations: a [private basket](/private-teotihuacan-balloon-rides/) costs several times a shared seat. Our [balloon ride for two](/guides/teotihuacan-balloon-ride-for-two/) guide compares couple prices and celebration packages.
 
 ## Pickup and the pre-dawn start
 
@@ -90,4 +90,4 @@ Viator standard 24 h full refund: ledger s7 (Viator partner resources); all four
 We Fly free reschedule; GA-MX reschedule flight only, extras not refunded: ledger s7.
 AFAC permit/licence/insurance requirements and traveller advice: ledger s4a. 29 Mar 2026 inspection 23 of 46, three suspended, irregularities not disclosed: ledger s4b. 1 Apr 2023 fire, two dead: ledger s4c.
 Prices (option level, 25 Oct 2026): TOURS-DIGEST.md (357659P1 TG2 $148, TG1 $236; 482323P1 TG2 $137, TG3 $181, TG1 $211; 247495P2 TG7 $203, TG5 $274; 309496P6 TG1 $1,017 per group up to 2). Admission excluded for 357659P1 and 482323P1: digest excludes. La Gruta waiting-time warning: 247495P2 option text.
-Rating/reviews: mcbr_offers.json (357659P1 4.94 -> 4.9, 8,158 = highest reviewCount in the file). -->
+Rating/reviews: mcbr_offers.json (357659P1 4.94 -> 4.9, 8,211 = highest reviewCount in the file). -->

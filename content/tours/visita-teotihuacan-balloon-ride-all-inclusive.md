@@ -5,7 +5,7 @@ draft: false
 type: "tour"
 tourId: "456146P3"
 slug: "visita-teotihuacan-balloon-ride-all-inclusive"
-description: "Visita Teotihuacan balloon ride reviewed: about $154 flight only, $231 all-inclusive with pickup, cave breakfast and ruins time. 4.9 from 2,849 reviews."
+description: "Visita Teotihuacan balloon ride reviewed: about $154 flight only, $231 all-inclusive with pickup, cave breakfast and ruins time. 4.9 from 2,862 reviews."
 keywords:
   - "visita teotihuacan balloon ride"
   - "gran vuelo teotihuacan"

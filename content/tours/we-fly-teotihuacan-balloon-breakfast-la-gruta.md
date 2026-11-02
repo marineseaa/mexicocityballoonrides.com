@@ -5,7 +5,7 @@ draft: false
 type: "tour"
 tourId: "247495P2"
 slug: "we-fly-teotihuacan-balloon-breakfast-la-gruta"
-description: "We Fly balloon flight reviewed: about $143 flight only, $203 with La Gruta breakfast, $231 all-inclusive from Mexico City. 4.9 from 4,822 reviews."
+description: "We Fly balloon flight reviewed: about $143 flight only, $203 with La Gruta breakfast, $231 all-inclusive from Mexico City. 4.9 from 4,823 reviews."
 keywords:
   - "we fly teotihuacan balloon"
   - "la gruta breakfast balloon teotihuacan"

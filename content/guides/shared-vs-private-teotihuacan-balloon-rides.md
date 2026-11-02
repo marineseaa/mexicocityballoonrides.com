@@ -21,7 +21,7 @@ cardImage: "/images/shared-vs-private-teotihuacan-balloon-rides-hook.webp"
 
 <img class="hook-image" src="/images/shared-vs-private-teotihuacan-balloon-rides-hook.webp" alt="Shared versus private Teotihuacán balloon ride for two: about $274 for two shared flight-only seats against $1,017 for a private basket" width="1200" height="630">
 
-For most visitors a shared basket is the right call: same launch field, same sky, same 30 to 60 minutes in the air, from about $137 a seat for the flight alone. Pay for a private basket if the flight is a proposal or anniversary, or if you want the whole rim for photographs; that costs about $476 per person with Teotihuacán Feliz or $1,017 for two with Zuyuá. Before paying the premium, check the balloon line: several "private" tours give you a private car and guide, then a seat in a shared basket.
+For most visitors a shared basket is the right call: same launch field, same sky, same 30 to 60 minutes in the air, from about $137 a seat for the flight alone. Pay for a private basket if the flight is a proposal or anniversary, or if you want the whole rim for photographs; that costs about $476 per person with Teotihuacán Feliz or $1,017 for two with Zuyuá. Our [balloon ride for two](/guides/teotihuacan-balloon-ride-for-two/) guide adds the operators' own peso prices for couples. Before paying the premium, check the balloon line: several "private" tours give you a private car and guide, then a seat in a shared basket.
 
 <!--more-->
 
@@ -47,7 +47,7 @@ What you give up in a shared basket is space and control: a spot at the rim you 
 
 ## The private baskets: Zuyuá and Teotihuacán Feliz
 
-{{< tour-link tour="309496P6" >}}Zuyuá's Private Sunrise Balloon for 2{{< /tour-link >}} is priced per group of up to two, about $1,017 (MX$18,500), so a solo traveller pays the same as a couple. It is the most complete package of the private options: round-trip transport from Mexico City in an air-conditioned vehicle, coffee before the flight, the sunrise flight, breakfast, a certified guide at Teotihuacán, tickets, insurance and parking. It runs about 6.5 hours and is rated 4.9 from 40 reviews. The downside to know: one review describes a missed pickup after a confirmation mix-up, so answer the operator's message the day before. [Our review →](/tours/zuyua-private-sunrise-balloon-for-two/)
+{{< tour-link tour="309496P6" >}}Zuyuá's Private Sunrise Balloon for 2{{< /tour-link >}} is priced per group of up to two, about $1,017 (MX$18,500), so a solo traveller pays the same as a couple. It is the most complete package of the private options: round-trip transport from Mexico City in an air-conditioned vehicle, coffee before the flight, the sunrise flight, breakfast, a certified guide at Teotihuacán, tickets, insurance and parking. It runs about 6.5 hours and is rated 4.9 from 41 reviews. The downside to know: one review describes a missed pickup after a confirmation mix-up, so answer the operator's message the day before. [Our review →](/tours/zuyua-private-sunrise-balloon-for-two/)
 
 {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private balloon flight{{< /tour-link >}} costs about $476 per person, or about $952 for two. It includes private transportation and breakfast. Despite "Entry" in its title, the listing excludes the archaeological-zone ticket, so budget MX$210 each for the gate. It is rated 5.0 from 20 reviews, and one reviewer confirms the basket held only "my wife and me".
 

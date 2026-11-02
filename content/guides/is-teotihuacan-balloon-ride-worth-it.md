@@ -37,11 +37,11 @@ It suits you if most of these are true:
 - You are celebrating something. A toast and a printed flight certificate come with almost every flight, and private baskets exist for couples (see our guide to [shared and private flights](/guides/shared-vs-private-teotihuacan-balloon-rides/)).
 - You are in good health. Operators bar pregnant passengers, and most of the listings we review rule out people with heart or spine problems.
 
-Demand is not in doubt. {{< tour-link tour="357659P1" >}}Viaja Teotihuacan{{< /tour-link >}} has a 4.9 rating from 8,158 reviews on Viator, and {{< tour-link tour="366381P1" >}}Tlatoani{{< /tour-link >}} has 4.9 from 7,663. Those numbers say people enjoy the morning. They do not say the pyramids were under the basket on every flight.
+Demand is not in doubt. {{< tour-link tour="357659P1" >}}Viaja Teotihuacan{{< /tour-link >}} has a 4.9 rating from 8,211 reviews on Viator, and {{< tour-link tour="366381P1" >}}Tlatoani{{< /tour-link >}} has 4.9 from 7,788. Those numbers say people enjoy the morning. They do not say the pyramids were under the basket on every flight.
 
 ## Who should skip it, or book something else
 
-Skip the balloon, or put it lower on the list, if the archaeology is the reason you are going. A typical balloon package leaves you about an hour to an hour and a half of free time at the ruins, usually without a guide and without the entry ticket, which costs MX$210 for foreign visitors in 2026. A guided pyramids tour spends that money on the site itself. The {{< tour-link tour="34858" >}}early-access tour{{< /tour-link >}} includes transport, a bilingual guide, entry and a tequila tasting for $68, with a 4.6 rating from 1,922 reviews, and its itinerary allows about three hours at Teotihuacán. The {{< tour-link tour="979732" >}}Catrina Adventures morning express tour{{< /tour-link >}} costs $86, arrives around 8:00 a.m. and has you back in the city by midday.
+Skip the balloon, or put it lower on the list, if the archaeology is the reason you are going. A typical balloon package leaves you about an hour to an hour and a half of free time at the ruins, usually without a guide and without the entry ticket, which costs MX$210 for foreign visitors in 2026. A guided pyramids tour spends that money on the site itself. The {{< tour-link tour="34858" >}}early-access tour{{< /tour-link >}} includes transport, a bilingual guide, entry and a tequila tasting for $68, with a 4.6 rating from 1,927 reviews, and its itinerary allows about three hours at Teotihuacán. The {{< tour-link tour="979732" >}}Catrina Adventures morning express tour{{< /tour-link >}} costs $86, arrives around 8:00 a.m. and has you back in the city by midday.
 
 Other good reasons to pass:
 
@@ -91,7 +91,7 @@ The extras. Entry to the zone, photo and video packages and tips are usually ext
 
 ## If you do book: the choices that matter
 
-Book for your first or second morning in the city, so a cancellation can move to a later day. Pick the option, not the headline price: the "from" figure on almost every listing is the flight alone, with no transport. If you want the flight and the ruins done properly, look at a package with a guided visit, such as those on our [balloon and pyramids tour page](/teotihuacan-balloon-and-pyramids-tour/). [Our Viaja Teotihuacan review →](/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/)
+Book for your first or second morning in the city, so a cancellation can move to a later day. Pick the option, not the headline price: the "from" figure on almost every listing is the flight alone, with no transport. Our guide on [how to book](/guides/how-to-book-teotihuacan-balloon-ride/) walks through the checks in order. If you want the flight and the ruins done properly, look at a package with a guided visit, such as those on our [balloon and pyramids tour page](/teotihuacan-balloon-and-pyramids-tour/). [Our Viaja Teotihuacan review →](/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/)
 
 ## Frequently asked questions
 
@@ -116,8 +116,8 @@ They do different jobs. The balloon gives a short aerial view at sunrise and a b
 For most travelers, the 4:30 to 5:30 a.m. pickup and the chance that weather moves your flight to another day.
 
 <!-- GK-AUDIT: is-teotihuacan-balloon-ride-worth-it
-Prices: TOURS-DIGEST 357659P1 TG2 $148, TG1 $236; 171986P1 TG1 $186; 366381P1 TG1 $240; flight-only range $136 (487546P4 TG1) to $159 (171986P1 TG3 / 484134P1 TG2). 34858 $68, includes transport, bilingual guide, entrance, tequila tasting; itinerary Teotihuacán 3 hours; 4.6/1,922: offers JSON/digest. 979732 $86, arrival around 8:00, back by midday, pyramid tickets: digest.
-Ratings: 357659P1 4.9/8,158; 366381P1 4.9/7,663: digest.
+Prices: TOURS-DIGEST 357659P1 TG2 $148, TG1 $236; 171986P1 TG1 $186; 366381P1 TG1 $240; flight-only range $136 (487546P4 TG1) to $159 (171986P1 TG3 / 484134P1 TG2). 34858 $68, includes transport, bilingual guide, entrance, tequila tasting; itinerary Teotihuacán 3 hours; 4.6/1,927: offers JSON/digest. 979732 $86, arrival around 8:00, back by midday, pyramid tickets: digest.
+Ratings: 357659P1 4.9/8,211; 366381P1 4.9/7,788: digest.
 Ruins time 1-1.5 h: digest 456146P3 / 401763P2 (1.5 h), 394927P1 (1 h), 366381P1 (up to 2 h / 1.5 h).
 MX$210 foreign admission (about $11 at FIX 18.667): ledger s5, s14. Entry excluded in most: digest excludes.
 Weight thresholds 95-100 kg: ledger s8 conflict wording.
