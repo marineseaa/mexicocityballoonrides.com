@@ -40,7 +40,7 @@ trustExtraLabel: "Prices & Fees Checked"
 
 bookingOverline: "When the room is sorted"
 bookingHeading: "Book the balloon flight"
-bookingPitch: "Viaja Teotihuacan sells both ways in: the flight alone at its balloon port near the Pemex Pirámides station, or the flight with round-trip transport from your Mexico City hotel and a cave breakfast. Rated 4.9 from 8,211 Viator reviews, with free cancellation up to 24 hours before."
+bookingPitch: "Viaja Teotihuacan sells both ways in: the flight alone at its balloon port near the Pemex Pirámides station, or the flight with round-trip transport from your Mexico City hotel and a cave breakfast. Rated 4.9 from 8,231 Viator reviews, with free cancellation up to 24 hours before."
 ctaTitle: "Book the flight, then the room"
 ctaBody: "Pick a date to see that morning's price for each option."
 
@@ -189,7 +189,7 @@ For the flights themselves, compare them on [the best Teotihuacán balloon rides
 
 <!-- GK-AUDIT: where-to-stay-teotihuacan-balloon-ride
 Tour facts (SCRAPE/TOURS-DIGEST.md + data/mcbr_offers.json, read 25 Oct 2026):
-- 357659P1 Viaja Teotihuacan: rating 4.9412 -> 4.9, 8,211 reviews; TG2 flight only about $148 (MXN 2699); TG1 flight + cave breakfast + transport about $236 (MXN 4299); meeting point "5 minutes from the Pemex Pirámides gas station", location sent the day before; free cancellation True.
+- 357659P1 Viaja Teotihuacan: rating 4.9412 -> 4.9, 8,231 reviews; TG2 flight only about $148 (MXN 2699); TG1 flight + cave breakfast + transport about $236 (MXN 4299); meeting point "5 minutes from the Pemex Pirámides gas station", location sent the day before; free cancellation True.
 - Arithmetic: (236-148) x 2 = $176 for two.
 - We Fly 247495P3 TG3 "SHUTTLE HOTELS IN DOWNTOWN ... COL JUAREZ, CONDESA, ROME, POLANCO ONLY". Ledger 12: We Fly free pickup within 4 km of the Angel (Reforma, Juarez, Zona Rosa, Centro Historico, Roma, Condesa); Polanco outside that list.
 - Volare 171986P1 includes "Pickup from Mexico City in selected hotels". Excellentravel 333644P5, Zuyua 309496P6, Teotihuacan Feliz 5553640P1/P2: "Pickup from your accommodation included".

@@ -68,7 +68,7 @@ Rain and temperature are SMN monthly averages for the San Martín de las Pirámi
 
 ## Sunrise times and what they mean for your alarm
 
-Balloons lift off at first light, so your start time follows the sun. In late December sunrise at Teotihuacán is about 7:05, with civil twilight from 6:41. On 21 March it is 6:38, on 22 September 6:24 and on 21 June 5:57, with twilight from 5:33. On 25 October 2026 the sun rose at 6:33.
+Balloons lift off at first light, so your start time follows the sun. In late December sunrise at Teotihuacán is about 7:05, with civil twilight from 6:41. On 21 March it is 6:38, on 22 September 6:24 and on 21 June 5:57, with twilight from 5:33. On 25 October 2026 the sun rose at 6:33. Operators' published launch windows are in our guide to [sunrise balloon ride times](/guides/teotihuacan-sunrise-hot-air-balloon-ride/).
 
 You would expect winter pickups to be later than summer ones, and some operators do change their hours: Amigo Tours' GetYourGuide listing says start times vary by season, with separate schedules for October to March and April to September. Others publish one check-in time year round, such as 5:30 a.m. at We Fly's reception or 5:40 a.m. on the Fly Teotihuacan listing. The exact time comes in the confirmation message the day before. Our [what to expect guide](/guides/what-to-expect-teotihuacan-balloon-ride/) goes through the morning hour by hour.
 

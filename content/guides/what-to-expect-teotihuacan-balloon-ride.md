@@ -45,7 +45,7 @@ It is cold at this hour. Average dawn lows at San Martín de las Pirámides are 
 
 ## Around sunrise: the flight
 
-Balloons lift off at first light, so the time follows the season. Sunrise at Teotihuacán, computed for local time, is about 7:05 in late December, 6:38 in late March, 5:57 in late June and 6:33 in late October.
+Balloons lift off at first light, so the time follows the season; our guide to the [sunrise hot air balloon ride](/guides/teotihuacan-sunrise-hot-air-balloon-ride/) compares operators' launch windows. Sunrise at Teotihuacán, computed for local time, is about 7:05 in late December, 6:38 in late March, 5:57 in late June and 6:33 in late October.
 
 Most listings quote 30 to 60 minutes in the air, and 45 to 60 minutes is the commonly quoted figure; Visita Teotihuacan's listing says 30 to 50 minutes, subject to weather. You share the basket with other passengers, and the pilot may move people to balance the load. Fly Teotihuacan advertises music on board, and Globo Tetris says the toast can come during or after the flight.
 

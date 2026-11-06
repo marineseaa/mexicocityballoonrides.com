@@ -35,7 +35,7 @@ The headline "from" price on most listings is the flight alone, about $137 to $1
 
 ### Which balloon ride should I book?
 
-Start with what you need included: transport from your hotel, a cave breakfast, time at the ruins, or a private basket. Ratings are uniformly high, so the option and the price do most of the sorting; {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's balloon flight with cave breakfast{{< /tour-link >}}, for example, is rated 4.9 from 8,211 reviews, the most of any flight we track. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) picks one for each kind of traveller.
+Start with what you need included: transport from your hotel, a cave breakfast, time at the ruins, or a private basket. Ratings are uniformly high, so the option and the price do most of the sorting; {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's balloon flight with cave breakfast{{< /tour-link >}}, for example, is rated 4.9 from 8,231 reviews, the most of any flight we track. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) picks one for each kind of traveller.
 
 ### Is a Teotihuacán balloon ride worth it?
 
@@ -114,7 +114,7 @@ Yes. The zone opens at 8:00, most full packages give you 1 to 1.5 hours there, a
 <!-- GK-AUDIT: teotihuacan-balloon-ride-faq
 Launch in valley, ~90% from SMP; not over CDMX: ledger s1, brief positioning. Road 45-50 km, 45-60 min: ledger s1. Pickups 4:30-5:30 confirmed day before, check-in ~5:30: ledger s2. Buses from 6:00 to zone gates: ledger s12, corrections 15.
 Flight 30-60 (45-60 quoted), early landing for safety (GA-MX): ledger s2. Return 10:00 / 14:30 (GA-MX), 1-2 pm (Explora digest): ledger s2, s13; TOURS-DIGEST 394927P1.
-Prices: flight-only $137 (482323P1) to $159 (171986P1, 484134P1); transport+breakfast $186 (171986P1 TG1) to $274 (247495P2 TG5); private $476 (5553640P2), $1,017 per group (309496P6): TOURS-DIGEST. Viaja 4.9/8,211 is the highest review count in offers JSON (checked). Zone MX$210 ~US$11: ledger s5, s14.
+Prices: flight-only $137 (482323P1) to $159 (171986P1, 484134P1); transport+breakfast $186 (171986P1 TG1) to $274 (247495P2 TG5); private $476 (5553640P2), $1,017 per group (309496P6): TOURS-DIGEST. Viaja 4.9/8,231 is the highest review count in offers JSON (checked). Zone MX$210 ~US$11: ledger s5, s14.
 Route: WeFly seek currents; GA-MX no route guarantee: ledger s3. Light winds only; cold fronts; rainy dawn: ledger s3, s6. WeFly/GA-MX reschedule free; Viator 24 h policy: ledger s7.
 Safety: AFAC permit, insurance, licensed staff, ask for proof: ledger s4a. 1 Apr 2023 fire, two dead: ledger s4c. 29 Mar 2026 inspection, 23 of 46, three suspended: ledger s4b.
 Age: We Fly listing min 4 (TOURS-DIGEST 247495P2), Volare under 5 not allowed and max 120 kg (TOURS-DIGEST 171986P1), GA-MX 1.20 m (ledger s8). Surcharges 95-100 kg: ledger s8. Pregnancy/heart/surgery restrictions: TOURS-DIGEST notSuitableFor/goodToKnow (357659P1 etc.).

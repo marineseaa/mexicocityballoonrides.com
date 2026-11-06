@@ -5,7 +5,7 @@ draft: false
 type: "tour"
 tourId: "171986P1"
 slug: "volare-teotihuacan-balloon-flight-from-mexico-city"
-description: "Volare balloon flight reviewed: about $159 flight only, $186 with Mexico City transport, breakfast at the balloon port. 4.8 from 4,487 reviews."
+description: "Volare balloon flight reviewed: about $159 flight only, $186 with Mexico City transport, breakfast at the balloon port. 4.8 from 4,517 reviews."
 keywords:
   - "volare balloon flight teotihuacan"
   - "volare vuelos en globo"

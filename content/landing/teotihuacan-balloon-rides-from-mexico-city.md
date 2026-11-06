@@ -104,7 +104,7 @@ keywords:
   - "teotihuacan hot air balloon pickup time"
 ---
 
-If you are staying in Mexico City and want someone else to do the 4 a.m. drive, book {{< tour-link tour="171986P1" >}}Volare's flight with round-trip transport{{< /tour-link >}}. On dates we checked in late October 2026 the transport option was about $186 per person, against $159 if you drive yourself, and it includes breakfast at the balloon port. A second option at the same $186 waits while you walk the ruins before driving you back. It is rated 4.8 from 4,487 reviews. The catch: Volare collects from selected hotels, so check yours is covered before you pay. [Our review →](/tours/volare-teotihuacan-balloon-flight-from-mexico-city/)
+If you are staying in Mexico City and want someone else to do the 4 a.m. drive, book {{< tour-link tour="171986P1" >}}Volare's flight with round-trip transport{{< /tour-link >}}. On dates we checked in late October 2026 the transport option was about $186 per person, against $159 if you drive yourself, and it includes breakfast at the balloon port. A second option at the same $186 waits while you walk the ruins before driving you back. It is rated 4.8 from 4,517 reviews. The catch: Volare collects from selected hotels, so check yours is covered before you pay. [Our review →](/tours/volare-teotihuacan-balloon-flight-from-mexico-city/)
 
 ## Balloons do not fly from the city
 
@@ -144,7 +144,7 @@ Volare suits most hotel guests: one fixed price for the drive and breakfast, plu
 
 <!-- GK-AUDIT: teotihuacan-balloon-rides-from-mexico-city
 Prices (TOURS-DIGEST / mcbr_offers priceOptions, 25 Oct 2026): 171986P1 TG1 $186, TG2 $186, TG3 $159; 247495P3 TG3 $203; 333644P5 TG1 $357; 357659P1 TG1 $236.
-Ratings: 171986P1 4.8/4,487 (digest).
+Ratings: 171986P1 4.8/4,517 (digest).
 Volare: "Pickup from Mexico City in selected hotels", breakfast at balloon port, TG1 duration 6 hours pickup to return, entry MX$210 cash not included: digest 171986P1. Review "12:30pm for going back": mcbr_offers sampleReviews 171986P1 (Oct 2026).
 We Fly express: "exclusively Mexico City center area, Col Juarez, Condesa, Rome, Polanco", buffet breakfast, early return: digest 247495P3 TG3. We Fly site free zone 4 km from the Angel, Polanco not listed: ledger s12. Sheraton María Isabel meeting point, branded vehicle: digest 247495P2 meeting/pickup. 3:45 a.m. pickup review: mcbr_offers sampleReviews 247495P2 (May 2026).
 Amigo Tours: Citibanamex at the Angel (5885P459 meeting point, twin of 696822); coach 57 min: 696822 itinerary.

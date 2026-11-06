@@ -97,7 +97,7 @@ Our guide to the [best time for a Teotihuacán balloon ride](/guides/best-time-t
 
 - Passport or government photo ID. We Fly requires one at check-in to register you on the flight insurance, and the name must match the booking. GetYourGuide listings from Amigo Tours LATAM and Vuelo en globo Teotihuacán also list it.
 - Your phone or camera on a wrist strap. We Fly asks for one; our [balloon photo guide](/guides/teotihuacan-balloon-ride-photos/) covers the rest.
-- Some pesos. The site fee for foreign visitors is MX$210 in 2026, about $11, and most balloon packages do not include it. Volare's listing says it is paid in cash at the entrance. Weight surcharges, where they apply, are usually paid at reception on the day.
+- Some pesos. The site fee for foreign visitors is MX$210 in 2026, about $11, and most balloon packages do not include it. Volare's listing says it is paid in cash at the entrance. Weight surcharges, where they apply, are usually paid on the day.
 
 Packages vary in what they include, and that changes how much you carry. On dates we checked in late October 2026, {{< tour-link tour="482323P1" >}}Skyteam Teotihuacán's flight{{< /tour-link >}} cost about $137 for the flight alone and about $211 with Mexico City transport and the cave breakfast. With transport, you can leave a layer in the vehicle. [Our review →](/tours/skyteam-teotihuacan-balloon-flight-natural-cave/) For the full order of the morning, see [what to expect on the day](/guides/what-to-expect-teotihuacan-balloon-ride/).
 

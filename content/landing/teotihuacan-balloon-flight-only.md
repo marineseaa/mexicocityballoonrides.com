@@ -102,11 +102,11 @@ keywords:
   - "teotihuacan balloon port location"
 ---
 
-If you have a car or are staying in San Juan Teotihuacán, book the flight-only option on {{< tour-link tour="482323P1" >}}Skyteam Teotihuacán's balloon flight{{< /tour-link >}}. At MXN 2,500, about $137 per person on dates we checked in late October 2026, it was the lowest flight-only price among the flights we review, and it is rated 4.9 from 1,559 reviews. Skyteam sends you the balloon port location and you make your own way there before dawn. Breakfast in a natural cave can be added, which takes the price to about $181. [Our review →](/tours/skyteam-teotihuacan-balloon-flight-natural-cave/)
+If you have a car or are staying in San Juan Teotihuacán, book the flight-only option on {{< tour-link tour="482323P1" >}}Skyteam Teotihuacán's balloon flight{{< /tour-link >}}. At MXN 2,500, about $137 per person on dates we checked in late October 2026, it was the lowest flight-only price among the flights we review, and it is rated 4.9 from 1,569 reviews. Skyteam sends you the balloon port location and you make your own way there before dawn. Breakfast in a natural cave can be added, which takes the price to about $181. [Our review →](/tours/skyteam-teotihuacan-balloon-flight-natural-cave/)
 
 ## Who sells a flight-only option, and for how much
 
-Most balloon listings around Teotihuacán sell the flight alone as their cheapest option, and it is usually the price you see first. Among the flights we review, flight-only options ranged from $137 to $159 per person:
+Most balloon listings around Teotihuacán sell the flight alone as their cheapest option, and it is usually the price you see first. Our guide to [cheap Teotihuacán balloon rides](/guides/cheap-teotihuacan-balloon-rides/) compares these fares with operators' own websites. Among the flights we review, flight-only options ranged from $137 to $159 per person:
 
 | Listing | Flight-only price |
 |---|---|
@@ -154,7 +154,7 @@ The archaeological zone opens at 8:00, so a flight-only morning leaves the rest 
 <!-- GK-AUDIT: teotihuacan-balloon-flight-only
 Flight-only option prices (TOURS-DIGEST, schedules read 25 Oct 2026): 482323P1 TG2 MXN 2,500 $137 (TG3 with cave breakfast $181); 247495P2 TG6 MXN 2,600 $143; 357659P1 TG2 2,699 $148; 5491014P1 TG2 2,699 $148; 456146P3 TG2 2,799 $154; 366381P1 TG3 2,850 $157; 171986P1 TG3 2,900 $159; 484134P1 TG2 2,899 $159. "Lowest among the flights we review" = the tours with /tours/ pages (5553640P1/P2 have none and sell no flight-only option). Gap 159-137=22.
 No-page listings: 487546P4 TG1 MXN 2,480 $136; 1432828 GYG from $99, 0 reviews (offers JSON), check-in 5:40 a.m. (goodToKnow); 696822 from $148, no-transport option at Balloon's Paradise port, San Martín de las Pirámides (goodToKnow).
-Rating: offers JSON 482323P1 4.9/1,559.
+Rating: offers JSON 482323P1 4.9/1,569.
 Inclusions: 456146P3 TG2 (coffee break cookies+coffee, certificate, sparkling toast, 2 h); 357659P1 includes (tea and coffee, bottled water, sparkling toast); 247495P2 meeting text (complimentary coffee break at reception, 5 min from zone); 171986P1 description (breakfast at balloon port, coffee break, toast, diploma) + TG3; 482323P1 TG2 "only includes a balloon flight", includes list "Flight certificate".
 Weight: 482323P1 and 357659P1 excludes (MXN 35/kg over 100 kg). Admission MX$210: ledger s5.
 Flight 30-60 min: ledger s2. We Fly check-in ~5:30: ledger s2 (WeFly FAQ). Drive 45-60 min pre-dawn: ledger s1 (DERIVED, hedged "roughly"). Route Mexico-Pachuca + Ecatepec-Pirámides: ledger s1 (INAH). 10-minute tolerance: ledger s2 (GA-MX, attributed as "one operator's terms").

@@ -24,7 +24,7 @@ cardImage: "/images/how-to-book-teotihuacan-balloon-ride-hook.webp"
 
 Booking a Teotihuacán balloon ride is easy once you know what the ticket includes. The date is rarely the problem. Picking the right basket, arranging transport from Mexico City before dawn, getting a clear confirmation and knowing what happens if the weather keeps the balloons on the ground take more thought.
 
-Tourist flights take off at sunrise in the Teotihuacán valley, northeast of Mexico City. You can book a seat in a shared balloon, a private basket for your group, or a package with transport, breakfast and time at the archaeological zone. Listings for these often use the same photos, but they are different products.
+Tourist flights take off at sunrise in the Teotihuacán valley, northeast of Mexico City (see our [sunrise balloon ride](/guides/teotihuacan-sunrise-hot-air-balloon-ride/) guide for launch times). You can book a seat in a shared balloon, a private basket for your group, or a package with transport, breakfast and time at the archaeological zone. Listings for these often use the same photos, but they are different products.
 
 The operator policies quoted below were checked on 2 November 2026. Prices, pickup times and terms change, so rely on the written conditions of your own booking.
 
@@ -38,10 +38,10 @@ Before you open a booking calendar, decide which of these you want.
 
 | Ticket type | What you are buying | Best for | What to confirm | Example listing |
 |---|---|---|---|---|
-| Shared balloon flight | One seat per ticket in a basket with other guests | Solo travelers, friends and couples on a budget | Passenger count, breakfast and transport | {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}}, $148, 4.9/5 from 1,496 reviews |
+| Shared balloon flight | One seat per ticket in a basket with other guests | Solo travelers, friends and couples on a budget | Passenger count, breakfast and transport | {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}}, $148, 4.9/5 from 1,499 reviews |
 | Private balloon flight | The whole basket for your party | Proposals, anniversaries and small groups | Minimum passengers, total price and that the basket is private | {{< tour-link tour="309496P6" >}}Private Sunrise Balloon for 2 - Teotihuacan Pyramids Experience{{< /tour-link >}}, $1,017 per couple, 4.9/5 from 41 reviews |
-| Flight + transport | Balloon ticket with travel from Mexico City | Travelers without a car | Exact pickup location, pickup time and the return | {{< tour-link tour="1522004" >}}Mexico City: Balloon Flight over Teotihuacán with Round-Trip Transportation and Breakfast{{< /tour-link >}}, $170, 5.0/5 from 46 reviews |
-| Flight + sightseeing | Balloon ride plus breakfast, a guided visit or time at the archaeological zone | A full morning out | Whether entry fees, guide, meals and the return are included | {{< tour-link tour="696822" >}}CDMX: Teotihuacan Balloon Flight with Optional Pyramids Tour{{< /tour-link >}}, $148, 4.6/5 from 1,306 reviews |
+| Flight + transport | Balloon ticket with travel from Mexico City | Travelers without a car | Exact pickup location, pickup time and the return | {{< tour-link tour="1522004" >}}Mexico City: Balloon Flight over Teotihuacán with Round-Trip Transportation and Breakfast{{< /tour-link >}}, $170, 5.0/5 from 51 reviews |
+| Flight + sightseeing | Balloon ride plus breakfast, a guided visit or time at the archaeological zone | A full morning out | Whether entry fees, guide, meals and the return are included | {{< tour-link tour="696822" >}}CDMX: Teotihuacan Balloon Flight with Optional Pyramids Tour{{< /tour-link >}}, $148, 4.6/5 from 1,321 reviews |
 | Celebration package | Shared or private flight with flowers, cake or photos | Birthdays and special occasions | Whether the basket is private and which extras you get | HappyFly's MXN 9,500 celebration package for two, booked with HappyFly directly |
 
 *Marketplace prices are per person unless stated, as shown on 2 November 2026.*
@@ -65,7 +65,7 @@ Before paying, check each of these:
 7. **Taxes and payment fees:** will the price change at checkout or if you ask for an invoice?
 8. **Weather cancellation:** which part of the payment comes back if the flight cannot go?
 
-Booked direct, [WE FLY's price page](https://weflyteotihuacan.com/teotihuacan-balloon-prices/) shows shared flights from MXN 1,990 per person and lists Mexico City transport as an optional add-on, free within 4 km of the Angel of Independence. [HappyFly's 2026 page](https://happyfly.mx/en/prices/) lists a shared flight at MXN 2,100 per person with buffet breakfast. Those are the operators' own peso prices. The marketplace listings on this site are priced in US dollars and usually bundle pickup and breakfast: the {{< tour-link tour="357659P1" >}}flight with cave breakfast, pyramids and Mexico City pickup{{< /tour-link >}} costs $148 per person (4.9/5 from 8,211 reviews). Check the fare and what it covers at checkout.
+Booked direct, [WE FLY's price page](https://weflyteotihuacan.com/teotihuacan-balloon-prices/) shows shared flights from MXN 1,990 per person and lists Mexico City transport as an optional add-on, free within 4 km of the Angel of Independence. [HappyFly's 2026 page](https://happyfly.mx/en/prices/) lists a shared flight at MXN 2,100 per person with buffet breakfast. Those are the operators' own peso prices. The marketplace listings on this site are priced in US dollars and usually bundle pickup and breakfast: the {{< tour-link tour="357659P1" >}}flight with cave breakfast, pyramids and Mexico City pickup{{< /tour-link >}} costs $148 per person (4.9/5 from 8,231 reviews). Check the fare and what it covers at checkout.
 
 For more pricing scenarios and the extras that add up, read our [Teotihuacán balloon ride prices guide](/teotihuacan-balloon-ride-prices/).
 
@@ -241,7 +241,7 @@ Keep it simple: your booking confirmation, photo ID, the payment card if your op
 These are the common slips that turn a simple booking into a stressful morning:
 
 1. **Paying for two shared seats and expecting a private basket.** Check for the words *private* or *shared*.
-2. **Comparing prices without transfers.** A cheap flight-only fare can cost more in the end once transport is added.
+2. **Comparing prices without transfers.** A cheap flight-only fare can cost more in the end once transport is added; our budget guide shows how to [compare the full trip cost](/guides/cheap-teotihuacan-balloon-rides/).
 3. **Assuming every hotel is in the pickup zone.** A tour may collect from one central meeting point only.
 4. **Believing a weather cancellation means a full refund.** Read what happens to extras and promotional fares.
 5. **Not reading the confirmation.** A wrong name, date or pickup point causes trouble at check-in.

@@ -27,13 +27,13 @@ Most Teotihuacán balloon operators include passengers up to about 100 kg in the
 
 ## How the weight surcharges work
 
-Two models cover almost every operator in the valley. The first is a charge per kilo above a threshold. Viaja Teotihuacan, on its {{< tour-link tour="357659P1" >}}balloon flight with cave breakfast{{< /tour-link >}}, charges MXN 35 per extra kilo above 100 kg (220 lb). Skyteam, Cielo Azteca, Visita Teotihuacan, Teotihuacán Feliz, Explora México and Arc Tours all quote the same MXN 35 a kilo above 100 kg. Vive Vuela charges MXN 30 a kilo above 100 kg, and We Fly's two Viator listings set the threshold lower, MXN 35 a kilo above 99 kg. We Fly's own website states a different rule again, MXN 50 a kilo above 95 kg, charged at reception on the day.
+Two models cover almost every operator in the valley. The first is a charge per kilo above a threshold. Viaja Teotihuacan, on its {{< tour-link tour="357659P1" >}}balloon flight with cave breakfast{{< /tour-link >}}, charges MXN 35 per extra kilo above 100 kg (220 lb). Skyteam, Cielo Azteca, Visita Teotihuacan, Teotihuacán Feliz, Explora México and Arc Tours all quote the same MXN 35 a kilo above 100 kg. Vive Vuela charges MXN 30 a kilo above 100 kg, and We Fly's two Viator listings set the threshold lower, MXN 35 a kilo above 99 kg. We Fly's own policy page, checked in November 2026, charges more than its listings: MXN 45 a kilo above 99 kg, with every passenger weighed at the launch site.
 
 The second model is a fixed fee by weight band. Tlatoani, on its {{< tour-link tour="366381P1" >}}balloon flight with pickup, cave breakfast and pyramids{{< /tour-link >}}, adds MXN 500 per person if you weigh more than 100 kg and up to 120 kg, and MXN 1,000 above 120 kg and up to 140 kg (308 lb). Teotihuacan Adventures uses the same two bands and adds a third, MXN 1,500 above 140 kg.
 
-What it costs in dollars, at about MXN 18.7 to the dollar in October 2026: at 110 kg, the per-kilo model is MXN 350, about $19, and the band model MXN 500, about $27. At 130 kg, the per-kilo model is MXN 1,050, about $56, and the band model MXN 1,000, about $54. On We Fly's website rule, 110 kg would be 15 kilos at MXN 50, or MXN 750, about $40.
+What it costs in dollars, at about MXN 18.7 to the dollar in October 2026: at 110 kg, the per-kilo model is MXN 350, about $19, and the band model MXN 500, about $27. At 130 kg, the per-kilo model is MXN 1,050, about $56, and the band model MXN 1,000, about $54. On We Fly's own published rule, MXN 45 a kilo above 99 kg, 110 kg would be 11 kilos, or MXN 495, about $26.
 
-The surcharge is paid on the day, not when you book. We Fly charges it at reception, Fly Teotihuacan at the launch site, and the reseller Civitatis, which charges US$3 a kilo above 99 kg on its own listing, at take-off. Carry enough to cover it; the listings do not say whether cards are accepted.
+The surcharge is paid on the day, not when you book. We Fly weighs every passenger at the launch site against the weight given at booking. Fly Teotihuacan collects it at the launch site, and the reseller Civitatis, which charges US$3 a kilo above 99 kg on its own listing, at take-off. Carry enough to cover it; the listings do not say whether cards are accepted.
 
 ## Why weight matters in a basket
 
@@ -61,7 +61,7 @@ On dates we checked in late October 2026, Tlatoani cost about $157 for the fligh
 | {{< tour-link tour="482323P1" >}}Skyteam{{< /tour-link >}} | 100 kg | MXN 35 per extra kilo | Not stated |
 | {{< tour-link tour="484134P1" >}}Cielo Azteca{{< /tour-link >}} | 100 kg | MXN 35 per extra kilo | Not stated |
 | {{< tour-link tour="456146P3" >}}Visita Teotihuacan{{< /tour-link >}} | 100 kg | MXN 35 per extra kilo | Not stated |
-| {{< tour-link tour="247495P3" >}}We Fly (Viator){{< /tour-link >}} | 99 kg | MXN 35 per extra kilo | Not stated |
+| {{< tour-link tour="247495P3" >}}We Fly (Viator){{< /tour-link >}} | 99 kg | MXN 45 per extra kilo (We Fly's own policy; the Viator listing still says MXN 35) | Not stated |
 | {{< tour-link tour="487546P4" >}}Vive Vuela{{< /tour-link >}} | 100 kg | MXN 30 per extra kilo | Not stated |
 | {{< tour-link tour="377048P1" >}}Globo Tetris{{< /tour-link >}} | 100 kg | 500 (101 to 120 kg), 1,000 (121 to 140 kg) | 140 kg |
 | {{< tour-link tour="1432828" >}}Fly Teotihuacan{{< /tour-link >}} | 99 kg | MXN 35 per extra kilo | Not stated |
@@ -111,8 +111,8 @@ To balance the weight. Tlatoani's listing says the pilot may move some passenger
 It depends on the operator and the disability. You must climb into the basket and stand. Ask the operator directly; Volare, which carries a wheelchair-accessible tag, says some disabilities may prevent participation.
 
 <!-- GK-AUDIT: teotihuacan-balloon-ride-weight-limits
-Per-kilo MXN 35 over 100 kg: digest 357659P1 (Viaja), 482323P1 (Skyteam), 484134P1 (Cielo Azteca), 456146P3 + 401763P2 (Visita), 5553640P1 (Teotihuacan Feliz), 394927P1 (Explora), 484176P1 (Arc Tours). Vive Vuela MXN 30: digest 487546P4. We Fly Viator 99 kg MXN 35: digest 247495P3 (247495P2 max 99 kg). Fly Teotihuacan 99 kg MXN 35 at launch site: offers JSON 1432828 description.
-WeFly website MXN 50 over 95 kg at reception: ledger s8. Civitatis 99 kg US$3/kg at take-off: ledger s8.
+Per-kilo MXN 35 over 100 kg: digest 357659P1 (Viaja), 482323P1 (Skyteam), 484134P1 (Cielo Azteca), 456146P3 + 401763P2 (Visita), 5553640P1 (Teotihuacan Feliz), 394927P1 (Explora), 484176P1 (Arc Tours). Vive Vuela MXN 30: digest 487546P4. We Fly 99 kg MXN 45/kg: wefly.com.mx/en/politicas-y-restricciones/ section 8, checked 2026-11-06 (Viator digest 247495P3 still says MXN 35; 247495P2 max 99 kg). Fly Teotihuacan 99 kg MXN 35 at launch site: offers JSON 1432828 description.
+WeFly website (2026-11-06): MXN 45 per kg over 99 kg, weighed at launch site; superseded the older MXN 50 over 95 kg ledger s8 figure. Civitatis 99 kg US$3/kg at take-off: ledger s8.
 Tlatoani bands MXN 500 (>100-120), MXN 1,000 (>120-140, 308 lb); pilot moves passengers for weight distribution; notSuitableFor list: digest 366381P1. Teotihuacan Adventures 500/1,000/1,500: digest 5491014P1. Globo Tetris 100 kg, $500/$1,000, >140 not admitted: digest 377048P1. GA-MX 101-120 MXN 500, 121-140 MXN 1,000, >140 cannot fly, report true weight, health list, intoxicated no refund: ledger s8. Volare max 120 kg/265 lb, disability note, wheelchair tag: digest 171986P1. Amigo max 150 kg, name/weight/health by government order, per-kilo above 100: offers JSON 5885P459. Amigo GYG notSuitableFor: digest 696822. Vuelo en globo afraid of heights etc: digest 1520860/1522004.
 Conversions at Banxico FIX 18.667: ledger s14 (350=$18.75, 500=$26.79, 1,050=$56.25, 1,000=$53.57, 750=$40.18).
 Viaja pregnancy any month, heart, surgery, back/spine, knee, alcohol: digest 357659P1. WeFly no upper age, ask about mobility/weight: ledger s8.

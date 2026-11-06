@@ -5,7 +5,7 @@ draft: false
 type: "tour"
 tourId: "357659P1"
 slug: "viaja-teotihuacan-balloon-flight-cave-breakfast"
-description: "Viaja Teotihuacan balloon flight reviewed: about $148 flight only, $236 with hotel pickup and cave breakfast. 4.9 from 8,211 reviews. Who should pick which."
+description: "Viaja Teotihuacan balloon flight reviewed: about $148 flight only, $236 with hotel pickup and cave breakfast. 4.9 from 8,231 reviews. Who should pick which."
 keywords:
   - "viaja teotihuacan balloon flight"
   - "teotihuacan balloon ride cave breakfast"
