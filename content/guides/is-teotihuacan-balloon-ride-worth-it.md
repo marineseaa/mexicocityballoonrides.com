@@ -37,11 +37,11 @@ It suits you if most of these are true:
 - You are celebrating something. A toast and a printed flight certificate come with almost every flight, and private baskets exist for couples (see our guide to [shared and private flights](/guides/shared-vs-private-teotihuacan-balloon-rides/)).
 - You are in good health. Operators bar pregnant passengers, and most of the listings we review rule out people with heart or spine problems.
 
-Demand is not in doubt. {{< tour-link tour="357659P1" >}}Viaja Teotihuacan{{< /tour-link >}} has a 4.9 rating from 8,231 reviews on Viator, and {{< tour-link tour="366381P1" >}}Tlatoani{{< /tour-link >}} has 4.9 from 7,844. Those numbers say people enjoy the morning. They do not say the pyramids were under the basket on every flight.
+Demand is not in doubt. {{< tour-link tour="357659P1" >}}Viaja Teotihuacan{{< /tour-link >}} has a 4.9 rating from 8,257 reviews on Viator, and {{< tour-link tour="366381P1" >}}Tlatoani{{< /tour-link >}} has 4.9 from 7,871. Those numbers say people enjoy the morning. They do not say the pyramids were under the basket on every flight.
 
 ## Who should skip it, or book something else
 
-Skip the balloon, or put it lower on the list, if the archaeology is the reason you are going. A typical balloon package leaves you about an hour to an hour and a half of free time at the ruins, usually without a guide and without the entry ticket, which costs MX$210 for foreign visitors in 2026. A guided pyramids tour spends that money on the site itself. The {{< tour-link tour="34858" >}}early-access tour{{< /tour-link >}} includes transport, a bilingual guide, entry and a tequila tasting for $68, with a 4.6 rating from 1,934 reviews, and its itinerary allows about three hours at Teotihuacán. The {{< tour-link tour="979732" >}}Catrina Adventures morning express tour{{< /tour-link >}} costs $86, arrives around 8:00 a.m. and has you back in the city by midday.
+Skip the balloon, or put it lower on the list, if the archaeology is the reason you are going. A typical balloon package leaves you about an hour to an hour and a half of free time at the ruins, usually without a guide and without the entry ticket, which costs MX$210 for foreign visitors in 2026 ([what each combo includes](/guides/teotihuacan-balloon-ride-pyramids-tour-packages/)). A guided pyramids tour spends that money on the site itself. The {{< tour-link tour="34858" >}}early-access tour{{< /tour-link >}} includes transport, a bilingual guide, entry and a tequila tasting for $68, with a 4.6 rating from 1,936 reviews, and its itinerary allows about three hours at Teotihuacán. The {{< tour-link tour="979732" >}}Catrina Adventures morning express tour{{< /tour-link >}} costs $86, arrives around 8:00 a.m. and has you back in the city by midday.
 
 Other good reasons to pass:
 
@@ -116,8 +116,8 @@ They do different jobs. The balloon gives a short aerial view at sunrise and a b
 For most travelers, the 4:30 to 5:30 a.m. pickup and the chance that weather moves your flight to another day.
 
 <!-- GK-AUDIT: is-teotihuacan-balloon-ride-worth-it
-Prices: TOURS-DIGEST 357659P1 TG2 $148, TG1 $236; 171986P1 TG1 $186; 366381P1 TG1 $240; flight-only range $136 (487546P4 TG1) to $159 (171986P1 TG3 / 484134P1 TG2). 34858 $68, includes transport, bilingual guide, entrance, tequila tasting; itinerary Teotihuacán 3 hours; 4.6/1,934: offers JSON/digest. 979732 $86, arrival around 8:00, back by midday, pyramid tickets: digest.
-Ratings: 357659P1 4.9/8,231; 366381P1 4.9/7,844: digest.
+Prices: TOURS-DIGEST 357659P1 TG2 $148, TG1 $236; 171986P1 TG1 $186; 366381P1 TG1 $240; flight-only range $136 (487546P4 TG1) to $159 (171986P1 TG3 / 484134P1 TG2). 34858 $68, includes transport, bilingual guide, entrance, tequila tasting; itinerary Teotihuacán 3 hours; 4.6/1,936: offers JSON/digest. 979732 $86, arrival around 8:00, back by midday, pyramid tickets: digest.
+Ratings: 357659P1 4.9/8,257; 366381P1 4.9/7,871: digest.
 Ruins time 1-1.5 h: digest 456146P3 / 401763P2 (1.5 h), 394927P1 (1 h), 366381P1 (up to 2 h / 1.5 h).
 MX$210 foreign admission (about $11 at FIX 18.667): ledger s5, s14. Entry excluded in most: digest excludes.
 Weight thresholds 95-100 kg: ledger s8 conflict wording.

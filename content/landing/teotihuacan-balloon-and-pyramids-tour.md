@@ -105,13 +105,13 @@ keywords:
   - "balloon ride teotihuacan entrance fee included"
 ---
 
-For a balloon flight and a properly guided visit in one booking, take the top option of the {{< tour-link tour="696822" >}}Amigo Tours balloon flight with optional pyramids tour{{< /tour-link >}} on GetYourGuide. It adds a professional guide, the Teotihuacán entry ticket and the Basilica of Guadalupe on the way back. The listing starts at $148 for its cheapest option; the same product on Viator, the {{< tour-link tour="5885P459" >}}Teotihuacan and Guadalupe Shrine full-day tour{{< /tour-link >}}, priced the guided option at $249 on dates we checked in late October 2026. It is rated 4.6 from 1,321 reviews on GetYourGuide. If you only want time to wander, cheaper packages give you that. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/)
+For a balloon flight and a properly guided visit in one booking, take the top option of the {{< tour-link tour="696822" >}}Amigo Tours balloon flight with optional pyramids tour{{< /tour-link >}} on GetYourGuide. It adds a professional guide, the Teotihuacán entry ticket and the Basilica of Guadalupe on the way back. The listing starts at $148 for its cheapest option; the same product on Viator, the {{< tour-link tour="5885P459" >}}Teotihuacan and Guadalupe Shrine full-day tour{{< /tour-link >}}, priced the guided option at $249 on dates we checked in late October 2026. It is rated 4.6 from 1,326 reviews on GetYourGuide. If you only want time to wander, cheaper packages give you that. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/)
 
 ## Free time is not a guided tour
 
 Most balloon packages that mention the pyramids give you time on foot, not a guide. {{< tour-link tour="171986P1" >}}Volare's option with extra time at the ruins{{< /tour-link >}} costs the same $186 as its plain transport option, and the listing says plainly that the entrance fee and a guide are not included. {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's $236 package{{< /tour-link >}} lists the archaeological-zone ticket and a certified guide among the exclusions. {{< tour-link tour="366381P1" >}}Tlatoani's all-inclusive option{{< /tour-link >}}, about $240, gives up to two hours. {{< tour-link tour="482323P1" >}}Skyteam's listing{{< /tour-link >}} notes that a guide can be hired on site.
 
-That suits you if you have read up or want to set your own pace. If you want the story of the city told as you walk, book a package that names a guide.
+That suits you if you have read up or want to set your own pace. If you want the story of the city told as you walk, book a package that names a guide; our [combo packages compared by price and inclusions](/guides/teotihuacan-balloon-ride-pyramids-tour-packages/) shows which ones do.
 
 ## Packages that include a guide
 
@@ -146,7 +146,7 @@ Amigo Tours suits first-time visitors who want the whole day planned. Excellentr
 
 <!-- GK-AUDIT: teotihuacan-balloon-and-pyramids-tour
 Prices (mcbr_offers / TOURS-DIGEST, 25 Oct 2026): 696822 from $148 (offers JSON); 5885P459 priceOptions TG1 $249 guided + Guadalupe, TG4 $172 (45 min), TG6 $157 (15 min) from mcbr_offers.json priceOptions (digest says "not on schedule" for MXN; the offers JSON carries USD option prices); 171986P1 TG2 $186; 357659P1 TG1 $236; 366381P1 TG1 $240; 333644P5 TG1 $357, TG2 $247; 323089P1 $360; 247495P2 TG1 $231; 247495P3 TG1 $258.
-Ratings: 696822 4.6/1,321 (offers JSON).
+Ratings: 696822 4.6/1,326 (offers JSON).
 696822 inclusions (guide, entrance, Guadalupe if option selected), itinerary (Teotihuacán guided 3 h, Artesanías El Quetzal workshop 45 min, Basilica 1 h), lunch at own cost, drop-off at meeting location but may stay at Basilica: offers JSON 696822. Meeting point Ángel: 5885P459 digest. Coach 57 min: 696822 itinerary.
 Volare entry/guide not included, MX$210 cash: digest 171986P1. Viaja excludes access + certified guide: digest 357659P1. Tlatoani up to 2 h: digest 366381P1. Skyteam guide on site: digest 482323P1. Excellentravel SECTUR guide, entrance, ~2:30 h: digest 333644P5. Luxury Tours guided visit + zone tickets: digest 323089P1. We Fly 247495P2 certified guide (all-inclusive), 1-1:30 h: digest. 247495P3 TG1 access ticket, 3 h free time, guide excluded: digest. Globo Tetris TG3, Aventuras TG7 entry: digest 377048P1, 463468P2.
 Entry MX$210 / MX$105, exemptions, free Sundays residents only: ledger s5. Zone hours 8-17, last entry 16:30: ledger s5. Sun climbing prohibited since 2020 (INAH Mar 2026): ledger s5. Moon first tier May 2025, closed after 20 Apr 2026 shooting, no reopening found: ledger s5 (hedged "by spring 2026"). Basilica in north CDMX near Insurgentes Norte exit road: ledger s13 (DERIVED). Overflight depends on wind: ledger s3.

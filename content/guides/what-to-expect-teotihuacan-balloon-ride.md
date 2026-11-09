@@ -61,7 +61,7 @@ If you booked flight only, this is where your package ends, about two to three h
 
 ## About 8:00 to 9:30 a.m.: breakfast and the workshop
 
-Breakfast depends on the option you chose. Many packages go to a restaurant in a natural cave near the archaeological zone. Visita Teotihuacan's all-inclusive package lists seasonal water, fruit, coffee, artisan bread and chilaquiles (with chicken, steak or egg) or an omelet, with vegan options. Volare serves a Mexican breakfast at its own balloon port, and Globo Tetris's all-inclusive option uses La Higuera restaurant. The cave at La Gruta is cool inside, so keep a layer on; our [cave breakfast page](/teotihuacan-balloon-rides-with-breakfast/) compares the options.
+Breakfast depends on the option you chose. Many packages go to a restaurant in a natural cave near the archaeological zone. Visita Teotihuacan's all-inclusive package lists seasonal water, fruit, coffee, artisan bread and chilaquiles (with chicken, steak or egg) or an omelet, with vegan options. Volare serves a Mexican breakfast at its own balloon port, and Globo Tetris's all-inclusive option uses La Higuera restaurant. The cave at La Gruta is cool inside, so keep a layer on; our [cave breakfast page](/teotihuacan-balloon-rides-with-breakfast/) compares the options, and our guide to [La Gruta vs La Cueva](/guides/teotihuacan-balloon-ride-cave-breakfast/) covers the two restaurants.
 
 Many full packages then stop at a cooperative or workshop for a short talk on obsidian and maguey and a tasting of local drinks such as tequila, mezcal and pulque. Expect a chance to buy crafts.
 

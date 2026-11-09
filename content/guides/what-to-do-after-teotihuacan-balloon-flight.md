@@ -39,15 +39,15 @@ Tickets are sold at the box offices and through INAH's official site. You enter 
 
 What you can and cannot do. Climbing the Pyramid of the Sun is prohibited and has been since 2020; INAH's March 2026 bulletin still lists it as banned. The Pyramid of the Moon reopened for climbing to its first tier in May 2025, but after the shooting there on 20 April 2026 INAH said access stays closed until further notice, and we found no reopening announcement. Plan to walk the Avenue of the Dead, which runs a couple of kilometres end to end, and see the pyramids from the ground. INAH launched a digital guide in June 2026 with seven themed routes in English and Spanish, each with a map, timings and an access gate.
 
-Most packages give you 1 to 1.5 hours of free time on site, which covers the Avenue of the Dead and the base of both pyramids at a steady pace. Some flights include the entry ticket, and a few add a guide: our [balloon and pyramids tour page](/teotihuacan-balloon-and-pyramids-tour/) compares them.
+Most packages give you 1 to 1.5 hours of free time on site, which covers the Avenue of the Dead and the base of both pyramids at a steady pace. Some flights include the entry ticket, and a few add a guide: our [balloon and pyramids tour page](/teotihuacan-balloon-and-pyramids-tour/) compares them, and our guide to [operator-direct combo prices](/guides/teotihuacan-balloon-ride-pyramids-tour-packages/) checks each package's inclusions.
 
 ## Breakfast in the cave: La Gruta and the alternatives
 
-La Gruta is a restaurant inside a natural volcanic cave, about 200 m from Puerta 5, outside the pyramid core. It dates from the early 20th century (sources disagree on the year), seats around 700 according to Atlas Obscura, and served breakfast from 8:00 to 11:00 in its most recent published hours, from 2021. Reservations are advised, and the cave is cool inside, so keep a layer handy.
+La Gruta is a restaurant inside a natural volcanic cave, about 200 m from Puerta 5, outside the pyramid core. It dates from the early 20th century (sources disagree on the year), seats around 700 according to Atlas Obscura, and its website lists it as open daily from 8:00 a.m. to 6:00 p.m. Reservations are advised at weekends, and the cave is cool inside, so keep a layer handy.
 
 Several balloon packages build the morning around it. We Fly sells a flight with breakfast at La Gruta, and warns on its listing that the wait outside the restaurant is beyond its control. Paseos Olmedo's {{< tour-link tour="193670P3" >}}balloon flight with a stop at La Gruta{{< /tour-link >}} includes the stop but not the food. Many other operators describe their breakfast as "in a natural cave" without naming the venue, and some use local restaurants instead: La Higuera, opposite the pyramids, on Globo Tetris's all-inclusive option, and Huehueteotl on one Explora México option.
 
-If your package has no breakfast, the cave makes a good stop on foot between the landing and the gates. Our page on [balloon rides with cave breakfast](/teotihuacan-balloon-rides-with-breakfast/) lists which packages include it and what they cost.
+If your package has no breakfast, the cave makes a good stop on foot between the landing and the gates. Our page on [balloon rides with cave breakfast](/teotihuacan-balloon-rides-with-breakfast/) lists which packages include it and what they cost, and our guide to [La Gruta vs La Cueva](/guides/teotihuacan-balloon-ride-cave-breakfast/) explains the two cave restaurants.
 
 ## Obsidian, maguey and pulque workshops
 
@@ -73,7 +73,7 @@ Acolman suits two kinds of traveller: those who drive themselves to a [flight-on
 
 The Basilica of Guadalupe stands in the north of Mexico City, about 37 km southwest of the site and close to Insurgentes Norte, the road most tours use to leave and re-enter the city. One news outlet gives its hours as 6:00 to 20:00 daily; confirm on the basilica's own site before you go.
 
-The easiest way to add it is to book it with the flight. Amigo Tours LATAM's {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}} has a top option with guided visits to both Teotihuacán and the Basilica; the drop-off is the meeting point, but you may stay at the Basilica and make your own way back. It is rated 4.6 from 1,321 reviews on GetYourGuide. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/) The same product is sold on Viator as {{< tour-link tour="5885P459" >}}Balloon Flight with Teotihuacan & Guadalupe Shrine{{< /tour-link >}}.
+The easiest way to add it is to book it with the flight. Amigo Tours LATAM's {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}} has a top option with guided visits to both Teotihuacán and the Basilica; the drop-off is the meeting point, but you may stay at the Basilica and make your own way back. It is rated 4.6 from 1,326 reviews on GetYourGuide. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/) The same product is sold on Viator as {{< tour-link tour="5885P459" >}}Balloon Flight with Teotihuacan & Guadalupe Shrine{{< /tour-link >}}.
 
 ## If you are not flying, or want a second day
 
@@ -81,8 +81,8 @@ Some people in a group skip the balloon, and some flights are grounded by wind. 
 
 | Tour | Price | What it is |
 |---|---|---|
-| {{< tour-link tour="34858" >}}Teotihuacan Early Access Tour{{< /tour-link >}} | $68 | Guided morning visit with entry, obsidian workshop and tequila tasting; groups up to 15; 4.6 from 1,934 reviews |
-| {{< tour-link tour="979732" >}}Morning Express Teotihuacan Tour{{< /tour-link >}} | $86 | Pickup from Polanco, Roma, Condesa or Centro, arrival around 8:00, back by midday; 5.0 from 61 reviews |
+| {{< tour-link tour="34858" >}}Teotihuacan Early Access Tour{{< /tour-link >}} | $68 | Guided morning visit with entry, obsidian workshop and tequila tasting; groups up to 15; 4.6 from 1,936 reviews |
+| {{< tour-link tour="979732" >}}Morning Express Teotihuacan Tour{{< /tour-link >}} | $86 | Pickup from Polanco, Roma, Condesa or Centro, arrival around 8:00, back by midday; 5.0 from 62 reviews |
 | {{< tour-link tour="429068" >}}Teotihuacan Skip-the-Line Ticket{{< /tour-link >}} | $29 | Entry ticket only, no guide; 4.0 from 102 reviews |
 | {{< tour-link tour="1241575" >}}Teotihuacan & Guadalupe with barbacoa lunch{{< /tour-link >}} | $138 | Teotihuacán, the Basilica and Tlatelolco with a guide; 5.0 from 2 reviews |
 
@@ -134,6 +134,6 @@ La Gruta cave, ~200 m from Puerta 5, early 20th century (dates conflict), ~700 s
 Workshops: TOURS-DIGEST 357659P1, 482323P1, 323089P1, 696822 itinerary (Artesanías El Quetzal 45 min); Civitatis list: ledger s13. Obsidian as volcanic glass worked at Teotihuacan: general knowledge.
 Acolman Museo Virreinal/ex-convent San Agustín, 9-17:30, MX$65 in 2022 (outdated), free Sundays for Mexicans etc., ~10 km SW straight line: ledger s13.
 Basilica ~37 km SW, near Insurgentes Norte, 6-20 (single outlet): ledger s13, s1.
-696822 Basilica option, drop-off/stay at Basilica, 4.6 from 1,321: TOURS-DIGEST, offers JSON. Same product 5885P459: TOURS-DIGEST. Duration 4.2-12 h: TOURS-DIGEST 5885P459.
-GYG no-balloon tours prices/ratings: TOURS-DIGEST/offers JSON (34858 $68 4.6/1,934, small group up to 15, starts Hostal Amigo; 979732 $86 5.0/57, pickup areas, ~8:00 arrival, back by midday; 429068 $29 4.0/102, listing mentions climbing the Sun; 1241575 $138 5.0/2, Tlatelolco).
+696822 Basilica option, drop-off/stay at Basilica, 4.6 from 1,326: TOURS-DIGEST, offers JSON. Same product 5885P459: TOURS-DIGEST. Duration 4.2-12 h: TOURS-DIGEST 5885P459.
+GYG no-balloon tours prices/ratings: TOURS-DIGEST/offers JSON (34858 $68 4.6/1,936, small group up to 15, starts Hostal Amigo; 979732 $86 5.0/57, pickup areas, ~8:00 arrival, back by midday; 429068 $29 4.0/102, listing mentions climbing the Sun; 1241575 $138 5.0/2, Tlatelolco).
 Return times: GA-MX 10:00 and 14:30 (ledger s2, s13); Explora 1-2 pm (TOURS-DIGEST 394927P1). Drive 45-60 min: ledger s1. Midday traffic remark: general, hedged. -->

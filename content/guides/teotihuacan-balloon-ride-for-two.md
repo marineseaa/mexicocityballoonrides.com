@@ -52,8 +52,8 @@ WE FLY lists transport from Mexico City as an optional add-on, and its page says
 
 | Listing | Price | For two | Rating |
 |---|---:|---:|---|
-| {{< tour-link tour="357659P1" >}}Balloon flight + Breakfast in cave + Pyramids + Pick up CDMX{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 8,231 reviews |
-| {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 1,499 reviews |
+| {{< tour-link tour="357659P1" >}}Balloon flight + Breakfast in cave + Pyramids + Pick up CDMX{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 8,257 reviews |
+| {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 1,501 reviews |
 | {{< tour-link tour="171986P1" >}}Teotihuacan Hot Air Balloon Flight from Mexico City / Volare{{< /tour-link >}} (shared) | $159 per person | $318 | 4.8/5 from 4,517 reviews |
 | {{< tour-link tour="5553640P2" >}}Private Balloon Flight over Teotihuacan plus Breakfast and Entry{{< /tour-link >}} | $476 per person | $952 | 4.9/5 from 20 reviews, a small sample |
 | {{< tour-link tour="309496P6" >}}Private Sunrise Balloon for 2 - Teotihuacan Pyramids Experience{{< /tour-link >}} | $1,017 per group of up to two | $1,017 | 4.9/5 from 41 reviews |
@@ -282,7 +282,7 @@ WE FLY shared MXN 1,990 pp, private MXN 3,750 pp min 2, transport optional add-o
 HappyFly shared MXN 2,100 pp (45-60 min, toast, certificate, buffet breakfast, travel insurance); private MXN 8,500 / 2 people (private basket, premium toast, breakfast); celebration MXN 9,500 / 2 (banner, rose bouquet, cake, photo session); meeting point Carretera Federal México-Tulancingo km 27.5, San Martín de las Pirámides; no transport stated; weather: reschedule or full refund; 48 h free cancel, 50% after; no-shows non-refundable: happyfly.mx/en/prices.
 Volar en Globo private "From $9,000 MXN per group" (size not stated); shared from 2,500, shared birthday from 2,500, from CDMX 3,100, all-inclusive 3,400: volarenglobo.com.mx/en.
 WE FLY booking lead time: wefly.com.mx/en/faq ("one or two weeks", "at least one month" for long weekends and Feb 14).
-Marketplace: 357659P1 $148 4.94/8211; 247495P3 $148 4.94/1496; 171986P1 $159 4.83/4487; 5553640P2 $476 pp 4.95/20; 309496P6 $1,017 per group up to 2, 4.90/41, includes transport, breakfast, guide, zone tickets, ~6.5 h: data/mcbr_offers.json refreshed 2026-11-02.
+Marketplace: 357659P1 $148 4.94/8257; 247495P3 $148 4.94/1501; 171986P1 $159 4.83/4552; 5553640P2 $476 pp 4.95/20; 309496P6 $1,017 per group up to 2, 4.90/41, includes transport, breakfast, guide, zone tickets, ~6.5 h: data/mcbr_offers.json refreshed 2026-11-09.
 Road 45-50 km, 45-60 min; pickups 4:30-5:30, check-in ~5:30: site ledger s1, s2. Flight 30-60 min: site figure (shared-vs-private, weather pages); HappyFly 45-60.
 No proposal package on marketplace listings: checked includes of 309496P6, 5553640P2, 323089P1, 333644P5 (private landing ledger).
 Dropped from the article as unverified: "one week in advance / private flights sell out first" (no source found; replaced with WE FLY FAQ); Volar "per couple" (page says per group); check-in 5:15-6:00 and pickups from 4:00 (replaced with site ledger figures). -->

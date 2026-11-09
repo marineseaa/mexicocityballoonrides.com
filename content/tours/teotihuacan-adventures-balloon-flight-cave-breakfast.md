@@ -5,7 +5,7 @@ draft: false
 type: "tour"
 tourId: "5491014P1"
 slug: "teotihuacan-adventures-balloon-flight-cave-breakfast"
-description: "Teotihuacan Adventures balloon flight reviewed: about $148 flight only, $228 with pickup, cave breakfast and ruins time. 4.9 from 2,705 reviews."
+description: "Teotihuacan Adventures balloon flight reviewed: about $148 flight only, $228 with pickup, cave breakfast and ruins time. 4.9 from 2,710 reviews."
 keywords:
   - "teotihuacan adventures balloon flight"
   - "teotihuacan balloon ride weight surcharge"

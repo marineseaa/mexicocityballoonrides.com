@@ -38,10 +38,10 @@ Before you open a booking calendar, decide which of these you want.
 
 | Ticket type | What you are buying | Best for | What to confirm | Example listing |
 |---|---|---|---|---|
-| Shared balloon flight | One seat per ticket in a basket with other guests | Solo travelers, friends and couples on a budget | Passenger count, breakfast and transport | {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}}, $148, 4.9/5 from 1,499 reviews |
+| Shared balloon flight | One seat per ticket in a basket with other guests | Solo travelers, friends and couples on a budget | Passenger count, breakfast and transport | {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}}, $148, 4.9/5 from 1,501 reviews |
 | Private balloon flight | The whole basket for your party | Proposals, anniversaries and small groups | Minimum passengers, total price and that the basket is private | {{< tour-link tour="309496P6" >}}Private Sunrise Balloon for 2 - Teotihuacan Pyramids Experience{{< /tour-link >}}, $1,017 per couple, 4.9/5 from 41 reviews |
-| Flight + transport | Balloon ticket with travel from Mexico City | Travelers without a car | Exact pickup location, pickup time and the return | {{< tour-link tour="1522004" >}}Mexico City: Balloon Flight over Teotihuacán with Round-Trip Transportation and Breakfast{{< /tour-link >}}, $170, 5.0/5 from 51 reviews |
-| Flight + sightseeing | Balloon ride plus breakfast, a guided visit or time at the archaeological zone | A full morning out | Whether entry fees, guide, meals and the return are included | {{< tour-link tour="696822" >}}CDMX: Teotihuacan Balloon Flight with Optional Pyramids Tour{{< /tour-link >}}, $148, 4.6/5 from 1,321 reviews |
+| Flight + transport | Balloon ticket with travel from Mexico City | Travelers without a car | Exact pickup location, pickup time and the return | {{< tour-link tour="1522004" >}}Mexico City: Balloon Flight over Teotihuacán with Round-Trip Transportation and Breakfast{{< /tour-link >}}, $170, 5.0/5 from 53 reviews |
+| Flight + sightseeing | Balloon ride plus breakfast, a guided visit or time at the archaeological zone | A full morning out | Whether entry fees, guide, meals and the return are included | {{< tour-link tour="696822" >}}CDMX: Teotihuacan Balloon Flight with Optional Pyramids Tour{{< /tour-link >}}, $148, 4.6/5 from 1,326 reviews |
 | Celebration package | Shared or private flight with flowers, cake or photos | Birthdays and special occasions | Whether the basket is private and which extras you get | HappyFly's MXN 9,500 celebration package for two, booked with HappyFly directly |
 
 *Marketplace prices are per person unless stated, as shown on 2 November 2026.*
@@ -65,7 +65,7 @@ Before paying, check each of these:
 7. **Taxes and payment fees:** will the price change at checkout or if you ask for an invoice?
 8. **Weather cancellation:** which part of the payment comes back if the flight cannot go?
 
-Booked direct, [WE FLY's price page](https://weflyteotihuacan.com/teotihuacan-balloon-prices/) shows shared flights from MXN 1,990 per person and lists Mexico City transport as an optional add-on, free within 4 km of the Angel of Independence. [HappyFly's 2026 page](https://happyfly.mx/en/prices/) lists a shared flight at MXN 2,100 per person with buffet breakfast. Those are the operators' own peso prices. The marketplace listings on this site are priced in US dollars and usually bundle pickup and breakfast: the {{< tour-link tour="357659P1" >}}flight with cave breakfast, pyramids and Mexico City pickup{{< /tour-link >}} costs $148 per person (4.9/5 from 8,231 reviews). Check the fare and what it covers at checkout.
+Booked direct, [WE FLY's price page](https://weflyteotihuacan.com/teotihuacan-balloon-prices/) shows shared flights from MXN 1,990 per person and lists Mexico City transport as an optional add-on, free within 4 km of the Angel of Independence. [HappyFly's 2026 page](https://happyfly.mx/en/prices/) lists a shared flight at MXN 2,100 per person with buffet breakfast. Those are the operators' own peso prices. The marketplace listings on this site are priced in US dollars and usually bundle pickup and breakfast: the {{< tour-link tour="357659P1" >}}flight with cave breakfast, pyramids and Mexico City pickup{{< /tour-link >}} costs $148 per person (4.9/5 from 8,257 reviews). Check the fare and what it covers at checkout.
 
 For more pricing scenarios and the extras that add up, read our [Teotihuacán balloon ride prices guide](/teotihuacan-balloon-ride-prices/).
 
@@ -325,6 +325,6 @@ WE FLY prices: MXN 1,990 shared, transport optional add-on, free within 4 km of 
 HappyFly: shared MXN 2,100 incl. buffet breakfast; private 8,500/2; celebration 9,500/2; weather reschedule or full refund; 48 h free, 50% after; no-shows non-refundable; children over 6 with an adult: happyfly.mx/en/prices.
 Vuelo en Globo terms: departure Ángel de la Independencia, no pickup at private homes/Airbnb; weather no refund, free reschedule, pay extras used; cancel 72 h ahead via sales adviser else full charge; <12 h notice = no-show; bookings within 72 h no date change: vueloenglobo.mx/teminos-y-condiciones.
 Viator free cancellation 24 h: site weather page; 696822 GYG free cancel 24 h: best-teotihuacan-balloon-rides.md.
-Marketplace figures: data/mcbr_offers.json refreshed 2026-11-02 (247495P3 $148 4.94/1496; 309496P6 $1,017/group up to 2 4.90/41; 1522004 $170 4.98/46; 696822 $148 4.64/1306; 357659P1 $148 4.94/8211).
+Marketplace figures: data/mcbr_offers.json refreshed 2026-11-09 (247495P3 $148 4.94/1501; 309496P6 $1,017/group up to 2 4.90/41; 1522004 $170 4.96/53; 696822 $148 4.64/1326; 357659P1 $148 4.94/8257).
 Zone entry MX$210 foreign visitors 2026: INAH tariffs as reported by Chilango / La Razón (Dec 2025), matches site ledger s5.
 Flight 30-60 min: site figure; article's 35-60 replaced. Road 45-50 km: site ledger s1. -->

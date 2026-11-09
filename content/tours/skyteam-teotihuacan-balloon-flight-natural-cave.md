@@ -5,7 +5,7 @@ draft: false
 type: "tour"
 tourId: "482323P1"
 slug: "skyteam-teotihuacan-balloon-flight-natural-cave"
-description: "Skyteam Teotihuacán balloon flight reviewed: about $137 flight only, $181 with cave breakfast, $211 with Mexico City transport. 4.9 from 1,569 reviews."
+description: "Skyteam Teotihuacán balloon flight reviewed: about $137 flight only, $181 with cave breakfast, $211 with Mexico City transport. 4.9 from 1,557 reviews."
 keywords:
   - "skyteam teotihuacan balloon flight"
   - "teotihuacan balloon ride natural cave breakfast"

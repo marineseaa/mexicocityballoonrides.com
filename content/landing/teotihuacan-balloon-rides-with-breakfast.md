@@ -67,7 +67,7 @@ quickFacts:
   - label: "La Gruta"
     value: "Natural cave about 200 m from Gate 5"
   - label: "La Gruta breakfast"
-    value: "8:00–11:00 (2021 listing)"
+    value: "8:00 a.m.–6:00 p.m. daily"
   - label: "Cave + transport packages"
     value: "From $181 per person"
   - label: "Cave, no transfer"
@@ -110,7 +110,7 @@ If the point is breakfast at La Gruta, the cave restaurant behind the Pyramid of
 
 Packages split three ways. La Gruta is a restaurant inside a natural volcanic cave, about 200 m from Gate 5 behind the Pyramid of the Sun, and it has served diners since the early 20th century. Several operators run breakfasts in their own natural caves, which they describe as decorated with pre-Hispanic art or as an "ancestral cave". The third kind is a buffet or set breakfast at a restaurant or at the balloon port itself.
 
-"Cave breakfast" on a listing does not mean La Gruta. Of the listings we track, only a few name it: We Fly, {{< tour-link tour="193670P3" >}}Paseos Olmedo{{< /tour-link >}}, and {{< tour-link tour="484176P1" >}}Arc Tours{{< /tour-link >}}, which offers its buffet "optional in the Restaurant La Cueva". Paseos Olmedo's $350 package stops at La Gruta but does not include the food.
+"Cave breakfast" on a listing does not mean La Gruta. Of the listings we track, only a few name it: We Fly, {{< tour-link tour="193670P3" >}}Paseos Olmedo{{< /tour-link >}}, and {{< tour-link tour="484176P1" >}}Arc Tours{{< /tour-link >}}, which offers its buffet "optional in the Restaurant La Cueva". Paseos Olmedo's $350 package stops at La Gruta but does not include the food. For the two cave restaurants side by side, see [La Gruta vs La Cueva explained](/guides/teotihuacan-balloon-ride-cave-breakfast/).
 
 ## Breakfast is not always in the price
 
@@ -118,9 +118,9 @@ The headline price on most listings is the flight alone. Viaja Teotihuacan's $14
 
 ## Waiting times at La Gruta
 
-We Fly is unusually frank. Its express option says breakfast at La Gruta is "subject to availability" and that "the waiting time outside the restaurant is beyond our control". The drive-yourself option warns there "may be a timeout to access the site", and the all-included option repeats the waiting-time warning. The all-included option's text calls the venue La Cueva, so ask We Fly which cave you will eat in if La Gruta matters to you.
+We Fly is unusually frank. Its express option says breakfast at La Gruta is "subject to availability" and that "the waiting time outside the restaurant is beyond our control". The drive-yourself option warns there "may be a timeout to access the site", and the all-included option repeats the waiting-time warning. The all-included option's text still calls the venue La Cueva, but We Fly says its package breakfasts have been served at La Gruta since August 22, 2026; check the restaurant on your confirmation, and see [how La Gruta differs from La Cueva](/guides/teotihuacan-balloon-ride-cave-breakfast/).
 
-A 2021 Chilango listing gave La Gruta's breakfast hours as 8:00 to 11:00, and reports that the cave is cool inside, around 6 °C. Bring the layer you flew in. One We Fly reviewer in March 2026 wrote that the cave breakfast in their package was not provided, so keep your booking confirmation to hand.
+La Gruta's website gives its hours as 8:00 a.m. to 6:00 p.m. every day and advises booking at weekends. A 2021 Chilango listing reports that the cave is cool inside, around 6 °C. Bring the layer you flew in. One We Fly reviewer in March 2026 wrote that the cave breakfast in their package was not provided, so keep your booking confirmation to hand.
 
 ## What is actually on the plate
 
@@ -148,8 +148,8 @@ Book We Fly if La Gruta itself is the draw and you can live with a possible wait
 <!-- GK-AUDIT: teotihuacan-balloon-rides-with-breakfast
 Prices (TOURS-DIGEST / mcbr_offers priceOptions, 25 Oct 2026): 247495P2 TG7 $203, TG5 $274, TG1 $231, TG6 $143; 482323P1 TG3 $181, TG2 $137, TG1 $211; 366381P1 TG2 $201, TG3 $157, TG1 $240; 456146P3 TG3 $231; 394927P1 TG1 $219, TG4 $203; 377048P1 TG3 $208; 171986P1 TG3 $159; 484134P1 TG1 $217; 5491014P1 TG1 $228; 5553640P1 $231; 357659P1 TG1 $236; 193670P3 $350 (offers JSON USD).
 Range $181-$274 and +$44 to +$60: arithmetic on the above. Rating 247495P2 4.9/4,824 (digest).
-We Fly waiting-time warnings, "subject to availability", "may be a timeout", "La Cueva" in TG1: digest 247495P2 option texts. Review "breakfast at the cave wasn't provided" (Mar 2026): mcbr_offers sampleReviews 247495P2.
-La Gruta: natural volcanic cave, ~200 m from Puerta 5 behind Pyramid of the Sun, early 20th century, breakfast 8:00-11:00 (Chilango 2021), cool ~6 °C (Chilango, single-source, attributed): ledger s9. Not claimed buffet; not claimed all operators use it.
+We Fly waiting-time warnings, "subject to availability", "may be a timeout", "La Cueva" in TG1: digest 247495P2 option texts; We Fly moved package breakfasts to La Gruta as of 22 Aug 2026: https://wefly.com.mx/en/guia/la-cueva-restaurante/ (checked 2026-11-09). Review "breakfast at the cave wasn't provided" (Mar 2026): mcbr_offers sampleReviews 247495P2.
+La Gruta: natural volcanic cave, ~200 m from Puerta 5 behind Pyramid of the Sun, early 20th century, open 08:00-18:00 daily (https://www.lagruta.mx/index_en.php, checked 2026-11-09; replaces Chilango 2021 8:00-11:00), cool ~6 °C (Chilango, single-source, attributed): ledger s9. Not claimed buffet; not claimed all operators use it.
 WeFly sells La Gruta package: ledger s9. Paseos Olmedo La Gruta stop optional, food not included: digest 193670P3. Arc Tours buffet optional in Restaurant La Cueva: digest 484176P1.
 Operators' caves "decorated with pre-Hispanic art" (357659P1, 247495P2 descriptions), "Ancestral Cave" (366381P1): digest.
 Menus: digest 456146P3 TG3, 394927P1 TG1/TG4 (Huehueteotl), 377048P1 TG3 (La Higuera, entry incl.), 171986P1 (Mexican breakfast at balloon port; Breakfast in includes for all options).
