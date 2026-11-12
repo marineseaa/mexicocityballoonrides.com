@@ -104,7 +104,7 @@ keywords:
   - "teotihuacan hot air balloon pickup time"
 ---
 
-If you are staying in Mexico City and want someone else to do the 4 a.m. drive, book {{< tour-link tour="171986P1" >}}Volare's flight with round-trip transport{{< /tour-link >}}. On dates we checked in late October 2026 the transport option was about $186 per person, against $159 if you drive yourself, and it includes breakfast at the balloon port. A second option at the same $186 waits while you walk the ruins before driving you back. It is rated 4.8 from 4,517 reviews. The catch: Volare collects from selected hotels, so check yours is covered before you pay. [Our review →](/tours/volare-teotihuacan-balloon-flight-from-mexico-city/)
+If you are staying in Mexico City and want someone else to do the 4 a.m. drive, book {{< tour-link tour="171986P1" >}}Volare's flight with round-trip transport{{< /tour-link >}}. On dates we checked in late October 2026 the transport option was about $186 per person, against $159 if you drive yourself, and it includes breakfast at the balloon port. A second option at the same $186 waits while you walk the ruins before driving you back. It is rated 4.8 from 4,510+ reviews. The catch: Volare collects from selected hotels, so check yours is covered before you pay. [Our review →](/tours/volare-teotihuacan-balloon-flight-from-mexico-city/)
 
 ## Balloons do not fly from the city
 

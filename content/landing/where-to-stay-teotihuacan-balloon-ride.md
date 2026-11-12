@@ -110,19 +110,19 @@ Viaja Teotihuacan, Tlatoani tours, We Fly, Volare, Cielo Azteca and the other op
 
 Centro is the closest of the pickup neighborhoods to the northbound road out of the city, and it has the strongest value hotels. The trade-off is the evening: many streets go quiet after the shops close, so you eat near the Zócalo or take a short ride to Roma.
 
-{{< hotel-link "hotel_catedral" >}}Hotel Catedral{{< /hotel-link >}} (mid-range) scored 9.2 from 4,407 reviews, lists free private parking and sets no minimum check-in age. {{< hotel-link "gran_hotel" >}}Gran Hotel Ciudad de México{{< /hotel-link >}} (upper) faces the Zócalo and charges US$10 a day for parking on site. {{< hotel-link "area_centro" >}}See all stays in Centro Histórico{{< /hotel-link >}}.
+{{< hotel-link "hotel_catedral" >}}Hotel Catedral{{< /hotel-link >}} (mid-range) scored 9.2 from 4,400+ reviews, lists free private parking and sets no minimum check-in age. {{< hotel-link "gran_hotel" >}}Gran Hotel Ciudad de México{{< /hotel-link >}} (upper) faces the Zócalo and charges US$10 a day for parking on site. {{< hotel-link "area_centro" >}}See all stays in Centro Histórico{{< /hotel-link >}}.
 
 ## Juárez and Reforma: sleep at the pickup corner {#juarez}
 
 The Angel of Independence is where several operators gather guests: Globos Aerostáticos Teotihuacán's shared transport leaves it at about 5:15 to 5:40 a.m., and We Fly's free pickup radius is measured from it. Juárez wraps around the Angel, and the big Reforma hotels line the avenue. You walk to dinner, and your morning van has the shortest loop.
 
-{{< hotel-link "hotel_geneve" >}}Hotel Geneve{{< /hotel-link >}} (mid-range) on Londres scored 8.5 from 1,272 reviews, lists free parking nearby and a minimum check-in age of 18. {{< hotel-link "sofitel_reforma" >}}Sofitel Mexico City Reforma{{< /hotel-link >}} (luxury) has a heated indoor pool with a view and valet parking at US$12 a day. {{< hotel-link "four_seasons" >}}Four Seasons Hotel Mexico City{{< /hotel-link >}} (luxury), farther along Reforma, lists an outdoor heated pool and parking at US$30 a day. {{< hotel-link "area_juarez" >}}See all stays in Juárez{{< /hotel-link >}}.
+{{< hotel-link "hotel_geneve" >}}Hotel Geneve{{< /hotel-link >}} (mid-range) on Londres scored 8.5 from 1,270+ reviews, lists free parking nearby and a minimum check-in age of 18. {{< hotel-link "sofitel_reforma" >}}Sofitel Mexico City Reforma{{< /hotel-link >}} (luxury) has a heated indoor pool with a view and valet parking at US$12 a day. {{< hotel-link "four_seasons" >}}Four Seasons Hotel Mexico City{{< /hotel-link >}} (luxury), farther along Reforma, lists an outdoor heated pool and parking at US$30 a day. {{< hotel-link "area_juarez" >}}See all stays in Juárez{{< /hotel-link >}}.
 
 ## San Juan Teotihuacán: skip the 4:30 a.m. pickup {#teotihuacan}
 
 If you booked a flight-only option, you must get yourself to the balloon port before dawn, and there is no public bus that early: the Terminal Norte ticket window opens at 6:00 and the buses stop at the zone gates, not at the launch fields. Sleeping in San Juan Teotihuacán solves that. The operator sends the exact port location the day before; Viaja Teotihuacan's is about 5 minutes from the Pemex Pirámides station, and We Fly puts its port about 15 minutes from the town's hotels. After the flight you can be at the archaeological zone when it opens at 8:00. The cost is the evenings: the town is small, and reviewers of one hotel mention that ride-hailing is limited, so a car helps.
 
-{{< hotel-link "villas_arqueologicas" >}}Villas Arqueologicas Teotihuacan{{< /hotel-link >}} (mid-range) scored 8.5 from 171 reviews, with a heated outdoor pool and free private parking; its listing places it moments from the ruins. {{< hotel-link "quinto_sol" >}}GS Quinto Sol Teotihuacan{{< /hotel-link >}} (mid-range) in town scored 8.7 from 252 reviews and lists free parking and a heated pool. {{< hotel-link "finca_abuelo" >}}La Finca del Abuelo Teotihuacan{{< /hotel-link >}} (budget) scored 8.7 from 532 reviews, with a garden and free private parking. {{< hotel-link "area_teotihuacan" >}}See all stays in San Juan Teotihuacán{{< /hotel-link >}}.
+{{< hotel-link "villas_arqueologicas" >}}Villas Arqueologicas Teotihuacan{{< /hotel-link >}} (mid-range) scored 8.5 from 170+ reviews, with a heated outdoor pool and free private parking; its listing places it moments from the ruins. {{< hotel-link "quinto_sol" >}}GS Quinto Sol Teotihuacan{{< /hotel-link >}} (mid-range) in town scored 8.7 from 250+ reviews and lists free parking and a heated pool. {{< hotel-link "finca_abuelo" >}}La Finca del Abuelo Teotihuacan{{< /hotel-link >}} (budget) scored 8.7 from 530+ reviews, with a garden and free private parking. {{< hotel-link "area_teotihuacan" >}}See all stays in San Juan Teotihuacán{{< /hotel-link >}}.
 
 ### Flight-only plus a local hotel, in numbers
 
@@ -132,19 +132,19 @@ On dates we checked in late October 2026, Viaja Teotihuacan's flight alone was a
 
 Roma and Condesa sit inside We Fly's free pickup radius and on its express shuttle list, a few minutes farther from the exit road than Centro. Choose them if the balloon is one morning of a longer stay and you want the cafés and parks the rest of the week. Many smaller hotels here have no parking at all, which matters only if you drive.
 
-{{< hotel-link "villa_condesa" >}}Hotel Villa Condesa{{< /hotel-link >}} (upper) on Colima scored 9.2 from 305 reviews. {{< hotel-link "casa_decu" >}}Casa Decu{{< /hotel-link >}} (upper) in Hipódromo Condesa includes a free continental breakfast and sets a minimum check-in age of 18. {{< hotel-link "brick" >}}Brick Hotel{{< /hotel-link >}} (luxury) on Orizaba is adults only. {{< hotel-link "area_romacondesa" >}}See all stays in Roma Norte{{< /hotel-link >}}.
+{{< hotel-link "villa_condesa" >}}Hotel Villa Condesa{{< /hotel-link >}} (upper) on Colima scored 9.2 from 300+ reviews. {{< hotel-link "casa_decu" >}}Casa Decu{{< /hotel-link >}} (upper) in Hipódromo Condesa includes a free continental breakfast and sets a minimum check-in age of 18. {{< hotel-link "brick" >}}Brick Hotel{{< /hotel-link >}} (luxury) on Orizaba is adults only. {{< hotel-link "area_romacondesa" >}}See all stays in Roma Norte{{< /hotel-link >}}.
 
 ## Polanco: the luxury base, with a pickup caveat {#polanco}
 
 Polanco has the city's big upscale hotels, and We Fly's express shuttle names it. Its free pickup radius around the Angel does not, so ask the operator before you book whether your hotel is covered and at what cost.
 
-{{< hotel-link "hyatt_regency" >}}Hyatt Regency Mexico City{{< /hotel-link >}} (upper) scored 9.1 from 917 reviews and has a heated indoor pool. {{< hotel-link "las_alcobas" >}}Las Alcobas{{< /hotel-link >}} (luxury) on Masaryk includes continental breakfast in the rate and lists free parking. {{< hotel-link "area_polanco" >}}See all stays in Polanco{{< /hotel-link >}}.
+{{< hotel-link "hyatt_regency" >}}Hyatt Regency Mexico City{{< /hotel-link >}} (upper) scored 9.1 from 910+ reviews and has a heated indoor pool. {{< hotel-link "las_alcobas" >}}Las Alcobas{{< /hotel-link >}} (luxury) on Masaryk includes continental breakfast in the rate and lists free parking. {{< hotel-link "area_polanco" >}}See all stays in Polanco{{< /hotel-link >}}.
 
 ## The airport (AICM): an arrival night, not a balloon base {#airport}
 
 Mexico City's main airport is on the east side, and in free-flow traffic it is about 45 minutes from the balloon ports, slightly closer than Roma. None of the shuttle pickup lists we read include it, though, so it only works if you drive or book a private package that collects from your accommodation. Use it for the night you land late or the night before an early flight, and move into the city or out to Teotihuacán for the balloon morning.
 
-{{< hotel-link "hilton_airport" >}}Hilton Mexico City Airport{{< /hotel-link >}} (mid-range) is at the airport, scored 8.0 from 2,063 reviews and runs a free shuttle to Terminal 2, subject to availability; it has no parking. {{< hotel-link "area_airport" >}}See all stays near the airport{{< /hotel-link >}}.
+{{< hotel-link "hilton_airport" >}}Hilton Mexico City Airport{{< /hotel-link >}} (mid-range) is at the airport, scored 8.0 from 2,060+ reviews and runs a free shuttle to Terminal 2, subject to availability; it has no parking. {{< hotel-link "area_airport" >}}See all stays near the airport{{< /hotel-link >}}.
 
 ## Should you split the stay? {#split}
 
