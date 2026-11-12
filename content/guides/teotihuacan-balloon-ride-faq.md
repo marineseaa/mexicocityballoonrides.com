@@ -35,7 +35,7 @@ The headline "from" price on most listings is the flight alone, about $137 to $1
 
 ### Which balloon ride should I book?
 
-Start with what you need included: transport from your hotel, a cave breakfast, time at the ruins, or a private basket. Ratings are uniformly high, so the option and the price do most of the sorting; {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's balloon flight with cave breakfast{{< /tour-link >}}, for example, is rated 4.9 from 8,257 reviews, the most of any flight we track. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) picks one for each kind of traveller.
+Start with what you need included: transport from your hotel, a cave breakfast, time at the ruins, or a private basket. Ratings are uniformly high, so the option and the price do most of the sorting; {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's balloon flight with cave breakfast{{< /tour-link >}}, for example, is rated 4.9 from 8,250+ reviews, the most of any flight we track. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) picks one for each kind of traveller.
 
 ### Is a Teotihuacán balloon ride worth it?
 

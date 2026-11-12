@@ -44,12 +44,12 @@ These are packages published on the operators' own websites, checked on 9 Novemb
 
 | Operator and package | Price per adult | Round-trip CDMX transport | Archaeological entry | Guide in the ruins | Food | Closest marketplace listing |
 |---|---:|---|---|---|---|---|
-| Magic Balloons, Experience | MXN 2,899 (about $159) | Yes | Included | Not listed | Buffet breakfast | {{< tour-link tour="247495P3" >}}We Fly flight with transport and entry{{< /tour-link >}}, from $148, 4.9/5 from 1,501 reviews |
-| WE FLY, Group Transport + Pyramids | MXN 2,990 (about $164) | Yes, shared | Included | In the itinerary, not in the inclusions list | Buffet breakfast | {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}}, from $148, 4.9/5 from 1,501 reviews |
-| Magic Balloons, Premium | MXN 3,200 (about $175) | Yes | Included | Not listed | Cave breakfast | {{< tour-link tour="366381P1" >}}Tlatoani's all-inclusive{{< /tour-link >}}, about $240, 4.9/5 from 7,871 reviews |
-| Flying Pictures, +Transport +Pyramids | MXN 3,250 (about $178) | Yes, shared | "Free access" to Teotihuacán | Not specified | Buffet breakfast | {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's full package{{< /tour-link >}}, about $236, 4.9/5 from 8,257 reviews |
-| Gran Vuelo, Archaeological Flight | MXN 3,599 (about $197) | Yes, shared | Included | A certified 1.5-hour tour in the inclusions, a "self-guided visit" in the itinerary | Cave breakfast | {{< tour-link tour="247495P2" >}}We Fly's all-included option{{< /tour-link >}}, about $231, 4.9/5 from 4,824 reviews |
-| WE FLY, All-Inclusive | MXN 3,600 (about $197) | Yes, from hotels in central areas | Included | Certified bilingual guide | Breakfast at La Gruta | {{< tour-link tour="247495P2" >}}Hot Air Balloon Flight + Breakfast at La Gruta + Pick Up in CDMX or We Fly{{< /tour-link >}}, about $231, 4.9/5 from 4,824 reviews |
+| Magic Balloons, Experience | MXN 2,899 (about $159) | Yes | Included | Not listed | Buffet breakfast | {{< tour-link tour="247495P3" >}}We Fly flight with transport and entry{{< /tour-link >}}, from $148, 4.9/5 from 1,500+ reviews |
+| WE FLY, Group Transport + Pyramids | MXN 2,990 (about $164) | Yes, shared | Included | In the itinerary, not in the inclusions list | Buffet breakfast | {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}}, from $148, 4.9/5 from 1,500+ reviews |
+| Magic Balloons, Premium | MXN 3,200 (about $175) | Yes | Included | Not listed | Cave breakfast | {{< tour-link tour="366381P1" >}}Tlatoani's all-inclusive{{< /tour-link >}}, about $240, 4.9/5 from 7,870+ reviews |
+| Flying Pictures, +Transport +Pyramids | MXN 3,250 (about $178) | Yes, shared | "Free access" to Teotihuacán | Not specified | Buffet breakfast | {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's full package{{< /tour-link >}}, about $236, 4.9/5 from 8,250+ reviews |
+| Gran Vuelo, Archaeological Flight | MXN 3,599 (about $197) | Yes, shared | Included | A certified 1.5-hour tour in the inclusions, a "self-guided visit" in the itinerary | Cave breakfast | {{< tour-link tour="247495P2" >}}We Fly's all-included option{{< /tour-link >}}, about $231, 4.9/5 from 4,820+ reviews |
+| WE FLY, All-Inclusive | MXN 3,600 (about $197) | Yes, from hotels in central areas | Included | Certified bilingual guide | Breakfast at La Gruta | {{< tour-link tour="247495P2" >}}Hot Air Balloon Flight + Breakfast at La Gruta + Pick Up in CDMX or We Fly{{< /tour-link >}}, about $231, 4.9/5 from 4,820+ reviews |
 
 Prices are in MXN per person on the operators' sites, with dollars at about MXN 18.25. Child, group, private-basket and seasonal rates can differ, and operators change wording or run several products with similar names. If a listing is ambiguous, ask for the inclusions in writing before you pay.
 
@@ -60,7 +60,7 @@ Prices are in MXN per person on the operators' sites, with dollars at about MXN 
 - **Cave breakfast and your own pace at the ruins:** Magic Balloons Premium at MXN 3,200.
 - **Cave breakfast and a guide:** Gran Vuelo's Archaeological Flight at MXN 3,599 against WE FLY All-Inclusive at MXN 3,600. Take WE FLY if you want the guide and La Gruta named on the product page; take Gran Vuelo only after it confirms in writing whether its visit is guided.
 
-On the marketplace, {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight, cave breakfast and pyramids package{{< /tour-link >}} has the most reviews of any flight we cover, at 4.9/5 from 8,257. Its listing excludes the INAH ticket and a guide inside the ruins, so budget MXN 210 at the gate and plan to explore on your own.
+On the marketplace, {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight, cave breakfast and pyramids package{{< /tour-link >}} has the most reviews of any flight we cover, at 4.9/5 from 8,250+. Its listing excludes the INAH ticket and a guide inside the ruins, so budget MXN 210 at the gate and plan to explore on your own.
 
 A good match on inclusions says nothing about safety or reliability. Recent reviews of the exact provider matter as much as the price.
 
@@ -98,7 +98,7 @@ If you mainly want time at the archaeological site, a simple buffet or a flight-
 
 ### 4. The pyramids entry ticket
 
-The INAH ticket is separate from the balloon flight unless the product says it is included. The {{< tour-link tour="401763P2" >}}cave-breakfast flight with Mexico City pickup{{< /tour-link >}} (from $143, 4.9/5 from 1,801 reviews) lists admission fees among its exclusions, so you pay the MXN 210 at the gate.
+The INAH ticket is separate from the balloon flight unless the product says it is included. The {{< tour-link tour="401763P2" >}}cave-breakfast flight with Mexico City pickup{{< /tour-link >}} (from $143, 4.9/5 from 1,800+ reviews) lists admission fees among its exclusions, so you pay the MXN 210 at the gate.
 
 If the ticket is included, ask how you get it: does the guide buy tickets on arrival, hand them out to the group, or ask you to show a separate voucher? This matters if you travel with children or with someone who qualifies for an INAH discount or free entry.
 

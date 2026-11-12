@@ -74,7 +74,7 @@ Read the table as three steps. Moving from shared to private transport adds abou
 
 For many couples this is the sweet spot. You skip the van loop round other hotels, keep your own guide at the ruins and get back when you planned, and you still fly at the shared price.
 
-{{< tour-link tour="333644P5" >}}Excellentravel's balloon flight with private transport{{< /tour-link >}} sells both versions of the same day: about $357 per person with a private vehicle and guide, or about $247 with shared transport and tour. Both include breakfast at a local restaurant, entry and a guided visit of about 2.5 hours, with return around 1:00 p.m. Photos during the flight are not included. Rated 4.9 from 123 reviews. [Our review →](/tours/excellentravel-balloon-flight-private-transport-pyramids/)
+{{< tour-link tour="333644P5" >}}Excellentravel's balloon flight with private transport{{< /tour-link >}} sells both versions of the same day: about $357 per person with a private vehicle and guide, or about $247 with shared transport and tour. Both include breakfast at a local restaurant, entry and a guided visit of about 2.5 hours, with return around 1:00 p.m. Photos during the flight are not included. Rated 4.9 from 120+ reviews. [Our review →](/tours/excellentravel-balloon-flight-private-transport-pyramids/)
 
 {{< tour-link tour="323089P1" >}}Luxury Tours' private tour and shared balloon ride{{< /tour-link >}} costs about $360 per person and includes the archaeological-zone tickets, a guided visit, breakfast, drinks and a stop at an obsidian craft house. A private balloon is an extra charge, so ask for a quote if you want both. Rated 4.9 from 25 reviews. [Our review →](/tours/luxury-tours-teotihuacan-private-tour-shared-balloon/)
 

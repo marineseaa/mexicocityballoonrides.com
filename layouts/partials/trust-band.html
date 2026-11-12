@@ -24,7 +24,7 @@
 <ul class="trust-band trust-grid fact-strip" role="list" aria-label="Key facts">
   {{ if $rating }}
   <li class="fact trust-item">
-    <span class="fact__label trust-label">{{ if $reviewCount }}{{ lang.FormatNumber 0 $reviewCount }} reviews{{ else }}Guest rating{{ end }}</span>
+    <span class="fact__label trust-label">{{ if $reviewCount }}{{ partial "review-count.html" $reviewCount }} reviews{{ else }}Guest rating{{ end }}</span>
     <span class="fact__value trust-metric"><span class="fact__star" aria-hidden="true">★</span> {{ printf "%.1f" $rating }} / 5</span>
   </li>
   {{ end }}

@@ -10,6 +10,7 @@
 {{ $reviews := $tour.sampleReviews | default slice }}
 {{ $rating  := $tour.rating      | default 0 }}
 {{ $count   := $tour.reviewCount | default 0 }}
+{{ $countLabel := partial "review-count.html" $count }}
 
 {{/* Build reviews URL for structured-data only — NOT exposed as href (JS-only) */}}
 {{ $featuredID := $page.Params.tourId | default $site.Params.featuredTourID | default $site.Params.gygWidgetTourID }}
@@ -75,7 +76,7 @@
       <h2 class="section-title" id="reviews-heading">{{ $page.Params.reviewsTitle | default $site.Params.reviewsTitle | default "What Our Guests Say" }}</h2>
 
       {{ if $rating }}
-      <div class="reviews-aggregate fade-up" aria-label="Aggregate rating: {{ printf "%.1f" $rating }} out of 5 from {{ $count }} reviews">
+      <div class="reviews-aggregate fade-up" aria-label="Aggregate rating: {{ printf "%.1f" $rating }} out of 5 from {{ $countLabel }} reviews">
         <div class="aggregate-stars" aria-hidden="true">
           {{ range seq 5 }}
           <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
@@ -84,7 +85,7 @@
           {{ end }}
         </div>
         <span class="aggregate-score">{{ printf "%.1f" $rating }}/5</span>
-        <span class="aggregate-count">from {{ $count }} {{ $site.Params.reviewsSource | default "verified guests" }}</span>
+        <span class="aggregate-count">from {{ $countLabel }} {{ $site.Params.reviewsSource | default "verified guests" }}</span>
       </div>
       {{ end }}
 
@@ -155,7 +156,7 @@
             </svg>
             {{ end }}
           </div>
-          <p class="review-cta-text">Read all {{ $count }} verified reviews</p>
+          <p class="review-cta-text">Read all {{ $countLabel }} verified reviews</p>
           {{/* Per-page destination — see the note in cta-band.html.
                (beststockholmtours.com 2026-08-23) */}}
           <a href="{{ $tour.url }}" class="btn-primary"

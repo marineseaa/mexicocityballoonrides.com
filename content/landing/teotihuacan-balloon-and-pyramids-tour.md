@@ -105,7 +105,7 @@ keywords:
   - "balloon ride teotihuacan entrance fee included"
 ---
 
-For a balloon flight and a properly guided visit in one booking, take the top option of the {{< tour-link tour="696822" >}}Amigo Tours balloon flight with optional pyramids tour{{< /tour-link >}} on GetYourGuide. It adds a professional guide, the Teotihuacán entry ticket and the Basilica of Guadalupe on the way back. The listing starts at $148 for its cheapest option; the same product on Viator, the {{< tour-link tour="5885P459" >}}Teotihuacan and Guadalupe Shrine full-day tour{{< /tour-link >}}, priced the guided option at $249 on dates we checked in late October 2026. It is rated 4.6 from 1,326 reviews on GetYourGuide. If you only want time to wander, cheaper packages give you that. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/)
+For a balloon flight and a properly guided visit in one booking, take the top option of the {{< tour-link tour="696822" >}}Amigo Tours balloon flight with optional pyramids tour{{< /tour-link >}} on GetYourGuide. It adds a professional guide, the Teotihuacán entry ticket and the Basilica of Guadalupe on the way back. The listing starts at $148 for its cheapest option; the same product on Viator, the {{< tour-link tour="5885P459" >}}Teotihuacan and Guadalupe Shrine full-day tour{{< /tour-link >}}, priced the guided option at $249 on dates we checked in late October 2026. It is rated 4.6 from 1,320+ reviews on GetYourGuide. If you only want time to wander, cheaper packages give you that. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/)
 
 ## Free time is not a guided tour
 

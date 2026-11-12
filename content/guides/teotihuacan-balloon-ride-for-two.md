@@ -52,8 +52,8 @@ WE FLY lists transport from Mexico City as an optional add-on, and its page says
 
 | Listing | Price | For two | Rating |
 |---|---:|---:|---|
-| {{< tour-link tour="357659P1" >}}Balloon flight + Breakfast in cave + Pyramids + Pick up CDMX{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 8,257 reviews |
-| {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 1,501 reviews |
+| {{< tour-link tour="357659P1" >}}Balloon flight + Breakfast in cave + Pyramids + Pick up CDMX{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 8,250+ reviews |
+| {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 1,500+ reviews |
 | {{< tour-link tour="171986P1" >}}Teotihuacan Hot Air Balloon Flight from Mexico City / Volare{{< /tour-link >}} (shared) | $159 per person | $318 | 4.8/5 from 4,517 reviews |
 | {{< tour-link tour="5553640P2" >}}Private Balloon Flight over Teotihuacan plus Breakfast and Entry{{< /tour-link >}} | $476 per person | $952 | 4.9/5 from 20 reviews, a small sample |
 | {{< tour-link tour="309496P6" >}}Private Sunrise Balloon for 2 - Teotihuacan Pyramids Experience{{< /tour-link >}} | $1,017 per group of up to two | $1,017 | 4.9/5 from 41 reviews |

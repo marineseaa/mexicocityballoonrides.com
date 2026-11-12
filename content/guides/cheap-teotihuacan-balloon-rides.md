@@ -24,7 +24,7 @@ cardImage: "/images/gallery/teotihuacan-4.webp"
 
 The cheapest seat in a Teotihuacán balloon costs MXN 1,899, about $104, booked on the operator's own website. That fare covers the flight and insurance and nothing else. The launch fields sit 45 to 50 km by road northeast of Mexico City, and you have to be there by about 5:30 a.m., so if you are sleeping in the city the ride there and back can cost more than the gap between a flight-only seat and a ticket with transport.
 
-> **Quick answer:** On operators' own websites, checked 6 November 2026, shared flight-only seats started at MXN 1,899 to 2,099 per person, and flights with transport from central Mexico City at MXN 2,799 to 3,200. On the listings this site covers, the lowest flight-only price is about $137 with {{< tour-link tour="482323P1" >}}Skyteam's balloon flight{{< /tour-link >}} (4.9/5 from 1,557 reviews). Add up flight, transport both ways, any fees and the extras you want, then compare totals, not headline fares.
+> **Quick answer:** On operators' own websites, checked 6 November 2026, shared flight-only seats started at MXN 1,899 to 2,099 per person, and flights with transport from central Mexico City at MXN 2,799 to 3,200. On the listings this site covers, the lowest flight-only price is about $137 with {{< tour-link tour="482323P1" >}}Skyteam's balloon flight{{< /tour-link >}} (4.9/5 from 1,550+ reviews). Add up flight, transport both ways, any fees and the extras you want, then compare totals, not headline fares.
 
 <!--more-->
 
@@ -49,11 +49,11 @@ Promotions end and the price on the calendar can differ by date, so treat these 
 
 On the listings this site reviews, prices are in US dollars and the flight alone is the cheapest option on each one:
 
-- {{< tour-link tour="482323P1" >}}Skyteam's balloon flight with breakfast in a natural cave{{< /tour-link >}}: flight only MXN 2,500, about $137, rated 4.9/5 from 1,557 reviews. The same listing costs about $211 with transport and the cave breakfast.
-- {{< tour-link tour="487546P4" >}}Vive Vuela Teotihuacan's flight, cave breakfast and pyramids{{< /tour-link >}}: flight only MXN 2,480, about $136, rated 4.9/5 from 750 reviews.
-- {{< tour-link tour="247495P2" >}}We Fly's flight with La Gruta breakfast{{< /tour-link >}}: flight only about $143, rated 4.9/5 from 4,824 reviews.
-- {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight with cave breakfast{{< /tour-link >}}: flight only about $148, rated 4.9/5 from 8,257 reviews.
-- {{< tour-link tour="171986P1" >}}Volare's balloon flight from Mexico City{{< /tour-link >}}: about $159 for the flight with breakfast at the balloon port, or about $186 with hotel pickup, rated 4.8/5 from 4,552 reviews.
+- {{< tour-link tour="482323P1" >}}Skyteam's balloon flight with breakfast in a natural cave{{< /tour-link >}}: flight only MXN 2,500, about $137, rated 4.9/5 from 1,550+ reviews. The same listing costs about $211 with transport and the cave breakfast.
+- {{< tour-link tour="487546P4" >}}Vive Vuela Teotihuacan's flight, cave breakfast and pyramids{{< /tour-link >}}: flight only MXN 2,480, about $136, rated 4.9/5 from 750+ reviews.
+- {{< tour-link tour="247495P2" >}}We Fly's flight with La Gruta breakfast{{< /tour-link >}}: flight only about $143, rated 4.9/5 from 4,820+ reviews.
+- {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight with cave breakfast{{< /tour-link >}}: flight only about $148, rated 4.9/5 from 8,250+ reviews.
+- {{< tour-link tour="171986P1" >}}Volare's balloon flight from Mexico City{{< /tour-link >}}: about $159 for the flight with breakfast at the balloon port, or about $186 with hotel pickup, rated 4.8/5 from 4,550+ reviews.
 
 Booked direct, the cheapest seat is about $30 less than the cheapest marketplace flight. The marketplace price buys reviews you can read, a booking in dollars and the listing's own cancellation terms. Our [Teotihuacán balloon ride prices guide](/teotihuacan-balloon-ride-prices/) sets out every price level from flight only to private baskets; this page is about spending less on the whole morning.
 

@@ -104,7 +104,7 @@ keywords:
   - "teotihuacan balloon breakfast la gruta price"
 ---
 
-If the point is breakfast at La Gruta, the cave restaurant behind the Pyramid of the Sun, book {{< tour-link tour="247495P2" >}}We Fly's balloon flight with breakfast at La Gruta{{< /tour-link >}}. On dates we checked in late October 2026 the flight plus La Gruta was about $203 per person if you drive to We Fly's reception, and about $274 with transport and an express return to Mexico City. We Fly warns that the wait outside the restaurant is beyond its control. If any natural cave will do, other operators charge less. We Fly is rated 4.9 from 4,824 reviews. [Our review →](/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/)
+If the point is breakfast at La Gruta, the cave restaurant behind the Pyramid of the Sun, book {{< tour-link tour="247495P2" >}}We Fly's balloon flight with breakfast at La Gruta{{< /tour-link >}}. On dates we checked in late October 2026 the flight plus La Gruta was about $203 per person if you drive to We Fly's reception, and about $274 with transport and an express return to Mexico City. We Fly warns that the wait outside the restaurant is beyond its control. If any natural cave will do, other operators charge less. We Fly is rated 4.9 from 4,820+ reviews. [Our review →](/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/)
 
 ## Three kinds of balloon breakfast
 

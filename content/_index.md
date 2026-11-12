@@ -26,7 +26,7 @@ keywords:
   - "private hot air balloon teotihuacan"
 ---
 
-For most first-time visitors staying in Mexico City, start by comparing flights with round-trip transfers and an optional visit to the archaeological site. It solves the hardest part of the morning, reaching a balloon field about an hour away before dawn. Our pick is the {{< tour-link tour="357659P1" >}}Viaja Teotihuacan balloon flight with cave breakfast and hotel transport{{< /tour-link >}}: about $236 per person with transport and breakfast on dates we checked in late October 2026, rated 4.9 from 8,257 reviews on Viator, more reviews than any other listing we track. [Our review →](/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/)
+For most first-time visitors staying in Mexico City, start by comparing flights with round-trip transfers and an optional visit to the archaeological site. It solves the hardest part of the morning, reaching a balloon field about an hour away before dawn. Our pick is the {{< tour-link tour="357659P1" >}}Viaja Teotihuacan balloon flight with cave breakfast and hotel transport{{< /tour-link >}}: about $236 per person with transport and breakfast on dates we checked in late October 2026, rated 4.9 from 8,250+ reviews on Viator, more reviews than any other listing we track. [Our review →](/tours/viaja-teotihuacan-balloon-flight-cave-breakfast/)
 
 ## The flights are not over the city
 

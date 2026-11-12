@@ -74,7 +74,7 @@ These are prices published on the operators' own websites, checked on 9 November
 
 Dollars are at about MXN 18.25. Use the table as a checklist. "Cave breakfast" does not mean La Gruta, a La Gruta breakfast is not part of every WE FLY product, and a cave breakfast package is not automatically a full day trip.
 
-On the marketplace, WE FLY's {{< tour-link tour="247495P2" >}}Hot Air Balloon Flight + Breakfast at La Gruta + Pick Up in CDMX or We Fly{{< /tour-link >}} is the listing that names La Gruta, at 4.9/5 from 4,824 reviews. The option where you make your own way there was about $203, and the all-included option about $231. Its option text still calls the all-included venue La Cueva, which predates the August switch; check the restaurant on your confirmation.
+On the marketplace, WE FLY's {{< tour-link tour="247495P2" >}}Hot Air Balloon Flight + Breakfast at La Gruta + Pick Up in CDMX or We Fly{{< /tour-link >}} is the listing that names La Gruta, at 4.9/5 from 4,820+ reviews. The option where you make your own way there was about $203, and the all-included option about $231. Its option text still calls the all-included venue La Cueva, which predates the August switch; check the restaurant on your confirmation.
 
 ### Gran Vuelo Traditional, the lowest-priced cave breakfast here
 
@@ -227,7 +227,7 @@ No. They are two restaurants near Teotihuacán with different addresses and book
 
 ### Which Teotihuacán balloon tours include La Gruta?
 
-WE FLY's Photos + La Gruta at MXN 2,990 and All-Inclusive at MXN 3,600 both name La Gruta, and on the marketplace WE FLY's {{< tour-link tour="247495P2" >}}flight with La Gruta breakfast{{< /tour-link >}} does too. Paseos Olmedo's {{< tour-link tour="193670P3" >}}flight with a stop at La Gruta{{< /tour-link >}} (about $350, 4.9/5 from 155 reviews) takes you there but does not pay for the food. Other operators' restaurants can change by date, so do not read a named restaurant into "cave breakfast".
+WE FLY's Photos + La Gruta at MXN 2,990 and All-Inclusive at MXN 3,600 both name La Gruta, and on the marketplace WE FLY's {{< tour-link tour="247495P2" >}}flight with La Gruta breakfast{{< /tour-link >}} does too. Paseos Olmedo's {{< tour-link tour="193670P3" >}}flight with a stop at La Gruta{{< /tour-link >}} (about $350, 4.9/5 from 150+ reviews) takes you there but does not pay for the food. Other operators' restaurants can change by date, so do not read a named restaurant into "cave breakfast".
 
 ### Does WE FLY still serve breakfast at La Cueva?
 

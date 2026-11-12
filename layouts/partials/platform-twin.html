@@ -36,7 +36,7 @@
     <p class="platform-twin-label">Same {{ $noun }}, also on {{ $name }}</p>
     <p class="platform-twin-facts">
       {{- with $twin.formattedStartingPrice }}From <strong>{{ . }}</strong> {{ $twin.priceCategory | default "per person" }}{{ end -}}
-      {{- with $twin.rating }} · ★ {{ printf "%.1f" . }} from {{ lang.FormatNumber 0 ($twin.reviewCount | default 0) }} {{ $name }} reviews{{ end -}}
+      {{- with $twin.rating }} · ★ {{ printf "%.1f" . }} from {{ partial "review-count.html" ($twin.reviewCount | default 0) }} {{ $name }} reviews{{ end -}}
     </p>
     <p class="platform-twin-note">Each platform sets its own price and collects its own reviews, so compare both before you book on {{ $here }}.</p>
   </div>

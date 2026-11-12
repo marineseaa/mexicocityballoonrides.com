@@ -102,7 +102,7 @@ keywords:
   - "teotihuacan balloon port location"
 ---
 
-If you have a car or are staying in San Juan Teotihuacán, book the flight-only option on {{< tour-link tour="482323P1" >}}Skyteam Teotihuacán's balloon flight{{< /tour-link >}}. At MXN 2,500, about $137 per person on dates we checked in late October 2026, it was the lowest flight-only price among the flights we review, and it is rated 4.9 from 1,557 reviews. Skyteam sends you the balloon port location and you make your own way there before dawn. Breakfast in a natural cave can be added, which takes the price to about $181. [Our review →](/tours/skyteam-teotihuacan-balloon-flight-natural-cave/)
+If you have a car or are staying in San Juan Teotihuacán, book the flight-only option on {{< tour-link tour="482323P1" >}}Skyteam Teotihuacán's balloon flight{{< /tour-link >}}. At MXN 2,500, about $137 per person on dates we checked in late October 2026, it was the lowest flight-only price among the flights we review, and it is rated 4.9 from 1,550+ reviews. Skyteam sends you the balloon port location and you make your own way there before dawn. Breakfast in a natural cave can be added, which takes the price to about $181. [Our review →](/tours/skyteam-teotihuacan-balloon-flight-natural-cave/)
 
 ## Who sells a flight-only option, and for how much
 

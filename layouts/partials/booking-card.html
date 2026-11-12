@@ -27,7 +27,7 @@
   <div class="booking-card-body">
     {{ if not .noMedia }}<h3 class="booking-card-title">{{ $tName }}</h3>{{ end }}
     <ul class="booking-card-facts" role="list">
-      {{ with $tour.rating }}<li><span class="booking-card-star" aria-hidden="true">★</span> <strong>{{ printf "%.1f" . }}</strong>/5 ({{ lang.FormatNumber 0 ($tour.reviewCount | default 0) }} reviews)</li>{{ end }}
+      {{ with $tour.rating }}<li><span class="booking-card-star" aria-hidden="true">★</span> <strong>{{ printf "%.1f" . }}</strong>/5 ({{ partial "review-count.html" ($tour.reviewCount | default 0) }} reviews)</li>{{ end }}
       {{ with $tour.duration }}<li>{{ . }}</li>{{ end }}
       {{ if $tour.freeCancellation }}<li>Free cancellation</li>{{ end }}
       {{ with $tour.supplier }}<li>Operated by {{ . }}</li>{{ end }}

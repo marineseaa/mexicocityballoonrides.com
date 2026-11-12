@@ -40,7 +40,7 @@ trustExtraLabel: "Prices & Fees Checked"
 
 bookingOverline: "When the room is sorted"
 bookingHeading: "Book the balloon flight"
-bookingPitch: "Viaja Teotihuacan sells both ways in: the flight alone at its balloon port near the Pemex Pirámides station, or the flight with round-trip transport from your Mexico City hotel and a cave breakfast. Rated 4.9 from 8,257 Viator reviews, with free cancellation up to 24 hours before."
+bookingPitch: "Viaja Teotihuacan sells both ways in: the flight alone at its balloon port near the Pemex Pirámides station, or the flight with round-trip transport from your Mexico City hotel and a cave breakfast. Rated 4.9 from 8,250+ Viator reviews, with free cancellation up to 24 hours before."
 ctaTitle: "Book the flight, then the room"
 ctaBody: "Pick a date to see that morning's price for each option."
 

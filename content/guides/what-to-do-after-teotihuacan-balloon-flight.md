@@ -73,7 +73,7 @@ Acolman suits two kinds of traveller: those who drive themselves to a [flight-on
 
 The Basilica of Guadalupe stands in the north of Mexico City, about 37 km southwest of the site and close to Insurgentes Norte, the road most tours use to leave and re-enter the city. One news outlet gives its hours as 6:00 to 20:00 daily; confirm on the basilica's own site before you go.
 
-The easiest way to add it is to book it with the flight. Amigo Tours LATAM's {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}} has a top option with guided visits to both Teotihuacán and the Basilica; the drop-off is the meeting point, but you may stay at the Basilica and make your own way back. It is rated 4.6 from 1,326 reviews on GetYourGuide. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/) The same product is sold on Viator as {{< tour-link tour="5885P459" >}}Balloon Flight with Teotihuacan & Guadalupe Shrine{{< /tour-link >}}.
+The easiest way to add it is to book it with the flight. Amigo Tours LATAM's {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}} has a top option with guided visits to both Teotihuacán and the Basilica; the drop-off is the meeting point, but you may stay at the Basilica and make your own way back. It is rated 4.6 from 1,320+ reviews on GetYourGuide. [Our review →](/tours/amigo-tours-teotihuacan-balloon-flight-optional-pyramids/) The same product is sold on Viator as {{< tour-link tour="5885P459" >}}Balloon Flight with Teotihuacan & Guadalupe Shrine{{< /tour-link >}}.
 
 ## If you are not flying, or want a second day
 
@@ -81,9 +81,9 @@ Some people in a group skip the balloon, and some flights are grounded by wind. 
 
 | Tour | Price | What it is |
 |---|---|---|
-| {{< tour-link tour="34858" >}}Teotihuacan Early Access Tour{{< /tour-link >}} | $68 | Guided morning visit with entry, obsidian workshop and tequila tasting; groups up to 15; 4.6 from 1,936 reviews |
+| {{< tour-link tour="34858" >}}Teotihuacan Early Access Tour{{< /tour-link >}} | $68 | Guided morning visit with entry, obsidian workshop and tequila tasting; groups up to 15; 4.6 from 1,930+ reviews |
 | {{< tour-link tour="979732" >}}Morning Express Teotihuacan Tour{{< /tour-link >}} | $86 | Pickup from Polanco, Roma, Condesa or Centro, arrival around 8:00, back by midday; 5.0 from 62 reviews |
-| {{< tour-link tour="429068" >}}Teotihuacan Skip-the-Line Ticket{{< /tour-link >}} | $29 | Entry ticket only, no guide; 4.0 from 102 reviews |
+| {{< tour-link tour="429068" >}}Teotihuacan Skip-the-Line Ticket{{< /tour-link >}} | $29 | Entry ticket only, no guide; 4.0 from 100+ reviews |
 | {{< tour-link tour="1241575" >}}Teotihuacan & Guadalupe with barbacoa lunch{{< /tour-link >}} | $138 | Teotihuacán, the Basilica and Tlatelolco with a guide; 5.0 from 2 reviews |
 
 Two cautions. The skip-the-line ticket's listing still mentions climbing the Pyramid of the Sun, which INAH prohibits, and it costs more than the MX$210 desk price. The early access tour starts from a hostel in Mexico City, so it cannot be combined with a sunrise flight on the same morning.

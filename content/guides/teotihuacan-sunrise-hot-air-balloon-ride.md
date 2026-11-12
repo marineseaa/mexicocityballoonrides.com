@@ -26,7 +26,7 @@ Every tourist balloon over Teotihuacán is a sunrise flight. The air in the vall
 
 The pilot decides on the morning whether it is safe to fly. Wind, fog or low cloud can delay the launch, shorten the flight or cancel it, so keep the rest of the morning loose.
 
-> **Quick answer:** Sunrise at Teotihuacán ranges from about 5:57 a.m. in June to 7:05 a.m. in late December, and balloons launch around then. Operators publish windows such as 6:00 to 7:30 (Volando en Globo) or a 7:00 to 8:00 flight block (WE FLY's sample schedule). With transport from Mexico City, expect a pickup between 4:30 and 5:30 a.m. On the listings we review, a shared sunrise flight starts at about $148 with {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight with cave breakfast{{< /tour-link >}}, rated 4.9/5 from 8,257 reviews.
+> **Quick answer:** Sunrise at Teotihuacán ranges from about 5:57 a.m. in June to 7:05 a.m. in late December, and balloons launch around then. Operators publish windows such as 6:00 to 7:30 (Volando en Globo) or a 7:00 to 8:00 flight block (WE FLY's sample schedule). With transport from Mexico City, expect a pickup between 4:30 and 5:30 a.m. On the listings we review, a shared sunrise flight starts at about $148 with {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight with cave breakfast{{< /tour-link >}}, rated 4.9/5 from 8,250+ reviews.
 
 <!--more-->
 
@@ -82,11 +82,11 @@ Every package flies at the same time of day, so you are choosing privacy, transp
 
 | Booking | Suits | Trade-off | Our pick on the listings we review |
 |---|---|---|---|
-| Shared flight only | Travellers with a car or staying near Teotihuacán | You get yourself to the field before dawn | {{< tour-link tour="357659P1" >}}Viaja Teotihuacan, flight only{{< /tour-link >}}, about $148, 4.9/5 from 8,257 reviews |
-| Shared flight with Mexico City pickup | First-time visitors without a car | A very early start, with stops at other hotels | {{< tour-link tour="171986P1" >}}Volare, flight with hotel pickup{{< /tour-link >}}, about $186, 4.8/5 from 4,552 reviews |
-| Shared flight with breakfast | Travellers who want a slower morning | The meal adds an hour or more | {{< tour-link tour="247495P2" >}}We Fly, flight with La Gruta breakfast{{< /tour-link >}}, from about $143, 4.9/5 from 4,824 reviews |
-| Flight with pickup, cave breakfast and the pyramids | Making the most of one day | A longer morning, more walking, a later return | {{< tour-link tour="366381P1" >}}Tlatoani, all-inclusive option{{< /tour-link >}}, about $240, 4.9/5 from 7,871 reviews |
-| Sunrise flight, cave breakfast and pickup from your accommodation | Travellers who want everyone collected at the door | Costs more than the shared-pickup options | {{< tour-link tour="5553640P1" >}}Teotihuacán Feliz sunrise flight{{< /tour-link >}}, about $231, 4.97/5 from 573 reviews |
+| Shared flight only | Travellers with a car or staying near Teotihuacán | You get yourself to the field before dawn | {{< tour-link tour="357659P1" >}}Viaja Teotihuacan, flight only{{< /tour-link >}}, about $148, 4.9/5 from 8,250+ reviews |
+| Shared flight with Mexico City pickup | First-time visitors without a car | A very early start, with stops at other hotels | {{< tour-link tour="171986P1" >}}Volare, flight with hotel pickup{{< /tour-link >}}, about $186, 4.8/5 from 4,550+ reviews |
+| Shared flight with breakfast | Travellers who want a slower morning | The meal adds an hour or more | {{< tour-link tour="247495P2" >}}We Fly, flight with La Gruta breakfast{{< /tour-link >}}, from about $143, 4.9/5 from 4,820+ reviews |
+| Flight with pickup, cave breakfast and the pyramids | Making the most of one day | A longer morning, more walking, a later return | {{< tour-link tour="366381P1" >}}Tlatoani, all-inclusive option{{< /tour-link >}}, about $240, 4.9/5 from 7,870+ reviews |
+| Sunrise flight, cave breakfast and pickup from your accommodation | Travellers who want everyone collected at the door | Costs more than the shared-pickup options | {{< tour-link tour="5553640P1" >}}Teotihuacán Feliz sunrise flight{{< /tour-link >}}, about $231, 4.97/5 from 570+ reviews |
 | Private sunrise basket for two | Couples marking an occasion | Several times the price of shared seats | {{< tour-link tour="309496P6" >}}Private sunrise balloon for 2{{< /tour-link >}}, about $1,017 per couple, 4.9/5 from 41 reviews |
 
 The private listing has far fewer reviews than the shared ones, so read them before you book. A private basket does not bring an earlier launch, better weather, a closer pass over the pyramids or a longer flight; it gives your party the basket to itself. Two seats in a shared basket are not a private balloon, and our [balloon ride for two guide](/guides/teotihuacan-balloon-ride-for-two/) compares the options for couples.

@@ -47,7 +47,7 @@
         {{- if $tour.rating -}}
         <div class="tour-rating-summary">
           <span class="tour-stars" aria-hidden="true">★★★★★</span>
-          <span class="tour-rating-text">{{ printf "%.1f" $tour.rating }} / 5 from {{ lang.FormatNumber 0 $tour.reviewCount }} verified reviews on GetYourGuide</span>
+          <span class="tour-rating-text">{{ printf "%.1f" $tour.rating }} / 5 from {{ partial "review-count.html" $tour.reviewCount }} verified reviews on GetYourGuide</span>
         </div>
         {{- end -}}
       </div>
@@ -182,7 +182,7 @@
         {{- with $tour.sampleReviews -}}
         <section class="article-section tour-section tour-reviews">
           <h2>What Travelers Say</h2>
-          <p class="tour-reviews-summary">Rated <strong>{{ printf "%.1f" $tour.rating }}/5</strong> by {{ lang.FormatNumber 0 $tour.reviewCount }} verified {{ cond (eq $tour.provider "viator") "Viator" "GetYourGuide" }} travelers.</p>
+          <p class="tour-reviews-summary">Rated <strong>{{ printf "%.1f" $tour.rating }}/5</strong> by {{ partial "review-count.html" $tour.reviewCount }} verified {{ cond (eq $tour.provider "viator") "Viator" "GetYourGuide" }} travelers.</p>
           <div class="tour-reviews-list">
             {{- range first 3 . -}}
             {{- if .text -}}

@@ -33,7 +33,7 @@
       {{ with $img }}<img src="{{ . }}" alt="{{ $imgAlt }}" loading="lazy" decoding="async" width="360" height="240">{{ end }}
       <span class="alt-tour-body">
         <span class="alt-tour-title">{{ $t.shortTitle | default $t.title }}</span>
-        <span class="alt-tour-meta">{{ with $t.rating }}★ {{ printf "%.1f" . }} ({{ lang.FormatNumber 0 ($t.reviewCount | default 0) }}){{ end }}{{ with $t.duration }} · {{ . }}{{ end }}</span>
+        <span class="alt-tour-meta">{{ with $t.rating }}★ {{ printf "%.1f" . }} ({{ partial "review-count.html" ($t.reviewCount | default 0) }}){{ end }}{{ with $t.duration }} · {{ . }}{{ end }}</span>
         <span class="alt-tour-price">{{ with $t.formattedStartingPrice }}From {{ . }}{{ else }}{{ with $t.startingPrice }}From ${{ printf "%.0f" . }}{{ end }}{{ end }}{{ with $t.priceCategory }}{{ if ne . "per person" }} {{ . }}{{ end }}{{ end }}</span>
       </span>
     </a>
