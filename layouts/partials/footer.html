@@ -2,7 +2,7 @@
 {{ $site := .Site }}
 {{ $page := .Page }}
 
-{{ $hasLocalSections := or $page.IsHome (eq $page.Type "landing") }}
+{{ $hasLocalSections := and (or $page.IsHome (eq $page.Type "landing")) (ne $page.Layout "stay") }}
 {{ $anchorPrefix := cond $hasLocalSections "" "/" }}
 
 {{/* Contact address: page front matter -> SITE param only. The scaffold's
