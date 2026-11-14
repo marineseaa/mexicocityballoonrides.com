@@ -1,4 +1,4 @@
-{{ $data := .Site.Data.comparison }}
+{{ $data := hugo.Data.comparison }}
 {{ $tour := .tour | default dict }}
 {{ $site := .Site }}
 {{ $price := $tour.formattedStartingPrice | default "$69" }}

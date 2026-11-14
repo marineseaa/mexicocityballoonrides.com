@@ -2,7 +2,7 @@
 {{ $site := .Site }}
 {{/* Featured tour for the widgets at the foot of this hub (see the note there). */}}
 {{ $featured := dict }}
-{{ range (index $site.Data $site.Params.offersDataKey) }}
+{{ range (index hugo.Data $site.Params.offersDataKey) }}
   {{ if eq (string .id) (string $site.Params.featuredTourID) }}{{ $featured = . }}{{ end }}
 {{ end }}
 

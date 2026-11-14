@@ -1,7 +1,7 @@
 {{ $site := .Site }}
 {{ $page := .Page }}
 {{ $tour := .tour | default dict }}
-{{ $allTours := index $site.Data $site.Params.offersDataKey }}
+{{ $allTours := index hugo.Data $site.Params.offersDataKey }}
 
 {{/* Sticky sidebar (romeinaday.tours design): quick facts, top picks, CTA card.
      - quickFacts: page front matter > site param, [{label, value}].

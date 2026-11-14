@@ -21,7 +21,7 @@
 
 {{- $src := .src | default "" -}}
 {{- $alt := .alt | default "" -}}
-{{- $map := .Site.Data.image_map | default dict -}}
+{{- $map := hugo.Data.image_map | default dict -}}
 
 {{- $entry := index $map $src -}}
 {{- if $entry -}}

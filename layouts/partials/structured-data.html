@@ -19,7 +19,7 @@
 {{ $heroImg     := (partial "img-src.html" (dict "src" (partial "first-image.html" $tour.images) "alt" "" "Site" $site)).src }}
 {{ $heroImgAbs  := cond (hasPrefix $heroImg "http") $heroImg (printf "%s%s" ($site.BaseURL | strings.TrimSuffix "/") $heroImg) }}
 {{ $faqKey      := $page.Params.faqDataKey | default "faq" }}
-{{ $faqData     := index $site.Data $faqKey }}
+{{ $faqData     := index hugo.Data $faqKey }}
 
 <script type="application/ld+json">
 {
@@ -130,7 +130,7 @@
 {{ $site := .Site }}
 {{ $page := .Page }}
 {{ $tour := dict }}
-{{ range (index $site.Data $site.Params.offersDataKey) }}
+{{ range (index hugo.Data $site.Params.offersDataKey) }}
   {{ if eq (string .id) (string $page.Params.tourId) }}{{ $tour = . }}{{ end }}
 {{ end }}
 {{ $img := "" }}

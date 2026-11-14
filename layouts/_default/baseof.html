@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
+<html lang="{{ .Site.Language.Locale | default "en" }}">
 <head>
   {{/* Load tour data once — available to head via .Scratch */}}
   {{ $tour := dict }}
   {{ if eq .Type "tour" }}
     {{/* For tour pages, load the specific tour from the offers JSON (key via offersDataKey) */}}
-    {{ $allTours := index .Site.Data .Site.Params.offersDataKey }}
+    {{ $allTours := index hugo.Data .Site.Params.offersDataKey }}
     {{ $tourID := .Params.tourId }}
     {{ range $allTours }}
       {{ if eq (string .id) (string $tourID) }}
@@ -17,9 +17,9 @@
     {{ $tourID := .Params.tourId | default "" }}
     {{ if $tourID }}
       {{ $key := printf "gyg_activity_%s" $tourID }}
-      {{ $tour = index .Site.Data $key | default dict }}
+      {{ $tour = index hugo.Data $key | default dict }}
       {{ if and (eq (len $tour) 0) .Params.dataKey }}
-        {{ $allTours := index .Site.Data .Params.dataKey }}
+        {{ $allTours := index hugo.Data .Params.dataKey }}
         {{ range $allTours }}
           {{ if eq (string .id) (string $tourID) }}
             {{ $tour = . }}
@@ -30,7 +30,7 @@
   {{ else }}
     {{/* For other pages, load the featured tour from the offers JSON (centralized via offersDataKey) */}}
     {{ $tourID := .Site.Params.featuredTourID | string }}
-    {{ $allTours := index .Site.Data .Site.Params.offersDataKey }}
+    {{ $allTours := index hugo.Data .Site.Params.offersDataKey }}
     {{ range $allTours }}
       {{ if eq (string .id) $tourID }}
         {{ $tour = . }}

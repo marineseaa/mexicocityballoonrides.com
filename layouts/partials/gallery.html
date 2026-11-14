@@ -16,7 +16,7 @@
          - src: "/images/<niche>/01-example.jpg"
            alt: "Descriptive alt text for accessibility/SEO"
            caption: "Short caption shown under the photo" */}}
-{{ $galleryData := $site.Data.gallery }}
+{{ $galleryData := hugo.Data.gallery }}
 {{ $items := slice }}
 {{/* Landing spokes sell their OWN tour, so they show that tour's photos, not the sitewide curated set (madridstadiumtours 2026-09-17). */}}
 {{ if and $galleryData (not $page.Params.tourId) }}

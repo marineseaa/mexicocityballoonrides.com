@@ -7,7 +7,7 @@
     </div>
 
     <div class="faq-list" role="list">
-      {{ range $i, $item := .Site.Data.faq }}
+      {{ range $i, $item := hugo.Data.faq }}
       <div class="faq-item" role="listitem">
         <button class="faq-question"
                 id="faq-q-{{ $i }}"

@@ -1,13 +1,16 @@
 [build]
   publish = "public"
   command = "hugo --gc --minify"
+  # Deploys go out from the PC (netlify-cli-deploy). Netlify builds only commits whose
+  # message contains [netlify-build]; every other push is cancelled before Hugo runs.
+  ignore = 'git log -1 --pretty=%B | grep -qF "[netlify-build]" && exit 1 || exit 0'
 
 [build.environment]
   # ≥0.146 required: `type:` front-matter resolution needs 0.146+, and the modern
   # `build:` section key (content/pages|landing/_index.md) needs 0.145+ (Hugo removed
   # the old `_build:` at 0.145). Kept <0.156 to avoid languageCode/.Site.Data
   # deprecation warnings. (Bumped from 0.140.0 — rovaniemidaytours 2026-07-30.)
-  HUGO_VERSION = "0.146.0"
+  HUGO_VERSION = "0.169.0"
 
 [[redirects]]
   from = "/*"

@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- $allTours := index .Site.Data .Site.Params.offersDataKey -}}
+{{- $allTours := index hugo.Data .Site.Params.offersDataKey -}}
 {{- $tourID := .Params.tourId -}}
 {{- $tour := dict -}}
 

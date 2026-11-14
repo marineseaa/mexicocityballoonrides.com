@@ -15,7 +15,7 @@
 {{- $twin := dict -}}
 {{- with $tour.twin -}}
   {{- $tid := string . -}}
-  {{- range (index $site.Data $site.Params.offersDataKey) -}}
+  {{- range (index hugo.Data $site.Params.offersDataKey) -}}
     {{- if eq (string .id) $tid -}}{{- $twin = . -}}{{- end -}}
   {{- end -}}
 {{- end -}}

@@ -1,7 +1,7 @@
 baseURL = "https://mexicocityballoonrides.com/"
 title = "Mexico City Balloon Rides"
 theme = "travel-niche"
-languageCode = "en-US"
+locale = "en-US"
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 buildFuture = true

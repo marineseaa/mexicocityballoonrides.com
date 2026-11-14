@@ -4,7 +4,7 @@
      — REPLACE it per site with the niche's counter-intuitive operational truth;
      this partial is niche-neutral. */}}
 {{ $site := .Site }}
-{{ $tl := index $site.Data "timeline" }}
+{{ $tl := index hugo.Data "timeline" }}
 {{ if $tl }}
 <section class="section itinerary-section" id="timeline" aria-labelledby="timeline-heading">
   <div class="container">

@@ -8,7 +8,7 @@
      data-affiliate-href (decorated by main.js). */}}
 {{ $site := .Site }}
 {{ $exclude := .exclude | default "" }}
-{{ $all := index $site.Data $site.Params.offersDataKey }}
+{{ $all := index hugo.Data $site.Params.offersDataKey }}
 {{ $pool := slice }}
 {{/* MIXED-PROVIDER SITE: skip the excluded tour's twin (same product, other network)
      and rows whose offers JSON says hasPage: false. */}}

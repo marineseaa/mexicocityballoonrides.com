@@ -10,7 +10,7 @@
      Context: dict "Site" "Page" "heading" (h2|h3, default h3).               */}}
 {{- $site := .Site -}}
 {{- $page := .Page -}}
-{{- $stay := $site.Data.stay -}}
+{{- $stay := hugo.Data.stay -}}
 {{- /* OTA name from stay.yaml `cardsSource`, else from stay22Provider (2026-10-25: the label was
        hard-coded "Expedia" and printed "Expedia reviews" on Booking.com sites). */ -}}
 {{- $otaNames := dict "booking" "Booking.com" "expedia" "Expedia" "hotelscom" "Hotels.com" "vrbo" "Vrbo" "agoda" "Agoda" -}}

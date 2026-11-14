@@ -11,7 +11,7 @@
      after a retrofit found every guide on a live site defaulting to the
      same sitewide tour regardless of topic. ── */}}
 {{ $widgetTourID := .Params.featuredTourId | default $site.Params.featuredTourID | string }}
-{{ $allTours := index $site.Data $site.Params.offersDataKey }}
+{{ $allTours := index hugo.Data $site.Params.offersDataKey }}
 {{ $widgetTour := dict }}
 {{ range $allTours }}
   {{ if eq (string .id) $widgetTourID }}

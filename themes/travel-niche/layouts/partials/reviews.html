@@ -20,7 +20,7 @@
 
   <div class="reviews-scroll-wrapper" role="region" aria-label="Guest reviews — scroll to browse">
     <div class="reviews-scroll">
-      {{ range .Site.Data.reviews }}
+      {{ range hugo.Data.reviews }}
       <article class="review-card fade-up" aria-label="Review by {{ .name }}">
         <div class="review-stars" aria-label="{{ .rating }} out of 5 stars">
           {{ range seq .rating }}

@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- $allTours := index .Site.Data .Site.Params.offersDataKey -}}
+{{- $allTours := index hugo.Data .Site.Params.offersDataKey -}}
 {{- $site := .Site -}}
 
 {{/* ── Hub card badges, from config (HOMEPAGE-CONVERSION-PATTERNS §7) ──
@@ -17,7 +17,7 @@
      Capture $id BEFORE `with .badge` — inside that block the dot is the badge
      string and `.id` is gone. */}}
 {{- $badgeMap := dict -}}
-{{- with index $site.Data "experiences_config" -}}
+{{- with index hugo.Data "experiences_config" -}}
   {{- range (.all_badges | default .featured_tours) -}}
     {{- $id := string .id -}}
     {{- with .badge -}}{{- $badgeMap = merge $badgeMap (dict $id .) -}}{{- end -}}

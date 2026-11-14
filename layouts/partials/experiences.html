@@ -1,5 +1,5 @@
-{{ $allTours := index .Site.Data .Site.Params.offersDataKey }}
-{{ $config := .Site.Data.experiences_config }}
+{{ $allTours := index hugo.Data .Site.Params.offersDataKey }}
+{{ $config := hugo.Data.experiences_config }}
 {{ $site := .Site }}
 {{ $page := .Page }}
 

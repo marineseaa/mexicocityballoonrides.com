@@ -2,7 +2,7 @@
 {{ $site := .Site }}
 {{ $page := .Page }}
 {{ $compKey := $page.Params.comparisonDataKey | default "comparison" }}
-{{ $data := index $site.Data $compKey }}
+{{ $data := index hugo.Data $compKey }}
 {{ $price := $tour.formattedStartingPrice | default "$179" }}
 {{ $priceCategory := $tour.priceCategory | default "per person" }}
 

@@ -2,7 +2,7 @@
   {{/* ── Load featured tour data from offers JSON by int ID match ── */}}
   {{ $tourID   := .Site.Params.featuredTourID | string }}
   {{ $tour     := dict }}
-  {{ $allTours := index .Site.Data .Site.Params.offersDataKey }}
+  {{ $allTours := index hugo.Data .Site.Params.offersDataKey }}
   {{ range $allTours }}
     {{ if eq (string .id) $tourID }}
       {{ $tour = . }}

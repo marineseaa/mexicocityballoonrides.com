@@ -68,7 +68,7 @@
       "@type": "FAQPage",
       "@id": "{{ .Site.BaseURL }}#faq",
       "mainEntity": [
-        {{ range $i, $item := .Site.Data.faq }}{{ if $i }},{{ end }}
+        {{ range $i, $item := hugo.Data.faq }}{{ if $i }},{{ end }}
         {
           "@type": "Question",
           "name": {{ $item.question | jsonify | safeJS }},
