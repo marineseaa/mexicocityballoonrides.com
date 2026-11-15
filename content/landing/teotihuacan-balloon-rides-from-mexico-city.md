@@ -122,7 +122,7 @@ Transfers come in three shapes: a pickup at your hotel, a shuttle from a central
 
 ## How early you will leave
 
-Pickups typically run between about 4:30 and 5:30 a.m., and the exact time arrives in a message the day before. {{< tour-link tour="394927P1" >}}Explora México's listing{{< /tour-link >}}, for example, collects between 4:30 and 4:50 for a 5:30 arrival. With empty roads the drive is about 45 to 60 minutes, and Roma, Condesa and Polanco sit a little further from the northbound exit than Centro. One operator's terms allow only 10 minutes' grace before the van leaves, so be in the lobby early. One reviewer missed a pickup that had been moved to 3:45 a.m. by phone, which is why it pays to answer that day-before message and keep your phone on.
+Pickups typically run between about 4:30 and 5:30 a.m., and the exact time arrives in a message the day before; WE FLY's all-inclusive package collects earlier, at 4:00, and our [sample day-trip schedules](/guides/teotihuacan-balloon-ride-from-mexico-city-day-trip-itinerary/) compare operators. {{< tour-link tour="394927P1" >}}Explora México's listing{{< /tour-link >}}, for example, collects between 4:30 and 4:50 for a 5:30 arrival. With empty roads the drive is about 45 to 60 minutes, and Roma, Condesa and Polanco sit a little further from the northbound exit than Centro. One operator's terms allow only 10 minutes' grace before the van leaves, so be in the lobby early. One reviewer missed a pickup that had been moved to 3:45 a.m. by phone, which is why it pays to answer that day-before message and keep your phone on.
 
 The public bus will not get you there in time. The ticket window at Terminal Norte opens at 6:00, and the buses stop at the archaeological zone's gates, not at the launch fields.
 

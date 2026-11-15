@@ -67,7 +67,7 @@ It is a pleasant half hour, and the tasting is part of the price. If you are sho
 
 The former Augustinian convent of San Agustín Acolman, now INAH's Museo Virreinal, sits roughly 10 km southwest of the pyramids in a straight line, on the Mexico City side of the valley. INAH lists it as open Monday to Sunday from 9:00 to 17:30. Its 2022 guide gave the entry fee as MX$65, which may have changed; Sundays are free for Mexican visitors, and under-13s, students, teachers and seniors also enter free.
 
-Acolman suits two kinds of traveller: those who drive themselves to a [flight-only booking](/teotihuacan-balloon-flight-only/), and those on a private tour who can ask the driver for a detour. None of the balloon listings in our data include it in the itinerary.
+Acolman suits two kinds of traveller: those who drive themselves to a [flight-only booking](/teotihuacan-balloon-flight-only/), and those on a private tour who can ask the driver for a detour. None of the balloon listings in our data include it in the itinerary. For the hours before and after, see our [full day-trip timeline from Mexico City](/guides/teotihuacan-balloon-ride-from-mexico-city-day-trip-itinerary/).
 
 ## The Basilica of Guadalupe on the way back
 

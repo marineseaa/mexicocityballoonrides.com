@@ -56,7 +56,7 @@ The all-inclusive packages, with breakfast in a cave restaurant and free time at
 | Volare, with transport from Mexico City | 30 to 50 min | About 6 h |
 | {{< tour-link tour="5885P459" >}}Amigo Tours{{< /tour-link >}}, flight with transport | About 45 min | About 6 h 30 min |
 | {{< tour-link tour="456146P3" >}}Visita Teotihuacan{{< /tour-link >}}, all-inclusive | 30 to 50 min | 7 h |
-| {{< tour-link tour="247495P2" >}}We Fly{{< /tour-link >}}, shared flight all included | 30 to 60 min | 8 h |
+| {{< tour-link tour="247495P2" >}}We Fly{{< /tour-link >}}, shared flight all included | 45 to 60 min | 8 h |
 | {{< tour-link tour="333644P5" >}}Excellentravel{{< /tour-link >}}, with guided pyramids visit | 40 to 50 min | 8 h |
 | {{< tour-link tour="377048P1" >}}Globo Tetris{{< /tour-link >}}, all inclusive | 30 to 50 min | 9 h |
 

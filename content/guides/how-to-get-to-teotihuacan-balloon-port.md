@@ -21,7 +21,7 @@ cardImage: "/images/how-to-get-to-teotihuacan-balloon-port-hook.webp"
 
 <img class="hook-image" src="/images/how-to-get-to-teotihuacan-balloon-port-hook.webp" alt="The Teotihuacán balloon port is not at the pyramids: launch fields sit in the San Martín de las Pirámides area, and public buses start too late for check-in" width="1200" height="630">
 
-Teotihuacán's balloon ports are launch fields in the valley around the archaeological zone, mostly in San Martín de las Pirámides, roughly 45 to 50 km by road northeast of Mexico City. You have three realistic ways to be there for a check-in between about 5:30 and 6:00 a.m.: the operator's hotel transfer, driving yourself in the dark, or sleeping in San Juan Teotihuacán the night before. Public buses do not run early enough, and your operator sends the exact location the day before.
+Teotihuacán's balloon ports are launch fields in the valley around the archaeological zone, mostly in San Martín de las Pirámides, roughly 45 to 50 km by road northeast of Mexico City. You have three realistic ways to be there for a check-in between about 5:30 and 6:00 a.m.: the operator's hotel transfer, driving yourself in the dark, or sleeping in San Juan Teotihuacán the night before. Public buses do not run early enough, and your operator sends the exact location the day before. Our [day-trip itinerary](/guides/teotihuacan-balloon-ride-from-mexico-city-day-trip-itinerary/) shows how each choice fits into the rest of the morning.
 
 <!--more-->
 

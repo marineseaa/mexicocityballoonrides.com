@@ -50,7 +50,7 @@ Most listings sell the same sunrise flight in several options, so the real choic
 
 ## Pickup and the pre-dawn start
 
-Hotel pickups from Mexico City typically leave between about 4:30 and 5:40 a.m., and operators confirm the exact time the day before. We Fly asks guests to be at its reception for check-in and coffee around 5:30, with photo ID. We Fly says its free pickup covers hotels within 4 km of the Angel of Independence, in Reforma, Juárez, Zona Rosa, the Centro Histórico, Roma and Condesa, and quotes farther areas on request; Polanco is not on that list. Globos Aerostáticos Teotihuacán says its transport does not collect from private homes or Airbnbs.
+Hotel pickups from Mexico City typically leave between about 4:30 and 5:40 a.m., and operators confirm the exact time the day before; our [Mexico City day-trip itinerary](/guides/teotihuacan-balloon-ride-from-mexico-city-day-trip-itinerary/) sets out sample schedules from pickup to the return. We Fly asks guests to be at its reception for check-in and coffee around 5:30, with photo ID. We Fly says its free pickup covers hotels within 4 km of the Angel of Independence, in Reforma, Juárez, Zona Rosa, the Centro Histórico, Roma and Condesa, and quotes farther areas on request; Polanco is not on that list. Globos Aerostáticos Teotihuacán says its transport does not collect from private homes or Airbnbs.
 
 Public transport will not get you there in time. The Autobuses Teotihuacán ticket window at Terminal Norte opens at 6:00, and the buses stop at the archaeological zone's gates, not at the launch fields.
 
