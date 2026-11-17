@@ -104,7 +104,7 @@ One hotel inside the city pickup zone, one beside the balloon ports, one splurge
 | [Polanco](#polanco) | 55–60 min (35 mi) | 7 min (2.5 mi) | 22 min (12 mi) | Some operators | upper to luxury | A luxury base |
 | [Airport (AICM)](#airport) | 45 min (30 mi) | 16 min (9.5 mi) | at the terminal | Not on the lists we read | mid-range | Arrival or departure night |
 
-Viaja Teotihuacan, Tlatoani tours, We Fly, Volare, Cielo Azteca and the other operators on this site all fly from the valley around San Martín de las Pirámides and San Juan Teotihuacán; balloons do not launch from Mexico City. In the city, We Fly offers free pickup within 4 km of the Angel (Reforma, Juárez, Zona Rosa, Centro Histórico, Roma, Condesa) and its express shuttle names Juárez, Condesa, Roma and Polanco; Volare collects from "selected hotels"; the private packages from Excellentravel, Zuyuá and Teotihuacán Feliz say pickup from your accommodation.
+Viaja Teotihuacan, Tlatoani tours, We Fly, Volare, Cielo Azteca and the other operators on this site all fly from the valley around San Martín de las Pirámides and San Juan Teotihuacán; balloons do not launch from Mexico City. In the city, We Fly offers free pickup within 4 km of the Angel (Reforma, Juárez, Zona Rosa, Centro Histórico, Roma, Condesa) and its express shuttle names Juárez, Condesa, Roma and Polanco; Volare collects from "selected hotels"; the private packages from Excellentravel and Teotihuacán Feliz say pickup from your accommodation.
 
 ## Centro Histórico: the value pick inside the pickup zone {#centro}
 
@@ -192,7 +192,7 @@ Tour facts (SCRAPE/TOURS-DIGEST.md + data/mcbr_offers.json, read 25 Oct 2026):
 - 357659P1 Viaja Teotihuacan: rating 4.9412 -> 4.9, 8,257 reviews; TG2 flight only about $148 (MXN 2699); TG1 flight + cave breakfast + transport about $236 (MXN 4299); meeting point "5 minutes from the Pemex Pirámides gas station", location sent the day before; free cancellation True.
 - Arithmetic: (236-148) x 2 = $176 for two.
 - We Fly 247495P3 TG3 "SHUTTLE HOTELS IN DOWNTOWN ... COL JUAREZ, CONDESA, ROME, POLANCO ONLY". Ledger 12: We Fly free pickup within 4 km of the Angel (Reforma, Juarez, Zona Rosa, Centro Historico, Roma, Condesa); Polanco outside that list.
-- Volare 171986P1 includes "Pickup from Mexico City in selected hotels". Excellentravel 333644P5, Zuyua 309496P6, Teotihuacan Feliz 5553640P1/P2: "Pickup from your accommodation included".
+- Volare 171986P1 includes "Pickup from Mexico City in selected hotels". Excellentravel 333644P5, Teotihuacan Feliz 5553640P1/P2: "Pickup from your accommodation included".
 - GA-MX shared transport departs the Angel 5:15-5:40 (ledger 2); GA-MX does not collect from private homes or Airbnbs (ledger 12).
 - Pickups typically 4:30-5:30 am (ledger 2); pre-dawn drive 45-60 min Centro/Roma/Condesa/Polanco (ledger 1, DERIVED).
 - We Fly port about 15 min from Teotihuacan town hotels (ledger 2/12, operator says). Zone opens 8:00 (ledger 13). Terminal Norte ticket window opens 6:00, buses stop at zone gates (ledger 12). Balloons fly over the valley around SMP / San Juan Teotihuacan (ledger 1). Dry season Nov-Apr (ledger 6). Dawn mean minimum 2-4 C Dec-Mar (ledger 10). Photo ID at check-in (ledger 2, WeFly). Viator 24-h policy (ledger 7).

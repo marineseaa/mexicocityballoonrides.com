@@ -14,7 +14,7 @@ keywords:
   - "romantic balloon ride teotihuacan"
 type: "guides"
 date: 2026-11-02
-featuredTourId: "309496P6"
+featuredTourId: "5553640P2"
 autoWidgetIntro: "More sunrise flights over **Teotihuacán**, **balloon and pyramids** combinations and day trips from **Mexico City**. Each listing shows its own cancellation policy."
 ogImage: "/images/teotihuacan-balloon-ride-for-two-hook.webp"
 cardImage: "/images/teotihuacan-balloon-ride-for-two-hook.webp"
@@ -26,7 +26,7 @@ For a couple, "for two" can mean two very different bookings. Two tickets in a s
 
 The balloons launch around sunrise from fields near the archaeological zone, roughly 45 to 50 km by road northeast of Mexico City. On a good morning you see the Pyramid of the Sun, the Pyramid of the Moon and dozens of other balloons across the valley. The wind sets the route, so no operator can promise a flight directly over a particular pyramid.
 
-> **Quick answer:** Booked direct with the operator, two shared seats cost MXN 3,980 to 4,200 for the couple and a private basket for two from MXN 7,500 to 9,000 (operator websites, checked 2 November 2026). On the marketplaces this site covers, prices are in US dollars: a shared flight with breakfast and Mexico City pickup costs about $148 per person, and a private sunrise package for two about $1,017 per couple. Transfers, breakfast, photos and admission to the archaeological zone differ by package, so check the final quote before you pay.
+> **Quick answer:** Booked direct with the operator, two shared seats cost MXN 3,980 to 4,200 for the couple and a private basket for two from MXN 7,500 to 9,000 (operator websites, checked 2 November 2026). On the marketplaces this site covers, prices are in US dollars: a shared flight with breakfast and Mexico City pickup costs about $148 per person, and a private balloon flight about $476 per person, or $952 per couple. Transfers, breakfast, photos and admission to the archaeological zone differ by package, so check the final quote before you pay.
 
 <!--more-->
 
@@ -55,12 +55,11 @@ WE FLY lists transport from Mexico City as an optional add-on, and its page says
 | {{< tour-link tour="357659P1" >}}Balloon flight + Breakfast in cave + Pyramids + Pick up CDMX{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 8,250+ reviews |
 | {{< tour-link tour="247495P3" >}}Teotihuacán Hot Air Balloons from We Fly{{< /tour-link >}} (shared) | $148 per person | $296 | 4.9/5 from 1,500+ reviews |
 | {{< tour-link tour="171986P1" >}}Teotihuacan Hot Air Balloon Flight from Mexico City / Volare{{< /tour-link >}} (shared) | $159 per person | $318 | 4.8/5 from 4,510+ reviews |
-| {{< tour-link tour="5553640P2" >}}Private Balloon Flight over Teotihuacan plus Breakfast and Entry{{< /tour-link >}} | $476 per person | $952 | 4.9/5 from 20 reviews, a small sample |
-| {{< tour-link tour="309496P6" >}}Private Sunrise Balloon for 2 - Teotihuacan Pyramids Experience{{< /tour-link >}} | $1,017 per group of up to two | $1,017 | 4.9/5 from 41 reviews |
+| {{< tour-link tour="5553640P2" >}}Private Balloon Flight over Teotihuacan plus Breakfast and Entry{{< /tour-link >}} | $476 per person | $952 | 5.0/5 from 20+ reviews, a small sample |
 
 *Marketplace prices and ratings as shown on the listings on 2 November 2026; they change with the date you pick.*
 
-The two private listings are packages: the $1,017 Zuyuá listing adds round-trip transport, breakfast, a certified guide and tickets to the archaeological zone, which is why it costs more than a private basket booked direct. Our [Zuyuá private balloon breakdown](/tours/zuyua-private-sunrise-balloon-for-two/) lists everything it includes.
+The private listing is a package: the $476-per-person Teotihuacán Feliz flight adds private transport from your accommodation and breakfast, which is why it costs more than a private basket booked direct. Our [Teotihuacán Feliz private balloon breakdown](/tours/teotihuacan-feliz-private-balloon-flight/) lists everything it includes, and what it leaves out.
 
 For two people, the gap is wide either way. Shared seats cost about half the price of a private basket with the operator, and roughly a third of a private package on the marketplaces. A private flight costs more because you reserve the whole basket; the pyramids and the sunrise are the same.
 
@@ -178,7 +177,7 @@ Operators run slightly different schedules, but a typical morning goes like this
 6. **Landing and return:** the ground crew meets the balloon and drives you back to the reception or breakfast area.
 7. **Extras:** breakfast, photos or a visit to the archaeological site.
 
-From Mexico City, plan on most of the morning; a combined pyramids tour runs longer, and the Zuyuá private package lists about 6.5 hours. If you have a flight, a train or a booked activity later that day, leave a generous buffer.
+From Mexico City, plan on most of the morning; a combined pyramids tour runs longer, and the Teotihuacán Feliz private package lists about 6 hours. If you have a flight, a train or a booked activity later that day, leave a generous buffer.
 
 For more practical detail, read [what to expect on a Teotihuacán balloon ride](/guides/what-to-expect-teotihuacan-balloon-ride/).
 
@@ -227,7 +226,7 @@ A clear written answer to these questions tells you more than the words *romanti
 
 ### How much does a private hot air balloon ride for two cost in Teotihuacán?
 
-Booked direct, operators publish private flights for two from MXN 7,500 (WE FLY) to MXN 8,500 (HappyFly), and Volar en Globo from MXN 9,000 per group; HappyFly's celebration package costs MXN 9,500 for two (checked 2 November 2026). On the marketplace, the private Zuyuá package for two costs about $1,017 per couple with transport, breakfast, guide and zone tickets.
+Booked direct, operators publish private flights for two from MXN 7,500 (WE FLY) to MXN 8,500 (HappyFly), and Volar en Globo from MXN 9,000 per group; HappyFly's celebration package costs MXN 9,500 for two (checked 2 November 2026). On the marketplace, the private Teotihuacán Feliz flight costs about $476 per person, or $952 per couple, with private transport and breakfast.
 
 ### Can two people book a shared balloon ride?
 
@@ -282,7 +281,7 @@ WE FLY shared MXN 1,990 pp, private MXN 3,750 pp min 2, transport optional add-o
 HappyFly shared MXN 2,100 pp (45-60 min, toast, certificate, buffet breakfast, travel insurance); private MXN 8,500 / 2 people (private basket, premium toast, breakfast); celebration MXN 9,500 / 2 (banner, rose bouquet, cake, photo session); meeting point Carretera Federal México-Tulancingo km 27.5, San Martín de las Pirámides; no transport stated; weather: reschedule or full refund; 48 h free cancel, 50% after; no-shows non-refundable: happyfly.mx/en/prices.
 Volar en Globo private "From $9,000 MXN per group" (size not stated); shared from 2,500, shared birthday from 2,500, from CDMX 3,100, all-inclusive 3,400: volarenglobo.com.mx/en.
 WE FLY booking lead time: wefly.com.mx/en/faq ("one or two weeks", "at least one month" for long weekends and Feb 14).
-Marketplace: 357659P1 $148 4.94/8257; 247495P3 $148 4.94/1501; 171986P1 $159 4.83/4552; 5553640P2 $476 pp 4.95/20; 309496P6 $1,017 per group up to 2, 4.90/41, includes transport, breakfast, guide, zone tickets, ~6.5 h: data/mcbr_offers.json refreshed 2026-11-09.
+Marketplace: 357659P1 $148 4.94/8257; 247495P3 $148 4.94/1501; 171986P1 $159 4.83/4552; 5553640P2 $476 pp 4.95/20, includes private transport and breakfast, ~6 h: data/mcbr_offers.json refreshed 2026-11-09.
 Road 45-50 km, 45-60 min; pickups 4:30-5:30, check-in ~5:30: site ledger s1, s2. Flight 30-60 min: site figure (shared-vs-private, weather pages); HappyFly 45-60.
-No proposal package on marketplace listings: checked includes of 309496P6, 5553640P2, 323089P1, 333644P5 (private landing ledger).
+No proposal package on marketplace listings: checked includes of 5553640P2, 323089P1, 333644P5 (private landing ledger).
 Dropped from the article as unverified: "one week in advance / private flights sell out first" (no source found; replaced with WE FLY FAQ); Volar "per couple" (page says per group); check-in 5:15-6:00 and pickups from 4:00 (replaced with site ledger figures). -->

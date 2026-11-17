@@ -24,9 +24,9 @@ columns:
     highlight: false
     url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
     cta: "Read our review"
-  - label: "Zuyuá: private basket for two"
+  - label: "Teotihuacán Feliz: private balloon flight"
     highlight: false
-    url: "/tours/zuyua-private-sunrise-balloon-for-two/"
+    url: "/tours/teotihuacan-feliz-private-balloon-flight/"
     cta: "Read our review"
 
 rows:
@@ -35,13 +35,13 @@ rows:
       - "$148 flight only; $236 with hotel transfer + cave breakfast"
       - "$137 flight only; $211 with transfer + cave breakfast"
       - "$203 flight + La Gruta (own transport); $274 with transport and early return"
-      - "$1,017 per group of up to 2"
+      - "$476 per person, so $952 for two"
   - label: "Transport"
     values:
       - "Round trip from your Mexico City hotel ($236 option), or drive yourself"
       - "Drive yourself to the balloon port; transfer from Mexico City in the $211 option"
       - "Own way to We Fly's reception, or transport with early return ($274)"
-      - "Private round trip from your accommodation"
+      - "Private transport from your accommodation"
   - label: "Time in the air"
     values:
       - "45 minutes (listing)"
@@ -59,13 +59,13 @@ rows:
       - "Free time at the pyramids in the $236 option, no guide"
       - "Up to 2 hours at the pyramids in the $211 option; guide extra, bought on site"
       - "Not in the La Gruta options; guided walk in the all-inclusive option"
-      - "Guided visit with a certified guide"
+      - "Not described on the listing"
   - label: "Pyramids admission"
     values:
       - "Not included (MX$210)"
       - "Not included (MX$210)"
       - "Not included on the La Gruta options"
-      - "Tickets listed as included"
+      - "Not included, despite \"Entry\" in the title (MX$210)"
   - label: "Cancellation"
     values:
       - "Free up to 24 h before; weather on the operator's terms"
@@ -77,10 +77,10 @@ rows:
       - "Over 100 kg: MX$35 per extra kilo; no flying in pregnancy or with heart, back or knee problems"
       - "Over 100 kg: MX$35 per extra kilo; not advised in pregnancy or with spinal or heart conditions"
       - "Minimum age 4; extra-weight penalty above 99 kg; no flying after alcohol"
-      - "None stated on the listing; ask before booking"
+      - "Not suitable with spinal injuries, in pregnancy or with poor cardiovascular health"
   - label: "Guest rating"
     values:
       - "4.9 from 8,250+ reviews"
       - "4.9 from 1,550+ reviews"
       - "4.9 from 4,820+ reviews"
-      - "4.9 from 41 reviews"
+      - "5.0 from 20+ reviews"

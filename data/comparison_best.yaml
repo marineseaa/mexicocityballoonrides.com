@@ -20,9 +20,9 @@ columns:
     highlight: false
     url: "/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/"
     cta: "Our review"
-  - label: "Zuyuá private basket for two"
+  - label: "Teotihuacán Feliz private balloon flight"
     highlight: false
-    url: "/tours/zuyua-private-sunrise-balloon-for-two/"
+    url: "/tours/teotihuacan-feliz-private-balloon-flight/"
     cta: "Our review"
   - label: "Amigo Tours on GetYourGuide"
     highlight: false
@@ -35,7 +35,7 @@ rows:
       - "$137 flight only ($181 with cave breakfast)"
       - "$247 with shared transport ($357 private transport)"
       - "$203 with La Gruta breakfast, no transport"
-      - "$1,017 per group of up to 2"
+      - "$476 per person, so $952 for two"
       - "From $148 (four options)"
   - label: "Best for"
     values:
@@ -43,7 +43,7 @@ rows:
       - "Self-drivers and budget travelers"
       - "History-first visitors"
       - "A breakfast inside La Gruta"
-      - "Couples, proposals, celebrations"
+      - "Couples who want a private basket"
       - "Booking on GetYourGuide, pay later"
   - label: "Transport from Mexico City"
     values:
@@ -51,7 +51,7 @@ rows:
       - "No, location sent in advance"
       - "Pickup from your accommodation"
       - "No ($231 all-included option has it)"
-      - "Round trip from Mexico City"
+      - "Private transport from your accommodation"
       - "In two of the four options"
   - label: "Breakfast"
     values:
@@ -67,7 +67,7 @@ rows:
       - "Not included"
       - "Ticket + guided visit of about 2.5 h"
       - "Not on this option"
-      - "Ticket + certified guide"
+      - "Not included (MX$210)"
       - "In the full-day option only"
   - label: "Weight rule"
     values:
@@ -83,5 +83,5 @@ rows:
       - "4.9 from 1,550+ reviews"
       - "4.9 from 120+ reviews"
       - "4.9 from 4,820+ reviews"
-      - "4.9 from 41 reviews"
+      - "5.0 from 20+ reviews"
       - "4.6 from 1,320+ reviews"

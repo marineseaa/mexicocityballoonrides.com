@@ -150,7 +150,7 @@ We Fly express: "exclusively Mexico City center area, Col Juarez, Condesa, Rome,
 Amigo Tours: Citibanamex at the Angel (5885P459 meeting point, twin of 696822); coach 57 min: 696822 itinerary.
 Excellentravel: lobby pickup, private vehicle, return ~1:00 pm: digest 333644P5. Viaja: round transport from hotel: digest 357659P1 TG1.
 Explora México 4:30-4:50 pickup, 5:30 arrival, return 1-2 pm: digest 394927P1 description.
-Luxury Tours "hotel or house within Mexico City": digest 323089P1. "Pickup from your accommodation": digest 309496P6, 5553640P2.
+Luxury Tours "hotel or house within Mexico City": digest 323089P1. "Pickup from your accommodation": digest 5553640P2.
 Geography (San Martín de las Pirámides, 45-50 km road, northeast): ledger s1. Drive 45-60 min, pre-dawn estimate, Roma/Condesa/Polanco further: ledger s1 (DERIVED, hedged). Pickup window 4:30-5:30 confirmed day before: ledger s2. GA-MX 10-minute tolerance, no Airbnb pickups, 10:00 / 14:30 returns: ledger s2, s12, s13 (operator named as Globos Aerostáticos Teotihuacán = GA-MX). Bus window 6:00, stops at gates: ledger s12. Zone opens 8:00: ledger s5. UTC-6: ledger s15.
 Viator 24 h free cancellation: ledger s7 (platform rule).
 -->

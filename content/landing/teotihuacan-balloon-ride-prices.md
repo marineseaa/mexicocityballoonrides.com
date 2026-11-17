@@ -53,8 +53,8 @@ steps:
     body: "Viator schedules are priced in Mexican pesos, so the dollar figure moves with the date, the season and the exchange rate."
 comparisonDataKey: "comparison_prices"
 faqDataKey: "faq_prices"
-experienceIDs: ["366381P1", "482323P1", "171986P1", "333644P5", "309496P6"]
-experienceBadges: ["THREE CLEAR TIERS", "LOWEST FLIGHT-ONLY WE REVIEW", "LOWEST WITH TRANSPORT WE REVIEW", "TICKET AND GUIDE INCLUDED", "PRIVATE BASKET FOR TWO"]
+experienceIDs: ["366381P1", "482323P1", "171986P1", "333644P5", "5553640P2"]
+experienceBadges: ["THREE CLEAR TIERS", "LOWEST FLIGHT-ONLY WE REVIEW", "LOWEST WITH TRANSPORT WE REVIEW", "TICKET AND GUIDE INCLUDED", "PRIVATE BASKET"]
 experiencesOverline: "One ride per price tier"
 experiencesTitle: "From the Flight Alone to a Basket for Two"
 experiencesSubtitle: "Tlatoani's three-tier listing, the lowest flight-only and transport prices we review, a guided day with the ticket included and a private basket."
@@ -69,7 +69,7 @@ quickFacts:
   - label: "With Mexico City transport"
     value: "$186 to $240 / person"
   - label: "Private basket for two"
-    value: "About $1,017 (Zuyuá)"
+    value: "About $952 (Teotihuacán Feliz)"
   - label: "Pyramids ticket"
     value: "MX$210, about $11"
 sideCtaTitle: "See Tlatoani prices"
@@ -114,7 +114,7 @@ These are option prices per person, not headline prices, from the balloon listin
 | Flight + cave breakfast, own transport | The flight plus breakfast in a cave restaurant | $181 to $203 |
 | All-inclusive from Mexico City | Hotel transport, flight, breakfast, free time at the pyramids | $186 to $240 |
 | Balloon + guided pyramids | Transport, flight, breakfast, ticket and a guide | $247 to $360 |
-| Private basket | A balloon for your party only, with transport and breakfast | $476 per person to $1,017 for two |
+| Private basket | A balloon for your party only, with transport and breakfast | About $476 per person, $952 for two |
 
 The lowest flight-only price among the flights we review is {{< tour-link tour="482323P1" >}}Skyteam's balloon flight{{< /tour-link >}} at MXN 2,500, about $137. The lowest price with transport among them is {{< tour-link tour="171986P1" >}}Volare's flight from Mexico City{{< /tour-link >}} at about $186, with breakfast served at the balloon port, not in a cave. Most all-inclusive packages, including the {{< tour-link tour="357659P1" >}}Viaja Teotihuacan package{{< /tour-link >}} at about $236, sit between $211 and $240.
 
@@ -140,14 +140,14 @@ Flight only suits drivers and anyone sleeping in San Juan Teotihuacán; see our 
 
 ## What a couple or a family pays
 
-For two people, Tlatoani's all-inclusive comes to $480, or about $502 with two pyramid tickets. The {{< tour-link tour="309496P6" >}}Zuyuá private sunrise balloon for two{{< /tour-link >}} was about $1,017 for the pair with tickets and a guide included, so privacy costs roughly $500 more. {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private flight{{< /tour-link >}} at about $476 each comes to $952 for two before tickets. Four adults pay about $548 for Skyteam's flight only, or $960 for Tlatoani's all-inclusive. Our [private balloon rides page](/private-teotihuacan-balloon-rides/) compares the private options, and the [best balloon rides](/best-teotihuacan-balloon-rides/) page matches each ride to a type of traveler.
+For two people, Tlatoani's all-inclusive comes to $480, or about $502 with two pyramid tickets. {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private flight{{< /tour-link >}} at about $476 each comes to $952 for two before tickets, so a private basket costs roughly $450 more than Tlatoani's all-inclusive for the pair. Four adults pay about $548 for Skyteam's flight only, or $960 for Tlatoani's all-inclusive. Our [private balloon rides page](/private-teotihuacan-balloon-rides/) compares the private options, and the [best balloon rides](/best-teotihuacan-balloon-rides/) page matches each ride to a type of traveler.
 
 <!-- GK-AUDIT: teotihuacan-balloon-ride-prices
-Option prices (TOURS-DIGEST, schedules read 25 Oct 2026): 366381P1 TG3 $157, TG2 $201, TG1 $240 (up to 2 h at pyramids); 482323P1 TG2 $137 (MXN 2,500), TG3 $181, TG1 $211; 171986P1 TG3 $159, TG1/TG2 $186 (breakfast at balloon port per description); 357659P1 TG2 $148, TG1 $236; 247495P2 TG6 $143, TG7 $203, TG1 $231, TG5 $274; 333644P5 TG2 $247, TG1 $357; 323089P1 $360; 5553640P2 $476 pp; 309496P6 $1,017 per group up to 2; 484134P1 $159/$217; 5491014P1 $148/$228; 456146P3 $154/$231; 5553640P1 $231.
-Tier ranges use the tours with /tours/ pages (12 after 5553640P1/P2 lost theirs), except the private tier, which includes 5553640P2 (no page, tour-link only). Flight only: 137-159. Cave breakfast own transport: 181 (Skyteam), 201 (Tlatoani), 203 (We Fly La Gruta). With transport: 186 (Volare) to 240 (Tlatoani); 274 We Fly express-return option excluded from range as a premium variant. Guided: 247 (333644P5 shared) to 360 (323089P1). Private: 476 pp (5553640P2) to 1,017 for two (309496P6).
+Option prices (TOURS-DIGEST, schedules read 25 Oct 2026): 366381P1 TG3 $157, TG2 $201, TG1 $240 (up to 2 h at pyramids); 482323P1 TG2 $137 (MXN 2,500), TG3 $181, TG1 $211; 171986P1 TG3 $159, TG1/TG2 $186 (breakfast at balloon port per description); 357659P1 TG2 $148, TG1 $236; 247495P2 TG6 $143, TG7 $203, TG1 $231, TG5 $274; 333644P5 TG2 $247, TG1 $357; 323089P1 $360; 5553640P2 $476 pp; 484134P1 $159/$217; 5491014P1 $148/$228; 456146P3 $154/$231; 5553640P1 $231.
+Tier ranges use the tours with /tours/ pages (12 after 5553640P1/P2 lost theirs), including the private tier (5553640P2). Flight only: 137-159. Cave breakfast own transport: 181 (Skyteam), 201 (Tlatoani), 203 (We Fly La Gruta). With transport: 186 (Volare) to 240 (Tlatoani); 274 We Fly express-return option excluded from range as a premium variant. Guided: 247 (333644P5 shared) to 360 (323089P1). Private: 476 pp (5553640P2), 952 for two.
 Step math: 201-157=44; 181-137=44; 211-181=30; 240-201=39; 236-148=88; 357-247=110. Viaja 236 + MX$210 (~$11) = ~$247.
-Party totals: 2x240=480 (+2x11=502); 1017-502=515 ("roughly $500"); 2x476=952; 4x137=548; 4x240=960.
-Inclusions/exclusions: 366381P1 (admission and gratuities excluded, weight tiers MXN 500/1,000); 357659P1 (MXN 35/kg over 100, photo/video packages, tips excluded); 482323P1 (tips, MXN 35/kg, entrance excluded); 5491014P1 (MXN 1,500 above 140 kg, gratuities); 247495P2 (max 99 kg penalty; all-included option includes entrance per description); 456146P3 (photo package "ask at our offices"); 696822 (professional photographs excluded); 333644P5 includes entrance + guided visit ~2h30, local-restaurant breakfast; 309496P6 includes tickets + certified guide; 5553640P2 excludes entrance ticket.
+Party totals: 2x240=480 (+2x11=502); 952-502=450 ("roughly $450"); 2x476=952; 4x137=548; 4x240=960.
+Inclusions/exclusions: 366381P1 (admission and gratuities excluded, weight tiers MXN 500/1,000); 357659P1 (MXN 35/kg over 100, photo/video packages, tips excluded); 482323P1 (tips, MXN 35/kg, entrance excluded); 5491014P1 (MXN 1,500 above 140 kg, gratuities); 247495P2 (max 99 kg penalty; all-included option includes entrance per description); 456146P3 (photo package "ask at our offices"); 696822 (professional photographs excluded); 333644P5 includes entrance + guided visit ~2h30, local-restaurant breakfast; 5553640P2 excludes entrance ticket.
 Admission MX$210, exemptions under 13 / over 60, free Sundays nationals/residents only, sold at box office and INAH site: ledger s5.
 MXN 2,500 ~ $137: digest implied listing rate. Banxico FIX ~18.67 (ledger s14): MX$210 ~ $11.
 Viator schedules priced in pesos: digest header + SITEMAP price rules.

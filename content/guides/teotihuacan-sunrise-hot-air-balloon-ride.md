@@ -87,7 +87,7 @@ Every package flies at the same time of day, so you are choosing privacy, transp
 | Shared flight with breakfast | Travellers who want a slower morning | The meal adds an hour or more | {{< tour-link tour="247495P2" >}}We Fly, flight with La Gruta breakfast{{< /tour-link >}}, from about $143, 4.9/5 from 4,820+ reviews |
 | Flight with pickup, cave breakfast and the pyramids | Making the most of one day | A longer morning, more walking, a later return | {{< tour-link tour="366381P1" >}}Tlatoani, all-inclusive option{{< /tour-link >}}, about $240, 4.9/5 from 7,870+ reviews |
 | Sunrise flight, cave breakfast and pickup from your accommodation | Travellers who want everyone collected at the door | Costs more than the shared-pickup options | {{< tour-link tour="5553640P1" >}}Teotihuacán Feliz sunrise flight{{< /tour-link >}}, about $231, 4.97/5 from 570+ reviews |
-| Private sunrise basket for two | Couples marking an occasion | Several times the price of shared seats | {{< tour-link tour="309496P6" >}}Private sunrise balloon for 2{{< /tour-link >}}, about $1,017 per couple, 4.9/5 from 41 reviews |
+| Private sunrise basket for two | Couples marking an occasion | Several times the price of shared seats | {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz private balloon flight{{< /tour-link >}}, about $476 per person ($952 per couple), 5.0/5 from 20+ reviews |
 
 The private listing has far fewer reviews than the shared ones, so read them before you book. A private basket does not bring an earlier launch, better weather, a closer pass over the pyramids or a longer flight; it gives your party the basket to itself. Two seats in a shared basket are not a private balloon, and our [balloon ride for two guide](/guides/teotihuacan-balloon-ride-for-two/) compares the options for couples.
 
@@ -208,4 +208,4 @@ INAH: 8:00-17:00 daily, last entry 16:30, MX$210 / MX$105: https://www.inah.gob.
 Sunrise 5:57 (21 Jun), 6:24 (22 Sep), 6:38 (21 Mar), 7:05 (late Dec); dawn 2-4 C winter; dry Nov-Apr: best-time and what-to-wear guides (SMN, ledger).
 Pickups 4:30-5:30 typical of listings: what-to-expect guide ledger s2.
 Flying Pictures FAQ (source's 6:00-8:30 window) returned HTTP 500 on 2026-11-06: dropped.
-Listings: 357659P1 TG2 $148 4.9/8,257; 171986P1 $186 4.8/4,552; 247495P2 from $143 4.9/4,824; 366381P1 TG1 $240 4.9/7,871; 5553640P1 $231 4.97/572; 309496P6 $1,017 4.9/41: data/mcbr_offers.json + prices landing digest. -->
+Listings: 357659P1 TG2 $148 4.9/8,257; 171986P1 $186 4.8/4,552; 247495P2 from $143 4.9/4,824; 366381P1 TG1 $240 4.9/7,871; 5553640P1 $231 4.97/572; 5553640P2 $476 pp 4.95/20: data/mcbr_offers.json + prices landing digest. -->

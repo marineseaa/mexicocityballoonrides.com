@@ -31,7 +31,7 @@ Three questions decide the booking: what it costs, which operator, and whether t
 
 ### How much does a Teotihuacán balloon ride cost?
 
-The headline "from" price on most listings is the flight alone, about $137 to $159 per person, and you drive yourself to the balloon port. With Mexico City transport and breakfast, options ran about $186 to $274 on dates we checked in late October 2026, and private baskets cost about $476 per person or $1,017 for two. Add MX$210 (about $11) for the archaeological zone unless your option includes it. See our [balloon ride prices page](/teotihuacan-balloon-ride-prices/).
+The headline "from" price on most listings is the flight alone, about $137 to $159 per person, and you drive yourself to the balloon port. With Mexico City transport and breakfast, options ran about $186 to $274 on dates we checked in late October 2026, and the private basket cost about $476 per person or $952 for two. Add MX$210 (about $11) for the archaeological zone unless your option includes it. See our [balloon ride prices page](/teotihuacan-balloon-ride-prices/).
 
 ### Which balloon ride should I book?
 
@@ -79,7 +79,7 @@ No regulator publishes a rating, so check what you can: operators need a permit 
 
 ### Can children fly, and is there a weight limit?
 
-Rules vary by operator: We Fly's listing sets a minimum age of 4, Volare's 5, and GA-MX also requires a height of 1.20 m. Most charge a surcharge above about 95 to 100 kg, and some set a cap, such as 120 kg at Volare; the details are in our [weight limits guide](/guides/teotihuacan-balloon-ride-weight-limits/). Pregnancy, heart conditions and recent surgery rule you out on most listings. See [balloon rides with kids](/guides/teotihuacan-balloon-rides-with-kids/).
+Rules vary by operator: We Fly's listing sets a minimum age of 4, Volare's 5, and GA-MX also requires a height of 1.20 m. Most charge a surcharge above about 95 to 100 kg, and some set a cap, such as 150 kg at Volare; the details are in our [weight limits guide](/guides/teotihuacan-balloon-ride-weight-limits/). Pregnancy, heart conditions and recent surgery rule you out on most listings. See [balloon rides with kids](/guides/teotihuacan-balloon-rides-with-kids/).
 
 ## Key facts at a glance
 
@@ -114,10 +114,10 @@ Yes. The zone opens at 8:00, most full packages give you 1 to 1.5 hours there, a
 <!-- GK-AUDIT: teotihuacan-balloon-ride-faq
 Launch in valley, ~90% from SMP; not over CDMX: ledger s1, brief positioning. Road 45-50 km, 45-60 min: ledger s1. Pickups 4:30-5:30 confirmed day before, check-in ~5:30: ledger s2. Buses from 6:00 to zone gates: ledger s12, corrections 15.
 Flight 30-60 (45-60 quoted), early landing for safety (GA-MX): ledger s2. Return 10:00 / 14:30 (GA-MX), 1-2 pm (Explora digest): ledger s2, s13; TOURS-DIGEST 394927P1.
-Prices: flight-only $137 (482323P1) to $159 (171986P1, 484134P1); transport+breakfast $186 (171986P1 TG1) to $274 (247495P2 TG5); private $476 (5553640P2), $1,017 per group (309496P6): TOURS-DIGEST. Viaja 4.9/8,257 is the highest review count in offers JSON (checked). Zone MX$210 ~US$11: ledger s5, s14.
+Prices: flight-only $137 (482323P1) to $159 (171986P1, 484134P1); transport+breakfast $186 (171986P1 TG1) to $274 (247495P2 TG5); private $476 (5553640P2): TOURS-DIGEST. Viaja 4.9/8,257 is the highest review count in offers JSON (checked). Zone MX$210 ~US$11: ledger s5, s14.
 Route: WeFly seek currents; GA-MX no route guarantee: ledger s3. Light winds only; cold fronts; rainy dawn: ledger s3, s6. WeFly/GA-MX reschedule free; Viator 24 h policy: ledger s7.
 Safety: AFAC permit, insurance, licensed staff, ask for proof: ledger s4a. 1 Apr 2023 fire, two dead: ledger s4c. 29 Mar 2026 inspection, 23 of 46, three suspended: ledger s4b.
-Age: We Fly listing min 4 (TOURS-DIGEST 247495P2), Volare under 5 not allowed and max 120 kg (TOURS-DIGEST 171986P1), GA-MX 1.20 m (ledger s8). Surcharges 95-100 kg: ledger s8. Pregnancy/heart/surgery restrictions: TOURS-DIGEST notSuitableFor/goodToKnow (357659P1 etc.).
+Age: We Fly listing min 4 (TOURS-DIGEST 247495P2), Volare under 5 not allowed (TOURS-DIGEST 171986P1), max 150 kg / 110 kg standard (volare.com.mx/en/shared-balloon-flight/, checked 2026-11-17), GA-MX 1.20 m (ledger s8). Surcharges 95-100 kg: ledger s8. Pregnancy/heart/surgery restrictions: TOURS-DIGEST notSuitableFor/goodToKnow (357659P1 etc.).
 Dry Nov-Apr: ledger s6. Winter dawn 2-4 C, highs mid-20s: ledger s6, s10. UTC-6: ledger s15.
 Clothing, banned footwear, bags: ledger s10, s8; TOURS-DIGEST 696822. Selfie sticks GA-MX/Amigo, drones INAH: ledger s11, s5; TOURS-DIGEST 696822. Photos usually extra: TOURS-DIGEST excludes.
 Flight-only includes coffee/toast/certificate: TOURS-DIGEST 456146P3 TG2, 401763P2 TG4. Cave breakfast: TOURS-DIGEST.

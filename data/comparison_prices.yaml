@@ -24,9 +24,9 @@ columns:
     highlight: false
     url: "/tours/excellentravel-balloon-flight-private-transport-pyramids/"
     cta: "Our review"
-  - label: "Zuyuá private basket"
+  - label: "Teotihuacán Feliz private flight"
     highlight: false
-    url: "/tours/zuyua-private-sunrise-balloon-for-two/"
+    url: "/tours/teotihuacan-feliz-private-balloon-flight/"
     cta: "Our review"
 rows:
   - label: "Price"
@@ -36,7 +36,7 @@ rows:
       - "$148 flight only"
       - "$143 flight only"
       - "$247 with shared transport and guided tour"
-      - "$1,017 per group of up to 2"
+      - "$476 per person, so $952 for two"
   - label: "Flight + cave breakfast, own transport"
     values:
       - "$201"
@@ -52,7 +52,7 @@ rows:
       - "$236 with cave breakfast and pyramids time"
       - "$231 all included; $274 express return + La Gruta"
       - "$247 shared; $357 private transport"
-      - "Included in the price"
+      - "Private transport included"
   - label: "Pyramids ticket (MX$210)"
     values:
       - "Not included"
@@ -60,7 +60,7 @@ rows:
       - "Not included"
       - "Included in the all-included option"
       - "Included, with a guide"
-      - "Included, with a guide"
+      - "Not included"
   - label: "Weight surcharge"
     values:
       - "MXN 500 at 100–120 kg, MXN 1,000 at 120–140 kg"
@@ -76,4 +76,4 @@ rows:
       - "4.9 from 8,250+ reviews"
       - "4.9 from 4,820+ reviews"
       - "4.9 from 120+ reviews"
-      - "4.9 from 41 reviews"
+      - "5.0 from 20+ reviews"

@@ -21,7 +21,7 @@ cardImage: "/images/teotihuacan-balloon-ride-weight-limits-hook.webp"
 
 <img class="hook-image" src="/images/teotihuacan-balloon-ride-weight-limits-hook.webp" alt="Teotihuacán balloon weight surcharges: MXN 35 per kilo over 100 kg at many operators, or MXN 500 to 1,000 by weight band" width="1200" height="630">
 
-Most Teotihuacán balloon operators include passengers up to about 100 kg in the ticket price and charge extra above that, either MXN 35 per extra kilo (Viaja Teotihuacan, Skyteam, Cielo Azteca and others) or a fixed band fee of MXN 500 for 100 to 120 kg and MXN 1,000 for 120 to 140 kg (Tlatoani). A few set a hard maximum, from 120 kg at Volare to 150 kg at Amigo Tours. Pregnancy rules you out or is "not recommended" with every operator that mentions it, and most also list spinal and heart conditions.
+Most Teotihuacán balloon operators include passengers up to about 100 kg in the ticket price and charge extra above that, either MXN 35 per extra kilo (Viaja Teotihuacan, Skyteam, Cielo Azteca and others) or a fixed band fee of MXN 500 for 100 to 120 kg and MXN 1,000 for 120 to 140 kg (Tlatoani). A few set a hard maximum, from 140 kg at Globos Aerostáticos Teotihuacán to 150 kg at Volare and Amigo Tours. Pregnancy rules you out or is "not recommended" with every operator that mentions it, and most also list spinal and heart conditions.
 
 <!--more-->
 
@@ -43,7 +43,7 @@ The weight also decides where you stand. Tlatoani's listing warns that the pilot
 
 Some operators draw a hard line above which they will not fly you at all:
 
-- Volare's maximum weight per person is 120 kg (265 lb).
+- Volare's own site includes up to 110 kg in the standard price, charges an extra fee above that and flies passengers up to 150 kg. Its Viator listing still says 120 kg, so confirm with Volare.
 - Globos Aerostáticos Teotihuacán does not fly passengers over 140 kg, and Globo Tetris says people over 140 kg are not admitted.
 - Amigo Tours sets its maximum at 150 kg.
 
@@ -65,7 +65,7 @@ On dates we checked in late October 2026, Tlatoani cost about $157 for the fligh
 | {{< tour-link tour="487546P4" >}}Vive Vuela{{< /tour-link >}} | 100 kg | MXN 30 per extra kilo | Not stated |
 | {{< tour-link tour="377048P1" >}}Globo Tetris{{< /tour-link >}} | 100 kg | 500 (101 to 120 kg), 1,000 (121 to 140 kg) | 140 kg |
 | {{< tour-link tour="1432828" >}}Fly Teotihuacan{{< /tour-link >}} | 99 kg | MXN 35 per extra kilo | Not stated |
-| {{< tour-link tour="171986P1" >}}Volare{{< /tour-link >}} | Not stated | Not stated | 120 kg |
+| {{< tour-link tour="171986P1" >}}Volare{{< /tour-link >}} | 110 kg | Fee not stated | 150 kg |
 | {{< tour-link tour="5885P459" >}}Amigo Tours{{< /tour-link >}} | 100 kg | Per extra kilo, rate not stated | 150 kg |
 
 Globo Tetris writes its fees with a $ sign on a listing priced in Mexican pesos. Globos Aerostáticos Teotihuacán, which sells direct, uses the same MXN 500 and MXN 1,000 bands with a 140 kg limit.
@@ -92,7 +92,7 @@ Traveling with children? The [kids guide](/guides/teotihuacan-balloon-rides-with
 
 ### What is the weight limit for a Teotihuacán balloon ride?
 
-Most operators include up to about 100 kg, some 95 or 99 kg, and charge above that. Hard maximums we found are 120 kg (Volare), 140 kg (Globos Aerostáticos Teotihuacán, Globo Tetris) and 150 kg (Amigo Tours).
+Most operators include up to about 100 kg, some 95 or 99 kg, and charge above that. Hard maximums we found are 140 kg (Globos Aerostáticos Teotihuacán, Globo Tetris) and 150 kg (Volare, Amigo Tours).
 
 ### How much is the overweight charge?
 
@@ -113,7 +113,7 @@ It depends on the operator and the disability. You must climb into the basket an
 <!-- GK-AUDIT: teotihuacan-balloon-ride-weight-limits
 Per-kilo MXN 35 over 100 kg: digest 357659P1 (Viaja), 482323P1 (Skyteam), 484134P1 (Cielo Azteca), 456146P3 + 401763P2 (Visita), 5553640P1 (Teotihuacan Feliz), 394927P1 (Explora), 484176P1 (Arc Tours). Vive Vuela MXN 30: digest 487546P4. We Fly 99 kg MXN 45/kg: wefly.com.mx/en/politicas-y-restricciones/ section 8, checked 2026-11-06 (Viator digest 247495P3 still says MXN 35; 247495P2 max 99 kg). Fly Teotihuacan 99 kg MXN 35 at launch site: offers JSON 1432828 description.
 WeFly website (2026-11-06): MXN 45 per kg over 99 kg, weighed at launch site; superseded the older MXN 50 over 95 kg ledger s8 figure. Civitatis 99 kg US$3/kg at take-off: ledger s8.
-Tlatoani bands MXN 500 (>100-120), MXN 1,000 (>120-140, 308 lb); pilot moves passengers for weight distribution; notSuitableFor list: digest 366381P1. Teotihuacan Adventures 500/1,000/1,500: digest 5491014P1. Globo Tetris 100 kg, $500/$1,000, >140 not admitted: digest 377048P1. GA-MX 101-120 MXN 500, 121-140 MXN 1,000, >140 cannot fly, report true weight, health list, intoxicated no refund: ledger s8. Volare max 120 kg/265 lb, disability note, wheelchair tag: digest 171986P1. Amigo max 150 kg, name/weight/health by government order, per-kilo above 100: offers JSON 5885P459. Amigo GYG notSuitableFor: digest 696822. Vuelo en globo afraid of heights etc: digest 1520860/1522004.
+Tlatoani bands MXN 500 (>100-120), MXN 1,000 (>120-140, 308 lb); pilot moves passengers for weight distribution; notSuitableFor list: digest 366381P1. Teotihuacan Adventures 500/1,000/1,500: digest 5491014P1. Globo Tetris 100 kg, $500/$1,000, >140 not admitted: digest 377048P1. GA-MX 101-120 MXN 500, 121-140 MXN 1,000, >140 cannot fly, report true weight, health list, intoxicated no refund: ledger s8. Volare 110 kg standard, 150 kg max (volare.com.mx/en/shared-balloon-flight/, checked 2026-11-17; Viator listing says 120 kg), disability note, wheelchair tag: digest 171986P1. Amigo max 150 kg, name/weight/health by government order, per-kilo above 100: offers JSON 5885P459. Amigo GYG notSuitableFor: digest 696822. Vuelo en globo afraid of heights etc: digest 1520860/1522004.
 Conversions at Banxico FIX 18.667: ledger s14 (350=$18.75, 500=$26.79, 1,050=$56.25, 1,000=$53.57, 750=$40.18).
 Viaja pregnancy any month, heart, surgery, back/spine, knee, alcohol: digest 357659P1. WeFly no upper age, ask about mobility/weight: ledger s8.
 Climb into basket; Civitatis not wheelchair accessible: ledger s8. Standing: digest 366381P1 (problem standing). Cielo Azteca / Arc Tours wheelchair tag: digest 484134P1, 484176P1.

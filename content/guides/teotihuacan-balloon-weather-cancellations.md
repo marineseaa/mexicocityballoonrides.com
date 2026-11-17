@@ -33,7 +33,7 @@ The decision is made on the morning, at the field. Globos Aerostáticos Teotihua
 
 Cancellations can hit the whole valley at once. On 1 February 2026 operators cancelled every balloon flight because of strong, gusty winds from cold front number 32. Winter is the dry season, but cold fronts mean it is not free of cancellations.
 
-A flight can also be cut short. Globos Aerostáticos Teotihuacán says flight times are approximate and depend on the wind, and that an early landing for safety is not grounds for a refund. Most listings quote 30 to 60 minutes in the air, subject to weather. If the balloon comes down early, accept the pilot's decision; it is part of the deal on every flight.
+A flight can also be cut short. Globos Aerostáticos Teotihuacán says flight times are approximate and depend on the wind, and that an early landing for safety is not grounds for a refund. Most listings quote 30 to 60 minutes in the air, subject to weather. If the balloon comes down early, accept the pilot's decision; it is part of the deal on every flight. Our [Teotihuacán balloon ride safety](/guides/teotihuacan-balloon-ride-safety/) guide sets out the incident record behind that caution.
 
 ## What the operators' policies say
 

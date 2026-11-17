@@ -53,8 +53,8 @@ steps:
     body: "Take a photo ID for check-in, warm layers for a cold dawn and cash for the archaeological zone, which most packages do not include."
 comparisonDataKey: "comparison_best"
 faqDataKey: "faq_best"
-experienceIDs: ["357659P1", "482323P1", "333644P5", "247495P2", "309496P6"]
-experienceBadges: ["OUR PICK", "LOWEST FLIGHT-ONLY WE REVIEW", "GUIDED PYRAMIDS INCLUDED", "LA GRUTA BREAKFAST", "PRIVATE BASKET FOR TWO"]
+experienceIDs: ["357659P1", "482323P1", "333644P5", "247495P2", "5553640P2"]
+experienceBadges: ["OUR PICK", "LOWEST FLIGHT-ONLY WE REVIEW", "GUIDED PYRAMIDS INCLUDED", "LA GRUTA BREAKFAST", "PRIVATE BASKET"]
 experiencesOverline: "The rides"
 experiencesTitle: "One Balloon Ride for Each Kind of Morning"
 experiencesSubtitle: "All-inclusive from Mexico City, flight only, a guided pyramids day, breakfast at La Gruta and a basket for two."
@@ -130,7 +130,7 @@ La Gruta is a restaurant inside a natural volcanic cave, behind the Pyramid of t
 
 ## Couples and celebrations: a private basket
 
-Shared baskets carry a group of strangers. For a proposal or an anniversary, the {{< tour-link tour="309496P6" >}}Zuyuá private sunrise balloon for two{{< /tour-link >}} was about $1,017 for the pair, with pickup, breakfast, a certified guide at Teotihuacán and tickets included. It has 41 reviews. {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private balloon flight{{< /tour-link >}} was about $476 per person with private transport and breakfast, though its listing excludes the archaeological-zone ticket. Either way you pay several times the shared price. See [private balloon rides](/private-teotihuacan-balloon-rides/), or our [balloon ride for two](/guides/teotihuacan-balloon-ride-for-two/) guide for couple prices booked direct and a celebration package. [Our Zuyuá review →](/tours/zuyua-private-sunrise-balloon-for-two/)
+Shared baskets carry a group of strangers. For a proposal or an anniversary, the {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz private balloon flight{{< /tour-link >}} was about $476 per person, or $952 for the pair, with private transport and breakfast, though its listing excludes the archaeological-zone ticket. It is rated 5.0 from 20+ reviews, a thin base. You pay several times the shared price. See [private balloon rides](/private-teotihuacan-balloon-rides/), or our [balloon ride for two](/guides/teotihuacan-balloon-ride-for-two/) guide for couple prices booked direct and a celebration package. [Our Teotihuacán Feliz review →](/tours/teotihuacan-feliz-private-balloon-flight/)
 
 ## Booking on GetYourGuide with flexible options
 
@@ -139,11 +139,11 @@ If you would rather book on GetYourGuide, {{< tour-link tour="696822" >}}Amigo T
 For what each tier really costs and what is extra, see our [balloon ride prices](/teotihuacan-balloon-ride-prices/) page. Flights are weather-dependent; read [weather and cancellations](/guides/teotihuacan-balloon-weather-cancellations/) before you pick a date, and our step-by-step guide on [how to book a Teotihuacán balloon ride](/guides/how-to-book-teotihuacan-balloon-ride/) before you pay.
 
 <!-- GK-AUDIT: best-teotihuacan-balloon-rides
-Option prices (TOURS-DIGEST, schedules read 25 Oct 2026): 357659P1 TG1 $236 / TG2 $148; 366381P1 TG1 $240; 482323P1 TG2 $137 (MXN 2,500), TG3 $181, TG1 $211; 333644P5 TG2 $247 shared, TG1 $357 private; 247495P2 TG7 $203, TG1 $231, TG5 $274; 309496P6 $1,017 per group up to 2; 5553640P2 $476 pp; 696822 from $148 (offers JSON; GYG option prices not itemized).
+Option prices (TOURS-DIGEST, schedules read 25 Oct 2026): 357659P1 TG1 $236 / TG2 $148; 366381P1 TG1 $240; 482323P1 TG2 $137 (MXN 2,500), TG3 $181, TG1 $211; 333644P5 TG2 $247 shared, TG1 $357 private; 247495P2 TG7 $203, TG1 $231, TG5 $274; 5553640P2 $476 pp; 696822 from $148 (offers JSON; GYG option prices not itemized).
 "Lowest flight-only of the flights we review": among the tours with /tours/ pages (5553640P1/P2 have none; neither sells a flight-only option), flight-only options: 482323P1 2,500; 247495P2 2,600; 357659P1 2,699; 5491014P1 2,699; 456146P3 2,799; 366381P1 2,850; 484134P1 2,899; 171986P1 2,900 MXN. (487546P4, no page, is MXN 2,480.)
 "Most-reviewed balloon listing on this site": offers JSON, 357659P1 8,257 is highest of all 32 offers.
-Ratings/reviews: offers JSON (357659P1 4.9/8,257; 482323P1 4.9/1,557; 333644P5 123; 309496P6 40; 696822 4.6/1,326).
-Inclusions: 357659P1 TG1 option text (transport, cave breakfast, cooperative obsidian/quartz, time at pyramids), excludes admission; 333644P5 includes (entrance + guided visit, SECTUR guide, local-restaurant breakfast, ~2h30 guided visit in description), goodToKnow moderate fitness; 247495P2 options + waiting-time warning + max 99 kg penalty; 309496P6 includes; 5553640P2 includes/excludes; 696822 description (four options), keyDetails (reserve now pay later), cancellation 24 h, goodToKnow (Balloon's Paradise port, San Martín de las Pirámides).
+Ratings/reviews: offers JSON (357659P1 4.9/8,257; 482323P1 4.9/1,557; 333644P5 123; 5553640P2 20; 696822 4.6/1,326).
+Inclusions: 357659P1 TG1 option text (transport, cave breakfast, cooperative obsidian/quartz, time at pyramids), excludes admission; 333644P5 includes (entrance + guided visit, SECTUR guide, local-restaurant breakfast, ~2h30 guided visit in description), goodToKnow moderate fitness; 247495P2 options + waiting-time warning + max 99 kg penalty; 5553640P2 includes/excludes; 696822 description (four options), keyDetails (reserve now pay later), cancellation 24 h, goodToKnow (Balloon's Paradise port, San Martín de las Pirámides).
 Pickup 4:30-5:30: ledger s2 (CONFLICTING/varies, recommended wording). Day-before confirmation: ledger s2 (GA-MX) + digest meeting texts.
 Valley not city, ~1 hour NE, route depends on wind: ledger s1, s3; SITEMAP positioning.
 MX$210 admission 2026 foreigners: ledger s5 (INAH). Sun pyramid climbing prohibited; Moon closed after 20 Apr 2026, no reopening found: ledger s5 + corrections 2.

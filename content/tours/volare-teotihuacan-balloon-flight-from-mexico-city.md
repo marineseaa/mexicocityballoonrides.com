@@ -10,7 +10,7 @@ keywords:
   - "volare balloon flight teotihuacan"
   - "volare vuelos en globo"
   - "teotihuacan balloon ride from mexico city"
-  - "teotihuacan balloon ride weight limit 120 kg"
+  - "teotihuacan balloon ride weight limit 150 kg"
   - "teotihuacan balloon flight breakfast"
 navTitle: "Volare balloon flight"
 shortTitle: "Volare: balloon flight from Mexico City"

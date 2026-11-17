@@ -14,7 +14,7 @@ cardTag: "Private"
 cardMeta: "Private baskets vs private tours with a shared balloon"
 cardImage: "/images/heroes/private-teotihuacan-balloon-rides.webp"
 
-tourId: "309496P6"
+tourId: "5553640P2"
 dataKey: "mcbr_offers"
 
 heroImage: "/images/heroes/private-teotihuacan-balloon-rides.webp"
@@ -24,54 +24,52 @@ heroOverline: "Private rides"
 heroSubtitle: "Some private packages put just the two of you in the basket. Others give you a private car and guide, then a shared balloon. Check which before you book."
 heroCTAPrimary: "Check dates and prices"
 heroCTASecondary: "Compare the options"
-trustDurationLabel: "Zuyuá, start to finish"
-trustDishesMetric: "$1,017"
-trustDishesLabel: "Zuyuá private basket, for two"
+trustDurationLabel: "Teotihuacán Feliz, start to finish"
+trustDishesMetric: "$952"
+trustDishesLabel: "Teotihuacán Feliz private flight, for two"
 trustGuideMetric: "$476"
 trustGuideLabel: "Teotihuacán Feliz private, per person"
 
-bookingPitch: "Our pick: Zuyuá's private sunrise balloon for two, with hotel pickup, a certified guide at the pyramids and entry tickets."
-highlightsTitle: "Zuyuá's Private Balloon for Two, in Brief"
-highlightsSubtitle: "A private sunrise flight for two people, round-trip transport from Mexico City and a guided visit to the pyramids."
+bookingPitch: "Our pick: Teotihuacán Feliz's private balloon flight, with private transport from your accommodation and breakfast. The zone ticket is extra."
+highlightsTitle: "Teotihuacán Feliz's Private Balloon, in Brief"
+highlightsSubtitle: "A private basket for your party, private transport from your accommodation and breakfast."
 howItWorksTitle: "How a Private Balloon Morning Works"
 howItWorksSubtitle: "One booking, one price for the two of you."
 steps:
   - number: "1"
-    title: "Book for the pair"
-    body: "Zuyuá prices its flight per group of up to two people, not per person. Book once for both of you."
+    title: "Book for your party"
+    body: "Teotihuacán Feliz prices its flight per person, about $476 each. Book the seats for everyone in your party and confirm the total at checkout."
   - number: "2"
-    title: "Confirm the day-before message"
-    body: "The operator sends the pickup time and place the day before. Reply to confirm it, and say if you are planning a proposal or celebration."
+    title: "Confirm the pickup"
+    body: "The listing gives no pickup time, so message the operator after booking to confirm it, and say if you are planning a proposal or celebration."
   - number: "3"
     title: "Fly just the two of you"
-    body: "Pickup at your accommodation, coffee before the flight, then a sunrise flight in your own basket."
+    body: "Private transport collects you at your accommodation, then you fly in a basket that is yours alone."
   - number: "4"
-    title: "Pyramids with a guide"
-    body: "After breakfast a certified guide takes you round Teotihuacán, with the entry tickets included."
+    title: "Breakfast, then the ruins"
+    body: "Breakfast is included. The zone ticket is not (MX$210), and the listing does not describe a guide, so plan to walk the ruins yourself or hire one there."
 galleryTitle: "A Private Sunrise over Teotihuacán"
-gallerySubtitle: "Photos from the Zuyuá listing."
+gallerySubtitle: "A private sunrise over the valley."
 reviewsTitle: "What Couples Say"
 ctaTitle: "Book a private balloon"
 ctaBody: "Pick a date to see the real price for your group. Viator lists free cancellation up to 24 hours before the start time."
 comparisonDataKey: "comparison_private"
 faqDataKey: "faq_private"
-experienceIDs: ["309496P6", "323089P1", "333644P5"]
+experienceIDs: ["5553640P2", "323089P1", "333644P5"]
 experienceBadges: ["OUR PICK", "PRIVATE GUIDE, SHARED BASKET", "PRIVATE DRIVER, SHARED BASKET"]
 experiencesOverline: "Private packages"
 experiencesTitle: "Private Basket or Private Tour"
-experiencesSubtitle: "A private basket for two, and two private ground tours that fly you in a shared basket."
+experiencesSubtitle: "A private basket, and two private ground tours that fly you in a shared basket."
 editorialOverline: "Choosing"
 editorialTitle: "What Private Really Means"
-sidebarPicks: ["309496P6", "323089P1", "333644P5"]
+sidebarPicks: ["5553640P2", "323089P1", "333644P5"]
 quickFacts:
-  - label: "Zuyuá private basket"
-    value: "$1,017 per group of up to 2"
-  - label: "Teotihuacán Feliz private"
-    value: "$476 per person"
+  - label: "Teotihuacán Feliz private basket"
+    value: "$476 per person, $952 for two"
   - label: "Private guide, shared basket"
     value: "$357–$360 per person"
   - label: "Zone entry"
-    value: "Included with Zuyuá; extra with Feliz"
+    value: "Extra with Feliz (MX$210); included with the private-guide tours"
   - label: "Time zone"
     value: "UTC-6 all year"
 sideCtaTitle: "See private dates"
@@ -79,7 +77,7 @@ toc:
   - id: "availability"
     label: "Check dates and prices"
   - id: "highlights"
-    label: "Zuyuá, in brief"
+    label: "Teotihuacán Feliz, in brief"
   - id: "comparison"
     label: "Private options compared"
   - id: "experiences"
@@ -104,25 +102,19 @@ keywords:
   - "teotihuacan hot air balloon for couples"
 ---
 
-For a basket with nobody else in it, book {{< tour-link tour="309496P6" >}}Zuyuá's private sunrise balloon for two{{< /tour-link >}}. It is priced per group, not per person: about $1,017 for up to two people on dates we checked in late October 2026, or roughly $509 each. That covers pickup from your accommodation, breakfast, a certified guide at the pyramids and the entry tickets. It is rated 4.9 from 41 reviews. The cheaper "private" tours on Viator mostly mean a private car and guide, with a shared balloon. [Our review →](/tours/zuyua-private-sunrise-balloon-for-two/)
+For a basket with nobody else in it, book {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private balloon flight{{< /tour-link >}}. It is priced per person: about $476 each on dates we checked in late October 2026, or about $952 for two. That covers private transport from your accommodation and breakfast. The archaeological-zone ticket is not included, and the listing does not describe a guide. It is rated 5.0 from 20+ reviews, a thin base. The cheaper "private" tours on Viator mostly mean a private car and guide, with a shared balloon. [Our review →](/tours/teotihuacan-feliz-private-balloon-flight/)
 
 ## Private basket or private ground tour
 
 This is the distinction that matters. A private basket means only your party flies with the pilot. A private tour means your own driver and guide, but in the air you share a basket with other passengers.
 
-Two packages here are private balloon flights: Zuyuá's, and {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private balloon flight{{< /tour-link >}}. Two are private ground tours with a shared basket: {{< tour-link tour="323089P1" >}}Luxury Tours' private tour and shared hot air balloon ride{{< /tour-link >}} and {{< tour-link tour="333644P5" >}}Excellentravel's balloon flight with private transport{{< /tour-link >}}. Excellentravel says it plainly: "the balloon flight is shared in small groups, while transport and the pyramids tour are completely private." Luxury Tours lists a private balloon as an extra cost. If the title says "private tour", read the inclusions before you assume the basket is yours.
-
-## Zuyuá: a private basket with the pyramids included
-
-Zuyuá's package runs about 6.5 hours. It includes round-trip transport from Mexico City in an air-conditioned vehicle, coffee before the flight, the sunrise flight, breakfast, a certified guide at Teotihuacán, tickets, insurance and parking. Lunch is extra. One reviewer valued arriving at the pyramids before the crowds. Another, in February 2025, said nobody came at the time given the day before, after being told they had not confirmed, so reply to the confirmation message.
-
-Because the price is per group, two people pay the same $1,017. A solo traveler pays it too, which makes it an expensive way to fly alone.
+One package here is a private balloon flight: {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private balloon flight{{< /tour-link >}}. Two are private ground tours with a shared basket: {{< tour-link tour="323089P1" >}}Luxury Tours' private tour and shared hot air balloon ride{{< /tour-link >}} and {{< tour-link tour="333644P5" >}}Excellentravel's balloon flight with private transport{{< /tour-link >}}. Excellentravel says it plainly: "the balloon flight is shared in small groups, while transport and the pyramids tour are completely private." Luxury Tours lists a private balloon as an extra cost. If the title says "private tour", read the inclusions before you assume the basket is yours.
 
 ## Teotihuacán Feliz: a private flight priced per person
 
-The Teotihuacán Feliz private flight was about $476 per person, so about $952 for a couple. It includes private transport from your accommodation and breakfast, over about 6.1 hours. The title mentions "Entry", but the listing excludes the archaeological-zone ticket, so budget MX$210 each for foreign visitors. A reviewer described a ride with just the two of them on board. It is rated 5.0 from 20 reviews, a small base.
+The Teotihuacán Feliz private flight was about $476 per person, so about $952 for a couple. It includes private transport from your accommodation and breakfast, over about 6 hours. The title mentions "Entry", but the listing excludes the archaeological-zone ticket, so budget MX$210 each for foreign visitors. A reviewer described a ride with just the two of them on board, and said the balloon was amazing but that the rest of the morning could be better. It is rated 5.0 from 20+ reviews, a small base.
 
-Against Zuyuá, a couple saves about $65 but pays for their own tickets, and the listing does not mention a certified guide.
+Against a private car and guide with a shared basket, a couple pays about $230 to $240 more, and the listing does not mention a guide.
 
 ## Private car and guide, shared basket
 
@@ -136,19 +128,18 @@ None of the marketplace listings here describes a proposal package, decorations 
 
 ## Who each option suits
 
-Zuyuá suits a couple who want the whole morning to themselves, in the air and on the ground, and are happy to pay for it. Teotihuacán Feliz suits a couple who want a private basket and will walk the ruins without a guide or hire one there. Luxury Tours suits families: its listing lists infant seats and says the balloon flight is open from 4 years of age. Excellentravel suits travelers who mainly want a dependable private driver and a well-paced guided visit, and do not mind sharing the basket; its listing asks for a moderate level of fitness.
+Teotihuacán Feliz suits a couple who want a private basket, are happy to pay for it, and will walk the ruins without a guide or hire one there. Luxury Tours suits families: its listing lists infant seats and says the balloon flight is open from 4 years of age. Excellentravel suits travelers who mainly want a dependable private driver and a well-paced guided visit, and do not mind sharing the basket; its listing asks for a moderate level of fitness.
 
-For a solo traveler, a private basket costs the same as for two, so a private car and guide with a shared balloon is the better value. For a group larger than two, Zuyuá's listing is priced for up to two people, so ask the operator about larger groups before booking.
+For a solo traveler, the private basket is one seat at about $476, still more than three times a shared flight-only seat, so a private car and guide with a shared balloon is often the better value. For a larger party, ask the operator how many the private basket takes before booking.
 
 Whichever you pick, ask about the AFAC permit, the pilot's licence and insurance; our [safety guide](/guides/teotihuacan-balloon-ride-safety/) explains what to check. For the wider trade-offs, read [shared vs private balloon rides](/guides/shared-vs-private-teotihuacan-balloon-rides/), and to compare by price, see [Teotihuacán balloon ride prices](/teotihuacan-balloon-ride-prices/). Every flight is ranked on [the best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/).
 
 <!-- GK-AUDIT: private-teotihuacan-balloon-rides
-Prices (TOURS-DIGEST / mcbr_offers, 25 Oct 2026): 309496P6 $1,017 per group up to 2 (MXN 18,500; offers JSON priceCategory "per group up to 2"); $509 each = 1017/2; 5553640P2 $476 per person (x2 = $952; difference $65); 323089P1 $360 per person; 333644P5 TG1 $357 per person.
-Ratings: 309496P6 4.9/40; 5553640P2 5.0/20 (digest).
-Zuyuá inclusions (breakfast, certified guide, tickets, AC vehicle, round trip from CDMX, insurance, coffee, parking), lunch excluded, 6.5 h, pickup from accommodation: digest 309496P6. Reviews "arrive before the crowds" (Jul 2025), missed pickup / "didn't confirm" (Feb 2025): mcbr_offers sampleReviews 309496P6.
+Prices (TOURS-DIGEST / mcbr_offers, 25 Oct 2026): 5553640P2 $476 per person (x2 = $952); 323089P1 $360 per person; 333644P5 TG1 $357 per person; difference to private ground tours 952-720=232, 952-714=238.
+Ratings: 5553640P2 4.95/20 (Viator API, 2026-11-17).
 Feliz private: private transport, breakfast, entry ticket excluded, 6.1 h, pickup from accommodation: digest 5553640P2. "Private ride, just my wife and me": sampleReviews 5553640P2 (Mar 2026). Certified guide not in its includes list (checked).
 Luxury Tours: private transport, guided visit, zone tickets, breakfast, alcoholic drinks, shared balloon, private balloon extra cost, SUV/minivan, hotel or house: digest 323089P1. Anniversary reviews: sampleReviews 323089P1 (two entries).
 Excellentravel: quote "balloon flight is shared in small groups..." , lobby pickup, local restaurant breakfast, ~2:30 h guided visit, SECTUR guide, return ~1:00 pm: digest 333644P5.
-No proposal package described on the listings: checked includes/descriptions of 309496P6, 5553640P2, 323089P1, 333644P5. HappyFly celebration package MXN 9,500 for two, direct only (no listing): https://happyfly.mx/en/prices/ checked 2026-11-02.
+No proposal package described on the listings: checked includes/descriptions of 5553640P2, 323089P1, 333644P5. HappyFly celebration package MXN 9,500 for two, direct only (no listing): https://happyfly.mx/en/prices/ checked 2026-11-02.
 Zone entry MX$210: ledger s5. Overflight depends on wind: ledger s3. AFAC permit, licence, insurance checks: ledger s4a. UTC-6: ledger s15.
 -->

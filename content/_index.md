@@ -36,7 +36,7 @@ No balloon on this site takes off in Mexico City or flies over its skyline. The 
 
 The "from" price at the top of almost every listing is the flight alone: you drive yourself to the balloon port and there is no breakfast. On dates we checked in late October 2026, Viaja Teotihuacan's flight-only option cost about $148 and its package with hotel transport and the cave breakfast about $236. {{< tour-link tour="482323P1" >}}Skyteam Teotihuacán{{< /tour-link >}} sold the flight alone for about $137, the flight with a cave breakfast but no transport for about $181, and the full package from the city for about $211. [Our Skyteam review →](/tours/skyteam-teotihuacan-balloon-flight-natural-cave/)
 
-Admission to the archaeological zone is a separate cost on most packages. INAH charges foreign visitors MX$210 in 2026, about $11, and both Viaja and Skyteam list it as not included. A private basket sits in another price band: {{< tour-link tour="309496P6" >}}Zuyuá's private sunrise balloon for two{{< /tour-link >}} was about $1,017 for the pair, with transport, breakfast and a guided pyramids visit. The [Teotihuacán balloon ride prices](/teotihuacan-balloon-ride-prices/) page sets out every tier side by side.
+Admission to the archaeological zone is a separate cost on most packages. INAH charges foreign visitors MX$210 in 2026, about $11, and both Viaja and Skyteam list it as not included. A private basket sits in another price band: {{< tour-link tour="5553640P2" >}}Teotihuacán Feliz's private balloon flight{{< /tour-link >}} was about $476 per person, or $952 for the pair, with private transport and breakfast but not the zone ticket. The [Teotihuacán balloon ride prices](/teotihuacan-balloon-ride-prices/) page sets out every tier side by side.
 
 ## Choosing a package
 
@@ -53,6 +53,8 @@ Most listings sell the same sunrise flight in several options, so the real choic
 Hotel pickups from Mexico City typically leave between about 4:30 and 5:40 a.m., and operators confirm the exact time the day before; our [Mexico City day-trip itinerary](/guides/teotihuacan-balloon-ride-from-mexico-city-day-trip-itinerary/) sets out sample schedules from pickup to the return. We Fly asks guests to be at its reception for check-in and coffee around 5:30, with photo ID. We Fly says its free pickup covers hotels within 4 km of the Angel of Independence, in Reforma, Juárez, Zona Rosa, the Centro Histórico, Roma and Condesa, and quotes farther areas on request; Polanco is not on that list. Globos Aerostáticos Teotihuacán says its transport does not collect from private homes or Airbnbs.
 
 Public transport will not get you there in time. The Autobuses Teotihuacán ticket window at Terminal Norte opens at 6:00, and the buses stop at the archaeological zone's gates, not at the launch fields.
+
+The pre-dawn start is hardest on children. Operators take them from age 4, 5 or 6, some add a height rule, and Volare publishes a reduced fare for ages 5 to 12; our guide to [balloon rides with kids](/guides/teotihuacan-balloon-rides-with-kids/) compares the rules and family costs.
 
 ## When to go
 
@@ -89,5 +91,5 @@ Light winds only, fog/prolonged rain triggers, pilot decides: ledger s3, s6, s7.
 Viator standard 24 h full refund: ledger s7 (Viator partner resources); all four comparison tours flagged STANDARD/free cancellation in mcbr_offers.json.
 We Fly free reschedule; GA-MX reschedule flight only, extras not refunded: ledger s7.
 AFAC permit/licence/insurance requirements and traveller advice: ledger s4a. 29 Mar 2026 inspection 23 of 46, three suspended, irregularities not disclosed: ledger s4b. 1 Apr 2023 fire, two dead: ledger s4c.
-Prices (option level, 25 Oct 2026): TOURS-DIGEST.md (357659P1 TG2 $148, TG1 $236; 482323P1 TG2 $137, TG3 $181, TG1 $211; 247495P2 TG7 $203, TG5 $274; 309496P6 TG1 $1,017 per group up to 2). Admission excluded for 357659P1 and 482323P1: digest excludes. La Gruta waiting-time warning: 247495P2 option text.
+Prices (option level, 25 Oct 2026): TOURS-DIGEST.md (357659P1 TG2 $148, TG1 $236; 482323P1 TG2 $137, TG3 $181, TG1 $211; 247495P2 TG7 $203, TG5 $274; 5553640P2 TG1 $476 per person). Admission excluded for 357659P1 and 482323P1: digest excludes. La Gruta waiting-time warning: 247495P2 option text.
 Rating/reviews: mcbr_offers.json (357659P1 4.94 -> 4.9, 8,257 = highest reviewCount in the file). -->

@@ -10,8 +10,8 @@ featured_tours:
     badge: "FLIGHT ONLY FROM $137"
   - id: "333644P5"
     badge: "GUIDED PYRAMIDS VISIT"
-  - id: "309496P6"
-    badge: "PRIVATE BASKET FOR 2"
+  - id: "5553640P2"
+    badge: "PRIVATE BASKET"
 
 # all_badges: labels for the /tours/ hub cards.
 all_badges:
@@ -35,7 +35,7 @@ all_badges:
     badge: "GUIDED PYRAMIDS VISIT"
   - id: "323089P1"
     badge: "PRIVATE GROUND TOUR"
-  - id: "309496P6"
-    badge: "PRIVATE BASKET FOR 2"
+  - id: "5553640P2"
+    badge: "PRIVATE BASKET"
   - id: "696822"
     badge: "ON GETYOURGUIDE"
