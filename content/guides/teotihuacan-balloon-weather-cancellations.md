@@ -52,7 +52,7 @@ Viator's standard policy is a full refund if you cancel at least 24 hours before
 
 Three practical points follow.
 
-- The clock starts from the start time, which for a balloon morning is the pickup or check-in, often between 4:30 and 5:40 a.m. Cancelling at 9:00 a.m. the day before a 5:00 a.m. pickup is already inside the 24 hours.
+- The clock starts from the start time, which for a balloon morning is the pickup or check-in, often between 4:00 and 5:40 a.m. Cancelling at 9:00 a.m. the day before a 5:00 a.m. pickup is already inside the 24 hours.
 - Mexico City is on UTC-6 all year. If you are cancelling from abroad before you travel, convert from that time.
 - What Viator does when the operator itself cancels for weather is not stated on the policy page we used. If the operator offers a new date that you cannot use, contact Viator's support through your booking and ask what it can do.
 
@@ -113,7 +113,7 @@ Pilot decides: ledger s2 (GA-MX). AFAC commission decides on weather, 5:00-9:00 
 Early landing no refund, approximate duration: ledger s2 (GA-MX). 30-60 min quoted: ledger s2.
 WeFly reschedule free: ledger s7. WeFly weather refund wording (2026-11-02): wefly.com.mx/en/politica-de-cancelacion s7 'refund of the component corresponding to the flight'; wefly.com.mx/en/politicas-y-restricciones s6 refunds only for international passengers on the standard fare, else 6-month gift certificate. GA-MX no refund, extras not recoverable, 90 days, foreign visitors refund minus extras: ledger s7. Civitatis MX$420 (about $22 at FIX 18.667): ledger s7, s14. Arc Tours another date: digest 484176P1 goodToKnow. El Universal pattern quote: ledger s7.
 Viator 24 h, local time, vast majority, check listing; weather outcome not confirmed: ledger s7. All offers freeCancellation True: digest. GYG wording "Cancel up to 24 hours in advance for a full refund": offers JSON cancellationDescription (696822, 34858 etc.).
-Pickup/check-in 4:30-5:40: ledger s2, digest 1432828. UTC-6: ledger s15.
+Pickup/check-in 4:00-5:40: ledger s2, digest 1432828. UTC-6: ledger s15.
 Viator weather outcome not sourced; page only suggests contacting support.
 Zone opens 8:00; MX$210: ledger s5, s13. GA-MX 10-minute tolerance: ledger s2.
 98% February figure attributed to operators via El Universal (not stated as fact): ledger s6, DO NOT CLAIM.

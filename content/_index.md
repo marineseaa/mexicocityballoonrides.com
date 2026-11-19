@@ -50,7 +50,7 @@ Most listings sell the same sunrise flight in several options, so the real choic
 
 ## Pickup and the pre-dawn start
 
-Hotel pickups from Mexico City typically leave between about 4:30 and 5:40 a.m., and operators confirm the exact time the day before; our [Mexico City day-trip itinerary](/guides/teotihuacan-balloon-ride-from-mexico-city-day-trip-itinerary/) sets out sample schedules from pickup to the return. We Fly asks guests to be at its reception for check-in and coffee around 5:30, with photo ID. We Fly says its free pickup covers hotels within 4 km of the Angel of Independence, in Reforma, Juárez, Zona Rosa, the Centro Histórico, Roma and Condesa, and quotes farther areas on request; Polanco is not on that list. Globos Aerostáticos Teotihuacán says its transport does not collect from private homes or Airbnbs.
+Hotel pickups from Mexico City typically leave between about 4:00 and 5:40 a.m., and operators confirm the exact time the day before; our [Mexico City day-trip itinerary](/guides/teotihuacan-balloon-ride-from-mexico-city-day-trip-itinerary/) sets out sample schedules from pickup to the return. We Fly asks guests to be at its reception for check-in and coffee around 5:30, with photo ID. We Fly's free pickup covers hotels within 3 km of the Angel of Independence, in Reforma, Juárez, Zona Rosa, the Centro Histórico, Roma and Condesa, and quotes farther areas on request; Polanco is not on that list. Globos Aerostáticos Teotihuacán says its transport does not collect from private homes or Airbnbs.
 
 Public transport will not get you there in time. The Autobuses Teotihuacán ticket window at Terminal Norte opens at 6:00, and the buses stop at the archaeological zone's gates, not at the launch fields.
 
@@ -76,9 +76,9 @@ Star ratings tell you how a morning went, not whether the paperwork is in order.
 Location, 45-50 km road distance, NE bearing, San Martin de las Piramides launch fields, ~90% of take-offs (state official, Posta 2026-02-04, single-source, attributed): ledger s1.
 Valley altitude ~2,300 m vs Mexico City: ledger s1 (SMN 15097 / es.wikipedia).
 Drive 45-60 min: ledger s1 (conflicting sources; safe wording used).
-Pickups 4:30-5:40, confirmed the day before: ledger s2 (Civitatis, GA-MX, WeFly).
+Pickups 4:00-5:40, confirmed the day before: ledger s2 (Civitatis, GA-MX, WeFly).
 We Fly check-in ~5:30 with coffee, photo ID: ledger s2 (WeFly FAQ + itinerary, operator says).
-We Fly free pickup within 4 km of the Angel, area list, Polanco not listed: ledger s12 (WeFly FAQ).
+We Fly free pickup within 3 km of the Angel (Viator listing 247495P2, checked 2026-11-19: max 3 km of the Angel); area list, Polanco not listed: ledger s12 (WeFly FAQ).
 GA-MX no pickup from private homes/Airbnbs: ledger s12 (GA-MX T&C).
 Bus ticket window 6:00 at Terminal Norte, buses stop at zone gates: ledger s12 + correction 15.
 Admission MX$210 foreigners 2026: ledger s5 (INAH); ~$11 at Banxico FIX 18.667: ledger s14.

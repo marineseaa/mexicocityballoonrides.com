@@ -21,7 +21,7 @@ cardImage: "/images/teotihuacan-balloon-ride-faq-hook.webp"
 
 <img class="hook-image" src="/images/teotihuacan-balloon-ride-faq-hook.webp" alt="Teotihuacán balloon ride FAQ: flights leave from the Teotihuacán valley, pickup is around 4:30 to 5:30 a.m., zone entry is usually extra" width="1200" height="630">
 
-Teotihuacán balloon rides take off from the valley about an hour northeast of Mexico City, not from the city itself, with hotel pickups around 4:30 to 5:30 a.m. and 30 to 60 minutes in the air at sunrise. On dates we checked in late October 2026 a shared flight cost about $137 to $159 on its own and about $186 to $274 with transport and breakfast, and the archaeological-zone ticket is usually extra. The answers below are short; each links to the page that covers its topic in full.
+Teotihuacán balloon rides take off from the valley about an hour northeast of Mexico City, not from the city itself, with hotel pickups around 4:00 to 5:30 a.m. and 30 to 60 minutes in the air at sunrise. On dates we checked in late October 2026 a shared flight cost about $137 to $159 on its own and about $186 to $274 with transport and breakfast, and the archaeological-zone ticket is usually extra. The answers below are short; each links to the page that covers its topic in full.
 
 <!--more-->
 
@@ -51,7 +51,7 @@ No. The launch fields are in the Teotihuacán valley, mostly in San Martín de l
 
 ### What time is pickup?
 
-Typically between about 4:30 and 5:30 a.m., confirmed by the operator the day before, for a check-in around 5:30 at the balloon port. Public buses from Terminal Norte start at 6:00 and stop at the archaeological zone, so they cannot get you to a sunrise flight. If you drive or stay nearby, a flight-only booking saves money. Our guide on [how to get to the balloon port](/guides/how-to-get-to-teotihuacan-balloon-port/) has the options.
+Typically between about 4:00 and 5:30 a.m., confirmed by the operator the day before, for a check-in around 5:30 at the balloon port. Public buses from Terminal Norte start at 6:00 and stop at the archaeological zone, so they cannot get you to a sunrise flight. If you drive or stay nearby, a flight-only booking saves money. Our guide on [how to get to the balloon port](/guides/how-to-get-to-teotihuacan-balloon-port/) has the options.
 
 ### How long does the ride last?
 
@@ -86,7 +86,7 @@ Rules vary by operator: We Fly's listing sets a minimum age of 4, Volare's 5, an
 | Question | Short answer | Full answer |
 |---|---|---|
 | Where do flights take off? | Teotihuacán valley, mainly San Martín de las Pirámides | [From Mexico City](/teotihuacan-balloon-rides-from-mexico-city/) |
-| Pickup time | About 4:30 to 5:30 a.m. | [Getting there](/guides/how-to-get-to-teotihuacan-balloon-port/) |
+| Pickup time | About 4:00 to 5:30 a.m. | [Getting there](/guides/how-to-get-to-teotihuacan-balloon-port/) |
 | Flight length | Usually 30 to 60 minutes | [Duration](/guides/teotihuacan-balloon-ride-duration/) |
 | Zone entry | MX$210 for foreign visitors, usually extra | [After the flight](/guides/what-to-do-after-teotihuacan-balloon-flight/) |
 | Driest months | November to April | [Best time](/guides/best-time-teotihuacan-balloon-ride/) |
@@ -112,7 +112,7 @@ Only in some options. Flight-only prices usually include just a coffee break, a 
 Yes. The zone opens at 8:00, most full packages give you 1 to 1.5 hours there, and the Pyramid of the Sun cannot be climbed. The Pyramid of the Moon has been closed to climbing since April 2026 with no reopening announced. Our guide to [what to do after the flight](/guides/what-to-do-after-teotihuacan-balloon-flight/) covers the ruins, La Gruta and the Basilica.
 
 <!-- GK-AUDIT: teotihuacan-balloon-ride-faq
-Launch in valley, ~90% from SMP; not over CDMX: ledger s1, brief positioning. Road 45-50 km, 45-60 min: ledger s1. Pickups 4:30-5:30 confirmed day before, check-in ~5:30: ledger s2. Buses from 6:00 to zone gates: ledger s12, corrections 15.
+Launch in valley, ~90% from SMP; not over CDMX: ledger s1, brief positioning. Road 45-50 km, 45-60 min: ledger s1. Pickups 4:00-5:30 confirmed day before, check-in ~5:30: ledger s2. Buses from 6:00 to zone gates: ledger s12, corrections 15.
 Flight 30-60 (45-60 quoted), early landing for safety (GA-MX): ledger s2. Return 10:00 / 14:30 (GA-MX), 1-2 pm (Explora digest): ledger s2, s13; TOURS-DIGEST 394927P1.
 Prices: flight-only $137 (482323P1) to $159 (171986P1, 484134P1); transport+breakfast $186 (171986P1 TG1) to $274 (247495P2 TG5); private $476 (5553640P2): TOURS-DIGEST. Viaja 4.9/8,257 is the highest review count in offers JSON (checked). Zone MX$210 ~US$11: ledger s5, s14.
 Route: WeFly seek currents; GA-MX no route guarantee: ledger s3. Light winds only; cold fronts; rainy dawn: ledger s3, s6. WeFly/GA-MX reschedule free; Viator 24 h policy: ledger s7.

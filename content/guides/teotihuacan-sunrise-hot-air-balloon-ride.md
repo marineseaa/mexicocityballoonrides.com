@@ -22,11 +22,11 @@ cardImage: "/images/gallery/teotihuacan-3.webp"
 
 <img class="hook-image" src="/images/gallery/teotihuacan-3.webp" alt="Dozens of hot air balloons against the rising sun over the Teotihuacán valley, where flights lift off between about 6:00 and 8:00 a.m." width="1200" height="630">
 
-Every tourist balloon over Teotihuacán is a sunrise flight. The air in the valley is calmest just after dawn, so operators launch at first light, roughly 6:00 to 8:00 a.m. depending on the company and the month, and spend 45 to 60 minutes in the air. From Mexico City that means a hotel pickup between about 4:30 and 5:30 a.m., check-in and coffee at the balloon port, and the inflation in the dark or the first grey light.
+Every tourist balloon over Teotihuacán is a sunrise flight. The air in the valley is calmest just after dawn, so operators launch at first light, roughly 6:00 to 8:00 a.m. depending on the company and the month, and spend 45 to 60 minutes in the air. From Mexico City that means a hotel pickup between about 4:00 and 5:30 a.m., check-in and coffee at the balloon port, and the inflation in the dark or the first grey light.
 
 The pilot decides on the morning whether it is safe to fly. Wind, fog or low cloud can delay the launch, shorten the flight or cancel it, so keep the rest of the morning loose.
 
-> **Quick answer:** Sunrise at Teotihuacán ranges from about 5:57 a.m. in June to 7:05 a.m. in late December, and balloons launch around then. Operators publish windows such as 6:00 to 7:30 (Volando en Globo) or a 7:00 to 8:00 flight block (WE FLY's sample schedule). With transport from Mexico City, expect a pickup between 4:30 and 5:30 a.m. On the listings we review, a shared sunrise flight starts at about $148 with {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight with cave breakfast{{< /tour-link >}}, rated 4.9/5 from 8,250+ reviews.
+> **Quick answer:** Sunrise at Teotihuacán ranges from about 5:57 a.m. in June to 7:05 a.m. in late December, and balloons launch around then. Operators publish windows such as 6:00 to 7:30 (Volando en Globo) or a 7:00 to 8:00 flight block (WE FLY's sample schedule). With transport from Mexico City, expect a pickup between 4:00 and 5:30 a.m. On the listings we review, a shared sunrise flight starts at about $148 with {{< tour-link tour="357659P1" >}}Viaja Teotihuacan's flight with cave breakfast{{< /tour-link >}}, rated 4.9/5 from 8,250+ reviews.
 
 <!--more-->
 
@@ -56,7 +56,7 @@ Most people book this as a day trip from the city. The times below are typical o
 
 | Approximate time | What happens |
 |---|---|
-| 4:30 to 5:30 a.m. | Hotel or meeting-point pickup in Mexico City |
+| 4:00 to 5:30 a.m. | Hotel or meeting-point pickup in Mexico City |
 | About 5:30 to 6:15 a.m. | Check-in and coffee at the balloon port |
 | First light | Inflation, safety briefing, boarding, lift-off |
 | 45 to 60 minutes | The flight, if conditions allow |
@@ -161,7 +161,7 @@ The tourist flights are early-morning flights around first light. Some operators
 
 ### What time should I leave Mexico City for a sunrise balloon ride?
 
-Most pickups run between about 4:30 and 5:30 a.m., and some operators start at 4:00. Some use central meeting points instead of collecting from every hotel. Follow the time on your written confirmation.
+Most pickups run between about 4:00 and 5:30 a.m.. Some use central meeting points instead of collecting from every hotel. Follow the time on your written confirmation.
 
 ### How long is the balloon flight itself?
 
@@ -206,6 +206,6 @@ Ruta Magica: reschedule free or 100% refund when it cancels for weather/operatio
 Aerodiverti pickup from 04:00, return Angel or Monumento a la Revolucion: https://beta.aerodiverti.com.mx/en/reservar/
 INAH: 8:00-17:00 daily, last entry 16:30, MX$210 / MX$105: https://www.inah.gob.mx/zonas/23-zona-arqueologica-de-teotihuacan ; drones banned: site ledger s5.
 Sunrise 5:57 (21 Jun), 6:24 (22 Sep), 6:38 (21 Mar), 7:05 (late Dec); dawn 2-4 C winter; dry Nov-Apr: best-time and what-to-wear guides (SMN, ledger).
-Pickups 4:30-5:30 typical of listings: what-to-expect guide ledger s2.
+Pickups 4:00-5:30 typical of listings: what-to-expect guide ledger s2.
 Flying Pictures FAQ (source's 6:00-8:30 window) returned HTTP 500 on 2026-11-06: dropped.
 Listings: 357659P1 TG2 $148 4.9/8,257; 171986P1 $186 4.8/4,552; 247495P2 from $143 4.9/4,824; 366381P1 TG1 $240 4.9/7,871; 5553640P1 $231 4.97/572; 5553640P2 $476 pp 4.95/20: data/mcbr_offers.json + prices landing digest. -->

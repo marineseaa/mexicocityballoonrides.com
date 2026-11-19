@@ -189,7 +189,7 @@ footerDescription = "An independent guide to hot-air balloon rides over Teotihua
 [[params.steps]]
   number = "3"
   title  = "Confirm pickup the day before"
-  body   = "Operators send the pickup time or the balloon port location by message the day before. Pickups from Mexico City usually leave between about 4:30 and 5:40 a.m."
+  body   = "Operators send the pickup time or the balloon port location by message the day before. Pickups from Mexico City usually leave between about 4:00 and 5:40 a.m."
 [[params.steps]]
   number = "4"
   title  = "Fly at sunrise, then explore"
@@ -203,7 +203,7 @@ footerDescription = "An independent guide to hot-air balloon rides over Teotihua
   value = "About 45–60 minutes"
 [[params.quickFacts]]
   label = "Pickup"
-  value = "About 4:30–5:40 a.m. from Mexico City"
+  value = "About 4:00–5:40 a.m. from Mexico City"
 [[params.quickFacts]]
   label = "From"
   value = "$137 flight only; about $210–$240 with transfer and breakfast"

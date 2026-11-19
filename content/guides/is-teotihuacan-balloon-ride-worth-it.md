@@ -32,7 +32,7 @@ The flight earns its price for travelers who want a view they cannot get any oth
 It suits you if most of these are true:
 
 - You are in Mexico City for at least three or four mornings, so a weather cancellation can be moved to another day.
-- You are happy to be collected between about 4:30 and 5:30 a.m., and to be standing in a field before sunrise.
+- You are happy to be collected between about 4:00 and 5:30 a.m., and to be standing in a field before sunrise.
 - You want the morning planned for you. The packages with transport take you from your hotel to the balloon port, then to breakfast, then to the archaeological zone, and back.
 - You are celebrating something. A toast and a printed flight certificate come with almost every flight, and private baskets exist for couples (see our guide to [shared and private flights](/guides/shared-vs-private-teotihuacan-balloon-rides/)).
 - You are in good health. Operators bar pregnant passengers, and most of the listings we review rule out people with heart or spine problems.
@@ -77,7 +77,7 @@ Remember too that the balloons fly over the Teotihuacán valley, about 45 to 50 
 
 ## The real downsides
 
-The early start. Hotel pickups run roughly between 4:30 and 5:30 a.m., confirmed the day before, and the drive takes about 45 to 60 minutes. Some operators allow only a few minutes of lateness before the transport leaves.
+The early start. Hotel pickups run roughly between 4:00 and 5:30 a.m., confirmed the day before, and the drive takes about 45 to 60 minutes. Some operators allow only a few minutes of lateness before the transport leaves.
 
 The cold. Mean dawn lows near San Martín de las Pirámides sit around 2 to 4 °C from December to March, and frost is possible in midwinter.
 
@@ -113,7 +113,7 @@ They do different jobs. The balloon gives a short aerial view at sunrise and a b
 
 ### What is the biggest downside?
 
-For most travelers, the 4:30 to 5:30 a.m. pickup and the chance that weather moves your flight to another day.
+For most travelers, the 4:00 to 5:30 a.m. pickup and the chance that weather moves your flight to another day.
 
 <!-- GK-AUDIT: is-teotihuacan-balloon-ride-worth-it
 Prices: TOURS-DIGEST 357659P1 TG2 $148, TG1 $236; 171986P1 TG1 $186; 366381P1 TG1 $240; flight-only range $136 (487546P4 TG1) to $159 (171986P1 TG3 / 484134P1 TG2). 34858 $68, includes transport, bilingual guide, entrance, tequila tasting; itinerary Teotihuacán 3 hours; 4.6/1,936: offers JSON/digest. 979732 $86, arrival around 8:00, back by midday, pyramid tickets: digest.
@@ -122,7 +122,7 @@ Ruins time 1-1.5 h: digest 456146P3 / 401763P2 (1.5 h), 394927P1 (1 h), 366381P1
 MX$210 foreign admission (about $11 at FIX 18.667): ledger s5, s14. Entry excluded in most: digest excludes.
 Weight thresholds 95-100 kg: ledger s8 conflict wording.
 Restrictions pregnant/heart/spine/knee/recent surgery: digest 357659P1 goodToKnow; fear of heights: digest 1520860 notSuitableFor.
-Pickup 4:30-5:30 confirmed day before; drive 45-60 min; GA-MX 10-minute tolerance: ledger s2, s1.
+Pickup 4:00-5:30 confirmed day before; drive 45-60 min; GA-MX 10-minute tolerance: ledger s2, s1.
 Views list (Sun, Moon, Avenue of the Dead, Quetzalcoatl Temple): ledger s3 (Civitatis). 46 balloons in operation 29 Mar 2026: ledger s4b.
 No route guarantee; Volare "possibility of not flying over the archaeological site"; Civitatis not guaranteed: digest 171986P1, ledger s3.
 45-50 km road, northeast: ledger s1.

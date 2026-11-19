@@ -171,7 +171,7 @@ This timetable is an example for planning, not any operator's schedule. Weather 
 
 | Approximate time | What happens | What to know |
 |---|---|---|
-| 4:30–5:30 a.m. (some at 4:00) | Leave Mexico City, if transport is included | Some packages collect from hotels, others from a central meeting point |
+| 4:00–5:30 a.m. | Leave Mexico City, if transport is included | Some packages collect from hotels, others from a central meeting point |
 | 5:30–6:15 a.m. | Check-in and briefing at the balloon port | Confirm the launch-site address the day before |
 | Around sunrise | Inflation, take-off and the flight | The pilot and the weather set the start and the length |
 | After landing | Drive back with the crew, photos, toast if included | Recovery can take longer than planned |

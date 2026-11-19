@@ -31,7 +31,7 @@ The numbers come from Mexico's national weather service (SMN), which kept a stat
 
 Averages hide the cold snaps. The typical coldest night of each winter month at that station falls below freezing from December to February, so frost on the field is possible.
 
-You feel those temperatures for a long time. Hotel pickups usually run between about 4:30 and 5:30 a.m., check-in at the balloon port is around 5:30, and you stand in an open field while the envelopes inflate before lift-off at first light.
+You feel those temperatures for a long time. Hotel pickups usually run between about 4:00 and 5:30 a.m., check-in at the balloon port is around 5:30, and you stand in an open field while the envelopes inflate before lift-off at first light.
 
 Then the day turns. The San Martín station's average high is 24.0 °C in January and 29.2 °C in April. Acolman reads several degrees cooler, around 20 °C in January, so treat the highs as a range. Either way, by the time you finish breakfast and reach the pyramids, you will be carrying what you wore at dawn.
 
@@ -128,7 +128,7 @@ SMN station 15097 SMP 2306 m, suspended, old record; mean minima Dec 2.5, Jan 1.
 Rainfall Jun 106.4, Jul 120.4, Aug 110.5, Dec 8.1, Jan 9.4; dry Nov-Apr, rainy May-Oct: ledger s6. Afternoon/evening showers (Valley of Mexico, press relaying SMN): ledger s6. WeFly summer mornings often fine, rainy dawn can ground: ledger s6.
 ~90% take off from SMP; most land in Teotihuacan municipality; Acolman landings: ledger s1.
 Elevation 2,250-2,300 m, CDMX ~2,240 m: ledger s1.
-Pickups 4:30-5:30, check-in ~5:30, lift-off at first light: ledger s2.
+Pickups 4:00-5:30, check-in ~5:30, lift-off at first light: ledger s2.
 WeFly clothing list (light jacket/sweater, long pants, closed flat shoes, sunscreen, sunglasses, cap, strap, no skirts/sandals/heels/loose scarves, photo ID): ledger s10, s2 (ID for insurance, name match).
 GA-MX clothing (sneakers/boots/flats, jeans/sweatshirts, no skirts/dresses/heels/tight, sandals/flip-flops not allowed, hat at own risk, objects inside basket, selfie sticks banned, lockers): ledger s10, s11, s8.
 1520860/1522004 "comfortable clothing, closed-toe shoes, jacket"; toBring passport: TOURS-DIGEST. 696822 notAllowed heels/sandals/strollers/bags/backpacks/selfie sticks, toBring ID: TOURS-DIGEST. 5885P459 backpacks/bags, selfie sticks: offers JSON goodToKnow.

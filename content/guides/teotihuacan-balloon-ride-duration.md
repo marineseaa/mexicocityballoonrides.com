@@ -37,7 +37,7 @@ Most of the morning is spent on the ground: check-in, coffee, watching the crew 
 
 ## How long the whole morning takes
 
-The clock starts well before sunrise. We Fly asks guests to arrive around 5:30 a.m. and at least 30 minutes before flight time, and lift-off is at first light. Fly Teotihuacan schedules check-in at 5:40. With a transfer, hotel pickups typically run from about 4:30 to 5:30 a.m.; Explora México collects between 4:30 and 4:50 to reach Teotihuacán around 5:30.
+The clock starts well before sunrise. We Fly asks guests to arrive around 5:30 a.m. and at least 30 minutes before flight time, and lift-off is at first light. Fly Teotihuacan schedules check-in at 5:40. With a transfer, hotel pickups typically run from about 4:00 to 5:30 a.m.; Explora México collects between 4:30 and 4:50 to reach Teotihuacán around 5:30.
 
 From there, the length of your day depends on what you booked. Flight-only packages are the quickest. Volare counts 3 hours from arrival at its balloon port to departure, Aventuras Teotihuacan and Globo Tetris quote about 3 hours, and Visita Teotihuacan says 2 hours for its flight-only option. Add the drive back and you can be in Mexico City by mid-morning.
 
@@ -72,7 +72,7 @@ These are planned times; traffic back into the city is less predictable than the
 
 ## Planning the rest of your day
 
-A balloon day starts at about 3:30 or 4:00 a.m. for most people, so keep the afternoon light. If you are flying home or catching a long-distance bus, do not book it for the same morning: weather can delay or cancel a launch, and We Fly, for example, moves you to another sunrise when it cannot fly. Leave a spare morning in your trip if you can. The [weather and cancellations guide](/guides/teotihuacan-balloon-weather-cancellations/) sets out how each operator handles it.
+A balloon day starts at about 4:00 a.m. for most people, so keep the afternoon light. If you are flying home or catching a long-distance bus, do not book it for the same morning: weather can delay or cancel a launch, and We Fly, for example, moves you to another sunrise when it cannot fly. Leave a spare morning in your trip if you can. The [weather and cancellations guide](/guides/teotihuacan-balloon-weather-cancellations/) sets out how each operator handles it.
 
 If you want the pyramids without a 9-hour package, the flight-only option plus your own visit works: the zone is open 8:00 to 17:00 and admission was MX$210 for foreign visitors in 2026. Our [after the flight guide](/guides/what-to-do-after-teotihuacan-balloon-flight/) has ideas for the rest of the day.
 
@@ -88,7 +88,7 @@ About 3 hours from arrival if you drive yourself, about 6 hours with a round-tri
 
 ### What time does the balloon ride start?
 
-Check-in is around 5:30 to 6:00 a.m. at the balloon port, and hotel pickups typically run from about 4:30 to 5:30 a.m. Your operator confirms the time the day before.
+Check-in is around 5:30 to 6:00 a.m. at the balloon port, and hotel pickups typically run from about 4:00 to 5:30 a.m. Your operator confirms the time the day before.
 
 ### What time will I be back in Mexico City?
 
@@ -102,8 +102,8 @@ You can, but leave a buffer. A weather delay or cancellation can push your fligh
 Flight times: WeFly 45-60 (ledger s2); Civitatis 30-60 (ledger s2); Explora 45-60 (digest 394927P1 TG1); Aventuras 45-60 (digest 463468P2 TG9); Volare 30-50 (digest 171986P1); Visita 30-50 (digest 456146P3/401763P2); Globo Tetris 30-50 (digest 377048P1); Excellentravel 40-50 (digest 333644P5); Viaja 45 min (digest 357659P1 TG1); Amigo GYG itinerary 50 min (digest 696822); We Fly 30-60 (digest 247495P2 includes).
 Amigo 15-min flight TG6, 3 h, Balloon's Paradise; 45-min TG4, 4 h 15; TG3 transport 6 h 30; listing up to 12 h: digest 5885P459. $157 headline: digest 5885P459.
 GA-MX approximate flight, early landing no refund; whole experience ~5 h; return 10:00 or 13:30 for 14:30: ledger s2, s13.
-WeFly arrive ~5:30, 30 min before, lift off at first light: ledger s2. Fly Teotihuacan check-in 5:40: digest 1432828. Pickups 4:30-5:30: ledger s2. Explora pickup 4:30-4:50, arrive ~5:30, return 1-2 pm: digest 394927P1.
+WeFly arrive ~5:30, 30 min before, lift off at first light: ledger s2. Fly Teotihuacan check-in 5:40: digest 1432828. Pickups 4:00-5:30: ledger s2. Explora pickup 4:30-4:50, arrive ~5:30, return 1-2 pm: digest 394927P1.
 Volare 3 h / 6 h: digest 171986P1 TG3/TG1. Aventuras ~3 h: digest 463468P2. Globo Tetris 3/6/9 h: digest 377048P1. Visita 2 h / 7 h: digest 456146P3. We Fly 8 h all-inclusive; Express Return option TG5; 247495P3 TG3 express early return: digest. Excellentravel 8 h, return ~1:00 pm: digest 333644P5. Paseos Olmedo ends 12:00 in CDMX: digest 193670P3.
 Ruins time 1-3 h: digest (Tlatoani up to 2 h, Visita 1.5 h, We Fly 247495P3 3 h, Explora 1 h).
-Zone 8:00-17:00, MX$210: ledger s5. WeFly reschedules to another sunrise: ledger s7. "3:30 or 4:00 a.m." start: ledger s1/s2 (WeFly 3:30 departure; 4:30 pickups).
+Zone 8:00-17:00, MX$210: ledger s5. WeFly reschedules to another sunrise: ledger s7. "4:00 a.m." start: WeFly guide leave by 4:30 (checked 2026-11-19), pickups from 4:00 (Viator 247495P2; 4:30 pickups).
 Traffic back unpredictable: general caution, no figure claimed. -->

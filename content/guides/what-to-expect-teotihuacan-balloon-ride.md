@@ -21,7 +21,7 @@ cardImage: "/images/what-to-expect-teotihuacan-balloon-ride-hook.webp"
 
 <img class="hook-image" src="/images/what-to-expect-teotihuacan-balloon-ride-hook.webp" alt="Typical Mexico City hotel pickup for a Teotihuacán balloon ride: 4:30 to 5:30 a.m." width="1200" height="630">
 
-Expect a hotel pickup between about 4:30 and 5:30 a.m., check-in and coffee at the balloon port around 5:30 to 6:00, lift-off near sunrise and 30 to 60 minutes in the air. After landing come a sparkling-wine toast and a flight certificate, then breakfast, often in a cave restaurant, and on the full packages an hour or two at the ruins. With a flight-only transfer you can be back in Mexico City around 10:00; with the ruins, between about 1:00 and 2:30 p.m.
+Expect a hotel pickup between about 4:00 and 5:30 a.m., check-in and coffee at the balloon port around 5:30 to 6:00, lift-off near sunrise and 30 to 60 minutes in the air. After landing come a sparkling-wine toast and a flight certificate, then breakfast, often in a cave restaurant, and on the full packages an hour or two at the ruins. With a flight-only transfer you can be back in Mexico City around 10:00; with the ruins, between about 1:00 and 2:30 p.m.
 
 <!--more-->
 
@@ -31,7 +31,7 @@ The morning starts the afternoon before. Most operators send the exact pickup ti
 
 Pickup times vary by operator and pickup point, but they cluster early. The reseller Civitatis lists pickups from 4:30 a.m. at Bellas Artes to 5:00 a.m. at the Ángel de la Independencia. Explora México collects between 4:30 and 4:50 a.m. to reach Teotihuacán around 5:30. Globos Aerostáticos Teotihuacán's shared transport leaves the Ángel at about 5:15 to 5:40. Arc Tours meets at the base of the Ángel and asks you to be there ten minutes early. Punctuality is not optional: Globos Aerostáticos Teotihuacán allows ten minutes' tolerance, after which the transport leaves without you and without a refund.
 
-The drive to the valley, about 45 to 50 km northeast by road on the Mexico-Pachuca motorway and the Ecatepec-Pirámides toll road, takes roughly 45 to 60 minutes in the empty pre-dawn streets. Pickup loops around several hotels add time; We Fly says guests coming from Mexico City leave around 3:30 a.m. for a 5:30 check-in. If you are staying in Teotihuacán itself, the trip to the field is about 15 minutes. Our guide on [getting to the balloon port](/guides/how-to-get-to-teotihuacan-balloon-port/) covers driving yourself.
+The drive to the valley, about 45 to 50 km northeast by road on the Mexico-Pachuca motorway and the Ecatepec-Pirámides toll road, takes roughly 45 to 60 minutes in the empty pre-dawn streets. Pickup loops around several hotels add time; We Fly's guide tells drivers coming from Mexico City to leave by 4:30 a.m. to be at its field for 5:30. If you are staying in Teotihuacán itself, the trip to the field is about 15 minutes. Our guide on [getting to the balloon port](/guides/how-to-get-to-teotihuacan-balloon-port/) covers driving yourself.
 
 ## 5:30 to 6:30 a.m.: check-in, coffee and inflation
 
@@ -78,7 +78,7 @@ This is a composite of the operator schedules above, for a full package in winte
 | Time | What happens |
 |---|---|
 | Day before | Confirmation of pickup time or balloon-port location |
-| 4:30 to 5:30 a.m. | Hotel or meeting-point pickup in Mexico City |
+| 4:00 to 5:30 a.m. | Hotel or meeting-point pickup in Mexico City |
 | 5:30 to 6:00 a.m. | Arrival, ID check, weight, coffee |
 | 6:00 to 7:00 a.m. | Balloon inflation, briefing, boarding |
 | About sunrise (6:33 to 7:05 in late Oct to Dec) | Lift-off |
@@ -92,7 +92,7 @@ This is a composite of the operator schedules above, for a full package in winte
 
 ### What time does a Teotihuacán balloon ride start?
 
-Hotel pickups usually run between about 4:30 and 5:30 a.m., and check-in at the balloon port is around 5:30 to 6:00. Lift-off is near sunrise, which ranges from about 5:57 in June to 7:05 in December.
+Hotel pickups usually run between about 4:00 and 5:30 a.m., and check-in at the balloon port is around 5:30 to 6:00. Lift-off is near sunrise, which ranges from about 5:57 in June to 7:05 in December.
 
 ### How long is the balloon flight itself?
 
@@ -113,7 +113,7 @@ Around 10:00 a.m. on a flight-only transfer, and between about 1:00 and 2:30 p.m
 <!-- GK-AUDIT: what-to-expect-teotihuacan-balloon-ride
 Day-before message: digest 456146P3 ("sent one day prior"), 357659P1, 482323P1; GA-MX adviser confirms: ledger s2.
 Pickups: Civitatis 4:30 Bellas Artes to 5:00 Angel; GA-MX 5:15-5:40 Angel; GA-MX 10-min tolerance, no refund: ledger s2. Explora 4:30-4:50, arrive ~5:30, drone footage, 1 h ruins, return 1-2 pm, pilot controls ascent/descent: digest 394927P1. Arc Tours Angel base, 10 min early: digest 484176P1.
-Road 45-50 km, route Mex-Pachuca + Ecatepec-Pirámides, 45-60 min: ledger s1. WeFly 3:30 departure for 5:30 check-in, Teotihuacán hotel 15-minute transfer: ledger s2.
+Road 45-50 km, route Mex-Pachuca + Ecatepec-Pirámides, 45-60 min: ledger s1. WeFly leave by 4:30 for 5:30 field arrival (wefly.com.mx guide, checked 2026-11-19), Teotihuacán hotel 15-minute transfer: ledger s2.
 WeFly reception 5:30, photo ID for insurance: ledger s2. Fly Teotihuacan 5:40, music on board: digest 1432828. Civitatis flight-only by 6:00: ledger s2.
 Government order name/weight/health: digest 5885P459. Weight threshold 95-100 kg: ledger s8. Lockers, bags not in basket, selfie sticks banned, objects inside basket: ledger s8, s11. Amigo notAllowed: digest 696822.
 Coffee and cookies: digest 394927P1, 456146P3. Welcome bonfire, toast during or at end, La Higuera: digest 377048P1. Inflation viewing: digest 482323P1, 333644P5, ledger s2 (WeFly). Briefing: digest 1520860, 1522004.

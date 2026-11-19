@@ -86,7 +86,7 @@ Check these details:
 - What happens if weather postpones the flight?
 - Does the vehicle stay with the group through the pyramids visit?
 
-WE FLY's All-Inclusive collects from hotels in areas such as Reforma, Polanco, the Historic Centre, Roma and Zona Rosa, and Gran Vuelo lists a shared transfer with pickup between 4:30 and 5:00 a.m. Most pickups fall between 4:30 and 5:30 a.m., and some operators start at 4:00. Your confirmation gives the real time.
+WE FLY's All-Inclusive collects from hotels in areas such as Reforma, Polanco, the Historic Centre, Roma and Zona Rosa, and Gran Vuelo lists a shared transfer with pickup between 4:30 and 5:00 a.m. Most pickups fall between 4:00 and 5:30 a.m.. Your confirmation gives the real time.
 
 ### 3. Breakfast: buffet, cave restaurant or nothing
 
@@ -140,7 +140,7 @@ An all-in-one day starts long before sunrise. This sample timetable combines the
 
 | Approximate time | What happens | What to know |
 |---|---|---|
-| 4:30–5:30 a.m. (some at 4:00) | Pickup in Mexico City | Some operators collect from hotels; others use a fixed meeting point downtown |
+| 4:00–5:30 a.m. | Pickup in Mexico City | Some operators collect from hotels; others use a fixed meeting point downtown |
 | 5:30–6:30 a.m. | Check-in and briefing at the balloon port | Weighing, coffee, inflation and the weather call |
 | Around sunrise | Balloon flight | Usually 30 to 60 minutes; the wind decides timing and length |
 | 7:30–9:00 a.m. | Landing, toast and breakfast | Depends on the recovery drive and the meal |
@@ -266,7 +266,7 @@ The zone has its own ticket. If your combo lists archaeological-zone admission, 
 
 ### How early do balloon and pyramids combos leave Mexico City?
 
-Most pickups fall between 4:30 and 5:30 a.m., and some operators start at 4:00. Your confirmed time depends on the operator, the pickup point and the season.
+Most pickups fall between 4:00 and 5:30 a.m.. Your confirmed time depends on the operator, the pickup point and the season.
 
 ### How long is the whole tour?
 
@@ -305,5 +305,5 @@ WE FLY All-Inclusive MXN 3,600, 45-60 min, La Gruta, certified bilingual guide, 
 Flying Pictures +Transport +Pyramids MXN 3,250, 45-60 min, "free access", buffet: https://flyingpictures.mx/index-en.html (fetched 2026-11-09).
 Gran Vuelo Archaeological MXN 3,599, 35-50 min, certified 1.5 h guide in inclusions vs "Self-Guided Visit" 10:00 in itinerary, pickup 4:30-5:00, natural cave: https://granvueloteotihuacan.com/en/product/archaeological-flight/ (fetched 2026-11-09).
 Marketplace: 357659P1 4.9/8,257 full package ~$236 (TG1 MXN 4,299), excludes INAH ticket and guide; 366381P1 4.9/7,871 all-inclusive ~$240; 247495P2 4.9/4,824 all-included ~$231, certified guide in archaeological area; 247495P3 4.9/1,501 from $148, entry with transport options, excludes guide; 401763P2 4.9/1,801 from $143, excludes admission: data/mcbr_offers.json.
-Flight 30-60 min, pickup 4:30-5:30 (some 4:00), 1-1.5 h at ruins: site ranges (teotihuacan-sunrise-hot-air-balloon-ride, what-to-do-after-teotihuacan-balloon-flight).
+Flight 30-60 min, pickup 4:00-5:30, 1-1.5 h at ruins: site ranges (teotihuacan-sunrise-hot-air-balloon-ride, what-to-do-after-teotihuacan-balloon-flight).
 Tripadvisor product in source = 401763P2 on the marketplace. -->

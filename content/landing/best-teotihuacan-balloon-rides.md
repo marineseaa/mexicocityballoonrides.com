@@ -24,7 +24,7 @@ heroSubtitle: "Most balloon listings sell the same sunrise flight in several pac
 heroCTAPrimary: "Check dates and prices"
 heroCTASecondary: "Compare the options"
 trustDurationLabel: "Duration"
-trustDishesMetric: "4:30–5:30 a.m."
+trustDishesMetric: "4:00–5:30 a.m."
 trustDishesLabel: "Typical hotel pickup"
 trustGuideMetric: "MX$210"
 trustGuideLabel: "Pyramids entry, usually extra"
@@ -47,7 +47,7 @@ steps:
     body: "The from-price on most listings is the flight alone. Open the options and pick the one that matches what you want: breakfast, transport, time at the pyramids."
   - number: "3"
     title: "Watch for the day-before message"
-    body: "Operators confirm the exact pickup time or the balloon port location the day before. Pickups from central Mexico City typically fall between about 4:30 and 5:30 a.m."
+    body: "Operators confirm the exact pickup time or the balloon port location the day before. Pickups from central Mexico City typically fall between about 4:00 and 5:30 a.m."
   - number: "4"
     title: "Bring ID, layers and pesos"
     body: "Take a photo ID for check-in, warm layers for a cold dawn and cash for the archaeological zone, which most packages do not include."
@@ -108,7 +108,7 @@ Every ride below flies over the Teotihuacán valley, about an hour northeast of 
 
 ## First-timers staying in Mexico City: an all-inclusive package
 
-Without a car, and with a hotel in Centro, Roma, Condesa or along Reforma, an all-inclusive package makes the morning simple: a pickup typically between about 4:30 and 5:30 a.m., the flight, a toast and certificate on landing, breakfast, then free time at the archaeological zone before the drive back. Viaja Teotihuacan's full option adds a visit to a cooperative with an explanation of obsidian and quartz.
+Without a car, and with a hotel in Centro, Roma, Condesa or along Reforma, an all-inclusive package makes the morning simple: a pickup typically between about 4:00 and 5:30 a.m., the flight, a toast and certificate on landing, breakfast, then free time at the archaeological zone before the drive back. Viaja Teotihuacan's full option adds a visit to a cooperative with an explanation of obsidian and quartz.
 
 The downside is cost and pace. You pay about $88 more than the flight alone, you keep to a group schedule, and the archaeological-zone ticket (MX$210 for foreign visitors in 2026) is not included. Similar packages from other operators cost about the same: {{< tour-link tour="366381P1" >}}Tlatoani's all-inclusive{{< /tour-link >}} was about $240 and {{< tour-link tour="482323P1" >}}Skyteam's flight with cave breakfast and transport{{< /tour-link >}} about $211. Our page on [rides with pickup from Mexico City](/teotihuacan-balloon-rides-from-mexico-city/) covers pickup zones and timings.
 
@@ -144,7 +144,7 @@ Option prices (TOURS-DIGEST, schedules read 25 Oct 2026): 357659P1 TG1 $236 / TG
 "Most-reviewed balloon listing on this site": offers JSON, 357659P1 8,257 is highest of all 32 offers.
 Ratings/reviews: offers JSON (357659P1 4.9/8,257; 482323P1 4.9/1,557; 333644P5 123; 5553640P2 20; 696822 4.6/1,326).
 Inclusions: 357659P1 TG1 option text (transport, cave breakfast, cooperative obsidian/quartz, time at pyramids), excludes admission; 333644P5 includes (entrance + guided visit, SECTUR guide, local-restaurant breakfast, ~2h30 guided visit in description), goodToKnow moderate fitness; 247495P2 options + waiting-time warning + max 99 kg penalty; 5553640P2 includes/excludes; 696822 description (four options), keyDetails (reserve now pay later), cancellation 24 h, goodToKnow (Balloon's Paradise port, San Martín de las Pirámides).
-Pickup 4:30-5:30: ledger s2 (CONFLICTING/varies, recommended wording). Day-before confirmation: ledger s2 (GA-MX) + digest meeting texts.
+Pickup 4:00-5:30: ledger s2 (CONFLICTING/varies, recommended wording). Day-before confirmation: ledger s2 (GA-MX) + digest meeting texts.
 Valley not city, ~1 hour NE, route depends on wind: ledger s1, s3; SITEMAP positioning.
 MX$210 admission 2026 foreigners: ledger s5 (INAH). Sun pyramid climbing prohibited; Moon closed after 20 Apr 2026, no reopening found: ledger s5 + corrections 2.
 Bus starts 6:00 and stops at zone gates: ledger s12 / correction 15.

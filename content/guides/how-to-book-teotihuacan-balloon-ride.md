@@ -65,7 +65,7 @@ Before paying, check each of these:
 7. **Taxes and payment fees:** will the price change at checkout or if you ask for an invoice?
 8. **Weather cancellation:** which part of the payment comes back if the flight cannot go?
 
-Booked direct, [WE FLY's price page](https://weflyteotihuacan.com/teotihuacan-balloon-prices/) shows shared flights from MXN 1,990 per person and lists Mexico City transport as an optional add-on, free within 4 km of the Angel of Independence. [HappyFly's 2026 page](https://happyfly.mx/en/prices/) lists a shared flight at MXN 2,100 per person with buffet breakfast. Those are the operators' own peso prices. The marketplace listings on this site are priced in US dollars and usually bundle pickup and breakfast: the {{< tour-link tour="357659P1" >}}flight with cave breakfast, pyramids and Mexico City pickup{{< /tour-link >}} costs $148 per person (4.9/5 from 8,250+ reviews). Check the fare and what it covers at checkout.
+Booked direct, [WE FLY's price page](https://weflyteotihuacan.com/teotihuacan-balloon-prices/) shows shared flights from MXN 1,990 per person and lists Mexico City transport as an optional add-on; its Viator listing limits pickup to central Mexico City within 3 km of the Angel of Independence. [HappyFly's 2026 page](https://happyfly.mx/en/prices/) lists a shared flight at MXN 2,100 per person with buffet breakfast. Those are the operators' own peso prices. The marketplace listings on this site are priced in US dollars and usually bundle pickup and breakfast: the {{< tour-link tour="357659P1" >}}flight with cave breakfast, pyramids and Mexico City pickup{{< /tour-link >}} costs $148 per person (4.9/5 from 8,250+ reviews). Check the fare and what it covers at checkout.
 
 For more pricing scenarios and the extras that add up, read our [Teotihuacán balloon ride prices guide](/teotihuacan-balloon-ride-prices/).
 
@@ -87,7 +87,7 @@ You have three common choices.
 
 For many visitors this is the simplest choice. Transfers can be shared or private. Some operators pick you up at your hotel; others ask you to meet at a central point. Never assume hotel, Airbnb or door-to-door pickup.
 
-[Vuelo en Globo's terms](https://vueloenglobo.mx/teminos-y-condiciones) (in Spanish), for example, set the shared-transport departure point at the Ángel de la Independencia and state that the van does not collect passengers from private homes or Airbnbs. Other operators work differently: WE FLY's price page offers free hotel pickup within 4 km of the Angel.
+[Vuelo en Globo's terms](https://vueloenglobo.mx/teminos-y-condiciones) (in Spanish), for example, set the shared-transport departure point at the Ángel de la Independencia and state that the van does not collect passengers from private homes or Airbnbs. Other operators work differently: WE FLY collects from hotels within 3 km of the Angel, according to its Viator listing.
 
 Ask for the actual pickup location and where you will be dropped off, not just whether a listing says "Mexico City transfer". Our guide to [getting to the Teotihuacán balloon port](/guides/how-to-get-to-teotihuacan-balloon-port/) compares the routes.
 
@@ -321,7 +321,7 @@ A sunrise flight over Teotihuacán can be the high point of a Mexico City trip. 
 WE FLY cancellation page s4: >72 h free reschedule or refund minus non-refundable fees; 72-24 h reschedule subject to seasonal charges or credit; <24 h non-refundable; s5 no-show non-refundable; s7 weather: free reschedule (preferred) or refund of flight component per package/services provided: wefly.com.mx/en/politica-de-cancelacion.
 WE FLY policies: s2 government photo ID, no ID = no boarding but can reschedule; s3 van departs without exception, missed = own way or no-show; s4 free changes >=72 h, <72 h 35%, <42 h 40%, <24 h 50%, no-show 100%; s6 weather refund only international passengers standard fare, else 6-month gift certificate; s7 recommend >=5 years and 1.10 m; s12 card used at purchase; s13 bookings <72 h ahead cannot be changed/cancelled: wefly.com.mx/en/politicas-y-restricciones.
 WE FLY FAQ: one or two weeks; at least one month for long weekends and Feb 14: wefly.com.mx/en/faq.
-WE FLY prices: MXN 1,990 shared, transport optional add-on, free within 4 km of the Angel: weflyteotihuacan.com (same phone as wefly.com.mx).
+WE FLY prices: MXN 1,990 shared, transport optional add-on: weflyteotihuacan.com (same phone as wefly.com.mx). Pickup radius 3 km of the Angel (Viator listing 247495P2, checked 2026-11-19: max 3 km of the Angel).
 HappyFly: shared MXN 2,100 incl. buffet breakfast; private 8,500/2; celebration 9,500/2; weather reschedule or full refund; 48 h free, 50% after; no-shows non-refundable; children over 6 with an adult: happyfly.mx/en/prices.
 Vuelo en Globo terms: departure Ángel de la Independencia, no pickup at private homes/Airbnb; weather no refund, free reschedule, pay extras used; cancel 72 h ahead via sales adviser else full charge; <12 h notice = no-show; bookings within 72 h no date change: vueloenglobo.mx/teminos-y-condiciones.
 Viator free cancellation 24 h: site weather page; 696822 GYG free cancel 24 h: best-teotihuacan-balloon-rides.md.

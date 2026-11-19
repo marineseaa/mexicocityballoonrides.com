@@ -46,7 +46,7 @@ Compare the total for both of you, not the per-person headline. The two tables b
 
 *Prices from the operators' own pages: [WE FLY prices](https://weflyteotihuacan.com/teotihuacan-balloon-prices/), [HappyFly prices](https://happyfly.mx/en/prices/) and the [Volar en Globo booking page](https://www.volarenglobo.com.mx/en), checked on 2 November 2026. HappyFly and the private WE FLY and Volar en Globo flights are booked with the operator; we have no affiliate link for them. Operators can change prices and package contents without notice.*
 
-WE FLY lists transport from Mexico City as an optional add-on, and its page says hotel pickup is free within 4 km of the Angel of Independence. HappyFly's price page names a meeting point on the México–Tulancingo highway in San Martín de las Pirámides and does not mention transport, so ask before you book.
+WE FLY lists transport from Mexico City as an optional add-on, and its Viator listing limits hotel pickup to within 3 km of the Angel of Independence. HappyFly's price page names a meeting point on the México–Tulancingo highway in San Martín de las Pirámides and does not mention transport, so ask before you book.
 
 ### Booking through a marketplace listing (USD)
 
@@ -163,7 +163,7 @@ You have three main options:
 
 **Drive yourself.** Operators have their own check-in site, or *globopuerto*, with directions and parking. Ask for the exact map pin, because there are several launch sites in the valley.
 
-Hotel pickups usually run between about 4:30 and 5:30 a.m., and check-in at the balloon port is around 5:30, depending on the operator and the season. The road is about 45 to 50 km, roughly 45 to 60 minutes before dawn traffic builds. Leave yourself a margin; a precise traffic estimate at that hour is guesswork. Our guide to [getting to the Teotihuacán balloon port](/guides/how-to-get-to-teotihuacan-balloon-port/) covers each route.
+Hotel pickups usually run between about 4:00 and 5:30 a.m., and check-in at the balloon port is around 5:30, depending on the operator and the season. The road is about 45 to 50 km, roughly 45 to 60 minutes before dawn traffic builds. Leave yourself a margin; a precise traffic estimate at that hour is guesswork. Our guide to [getting to the Teotihuacán balloon port](/guides/how-to-get-to-teotihuacan-balloon-port/) covers each route.
 
 ## What happens on the morning of your couple's flight?
 
@@ -277,11 +277,11 @@ Ready to compare options? Start with our [best Teotihuacán balloon rides](/best
 - [WE FLY: booking FAQ](https://wefly.com.mx/en/faq/)
 
 <!-- Source ledger (2026-11-02):
-WE FLY shared MXN 1,990 pp, private MXN 3,750 pp min 2, transport optional add-on, free hotel pickup within 4 km of the Angel: weflyteotihuacan.com/teotihuacan-balloon-prices (same phone +52 55 3561 6626 as wefly.com.mx).
+WE FLY shared MXN 1,990 pp, private MXN 3,750 pp min 2, transport optional add-on, hotel pickup within 3 km of the Angel (Viator listing 247495P2, checked 2026-11-19: max 3 km of the Angel); weflyteotihuacan.com/teotihuacan-balloon-prices (same phone +52 55 3561 6626 as wefly.com.mx).
 HappyFly shared MXN 2,100 pp (45-60 min, toast, certificate, buffet breakfast, travel insurance); private MXN 8,500 / 2 people (private basket, premium toast, breakfast); celebration MXN 9,500 / 2 (banner, rose bouquet, cake, photo session); meeting point Carretera Federal México-Tulancingo km 27.5, San Martín de las Pirámides; no transport stated; weather: reschedule or full refund; 48 h free cancel, 50% after; no-shows non-refundable: happyfly.mx/en/prices.
 Volar en Globo private "From $9,000 MXN per group" (size not stated); shared from 2,500, shared birthday from 2,500, from CDMX 3,100, all-inclusive 3,400: volarenglobo.com.mx/en.
 WE FLY booking lead time: wefly.com.mx/en/faq ("one or two weeks", "at least one month" for long weekends and Feb 14).
 Marketplace: 357659P1 $148 4.94/8257; 247495P3 $148 4.94/1501; 171986P1 $159 4.83/4552; 5553640P2 $476 pp 4.95/20, includes private transport and breakfast, ~6 h: data/mcbr_offers.json refreshed 2026-11-09.
-Road 45-50 km, 45-60 min; pickups 4:30-5:30, check-in ~5:30: site ledger s1, s2. Flight 30-60 min: site figure (shared-vs-private, weather pages); HappyFly 45-60.
+Road 45-50 km, 45-60 min; pickups 4:00-5:30, check-in ~5:30: site ledger s1, s2. Flight 30-60 min: site figure (shared-vs-private, weather pages); HappyFly 45-60.
 No proposal package on marketplace listings: checked includes of 5553640P2, 323089P1, 333644P5 (private landing ledger).
 Dropped from the article as unverified: "one week in advance / private flights sell out first" (no source found; replaced with WE FLY FAQ); Volar "per couple" (page says per group); check-in 5:15-6:00 and pickups from 4:00 (replaced with site ledger figures). -->
