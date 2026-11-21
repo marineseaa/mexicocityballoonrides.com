@@ -89,11 +89,11 @@ Several operators sell a balloon-and-pyramids package with a guided visit. [WE F
 | 4:00 a.m. | Pickup from an eligible central Mexico City hotel | The early pickup belongs to this package |
 | 5:30 a.m. | Arrival and registration | Bring valid ID |
 | 6:00 a.m. | Coffee and balloon preparations | The team checks flying conditions |
-| 6:30 a.m. | Take-off | Advertised flight: 45 to 60 minutes |
+| 6:30 a.m. | Take-off | Advertised flight: 30 to 60 minutes |
 | 7:30 a.m. | Landing and toast | The landing spot varies |
 | 8:30 a.m. | Breakfast at La Gruta | Confirm the menu and drinks |
 | 9:30 a.m. | Guided visit to the archaeological zone | Ask which sections are covered |
-| 11:30 a.m. | Return to Mexico City begins | WE FLY expects you back around noon to 1 p.m., depending on conditions |
+| After the visit | Return to Mexico City | WE FLY says you are back no later than 3:00 p.m. |
 
 When we checked, WE FLY sold this package at MXN 3,600 (about $197) per person, including pickup in set central areas, a shared flight, breakfast at La Gruta, admission to the archaeological zone and a bilingual guide. Check the inclusions at checkout, because schedules and contents can change. On the marketplace, the {{< tour-link tour="696822" >}}balloon flight with optional pyramids tour{{< /tour-link >}} (4.6/5 from more than 1,300 reviews) offers a full-day option with a professional guide and entry to Teotihuacán.
 
@@ -348,7 +348,7 @@ You fly in the Teotihuacán valley and often get good views of the pyramids, but
 
 ### How long is the balloon ride itself?
 
-Volare quotes 30 to 50 minutes for its shared flight, and WE FLY's all-inclusive package quotes 45 to 60 minutes. The whole outing takes much longer because of transfers, check-in, inflation, landing and breakfast. Our [flight duration guide](/guides/teotihuacan-balloon-ride-duration/) compares operators.
+Volare quotes 30 to 50 minutes for its shared flight, and WE FLY's all-inclusive package quotes 30 to 60 minutes. The whole outing takes much longer because of transfers, check-in, inflation, landing and breakfast. Our [flight duration guide](/guides/teotihuacan-balloon-ride-duration/) compares operators.
 
 ### Can I walk around the ruins after my flight?
 
@@ -394,6 +394,6 @@ Checked 2026-11-15. USD at about MXN 18.25 (site convention).
 Volare: MXN 2,900 adult shared; arrive 5:45; check-in 5:45-6:15; boarding 6:15-6:30; flight 6:30-7:10; return 7:10-7:40; breakfast + toast 7:40-8:40; 30-50 min; round-trip transport MXN 500 pp from tourist-area hotels; extended transport ~3 h at zone, entry MXN 210; port Carretera libre a Tulancingo Km 27.5, San Juan Teotihuacan: https://volare.com.mx/en/shared-balloon-flight/ (fetched 2026-11-15). Expired Oct 15 promotion omitted.
 Volare FAQ: cannot be directed, wind currents; lands at different point; weather reschedule/cancel no extra fee; book 24 h ahead: https://volare.com.mx/en/faqs-en/ (fetched 2026-11-15).
 WE FLY schedules: check-in 5:30 sharp; meeting ~5:00 with transport: https://wefly.com.mx/en/schedules/ (fetched 2026-11-15).
-WE FLY all-inclusive: pickup 4:00 (FAQ 4:00-4:30), 5:30 check-in, 45-60 min, La Gruta, guide, admission, MXN 3,600, return 11:30, back noon-1 p.m.; areas Reforma/Polanco/Historic Center + Roma (starting point) vs Zona Rosa (FAQ): https://wefly.com.mx/en/tours/all-inclusive-flight/ (research report).
+WE FLY all-inclusive: pickup 4:00 (FAQ 4:00-4:30), 5:30 check-in, 30-60 min, La Gruta, guide, admission, MXN 3,600, back no later than 3:00 PM (rechecked 2026-11-21); areas Reforma/Polanco/Historic Center + Roma (starting point) vs Zona Rosa (FAQ): https://wefly.com.mx/en/tours/all-inclusive-flight/ (research report).
 INAH: Mon-Sun 8:00-17:00, last entry 16:30, MXN 210; nacionales y extranjeros residentes MXN 105: https://www.inah.gob.mx/zonas/23-zona-arqueologica-de-teotihuacan (fetched 2026-11-15). 45-60 min road, 3-5 h visit, 85D/132D, Terminal del Norte buses: visitateotihuacan.inah.gob.mx (article source; site returned HTTP 468 to fetch). Sun pyramid climbing prohibited: site guide do-balloons-fly-over (INAH 2026 bulletin).
 Marketplace: 357659P1 4.94/8,257 (live 8,334); 171986P1 4.83/4,552, TG3 MXN 2,900, TG1/TG2 MXN 3,400; 696822 4.64/1,326; 333644P5 4.89/123: data/mcbr_offers.json. -->
