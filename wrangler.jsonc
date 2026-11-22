@@ -1,0 +1,22 @@
+// Cloudflare Workers static-assets config. This site is hosted on Cloudflare, not Netlify:
+// the PC builds it and uploads it with wrangler; Cloudflare never builds. Deploy only with
+// ~/.claude/skills/netlify-cli-deploy/scripts/deploy.py <domain> --prod (never a bare `wrangler deploy`:
+// deploy.py publishes a clean build, converts netlify.toml headers/redirects, and checks the result).
+{
+  "name": "mexicocityballoonrides",
+  "compatibility_date": "2026-11-22",
+  "account_id": "c79bee0f32ed7d04385e7a91bdc52c18",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "mexicocityballoonrides.com",
+      "custom_domain": true
+    }
+  ],
+  "workers_dev": true,
+  "preview_urls": false
+}

@@ -49,3 +49,4 @@ _commit_msg_*.txt
 # Local documentation (not for deployment)
 /docs/
 bash.exe.stackdump
+.wrangler/
