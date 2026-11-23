@@ -263,7 +263,6 @@
           </a>
 
           <p class="tour-booking-note">You'll choose your date and complete the booking on {{ cond (in ($tour.url | default "") "getyourguide.com") "GetYourGuide" "Viator" }}.</p>
-          {{ partial "platform-twin.html" (dict "Site" $site "tour" $tour) }}
         </div>
 
         {{- with $tour.badges -}}

@@ -1,0 +1,55 @@
+{{- /* best-twin.html — RETURNS the better listing of a tour sold on both networks.
+     dict: Site, tour. A tour with no `twin` (or a twin missing from the offers
+     JSON) comes back unchanged.
+     Marina 2026-11-23 (fairbanksarcticcircletours): "never put 2 widgets for the
+     same tour ... just choose the best one". The same product is shown ONCE, on
+     its better listing; the other listing never appears (platform-twin.html is
+     retired). The rule is tour-inventory-research's pick() in
+     scripts/compare_inventory.py, so a page and the inventory table agree:
+       1. GYG shows no price and Viator does            -> Viator
+       2. Viator Wilson >= GYG + 0.05 AND reviews >= 3x -> Viator
+       3. same currency, Viator <= 90% of GYG's price and
+          Viator Wilson within 0.03 of GYG's             -> Viator
+       4. otherwise                                      -> GetYourGuide
+     Wilson = lower bound of the 95% interval on (rating-1)/4 over reviewCount. */ -}}
+{{- $tour := .tour | default dict -}}
+{{- $site := .Site -}}
+{{- $twin := dict -}}
+{{- with $tour.twin -}}
+  {{- $tid := string . -}}
+  {{- range (index hugo.Data $site.Params.offersDataKey) -}}
+    {{- if eq (string .id) $tid -}}{{- $twin = . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $best := $tour -}}
+{{- if and $twin.id $tour.id (ne ($twin.provider | default "getyourguide") ($tour.provider | default "getyourguide")) -}}
+  {{- $g := cond (eq $tour.provider "viator") $twin $tour -}}
+  {{- $v := cond (eq $tour.provider "viator") $tour $twin -}}
+  {{- $w := dict -}}
+  {{- range $k, $o := dict "g" $g "v" $v -}}
+    {{- $r := float ($o.rating | default 0) -}}
+    {{- $n := float ($o.reviewCount | default 0) -}}
+    {{- $s := 0.0 -}}
+    {{- if and (gt $r 0.0) (gt $n 0.0) -}}
+      {{- $p := math.Min 1.0 (math.Max 0.0 (div (sub $r 1.0) 4.0)) -}}
+      {{- $z2 := 3.8416 -}}
+      {{- $centre := add $p (div $z2 (mul 2.0 $n)) -}}
+      {{- $margin := mul 1.96 (math.Sqrt (div (add (mul $p (sub 1.0 $p)) (div $z2 (mul 4.0 $n))) $n)) -}}
+      {{- $s = math.Max 0.0 (div (sub $centre $margin) (add 1.0 (div $z2 $n))) -}}
+    {{- end -}}
+    {{- $w = merge $w (dict $k $s) -}}
+  {{- end -}}
+  {{- $gp := float ($g.startingPrice | default 0) -}}
+  {{- $vp := float ($v.startingPrice | default 0) -}}
+  {{- $gn := float ($g.reviewCount | default 0) -}}
+  {{- $vn := float ($v.reviewCount | default 0) -}}
+  {{- $best = $g -}}
+  {{- if and (eq $gp 0.0) (gt $vp 0.0) -}}
+    {{- $best = $v -}}
+  {{- else if and (ge (sub $w.v $w.g) 0.05) (ge $vn (mul 3.0 (math.Max $gn 1.0))) -}}
+    {{- $best = $v -}}
+  {{- else if and (gt $gp 0.0) (gt $vp 0.0) (eq ($g.currency | default "USD") ($v.currency | default "USD")) (le $vp (mul 0.9 $gp)) (le (sub $w.g $w.v) 0.03) -}}
+    {{- $best = $v -}}
+  {{- end -}}
+{{- end -}}
+{{- return $best -}}
