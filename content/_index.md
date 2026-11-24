@@ -40,7 +40,7 @@ Admission to the archaeological zone is a separate cost on most packages. INAH c
 
 ## Choosing a package
 
-Most listings sell the same sunrise flight in several options, so the real choice is what you add to it. Our guide to the [Teotihuacán sunrise balloon ride](/guides/teotihuacan-sunrise-hot-air-balloon-ride/) compares launch times and pickups. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) matches each package to a type of traveler. In short:
+Most listings sell the same sunrise flight in several options, so the real choice is what you add to it. Our guide to the [Teotihuacán sunrise balloon ride](/guides/teotihuacan-sunrise-hot-air-balloon-ride/) compares launch times and pickups. Our comparison of the [best Teotihuacán balloon rides](/best-teotihuacan-balloon-rides/) matches each package to a type of traveler. If you are choosing between companies, our [Volare vs WE FLY vs Sky Balloons](/guides/volare-vs-we-fly-vs-sky-balloons-teotihuacan/) comparison sets their prices, private baskets and cancellation terms side by side. In short:
 
 - Staying in Mexico City without a car: book an option with round-trip transport. It costs more, but solves the pre-dawn transport problem. Our guide on [how to book](/guides/how-to-book-teotihuacan-balloon-ride/) covers pickup zones and cancellation rules.
 - Driving yourself, or sleeping near the pyramids: the [flight-only option](/teotihuacan-balloon-flight-only/) is the cheapest way into the air. Our guide to [cheap Teotihuacán balloon rides](/guides/cheap-teotihuacan-balloon-rides/) adds up the transport.

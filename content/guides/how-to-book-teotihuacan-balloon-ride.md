@@ -48,7 +48,7 @@ Before you open a booking calendar, decide which of these you want.
 
 A private ticket is not two seats bought together. [HappyFly's price list](https://happyfly.mx/en/prices/), for example, separates its per-person shared flight from a private basket priced for two people. If privacy matters, look for *private basket*, *exclusive flight* or the equivalent on the confirmation.
 
-Couples can compare both options in our [Teotihuacán balloon ride for two guide](/guides/teotihuacan-balloon-ride-for-two/). For the wider field, start with our [best Teotihuacán balloon rides comparison](/best-teotihuacan-balloon-rides/).
+Couples can compare both options in our [Teotihuacán balloon ride for two guide](/guides/teotihuacan-balloon-ride-for-two/). For the wider field, start with our [best Teotihuacán balloon rides comparison](/best-teotihuacan-balloon-rides/), and to book direct with an operator, see [Volare, WE FLY and Sky Balloons compared](/guides/volare-vs-we-fly-vs-sky-balloons-teotihuacan/).
 
 ## Step 2: Compare the total price, not just the headline ticket
 
