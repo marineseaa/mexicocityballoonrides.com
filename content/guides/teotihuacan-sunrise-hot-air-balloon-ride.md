@@ -200,7 +200,7 @@ Checked 2026-11-06:
 Volando en Globo: lift-off "around 06:00-07:30", own field "A 2 km de la Zona Arqueologica", pickup from 4:00 AM within 5 km of the Angel, MXN 500 pp further, meeting point Paseo de la Reforma 222: https://volandoenglobo.com/en/globopuerto/
 WE FLY schedule: check-in 5:30 sharp (5:00 with transport), prep 6:30-7:00, flight 7:00-8:00, landing/toast 8:00-9:00; government photo ID required: https://wefly.com.mx/en/schedules/
 WE FLY transfer package: pickup 4:30 near Reforma, lift-off ~6:30, MXN 2,890 (research report): https://wefly.com.mx/en/tours/flight-transportation-cdmx/
-WE FLY all-inclusive MXN 3,600: hotel pickup ~4:00, 45-60 min flight, La Gruta breakfast, admission + certified bilingual guide: https://wefly.com.mx/en/tours/all-inclusive-flight/
+WE FLY all-inclusive MXN 3,600: hotel pickup ~4:00, 30-60 min flight (rechecked 2026-11-24), La Gruta breakfast, admission + certified bilingual guide: https://wefly.com.mx/en/tours/all-inclusive-flight/
 WE FLY policy: weather reschedule or 6-month gift certificate; refunds international passengers, standard fares only: https://wefly.com.mx/en/politicas-y-restricciones/
 Ruta Magica: reschedule free or 100% refund when it cancels for weather/operational reasons: https://rutamagica.com.mx/en/politicas-y-terminos/
 Aerodiverti pickup from 04:00, return Angel or Monumento a la Revolucion: https://beta.aerodiverti.com.mx/en/reservar/

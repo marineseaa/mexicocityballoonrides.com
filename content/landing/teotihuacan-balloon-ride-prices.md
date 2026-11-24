@@ -129,7 +129,7 @@ Season, date and exchange rate move the figure too, so check the price on your o
 ## Extras the price does not cover
 
 - Archaeological zone: MX$210 for foreign visitors in 2026, paid at the gate or on INAH's site. Children under 13 and people over 60 are exempt. Free Sundays apply only to Mexican nationals and foreign residents.
-- Weight surcharges, set by each operator: Viaja Teotihuacan and Skyteam charge MXN 35 per kilo over 100 kg; Tlatoani charges MXN 500 from 100 to 120 kg and MXN 1,000 from 120 to 140 kg; Teotihuacan Adventures adds MXN 1,500 above 140 kg; We Fly includes up to 99 kg and charges MXN 45 per extra kilo. See our [weight limits guide](/guides/teotihuacan-balloon-ride-weight-limits/).
+- Weight surcharges, set by each operator: Viaja Teotihuacan and Skyteam charge MXN 35 per kilo over 100 kg; Tlatoani charges MXN 500 from 100 to 120 kg and MXN 1,000 from 120 to 140 kg; Teotihuacan Adventures adds MXN 1,500 above 140 kg; We Fly includes up to 95 kg and charges MXN 50 per extra kilo. See our [weight limits guide](/guides/teotihuacan-balloon-ride-weight-limits/).
 - Photos: Viaja Teotihuacan, Visita Teotihuacan and Amigo Tours list photo and video packages as extras, with no price on the listing. Our [photos guide](/guides/teotihuacan-balloon-ride-photos/) covers what you can shoot yourself.
 - Tips: listed as not included by Tlatoani, Skyteam, Teotihuacan Adventures and others, and left to you.
 - Self-driving: tolls and fuel on the Mexico–Pachuca and Ecatepec–Pirámides roads, if you skip the transport option.

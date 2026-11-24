@@ -126,7 +126,7 @@ The Pyramid of the Sun cannot be climbed, and access to the Pyramid of the Moon 
 
 ## Breakfast at La Gruta
 
-La Gruta is a restaurant inside a natural volcanic cave, behind the Pyramid of the Sun. Several listings serve breakfast in a cave restaurant; We Fly and Paseos Olmedo name La Gruta. The {{< tour-link tour="247495P2" >}}We Fly flight with breakfast at La Gruta{{< /tour-link >}} was about $203 per person without transport, about $231 for its all-included option from Mexico City and about $274 for an express return to the city after breakfast. The listing warns that waiting time outside the restaurant is beyond its control. We Fly sets its maximum weight at 99 kg, with a penalty above it. More in [balloon rides with breakfast](/teotihuacan-balloon-rides-with-breakfast/). [Our review →](/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/)
+La Gruta is a restaurant inside a natural volcanic cave, behind the Pyramid of the Sun. Several listings serve breakfast in a cave restaurant; We Fly and Paseos Olmedo name La Gruta. The {{< tour-link tour="247495P2" >}}We Fly flight with breakfast at La Gruta{{< /tour-link >}} was about $203 per person without transport, about $231 for its all-included option from Mexico City and about $274 for an express return to the city after breakfast. The listing warns that waiting time outside the restaurant is beyond its control. The listing sets a maximum of 99 kg with a penalty above it, while We Fly's own policy includes up to 95 kg and charges MXN 50 a kilo above that. More in [balloon rides with breakfast](/teotihuacan-balloon-rides-with-breakfast/). [Our review →](/tours/we-fly-teotihuacan-balloon-breakfast-la-gruta/)
 
 ## Couples and celebrations: a private basket
 

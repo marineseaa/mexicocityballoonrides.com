@@ -103,7 +103,7 @@ Globopuerto Teotihuacán's weekday promotion costs MXN 1,950 against its usual M
 
 ### 3. Compare direct and marketplace prices on identical inclusions
 
-An operator's own site often shows a lower base fare, and a marketplace listing often bundles pickup, breakfast or a site visit. Compare them in one currency, for one date, on these points:
+An operator's own site often shows a lower base fare, and a marketplace listing often bundles pickup, breakfast or a site visit. For an example with real fares, see [three operators compared side by side](/guides/volare-vs-we-fly-vs-sky-balloons-teotihuacan/). Compare them in one currency, for one date, on these points:
 
 - Price per traveller, including taxes and checkout fees.
 - Meeting point and check-in time.
@@ -136,7 +136,7 @@ A balloon ticket does not get you into the Teotihuacán archaeological zone unle
 
 ### Weight surcharges
 
-Many operators include passengers up to about 99 or 100 kg and charge per extra kilo: Aerodiverti MXN 50 above 99 kg and WE FLY MXN 45 above 99 kg, paid on the day. Give the operator your real weight when you book. Our [weight limits guide](/guides/teotihuacan-balloon-ride-weight-limits/) lists every operator's rule.
+Many operators include passengers up to about 99 or 100 kg and charge per extra kilo: Aerodiverti MXN 50 above 99 kg and WE FLY MXN 50 above 95 kg, paid on the day. Give the operator your real weight when you book. Our [weight limits guide](/guides/teotihuacan-balloon-ride-weight-limits/) lists every operator's rule.
 
 ### Photos and videos
 
@@ -235,7 +235,7 @@ Vuelos en Globo MX Viaje en Globo Teotihuacan MXN 1,990 lunes a viernes: https:/
 Aerodiverti Essential 2,000; Flight + CDMX transport 3,200; pickup from 04:00 within 4 km of Angel, return Angel or Monumento a la Revolucion; takeoff San Martin de las Piramides, free parking; MXN 50/kg above 99 kg: https://beta.aerodiverti.com.mx/en/reservar/
 Teotours shared flight only, minimum 2 people: https://www.teotours.com/en/product/vuelo-en-globo-compartido-solo-vuelo/
 WE FLY transfer package MXN 2,890 (research run 2026-11-06): https://wefly.com.mx/en/tours/flight-transportation-cdmx/
-WE FLY policy: 99 kg included, MXN 45/kg over; weather reschedule or 6-month gift certificate; refunds only international passengers, standard fares; promo excluded; transport/accommodation non-refundable: https://wefly.com.mx/en/politicas-y-restricciones/
+WE FLY policy: 95 kg included, MXN 50/kg over (rechecked 2026-11-24, page updated 31 Aug 2026); weather reschedule or 6-month gift certificate; refunds only international passengers, standard fares; promo excluded; transport/accommodation non-refundable: https://wefly.com.mx/en/politicas-y-restricciones/
 USD at about MXN 18.25 (482323P1 TG2 MXN 2,500 = $137).
 Marketplace: 482323P1 TG2 $137, TG1 $211, 4.9/1,557; 487546P4 TG1 MXN 2,480 $136, 4.9/746; 247495P2 TG6 $143, 4.9/4,824; 357659P1 TG2 $148, 4.9/8,257; 171986P1 TG3 $159, TG1/TG2 $186, 4.8/4,552: data/mcbr_offers.json + prices landing digest.
 INAH: MX$210 / MX$105, 8:00-17:00: https://www.inah.gob.mx/zonas/23-zona-arqueologica-de-teotihuacan
