@@ -153,7 +153,7 @@ The return is the harder half. Many flight-only guests head to the ruins after l
 
 ## Option 3: Drive yourself to the balloon port
 
-Driving works for a group that already has a rental car, and it gives you the most freedom after the flight.
+Driving works for a group that already has a rental car, and it gives you the most freedom after the flight. Our guide to [booking the flight without a tour](/guides/teotihuacan-balloon-ride-without-a-tour-flight-only/) compares the self-arrival tickets that go with it.
 
 | Operator | Where flight-only guests go | Location sent |
 |---|---|---|
@@ -202,7 +202,7 @@ If your flight includes a ride back to the operator's field but not to Mexico Ci
 
 Sometimes. A flight-only fare is only half the comparison if you also pay to reach a field in the countryside and get back.
 
-We Fly shows the gap on its own site: its carpool flight, where you make your own way to the field by 5:30 a.m., costs MXN 2,300 (about $126), and the flight with Mexico City transfer costs MXN 2,890 (about $158). That is MXN 590 (about $32) per person, or about $64 for two, though the packages may differ in more than the ride. A private driver for the morning can cost more than that; a group of four sharing one booked car can come out ahead.
+We Fly shows the gap on its own site: its traditional shared flight, where you make your own way to the field by 5:30 a.m. and get a buffet breakfast, costs MXN 2,300 (about $126), and the flight with Mexico City transfer costs MXN 2,890 (about $158). That is MXN 590 (about $32) per person, or about $64 for two, though the packages may differ in more than the ride. A private driver for the morning can cost more than that; a group of four sharing one booked car can come out ahead.
 
 Add it up the same way for your own booking: flight tickets, the ride there, the ride back, tolls or parking, any waiting charge and any extras you want. Compare that total with a transfer package for the same number of people and the same inclusions (breakfast, zone entry). A bare sunrise flight against a full-day combo is not a transport comparison. Our [cheap balloon rides guide](/guides/cheap-teotihuacan-balloon-rides/) and [prices page](/teotihuacan-balloon-ride-prices/) run the numbers.
 
@@ -329,7 +329,7 @@ Merged 2026-11-19 from queue article 12 (launch sites from Mexico City). Checked
  Volare km 27.5 San Juan Teotihuacan, search "Volare | Vuelos en globo", 5-min tolerance, van may be 5-15 min late: volare.com.mx/en/reservation/.
  Sky Balloons km 28.0 int 1, Francisco Villa, 55830 San Martin Centro: skyballoons.mx/ubicacion.
  WeFly km 27.3 San Francisco Mazapa, 47.3 km, 45-60 min, be at field 5:30, leave by 4:30 if driving: wefly.com.mx/en/guia/como-llegar-teotihuacan/ (replaces the earlier "leave 3:30" ledger line sitewide).
- WeFly transfer package MXN 2,890, meet near Reforma 4:30, up to 8.5 h; carpool MXN 2,300 self-arrival by 5:30: wefly.com.mx/en/tours/flight-transportation-cdmx/.
+ WeFly transfer package MXN 2,890, meet near Reforma 4:30, up to 8.5 h; Vuelo Compartido Tradicional MXN 2,300 self-arrival by 5:30, buffet breakfast, every day (weflyteotihuacan.com/es/tours/vuelo-tradicional/, 2026-11-27): wefly.com.mx/en/tours/flight-transportation-cdmx/.
  WeFly all-inclusive MXN 3,600, km 28 SMP 55850, free pickup Reforma/Polanco/Centro/Roma, 4:00, back by 15:00: wefly.com.mx/en/tours/all-inclusive-flight/.
  357659P1 pickup 4:20-5:10 by location, hotel or Airbnb: Viator API product 357659P1 (2026-11-19). 247495P2 pickups from 4:00, center within 3 km of the Angel, arrive 5:40: Viator API product 247495P2.
  Pickup window sitewide 4:00-5:30 (was 4:30-5:30): from the two listings above + WeFly site.

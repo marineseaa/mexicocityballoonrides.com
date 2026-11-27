@@ -94,6 +94,7 @@ keepReading:
   - "guides/how-to-get-to-teotihuacan-balloon-port.md"
   - "guides/what-to-wear-teotihuacan-balloon-ride.md"
   - "guides/what-to-do-after-teotihuacan-balloon-flight.md"
+  - "guides/teotihuacan-balloon-ride-without-a-tour-flight-only.md"
 keywords:
   - "teotihuacan balloon flight only"
   - "teotihuacan hot air balloon without transportation"
@@ -131,7 +132,7 @@ You get the same shared sunrise flight as the package passengers, usually 30 to 
 - {{< tour-link tour="171986P1" >}}Volare's no-transport option{{< /tour-link >}} is the exception: its listing includes a Mexican breakfast at the balloon port after the flight, plus coffee, a toast and a diploma, for about $159.
 - Skyteam's option text says it includes only the balloon flight; the listing's general inclusions add a flight certificate.
 
-Flight only never includes transport, and except at Volare it does not include breakfast. The archaeological-zone ticket (MX$210 for foreign visitors in 2026) is extra, as are tips and any weight surcharge: Skyteam and Viaja Teotihuacan charge MXN 35 per kilo over 100 kg.
+On these listings, flight only never includes transport, and except at Volare it does not include breakfast. Booked on the operators' own websites, several self-arrival fares do include breakfast; our guide to [what a flight-only morning really costs](/guides/teotihuacan-balloon-ride-without-a-tour-flight-only/) compares them. The archaeological-zone ticket (MX$210 for foreign visitors in 2026) is extra, as are tips and any weight surcharge: Skyteam and Viaja Teotihuacan charge MXN 35 per kilo over 100 kg.
 
 ## Getting to the balloon port before dawn
 

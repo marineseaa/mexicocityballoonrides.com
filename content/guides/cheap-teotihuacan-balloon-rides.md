@@ -81,7 +81,7 @@ Price the car for your real date, address and pre-dawn start, and make sure the 
 
 ### Travelling alone
 
-On your own, nobody splits the car with you. The ticket stays cheap, but a private pre-dawn transfer both ways can be a large share of the day's cost, so a shared pickup from central Mexico City usually works out cheaper and carries less risk of arriving late.
+On your own, nobody splits the car with you; our guide to going [flight-only without a tour](/guides/teotihuacan-balloon-ride-without-a-tour-flight-only/) adds up a self-arrival morning. The ticket stays cheap, but a private pre-dawn transfer both ways can be a large share of the day's cost, so a shared pickup from central Mexico City usually works out cheaper and carries less risk of arriving late.
 
 Ask whether the low fare needs a minimum number of passengers. Teotours, for example, sells its shared flight-only seat with a two-person minimum per booking, even though the basket is shared with strangers.
 
